@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:dt="http://iso.org/OTX/1.0.0/DateTime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="FormatDuration" id="id_2fc18f399bf0420d895490a9ce6e097a" package="DateTime.Terms" version="1.0.0.0" timestamp="2021-07-29T14:41:02.401+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42410</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="FormatDuration_Base" id="id_42b7e61bb7e042899c6201724127daca" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_c3910ddba56a474794c940efa4e20725">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="P0-00-00T00:00:00.000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_43b65b7b2cc547de88d063c2e459d644">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="IntegerLiteral" value="203443" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="P0-00-00T00:03:23.443" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2f3e9335fcbb4f4688fa3042d38b0023">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="IntegerLiteral" value="203443" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="'This took about' m 'minutes and' s 'seconds.'" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="This took about 3 minutes and 23 seconds." />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9addc8df745247cfaaa24f251aa3f7f5">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="FloatLiteral" value="0.9999" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="P0-00-00T00:00:00.000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_94b73673583f46ebbc8362b396d3920b">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="IntegerLiteral" value="1627549274618" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="'This took about' Y 'years' MM 'months' dd 'days' HH 'hours' mm 'minutes and' ss 'seconds' SS 'Milliseconds'" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="This took about 52 years 03 months 27 days 09 hours 01 minutes and 14 seconds 618 Milliseconds" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_582c07b7ccf147d9ae29fd8612187f05">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="IntegerLiteral" value="-223443" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_68f33ba5de4e458c818db862e964cfd8">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="IntegerLiteral" value="1627549274618" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="  This took about  - y - years - MM - months - dd - days - HH - hours - mm 'minutes and' ss 'seconds' SS 'Milliseconds'" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_33fcf89053ea4880b8ba277058ea5993">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="IntegerLiteral" value="1627549274618" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="''Y''" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="52" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e98a0f40dac44e7185115615b022f685">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="IntegerLiteral" value="1627549274618" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="''M - MM''" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="3 - 03" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bbeb5f327e3a4863a058f22faf0de7d7">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="IntegerLiteral" value="1627549274618" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="''d - dd''" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="27 - 27" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ed152495bcd54add8c99aff7c026a5fa">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="IntegerLiteral" value="1627549274618" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="''m - mm''" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="1 - 01" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c44973ee29a74d5ba528759a5d2094cb">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="IntegerLiteral" value="1627549274618" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="''s - ss''" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="14 - 14" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7ad9060af65f41ae860f18443703beda">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="IntegerLiteral" value="1627549274618" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="''S - SS - SSS''" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="618 - 618 - 618" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_99458b8237ea4133824782a49c48a0da">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="IntegerLiteral" value="1627549274618" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="''" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_eb203ef5632d4bbe9c108f78198165c9">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="A" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_408a3b52a8894b7db582418d3ea3ea37">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="a" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_970aa5e5bb1b4fd1982821abb53a8009">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8aa3ad379bfe483a8fa2903df645aeb9">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4d6f856be251461ea4e7a237ca604dc0">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2fc8b92d03cd481bae1a0b618d088c42">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_00ecbedfbb424059b00948f70643de32">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="P0-00-00T00:00:00.000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bb7329b4be8f439bacb200036e9ab71f">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_350a30e32e844b0f9ed81d8b76bae16a">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="P0-00-00T00:00:00.049" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6fd4ee39076d40f5b7659f82dfd6f658">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_0ce41335c0894e978bb73c29effae56e">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_029ed3238ba0476ab7119a3114922156">
+            <unittest:arguments>
+              <unittest:argument param="duration">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="duration" id="InParameterDeclaration_313f22cd7d8d4224abfc4c4dff9b2db1">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="format" id="InParameterDeclaration_c9f25413a4d74176824d95bee8d9dfbc">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_315f62dc4fb34fd8be83612a0245eead">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_5cc259350e134324b89204f59c47f8ee">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="result" />
+              <term xsi:type="dt:FormatDuration">
+                <dt:duration xsi:type="FloatValue" valueOf="duration" />
+                <dt:format xsi:type="StringValue" valueOf="format" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

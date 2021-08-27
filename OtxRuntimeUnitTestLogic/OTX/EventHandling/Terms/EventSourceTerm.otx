@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:event="http://iso.org/OTX/1.0.0/Event" name="EventSourceTerm" id="id_18f3075333794fba9d716ed4304aad88" package="EventHandling.Terms" version="1.0.0.0" timestamp="2021-08-11T13:46:46.098+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42500</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="EventSourceTerm" id="id_71e06f1479154af09d392a69ef7036ed">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="EventSource1" id="VariableDeclaration_853e421e984146d9b7ec593c8ad80fd9">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="EventSource2" id="VariableDeclaration_324855e2dd854694bc77c1fd17aa79b7">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_5add90d274b447a0875f85d3581b0fcd">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:TimerExpiredEventSource">
+                <event:timeout xsi:type="IntegerLiteral" value="200" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_fc9102b7c7f34bfc9d885087cd7e808f">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource2" />
+              <term xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+            </realisation>
+          </action>
+          <action id="Action_55c9620919b54b4a825cbfb8b5d6d153">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                <term xsi:type="event:EventSourceValue" valueOf="EventSource2" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

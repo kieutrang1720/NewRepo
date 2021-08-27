@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:flash="http://iso.org/OTX/1.0.0/Flash" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagConf="http://iso.org/OTX/1.0.0/DiagConfiguration" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:diag="http://iso.org/OTX/1.0.0/DiagCom" xmlns:quant="http://iso.org/OTX/1.0.0/Quantities" xmlns:event="http://iso.org/OTX/1.0.0/Event" xmlns:string="http://iso.org/OTX/1.0.0/StringUtil" xmlns:hmi="http://iso.org/OTX/1.0.0/HMI" xmlns:dt="http://iso.org/OTX/1.0.0/DateTime" xmlns:math="http://iso.org/OTX/1.0.0/Math" xmlns:log="http://iso.org/OTX/1.0.0/Logging" xmlns:measure="http://iso.org/OTX/1.0.0/Measure" xmlns:i18n="http://iso.org/OTX/1.0.0/i18n" xmlns:job="http://iso.org/OTX/1.0.0/Job" xmlns:data="http://iso.org/OTX/1.0.0/DiagDataBrowsing" xmlns:dmd="http://iso.org/OTX/1.0.0/Auxiliaries/DiagMetaData" xmlns:vwfile="http://vwag.de/OTX/1.0.0/File" xmlns:fileXml="http://vwag.de/OTX/1.0.0/XmlFile" xmlns:diagDataPlus="http://iso.org/OTX/1.0.0/DiagDataBrowsingPlus" xmlns:utils="http://emotive.de/OTX/1.0.0/Utils" xmlns:gdi="http://emotive.de/OTX/1.0.0/Gdi" xmlns:raw="http://iso.org/OTX/1.0.0/DiagComRaw" xmlns:dba="http://emotive.de/OTX/1.0.0/Database" xmlns:fdb="http://com.vwag/OTX/P/Framework/DataTypes/Boxing/1.0.5" xmlns:fdr="http://com.vwag/OTX/P/Framework/DataTypes/Ressource/1.0.4" xmlns:fwf="http://com.vwag/OTX/P/Framework/Wrapper/FunctionInterfaces/1.0.4" xmlns:file="http://iso.org/OTX/1.0.0/File" xmlns:otxXml="http://iso.org/OTX/1.0.0/XML" xmlns:persist="http://iso.org/OTX/1.0.0/Persistence" xmlns:eventPlus="http://iso.org/OTX/1.0.0/EventPlus" xmlns:blackBox="http://iso.org/OTX/1.0.0/BlackBox" xmlns:dataType="http://iso.org/OTX/1.0.0/DataType" xmlns:util="http://iso.org/OTX/1.0.0/Util" xmlns:stateVar="http://iso.org/OTX/1.0.0/StateVariable" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:smp="http://iso.org/OTX/1.0.0/StateMachineProcedure" xmlns:zip="http://iso.org/OTX/1.0.0/ZipHandling" xmlns:sql="http://iso.org/OTX/1.0.0/SQL" xmlns:testResult="http://iso.org/OTX/1.0.0/TestResultHandling" xmlns:commDlg="http://iso.org/OTX/1.0.0/CommonDialogs" xmlns:esp="http://iso.org/OTX/1.0.0/ExternalServiceProvider" xmlns:busMon="http://iso.org/OTX/1.0.0/BusMonitoring" xmlns:comIf="http://iso.org/OTX/1.0.0/ComInterface" xmlns:ecuConf="http://iso.org/OTX/1.0.0/EcuConfiguration" xmlns:diagComPlus="http://iso.org/OTX/1.0.0/DiagComPlus" xmlns:flashPlus="http://iso.org/OTX/1.0.0/FlashPlus" xmlns:vehInf="http://iso.org/OTX/1.0.0/VehicleInfo" name="GetNumberOfSegments" id="id_ca680c1213f44d5eb1003675fec99de3" package="Flash.Terms" version="1.0.0.0" timestamp="2021-08-11T14:28:43.836+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42514</data>
+  </metaData>
+  <declarations>
+    <variable name="CurrentProjectName" id="DocumentVariableDeclaration_c352bdd5f0824e3299f0ec2cf62f6287">
+      <realisation>
+        <dataType xsi:type="String" />
+      </realisation>
+    </variable>
+    <variable name="CurrentVehicleName" id="DocumentVariableDeclaration_6e0ca203bf8e4fcabd92c63211f2a8e4">
+      <realisation>
+        <dataType xsi:type="String" />
+      </realisation>
+    </variable>
+  </declarations>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ChangeOdxDb_p_918_v_918S" id="TestProcedure_a17f6b2510bb44bab7676fca7dd43fc0">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_09fcb90f01fe473e8998e353969f6a21">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="CurrentProjectName" />
+              <term xsi:type="diagConf:GetActiveProject" />
+            </realisation>
+          </action>
+          <action id="Action_0e1fbc8f3383402cb82f7f81ec8d2f1e">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="CurrentVehicleName" />
+              <term xsi:type="diagConf:GetActiveVehicleInformation" />
+            </realisation>
+          </action>
+          <branch id="Branch_2cf7e93169754725bd1b3cb4e5c9a6b3">
+            <realisation>
+              <if>
+                <condition id="ConditionHeader_7a8169f035224c0c9ff3d5c533e18534">
+                  <realisation xsi:type="IsNotEqual">
+                    <term xsi:type="StringValue" valueOf="CurrentProjectName" />
+                    <term xsi:type="StringLiteral" value="918" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_7033df5dbcf843499a9c399471859ea2">
+                    <realisation xsi:type="diagConf:SelectProject">
+                      <diagConf:projectName xsi:type="StringLiteral" value="918" />
+                    </realisation>
+                  </action>
+                  <action id="Action_de04e2f7167842d090a7027d158185cd">
+                    <realisation xsi:type="diagConf:SelectVehicleInformation">
+                      <diagConf:vehicleInformation xsi:type="StringLiteral" value="918S" />
+                    </realisation>
+                  </action>
+                </flow>
+              </if>
+            </realisation>
+          </branch>
+          <endNode id="ExtensibleEndNode_9e9be2d535ec4313b346784babd87ad5">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="GetNumberOfSegmentsIntArgs" id="TestProcedure_e9a842160daf4b0dbcbdfea085ed8394" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_e1a13b9f5ac349a0b0b7573ed86e6f6e">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:value xsi:type="StringLiteral" value="_7PP907357H_7540" />
+              </unittest:argument>
+              <unittest:argument param="Block">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="1" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutInteger">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_12647726bc7e414e9b657a0069dfff90">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:value xsi:type="StringLiteral" value="_7PP907357F_7520" />
+              </unittest:argument>
+              <unittest:argument param="Block">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="1" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutInteger">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_dc79d23734334470bbc388cb1010fdfa">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:value xsi:type="StringLiteral" value="_7PP907357H_7540" />
+              </unittest:argument>
+              <unittest:argument param="Block">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="2" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="SessionID" id="InParameterDeclaration_85fa6b9aee9544f38d892fe6b4df7919">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="Block" id="InParameterDeclaration_98cabf6f67544360bc72760c776b892e">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="OutInteger" id="OutParameterDeclaration_518cbf626ac743419f2d510ce74fe0b2">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="FlashSession1" id="VariableDeclaration_c90839a8c92644cf9292c2a000c0b946">
+            <realisation>
+              <dataType xsi:type="flash:FlashSession" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_edd3304411e44a2683c6344b8c66e3fe">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashSessionVariable" name="FlashSession1" />
+              <term xsi:type="flash:GetFlashSession">
+                <flash:sessionID xsi:type="StringValue" valueOf="SessionID" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_785954472df540f8898bc68ce93b6fda">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="OutInteger" />
+              <term xsi:type="flash:GetNumberOfSegments">
+                <flash:session xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+                <flash:block xsi:type="IntegerValue" valueOf="Block" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="GetNumberOfSegmentsFloatArgs" id="id_faf343de8fd24f63ae486c40b4b1a0e6" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_ab27d13914e3431cb53072993400b066">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:value xsi:type="StringLiteral" value="_7PP907357H_7540" />
+              </unittest:argument>
+              <unittest:argument param="Block">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="-0.9999999999" />
+                    <unittest:element xsi:type="FloatLiteral" value="1" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutInteger">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_38cc22353f99432ebf5173e8f40099e1">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:value xsi:type="StringLiteral" value="_7PP907357F_7520" />
+              </unittest:argument>
+              <unittest:argument param="Block">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="-0.9999999999" />
+                    <unittest:element xsi:type="FloatLiteral" value="1" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutInteger">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d9b5c355d0b04a15b481124eb626d864">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:value xsi:type="StringLiteral" value="_7PP907357H_7540" />
+              </unittest:argument>
+              <unittest:argument param="Block">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="NaN" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1" />
+                    <unittest:element xsi:type="FloatLiteral" value="2" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="SessionID" id="InParameterDeclaration_3e24330751e94aaea63b01a1f52a8dd3">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="Block" id="InParameterDeclaration_8659e95d1aa24052885d8caa1550c068">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="OutInteger" id="OutParameterDeclaration_a44bce70f3424a44ab51ed0c2fd4c894">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="FlashSession1" id="VariableDeclaration_dc96aadb65dd4eb1bd6d10b4073aa360">
+            <realisation>
+              <dataType xsi:type="flash:FlashSession" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_d64dce7e8cd64855896af2c5eef97a43">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashSessionVariable" name="FlashSession1" />
+              <term xsi:type="flash:GetFlashSession">
+                <flash:sessionID xsi:type="StringValue" valueOf="SessionID" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_c31edb4201d045e9a55f84589eae9ad3">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="OutInteger" />
+              <term xsi:type="flash:GetNumberOfSegments">
+                <flash:session xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+                <flash:block xsi:type="FloatValue" valueOf="Block" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ChangeOdxDb_LastDb" id="TestProcedure_568d379845884dd9ad43457c4f86b65e">
+      <unittest:realisation>
+        <unittest:flow>
+          <branch id="Branch_4496ed97dcba42ea929a82410d7efefa">
+            <realisation>
+              <if>
+                <condition id="ConditionHeader_71a07f64f31842bc8ef45e3b465c3d3d">
+                  <realisation xsi:type="IsEqual">
+                    <term xsi:type="StringValue" valueOf="CurrentProjectName" />
+                    <term xsi:type="StringLiteral" value="918" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_4c219b3836384b1db7302e682bd2de91">
+                    <realisation xsi:type="diagConf:SelectProject">
+                      <diagConf:projectName xsi:type="StringValue" valueOf="CurrentProjectName" />
+                    </realisation>
+                  </action>
+                  <action id="Action_0201ef379d50405fbe4fdc9cdcc05565">
+                    <realisation xsi:type="diagConf:SelectVehicleInformation">
+                      <diagConf:vehicleInformation xsi:type="StringValue" valueOf="CurrentVehicleName" />
+                    </realisation>
+                  </action>
+                </flow>
+              </if>
+            </realisation>
+          </branch>
+          <endNode id="ExtensibleEndNode_1c1606f0e920440ab3ef56895753f9c4">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:event="http://iso.org/OTX/1.0.0/Event" name="IsTresholdExceededEvent" id="id_48547171d6954ed3bebc0131d13f283d" package="EventHandling.Terms" version="1.0.0.0" timestamp="2021-08-10T14:26:01.72+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42500</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="IsTresholdExceededEvent_EventHasUseThresholdExceeded" id="id_4ba4f01299fe4ac4be4b61326675f33d" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Boolean1" id="VariableDeclaration_6f48005415344b26b1241bed5bd41a91">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_ebbc5e6607a14460a4eb13a5fde14f88">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+          <variable name="EventSource1" id="VariableDeclaration_a3e8d57944d746d58168ca5b726dc1ce">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_e60d5325f0d64b378785336aaebb6ac7">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:ThresholdExceededEventSource">
+                <event:variable xsi:type="BooleanVariable" name="Boolean1" />
+                <event:lowerThreshold xsi:type="BooleanLiteral" value="true" />
+                <event:upperThreshold xsi:type="BooleanLiteral" value="true" />
+              </term>
+            </realisation>
+          </action>
+          <parallel id="Parallel_03ce3db1d7154cad8ba98ac840512f4f">
+            <realisation>
+              <lane>
+                <action id="Action_fef2a5428ce94a308c577b00ac0d7ca5">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_390b3693d0c942899f38f6be5f8c5bc9">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="100" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_f1cf421935d74afdb2bbb844dbca2844">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="BooleanVariable" name="Boolean1" />
+                    <term xsi:type="BooleanLiteral" value="false" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_7f5648317af842748c4ed434f6293d11">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="event:IsThresholdExceededEvent">
+                <event:event xsi:type="event:EventValue" valueOf="Event1" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="IsTresholdExceededEvent_NoUseThresholdExceeded" id="TestProcedure_4b7c1c0d362743b9aeef6e24e1627b4c" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Boolean1" id="VariableDeclaration_766561fefceb4452affb99e7f4d29dd0">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_b5d8e388c84b4627b67d43f34877465a">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+          <variable name="EventSource1" id="VariableDeclaration_eb12008b7273445cbb35b3952fbc17a2">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_e2b9a9392b634cc69f473d35a96d5595">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:MonitorChangeEventSource">
+                <event:variable xsi:type="BooleanVariable" name="Boolean1" />
+              </term>
+            </realisation>
+          </action>
+          <parallel id="Parallel_4332b723e15d4568ac48a4b44ccac71d">
+            <realisation>
+              <lane>
+                <action id="Action_2b1a527dafd441dd96da95a9f650d8fb">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_3a72f2956546462e99cc44230f584c46">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="100" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_dccbfeaf426f4b4ea209b739bef4ec12">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="BooleanVariable" name="Boolean1" />
+                    <term xsi:type="BooleanLiteral" value="true" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_01deeee58a494ff6be1a68243c8f3a88">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="event:IsThresholdExceededEvent">
+                  <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

@@ -1,0 +1,910 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="LogicXor" id="id_775660556f264cf1ba673e0d1b7f1720" package="Core.Terms.LogicOperations" version="1.0.0.41602" timestamp="2021-05-17T10:53:16.236+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.41142</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="LogicXor_2Booleans" id="TestProcedure_008126735b7f4139872d3d09c852e936" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_3986d1af8af443e3b55e85088b42da98">
+            <unittest:arguments>
+              <unittest:argument param="left">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+              <unittest:argument param="right">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8b6a081e8ccb4852a7d63aef43cc92b9">
+            <unittest:arguments>
+              <unittest:argument param="left">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+              <unittest:argument param="right">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_98f0400f4f664ca1b635ee92f64e3a94">
+            <unittest:arguments>
+              <unittest:argument param="left">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+              <unittest:argument param="right">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_438a165f95034657ab80133ab209241b">
+            <unittest:arguments>
+              <unittest:argument param="left">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+              <unittest:argument param="right">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="left" id="InParameterDeclaration_25dda7cd0b9041788b1377dc6b10ea48">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="right" id="InParameterDeclaration_475dd75a26d14fba85d93feeb7331bcf">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_bf4fca59b5ee411dadcf65c1c1e1b43d">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_0da43ddead9f44a2a940f5cd59f3782b">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="result" />
+              <term xsi:type="LogicXor">
+                <term xsi:type="BooleanValue" valueOf="left" />
+                <term xsi:type="BooleanValue" valueOf="right" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="LogicXor_3Booleans" id="TestProcedure_bdd219ff8754458a8fca934cad2a17f4" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_6d5ff6c45d754de484883abff33fb67a">
+            <unittest:arguments>
+              <unittest:argument param="left">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+              <unittest:argument param="middle">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+              <unittest:argument param="right">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_38d45f4bcd494346bca10592e32152a1">
+            <unittest:arguments>
+              <unittest:argument param="left">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+              <unittest:argument param="middle">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+              <unittest:argument param="right">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1f127289057347f889f8ba32b83a2447">
+            <unittest:arguments>
+              <unittest:argument param="left">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+              <unittest:argument param="middle">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+              <unittest:argument param="right">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e54b07d7f6064dad9363d6034afd4d53">
+            <unittest:arguments>
+              <unittest:argument param="left">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+              <unittest:argument param="middle">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+              <unittest:argument param="right">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5ef3c18eb32c4a63ad4461e63c46b721">
+            <unittest:arguments>
+              <unittest:argument param="left">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+              <unittest:argument param="middle">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+              <unittest:argument param="right">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3e6586aa32e04908aa0e7653f07fb545">
+            <unittest:arguments>
+              <unittest:argument param="left">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+              <unittest:argument param="middle">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+              <unittest:argument param="right">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1bfb42f7bccc48e0af72451989c560c1">
+            <unittest:arguments>
+              <unittest:argument param="left">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+              <unittest:argument param="middle">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+              <unittest:argument param="right">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ab8c670f1d944fa2a4a14d259cc95e22">
+            <unittest:arguments>
+              <unittest:argument param="left">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+              <unittest:argument param="middle">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+              <unittest:argument param="right">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="left" id="InParameterDeclaration_8ec3a09361484ae5a2650e45e6af3bfa">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="middle" id="InParameterDeclaration_fb8a15a9da07498b915b35c8233fb977">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="right" id="InParameterDeclaration_2e43cc75e22b4158a8686860925d6e84">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_f9f72004ce8c4e358a3833d56d8c8898">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_2ad183b5a6a64d33939e0431ac60ae37">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="result" />
+              <term xsi:type="LogicXor">
+                <term xsi:type="BooleanValue" valueOf="left" />
+                <term xsi:type="BooleanValue" valueOf="middle" />
+                <term xsi:type="BooleanValue" valueOf="right" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="LogicXor_ManyBooleans" id="TestProcedure_cdeb4144df684550964f999e866127e2" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_3e30a6e1d856426897897b96d236d65f">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicXor">
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_9191bee9285e4d9281446203939bf611">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicXor">
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="false" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="false" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_9007df6dec514af7b17d8beb2d55e1b7">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicXor">
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_df7611d3abb24311a20f33c3719f9ba3">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="LogicXor">
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="true" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                </term>
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_0ba2b1d1730d4625be37f4d155f1ad6d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="LogicXor">
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="true" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                </term>
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_e91c8257612b4e2abf9d43762fc01835">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="LogicXor">
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                  <term xsi:type="BooleanLiteral" value="false" />
+                </term>
+                <term xsi:type="BooleanLiteral" value="false" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

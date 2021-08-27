@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:log="http://iso.org/OTX/1.0.0/Logging" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="LogLevelTerm" id="id_86f3aaeaef85426eadcf6ac5de690a07" package="Logging.Terms" version="1.0.0.0" timestamp="2021-08-11T18:48:34.922+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42500</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="LogLevelTerm" id="id_d884efe1905a4133a661c31fa23d9206" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="LogLevel1" id="VariableDeclaration_3a0d23dbd9174b8c901ec5eafa16989e">
+            <realisation>
+              <dataType xsi:type="log:LogLevel">
+                <log:init value="ALL" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="LogLevel2" id="VariableDeclaration_31aa386564884a32b6365532b0ce3cf6">
+            <realisation>
+              <dataType xsi:type="log:LogLevel">
+                <log:init value="DEBUG" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="LogLevel3" id="VariableDeclaration_50bd7c6e37b2418cae1b6a87099b0414">
+            <realisation>
+              <dataType xsi:type="log:LogLevel">
+                <log:init value="ERROR" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="LogLevel4" id="VariableDeclaration_51c0ad7630584f3799ea744f3ab38bfa">
+            <realisation>
+              <dataType xsi:type="log:LogLevel">
+                <log:init value="FATAL" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="LogLevel5" id="VariableDeclaration_1ee5c33a4b4a4566850b231730c45812">
+            <realisation>
+              <dataType xsi:type="log:LogLevel">
+                <log:init value="INFO" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="LogLevel6" id="VariableDeclaration_cb680c5aca6445ac88dff6af1c17fb06">
+            <realisation>
+              <dataType xsi:type="log:LogLevel">
+                <log:init value="OFF" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="LogLevel7" id="VariableDeclaration_9f6d7f5837d44664ad3d2e3808104743">
+            <realisation>
+              <dataType xsi:type="log:LogLevel">
+                <log:init value="TRACE" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="LogLevel8" id="VariableDeclaration_8f7bf48aa8fc4b3a8014e7300064a384">
+            <realisation>
+              <dataType xsi:type="log:LogLevel">
+                <log:init value="WARN" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_d77f35dae211401487b315f713e9a92e">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:LogLevelValue" valueOf="LogLevel1" />
+                <term xsi:type="log:LogLevelLiteral" value="ALL" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_0b6d7263a25e4039b81df10c95054a34">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:LogLevelValue" valueOf="LogLevel2" />
+                <term xsi:type="log:LogLevelLiteral" value="DEBUG" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_553e5e56b0bd40fe82c265c7c3f8f41d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:LogLevelValue" valueOf="LogLevel3" />
+                <term xsi:type="log:LogLevelLiteral" value="ERROR" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_877503a6df024a7da4aa14c50f7c7039">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:LogLevelValue" valueOf="LogLevel4" />
+                <term xsi:type="log:LogLevelLiteral" value="FATAL" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_94df1cfae23a4eaba1b6971afeb5fe6f">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:LogLevelValue" valueOf="LogLevel5" />
+                <term xsi:type="log:LogLevelLiteral" value="INFO" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_6c4b2b9c345c44edbac8f8f6d37c554c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:LogLevelValue" valueOf="LogLevel6" />
+                <term xsi:type="log:LogLevelLiteral" value="OFF" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_cb14ee0557574c8094779080f91c84fd">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:LogLevelValue" valueOf="LogLevel7" />
+                <term xsi:type="log:LogLevelLiteral" value="TRACE" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_c0ac7ab5e7304241906447832d7a999d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:LogLevelValue" valueOf="LogLevel8" />
+                <term xsi:type="log:LogLevelLiteral" value="WARN" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

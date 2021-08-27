@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:string="http://iso.org/OTX/1.0.0/StringUtil" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="MatchToRegularExpression" id="id_2f0243f8b4da4fc18057992fd62146ea" package="StringUtil.Terms" version="1.0.0.0" timestamp="2021-08-09T08:20:56.844+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42466</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="MatchToRegularExpression_Base" id="TestProcedure_854f831cf24444a6ae383ac123cfcef1" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_da76cbe59de14de795ddfdfdb75d0690">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="Sing the song 'asdfghj...zx and c'" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="asd" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f2122aef7f574cad8af828d8a2c640ae">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="a_sd_as_d_a_s_d_ads_sad_sda_das_dsa_Asd_aSd_asD_ASD" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="asd" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_301281d5dcc34c808a308f72042e3307">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="Hello fan" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="[\\x48\\x66]" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_faf6e6468f6a407ea0f028969b2b6070">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="hello Fan" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="[\\x48\\x66]" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1142d3bfc2b2487ba9202d26408fdc31">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="face" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="ab*c" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9edf38b8c4e84fda9b0e55dc81666b37">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="as_das_sda" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="as*c" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7d9a8ad0fe7c4b15a3c4cc8ac482e5ca">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="0asd0asssd000" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="as+d" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_686657fed4b04238a4f4f42d7027b7a5">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="face" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="ab+c" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_16f5336b41c2422588849d60da1cbdbb">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="!!!a1!!!" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="\\w" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d2dbcad90f794a8abbd747c0be3c77d1">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="!!!#?$!!!" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="\\w" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_633e42409c104c90bda41bb46a148d35">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="!!!#?$!!!" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="\\W" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_028b239dd5c14edd947c9230aeabe7c5">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="a_z_A_Z_0_9" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="\\W" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a99a038054784d108f5cb825af0d4ad1">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="aabbcc!@#$%^&amp;*(7)?&gt;&lt;|:__ABC" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="\\d" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e107f79e4ab944758a9aec1a4bcebcd1">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="aabbcc!@#$%^&amp;*()?&gt;&lt;|:__ABC" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="\\d" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_73b0b09bbfba4114a7fb017fa8644033">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="cabbage" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="ab{2}" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_aca3642b16014189b59825480ee897e0">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="an 'abc' song" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="ab{2}" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_259097bce28249afa4af464fa0655f74">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="Start~!@#$%^&amp;*()_+{}|:\&quot;&lt;&gt;;?`-=[]\\;',./End" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="^Start|End$" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8a664ad23baa41198e2ad6491184d7e0">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="^Start~!@#$%^&amp;*()_+{}|:\&quot;&lt;&gt;?`-=[]\\;',./End$" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="^Start|End$" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8d4ab84e8d1a4a9f90e9d900732b60e8">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="123x456-789/0^0" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="\\d+[\\+-x\\^]\\d+" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9fff65ab417a426a82201aeb81540b14">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="1++2--3xx4//5^^6+a-bxc/d^e" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="\\d+[\\+-x\\^]\\d" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_48efcd1c5ffc4489abdf2c7a491dcb30">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="asdASD123" />
+              </unittest:argument>
+              <unittest:argument param="regexp">
+                <unittest:value xsi:type="StringLiteral" value="*+?" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="string" id="InParameterDeclaration_6c57241800754b799a4a4d7b137b0d81">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="regexp" id="InParameterDeclaration_485a7220b9bd466ba5c3a628a037306b">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_f42f260b8f604fb8a05064c4fb38e9b2">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_48c9d8fc3eeb4a019afd5a91bf55aa27">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="result" />
+              <term xsi:type="string:MatchToRegularExpression">
+                <string:string xsi:type="StringValue" valueOf="string" />
+                <string:regexp xsi:type="StringValue" valueOf="regexp" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

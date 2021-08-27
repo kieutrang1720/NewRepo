@@ -1,0 +1,1478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Subtract" id="id_f46acefa449d44bbaf15d7759c10bdba" package="Core.Terms.MathematicalOperations" version="1.0.0.0" timestamp="2021-04-28T16:43:27.272+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42141</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="Subtract_IntegerInteger" id="TestProcedure_453c08639b3a49a9a01214d673239070" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_2a84a682dba84e02979aaead461c0fb4">
+            <specification>This is an underflow case. Overflows and underflows shall be handled in analogy to the specifications given by §4.2 of The Java™ Language Specification [1].</specification>
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_400cb9aa4139456893837509d66fe9f7">
+            <specification>This is an underflow case. Overflows and underflows shall be handled in analogy to the specifications given by §4.2 of The Java™ Language Specification [1].</specification>
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775759" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f058e1af91e642c9afed8ed2451a73dc">
+            <specification>This is an underflow case. Overflows and underflows shall be handled in analogy to the specifications given by §4.2 of The Java™ Language Specification [1].</specification>
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775793" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a6f1538f5ba5402ca5e866c39bc8e140">
+            <specification>This is an overflow case. Overflows and underflows shall be handled in analogy to the specifications given by §4.2 of The Java™ Language Specification [1].</specification>
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_846b9daa376f4ccaaafbbbfa0edc18ee">
+            <specification>This is an overflow case. Overflows and underflows shall be handled in analogy to the specifications given by §4.2 of The Java™ Language Specification [1].</specification>
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775759" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_42f6606382aa4239ab08e3bee2e520ea">
+            <specification>This is an overflow case. Overflows and underflows shall be handled in analogy to the specifications given by §4.2 of The Java™ Language Specification [1].</specification>
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="-1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_83b65f8024b347eda84160061d61fbfa">
+            <specification>This is an overflow case. Overflows and underflows shall be handled in analogy to the specifications given by §4.2 of The Java™ Language Specification [1].</specification>
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775793" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b8457cb3a3324be8bad32c955d66e261">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_098bae870f9e42cd9e465de12b174e7e">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775792" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b2c13023200c41f187338704a2409ce1">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e7492e0287a043fd97494432a84a1096">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775792" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c7703d2900a941ed999a64166c6a7a85">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5034ce561d4d44caacf3d65a52010a46">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_70a3fc9808fd40888675a2d81af9fac3">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="-65" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_047ec18df8ff474e83c36015ebda9765">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="16" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_651b15d9fcf943b89fe7d41209782073">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f1ab472498f24de2ba5dc0447370b0e6">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="-49" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3056d2e27a49484dade7a75025ae5e2e">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775807" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_02c8f10142e7406d88c456a293b6e2de">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="65" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_82023ac2c01b4221bbc02f3cc96c087c">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4544813b2276467cb5eaa817b1506a91">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8c42eb2208744ac0ab768d23e11bd9af">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775758" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_09b8279afbfe439f855353b769f41f48">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ea630ecd77b746d68f2b86e1067394aa">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775758" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ca3f501216a1439aba4ea38403fa5e6f">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="subtrahend" id="InParameterDeclaration_f006f50d6e6c410ba5b47a5825fd002f">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="minuend" id="InParameterDeclaration_484b707b96d64cc7b7e2fbec9d6d85af">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_cdc1a59945b7440ca8ad7857d49e1f2f">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_a4dd387b4953478ea49942eafc408868">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="result" />
+              <term xsi:type="Subtract">
+                <numeral xsi:type="IntegerValue" valueOf="subtrahend" />
+                <subtrahend xsi:type="IntegerValue" valueOf="minuend" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Subtract_FloatFloat" id="TestProcedure_d3a6e958d0fb4cc4a60093b34d06c1ee" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_4fa718a7ae2b417f94e312bdf5b5e104">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-12.34" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="0" />
+                    <unittest:element xsi:type="FloatLiteral" value="49.77" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8df656c4306348958f0f26aea261cf13">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-12.34" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="0" />
+                    <unittest:element xsi:type="FloatLiteral" value="49.77" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_fa820a7d3d0f40b89480bed394e3cd01">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_020240b0e8994bac980f264dfaaf755d">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-12.34" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="0" />
+                    <unittest:element xsi:type="FloatLiteral" value="49.77" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3b29dec064684feb96705a00c186edd0">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-12.34" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="0" />
+                    <unittest:element xsi:type="FloatLiteral" value="49.77" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e377f59104b442ec8c99294acecd73c7">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_87b88a8d1de24f9b9e12ec7c5a9c3fb1">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="1" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="NaN" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_269fbf4a1bf44e50bf7586b34a1be2c3">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="1" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="NaN" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1c1c931b50124874b105c41bd3e0c73b">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ab34c24e2c1b449f9f71294a55513d3b">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b9574b0ba3134a0385a96eba6fd35f22">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_44f92600fb6444c2897a10fd28b12b07">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_541b833397ed493196c13aabc0ce87e2">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-62.11" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ad2334a018034adab13c1c6b1a639e60">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="62.11" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a6103efc596844ca92b5a4f58265b8c1">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c41ca9f7bf7f4bc4a62c08dbb1f8b3d3">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1af46cfd53e34ac19dc7d9ae1b807177">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_87187747860d4081a6a090e768d98cac">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="subtrahend" id="InParameterDeclaration_ece4b1fe36524a8ea0014609a301e0ec">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="minuend" id="InParameterDeclaration_75b855359688487f96bf881c0f2633a4">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_30324256cdff4fb68c0cee921829b464">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_3051e46d8b4441aa9e36177016e687ba">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="result" />
+              <term xsi:type="Subtract">
+                <numeral xsi:type="FloatValue" valueOf="subtrahend" />
+                <subtrahend xsi:type="FloatValue" valueOf="minuend" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Subtract_IntegerFloat" id="TestProcedure_5fbf590e3d614bc095b7c0978902c674" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_a01b8aaf058340da95a62e7d50f0f25d">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-12" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="49" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c5969397283148e488fe5138826b8960">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-12" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="49" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a6514c51835a493ea92b899093541f65">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-12" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="49" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_dca72c3e4e9b4dcea297ed14f567825e">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-9.2233720368547758E+18" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_71834d32ac9249f987d759838c537ac7">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-3.66" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_950f77cb9e214dd88d9cd25ebf188e1f">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-16" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_befcd7ae84f04080b60b03ec9eacea78">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-65.77" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-13" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_10faef00bea640c2b428387351cd8f57">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="12.34" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_fdab78ca1d164619879867ba6cd402d3">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_382fd5ca9ead4d6fb7898d588920792f">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-49.77" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4ab661e677084217ae12f823b05c90be">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d903f1eceba840349caba2eeeeafd257">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="61.34" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_62493073227c4441927bb6c2ed6a67b1">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="49" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_64375f77a6494388ba4b8436847e45d7">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-0.77" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="3.13E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="subtrahend" id="InParameterDeclaration_09267f3a2dda4463897870320a47f55c">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="minuend" id="InParameterDeclaration_232b71b942aa4dc9a6a89b7133bd5037">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_cd28ec9062694581ad2295502b2b1249">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_5afc4a0011984879b32af06d2ebf002c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="result" />
+              <term xsi:type="Subtract">
+                <numeral xsi:type="IntegerValue" valueOf="subtrahend" />
+                <subtrahend xsi:type="FloatValue" valueOf="minuend" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Subtract_FloatInteger" id="TestProcedure_0308ce4c13314587b5e31cc48f0eb67a" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_a3cbc22d73d249dfbe0c36895689f278">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-16" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="49" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_817d4ec1c9054facac828c3a5b1b8db1">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="9.2233720368547758E+18" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_098b9b9687d74f368dadeff278df0ec2">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="3.66" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2725f37c597848b8acf6c66fc866a275">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2fd53d0ce3fa4607aec3097d50e6fea4">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-61.34" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d1a0369c2994421580cfa12c80ba5892">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-9.2233720368547758E+18" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5195b99d5a6b49399c2ab979e92f5637">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="9.2233720368547758E+18" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_74df61a790dd47d5a08913190374b305">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="16" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_dbc769eb396d4af0ab11aa9f8d927f26">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bd67a1e0ce8a4558bc64ab7f770ecf36">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="-49" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_36f549fdf9854a6caba3b8bf46533268">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775807" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_0e9d2522aa164b9e9bf3296d73ebebfd">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-16" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="49" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_0c4668a718194ef283e05370bfb8253a">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="9.2233720368547758E+18" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b61a25861c3d41fd817212220662d187">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="16" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_04c529ca017c413c8ce4227606845ef1">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8e40f82c55fe4df8b594194f64703c48">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="-49" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_21a16b05a7f74f1c94ad6a375309fff2">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775807" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ee0383ddac5c447ab02f9b31d6e7fbf3">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="9.2233720368547758E+18" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_446af9f7f34a42dfb7ed318c12be0d3a">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="65.77" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-08" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_cf5bfa57281a4554b6e09b03f7235dc1">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_00380c4155a647f5ab38376f1187a4a8">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="0.77" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-08" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_be7611d5c57e4ec7a7f39e4c2787c07a">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-9.2233720368547758E+18" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_16035cee6d9d46baad99023bf68e6d5c">
+            <unittest:arguments>
+              <unittest:argument param="subtrahend">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+              <unittest:argument param="minuend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-16" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="49" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="subtrahend" id="InParameterDeclaration_08036ddc4e254ffabe10aa2f95fbb071">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="minuend" id="InParameterDeclaration_399051b4cf5944aba7bd7b5e47296b48">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_a5dbd45ae27f4fffa675b62eef145b07">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_603823c3ed5245948524a29dfc906b3e">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="result" />
+              <term xsi:type="Subtract">
+                <numeral xsi:type="FloatValue" valueOf="subtrahend" />
+                <subtrahend xsi:type="IntegerValue" valueOf="minuend" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

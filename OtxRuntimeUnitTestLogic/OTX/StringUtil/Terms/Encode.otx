@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:string="http://iso.org/OTX/1.0.0/StringUtil" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Encode" id="id_8a8e0b3122844a6fbfcf89dd2872afe1" package="StringUtil.Terms" version="1.0.0.0" timestamp="2021-08-09T14:31:13.541+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42466</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="Encode_Base" id="id_8f0b4c610fc54fa2b9e310aa4c503a19" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_7a787e1d96e4438fb1ad1c585569222b">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="BIN" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="0100100001100101011011000110110001101111" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="48656C6C6F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4a2d492bc7344ac380656b64f77dc7d6">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="BIN" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="1010101" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9a7f9ac3f41a4acb85227091618bb340">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="BIN" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="azxy" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_098b1d375eb8462a9656beb5487d340f">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="BIN" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="Hello - Goodbye" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5c630093340845de86994a5554d1ad04">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="ISO-8859-1" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="Hello - Goodbye" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="48656C6C6F202D20476F6F64627965" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3f197c1885c2495598a79eaefd3d9893">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="HEX" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="AX" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_dac27e3cc6644c799649ab0bfe24b565">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="HEX" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="ABC" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4d0d67ec30484310982bb6f04a052eab">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="HEX" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="0123456789ABCDEF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0123456789ABCDEF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e4b6921b9fbc4ba19770f76f9ee8dbc7">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="OCT" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="Hello - Goodbye" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_213736b9ef3a4efead18422080f58d33">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="OCT" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="778899" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_15b6cbcbb0224ed3857431c77adfc617">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="OCT" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="1357" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="02EF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_286e4e907b4c424c85f5bd1cd9a75abd">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="OCT" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="123456701234" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="029CBB829C" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c2c5e740af404f19b7e6db33a5d16d8f">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="US-ASCII" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="Hello - Goodbye" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="48656C6C6F202D20476F6F64627965" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_dcec2fe07ffa48df8817a48b8d858dac">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-16" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="$" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FEFF0024" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_176324e72bcb48a789738cb161d35897">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-16" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="Hello - Goodbye" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FEFF00480065006C006C006F0020002D00200047006F006F0064006200790065" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_cc4eec254b9a4e349b7a0483688866d1">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-16BE" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="$" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0024" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d876b96434b44b3db31994d5441db2cb">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-16BE" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="Hello - Goodbye" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00480065006C006C006F0020002D00200047006F006F0064006200790065" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7651910eaf664a24baea338396849b82">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-16LE" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="$" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="2400" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_80187d33a58647e3a467daf8272f4eca">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-16LE" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="Hello - Goodbye" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="480065006C006C006F0020002D00200047006F006F006400620079006500" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3c049a5e36ca4e259d5aeba7d1c8c53a">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-8" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="12345" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="3132333435" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c75b2dea788e4218a6da05ea612c1e5d">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-8" />
+              </unittest:argument>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="Hello - Goodbye" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="48656C6C6F202D20476F6F64627965" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="encoding" id="InParameterDeclaration_76665dce77024972b0a21b4296931070">
+            <realisation>
+              <dataType xsi:type="string:Encoding" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="string" id="InParameterDeclaration_fd7cf7f88b8a42989a9054fb852a723c">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_52dd0dd984b74c7aacb9dc1a065c2592">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_9b032d9abce046909029cfbda7ef0ea7">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="result" />
+              <term xsi:type="string:Encode">
+                <string:encoding xsi:type="string:EncodingValue" valueOf="encoding" />
+                <string:string xsi:type="StringValue" valueOf="string" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Encode_StringEmpty" id="TestProcedure_0a13c89e6f6e4dcaa3746faac5971cfa" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_dd7681b8298c4f4d9361bfbd4b6d47b8">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="BIN" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_36cbf55ac4844115bed9d870bc16b20d">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="HEX" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1fefbd30f8e24df5a9affa1fcabab115">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="ISO-8859-1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_caaffdc81a304f169a281a144e2c5183">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="OCT" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d702c0218aa140beb094d0965bc4598a">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="US-ASCII" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_fd4379d0151542cc903b165737bd3738">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-16" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6dd95a448d6d480eb641d2f52bdd38cd">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-16BE" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_984ee978effd4fb081f1e2162c3b2061">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-16LE" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3616bdf06255473c945c075048fa9632">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-8" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="encoding" id="InParameterDeclaration_90ad347ea6294294860e3b904c564258">
+            <realisation>
+              <dataType xsi:type="string:Encoding" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_2505f83807f04769923c0d63679b8e9c">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_ec803a259ea04859a186d07cdf91ccca">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="result" />
+              <term xsi:type="string:Encode">
+                <string:encoding xsi:type="string:EncodingValue" valueOf="encoding" />
+                <string:string xsi:type="StringLiteral" value="" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Encode_StringNotInAscII" id="TestProcedure_1337411627b64316a50e5990fcd92957" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_1c19510aace8450184f5c943ea00879b">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="BIN" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e9cfc5f5e88a4838abccf2b672598c08">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="HEX" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7e03a6f44a204be2a688924ecc0a8ad1">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="ISO-8859-1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="E282AC" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_407609251dda48ee971d527b71b012a1">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="OCT" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_edc40a014e8a4fb7ba03ffdc2d23c3f4">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="US-ASCII" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_95483891502d4944b05e6d95e21a7540">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-16" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_201d97ceecd24573868203123d7d7e01">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-16BE" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a8ba0b799a924d9392ea7ed1b287b049">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-16LE" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b46ab1f57f3643deb5e26870b4e199a1">
+            <unittest:arguments>
+              <unittest:argument param="encoding">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-8" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="E282AC" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="encoding" id="InParameterDeclaration_9369df3c152c42beb5b9827c14abe758">
+            <realisation>
+              <dataType xsi:type="string:Encoding" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_d9e47f70d4f944578d359c2015f1fd00">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_4f189c346d6e4fb79674d89f775f80a6">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="result" />
+              <term xsi:type="string:Encode">
+                <string:encoding xsi:type="string:EncodingValue" valueOf="encoding" />
+                <string:string xsi:type="StringLiteral" value="€" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

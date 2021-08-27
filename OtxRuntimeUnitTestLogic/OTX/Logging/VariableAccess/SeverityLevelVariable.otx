@@ -1,0 +1,1396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:log="http://iso.org/OTX/1.0.0/Logging" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="SeverityLevelVariable" id="id_4264b8fb00ce4fe5aab372c92fe340a2" package="Logging.VariableAccess" version="1.0.0.0" timestamp="2021-08-11T16:06:20.19+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42500</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="SeverityLevelVariable_Base" id="TestProcedure_5d53719f7a0b4febadb5dbc56667b096" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_1b0387667637433e91ef78b5c0af6550">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7154cb76ef1f4c61a7d7b4a8a9cdf1eb">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_edee6906e5fd455cb24183b7aa34ae9f">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_da84eb1e64924679a7129399c9cc5df5">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="INFO" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f330f933334440ac87a8ec7c44a28cdb">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1e8246b81d1c4e6991c3b3d78940ffc8">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="WARN" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="input" id="InParameterDeclaration_6c930beb52d749ee9d487b16d2dca948">
+            <realisation>
+              <dataType xsi:type="log:SeverityLevel" />
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="SeverityLevel1" id="VariableDeclaration_ef472ea38ade4ce8ae71d4003d7b954f">
+            <realisation>
+              <dataType xsi:type="log:SeverityLevel" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_a092b5cc5a294c7f823f9279ae546b69">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="log:SeverityLevelVariable" name="SeverityLevel1" />
+              <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_402ef0e4d79e43e6accc9ade243c0ea8">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="log:SeverityLevelVariable" name="SeverityLevel1" />
+              <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_8743599172304417b9dbad2894f19803">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="SeverityLevel1" />
+                <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SeverityLevelVariable_1Step" id="TestProcedure_448e5d046e0f4bf199a44ccae06a46b4" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_22d3c3236881461197001daaac6bf312">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ea423148fa85420da0e16176a0a9de8c">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9bb2b7dba5f145289ea3c574edbf02af">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_70b0460d2b814d7db8df90d12a93e492">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="INFO" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5b9d58f8a22e4d9980140bccdbddd5b0">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5ca45b2696834eceb90aba7bcedba888">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="WARN" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="input" id="InParameterDeclaration_8080870e14254f8282eecc2924044ac8">
+            <realisation>
+              <dataType xsi:type="log:SeverityLevel" />
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_f9eb506db86b4797ae4f3b886bcf23a0">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="log:SeverityLevel" />
+                <init>
+                  <itemType xsi:type="log:SeverityLevel" />
+                  <items>
+                    <item xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+                    <item xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+                    <item xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+                    <item xsi:type="log:SeverityLevelLiteral" value="INFO" />
+                    <item xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+                    <item xsi:type="log:SeverityLevelLiteral" value="WARN" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map0" id="VariableDeclaration_38029e543dbf4ea4b46cde1afff89525">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="log:SeverityLevel" />
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="log:SeverityLevel" />
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="11" />
+                      <value xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="22" />
+                      <value xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="33" />
+                      <value xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="44" />
+                      <value xsi:type="log:SeverityLevelLiteral" value="INFO" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="55" />
+                      <value xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="66" />
+                      <value xsi:type="log:SeverityLevelLiteral" value="WARN" />
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_c1fe02b0e46c424d877843a1a1c0c8fb">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="log:SeverityLevel" />
+                <init>
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="log:SeverityLevel" />
+                  <items>
+                    <item>
+                      <key xsi:type="StringLiteral" value="a" />
+                      <value xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="s" />
+                      <value xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="d" />
+                      <value xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="f" />
+                      <value xsi:type="log:SeverityLevelLiteral" value="INFO" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="g" />
+                      <value xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="h" />
+                      <value xsi:type="log:SeverityLevelLiteral" value="WARN" />
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_647426b4481944a49f8f328655bfd887">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="log:SeverityLevelVariable" name="List1">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="3" />
+                </path>
+              </result>
+              <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_d392f80844e64bf78333b7034cd0aced">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="log:SeverityLevelVariable" name="Map0">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="55" />
+                </path>
+              </result>
+              <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_2074628ee5894a35b2ff73c931afccdc">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="log:SeverityLevelVariable" name="Map1">
+                <path>
+                  <stepByName xsi:type="StringLiteral" value="g" />
+                </path>
+              </result>
+              <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_71dcac727c3c42c5aff7b80fd5a08e1c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="List1">
+                  <log:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="3" />
+                  </log:path>
+                </term>
+                <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_346c6024c82f4a83b61b4ed4c40ebdcd">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="Map0">
+                  <log:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="55" />
+                  </log:path>
+                </term>
+                <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_058df6537eba46d488c3f4187883f09e">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="Map1">
+                  <log:path>
+                    <stepByName xsi:type="StringLiteral" value="g" />
+                  </log:path>
+                </term>
+                <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_e61a7c2f5e3147d0a18ced847b94c6fa">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_a326f4ccdaf24ec09fc7e977a94ac0dd">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_94d2bb6d12354455a5a645b92ed2bce8">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_edc50eb61dcd403a9a0b80e1b013ed25">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map0">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="10" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_cc803b755c6f4d1fa5c64223a8cfe325">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_5fac7a6f1ffe42d18e64b19405715b11">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map1">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="w" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SeverityLevelVariable_2Steps" id="TestProcedure_46d4bc2f6a7b4d19982f6215ce4c0f8a" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_65eaed364c2244f483e786cf1526390f">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_0252dd03bd14452ba905cfd6b89ed8fa">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_36da9b11b7d54c0cb3dc5c593c26ca91">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_01528cadc85a49f5b07e78b75040b112">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="INFO" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2e153b91203a43e59def4d7a451b4534">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1b796d8ff380412da64fcbd3e92f2520">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="WARN" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="input" id="InParameterDeclaration_6a69f6d04ce043bdb02dce537ca39b18">
+            <realisation>
+              <dataType xsi:type="log:SeverityLevel" />
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_a43cfecd56004a088f3f75cf9c99d649">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="log:SeverityLevel" />
+                </itemType>
+                <init>
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="log:SeverityLevel" />
+                  </itemType>
+                  <items>
+                    <item xsi:type="ListLiteral">
+                      <itemType xsi:type="log:SeverityLevel" />
+                      <items>
+                        <item xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+                      </items>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_9f91ff32ce424def82780697175907e3">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="log:SeverityLevel" />
+                </valueType>
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="log:SeverityLevel" />
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="1" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="Integer" />
+                        <valueType xsi:type="log:SeverityLevel" />
+                        <items>
+                          <item>
+                            <key xsi:type="IntegerLiteral" value="5" />
+                            <value xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_0e5d9ce2e1494bf7910c3b5e18c74e5f">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="log:SeverityLevel" />
+                </valueType>
+                <init>
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="log:SeverityLevel" />
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="StringLiteral" value="3" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="String" />
+                        <valueType xsi:type="log:SeverityLevel" />
+                        <items>
+                          <item>
+                            <key xsi:type="StringLiteral" value="9" />
+                            <value xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_ff37e8f4ac5c40f599705ece7ec83723">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="log:SeverityLevelVariable" name="List1">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                </path>
+              </result>
+              <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_45ccb895f106448fb62f0390c3e42adf">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="log:SeverityLevelVariable" name="Map1">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                </path>
+              </result>
+              <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_4da19d394365474099d4b8987b5a70d8">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="log:SeverityLevelVariable" name="Map2">
+                <path>
+                  <stepByName xsi:type="StringLiteral" value="3" />
+                  <stepByName xsi:type="StringLiteral" value="9" />
+                </path>
+              </result>
+              <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_e7eb67b775324dfaa5d2e10f8cd8b120">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="List1">
+                  <log:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </log:path>
+                </term>
+                <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_4c68bafc37d949d88d222b45ecb30800">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="Map1">
+                  <log:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                  </log:path>
+                </term>
+                <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_d8cf1da0d24e42248b012747dc7aeaeb">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="Map2">
+                  <log:path>
+                    <stepByName xsi:type="StringLiteral" value="3" />
+                    <stepByName xsi:type="StringLiteral" value="9" />
+                  </log:path>
+                </term>
+                <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_6c9e15c5d7e24d39a89251f2f7c166aa">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_141e955b6c854257ab31b757415d7c50">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_17f666a28ec84f03b0b8ceef65651fa3">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_b008bee1ba98452ca20ae07db4fdbd61">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_630f1f2bbb9d44c88cf85c223efa02f1">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_da6887d2a1644baab9e3f0b25b6b94ec">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_325643050de946dfacb71099eefdee10">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_2c498365bd9440a6a7fa03baaed47b6d">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_89dbe39f27994e0e95e57abaac66563f">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_c414b9481a45402dab0c554b1980bdb4">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_870e56727e2f46b48b75067e570c16f3">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_fb8190c083e04ece96458a170090df4b">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_9692f979f2e54f52afb3ea2a7d821168">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_0ef44e00b7df4543a45da38bb252d675">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="3" />
+                        <stepByName xsi:type="StringLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_50a0feed29954e98930c35074afa9741">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_cda30dce61a74b138bbc8cdc809f8051">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="4" />
+                        <stepByName xsi:type="StringLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_f5ede57ca10848dca5216352d84bebe6">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_9b70e88f3f5a48e5bf454942dbc120f8">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="4" />
+                        <stepByName xsi:type="StringLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SeverityLevelVariable_3Steps" id="TestProcedure_36a6253e582d4f6899f18a74750f21cc" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_04e972e8f8eb411a97a685d33f57e969">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_64de6fbb1c204e3b93385e5c4d2d1164">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b429c7d18b894912974f8c80ed2f8030">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_44a29c298b5b438a985abeb40f2c3ce7">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="INFO" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6ae5f81fd89044ff8ef14a5363ffcad8">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f87c0c05c9ff456ca4ca524355765981">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="log:SeverityLevelLiteral" value="WARN" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="input" id="InParameterDeclaration_cea99c46ab8f45aea1bb41cf12794179">
+            <realisation>
+              <dataType xsi:type="log:SeverityLevel" />
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_42cda67bdf1f42c0b04496e3488936d2">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="log:SeverityLevel" />
+                  </itemType>
+                </itemType>
+                <init>
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="List">
+                      <itemType xsi:type="log:SeverityLevel" />
+                    </itemType>
+                  </itemType>
+                  <items>
+                    <item xsi:type="ListLiteral">
+                      <itemType xsi:type="List">
+                        <itemType xsi:type="log:SeverityLevel" />
+                      </itemType>
+                      <items>
+                        <item xsi:type="ListLiteral">
+                          <itemType xsi:type="log:SeverityLevel" />
+                          <items>
+                            <item xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+                          </items>
+                        </item>
+                      </items>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_b7e8b5a474bc47d08192c1f578e7c727">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="log:SeverityLevel" />
+                  </valueType>
+                </valueType>
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="Map">
+                      <keyType xsi:type="Integer" />
+                      <valueType xsi:type="log:SeverityLevel" />
+                    </valueType>
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="1" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="Integer" />
+                        <valueType xsi:type="Map">
+                          <keyType xsi:type="Integer" />
+                          <valueType xsi:type="log:SeverityLevel" />
+                        </valueType>
+                        <items>
+                          <item>
+                            <key xsi:type="IntegerLiteral" value="5" />
+                            <value xsi:type="MapLiteral">
+                              <keyType xsi:type="Integer" />
+                              <valueType xsi:type="log:SeverityLevel" />
+                              <items>
+                                <item>
+                                  <key xsi:type="IntegerLiteral" value="9" />
+                                  <value xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+                                </item>
+                              </items>
+                            </value>
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_d1189b1c51f2469ebbdf60cb844a6ed4">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="log:SeverityLevel" />
+                  </valueType>
+                </valueType>
+                <init>
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="Map">
+                      <keyType xsi:type="String" />
+                      <valueType xsi:type="log:SeverityLevel" />
+                    </valueType>
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="StringLiteral" value="3" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="String" />
+                        <valueType xsi:type="Map">
+                          <keyType xsi:type="String" />
+                          <valueType xsi:type="log:SeverityLevel" />
+                        </valueType>
+                        <items>
+                          <item>
+                            <key xsi:type="StringLiteral" value="6" />
+                            <value xsi:type="MapLiteral">
+                              <keyType xsi:type="String" />
+                              <valueType xsi:type="log:SeverityLevel" />
+                              <items>
+                                <item>
+                                  <key xsi:type="StringLiteral" value="9" />
+                                  <value xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+                                </item>
+                              </items>
+                            </value>
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_c459bd3a242744d5be2c413936c7673a">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="log:SeverityLevelVariable" name="List1">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                </path>
+              </result>
+              <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_db56156c93174f86976bc1ce1dd26b8d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="log:SeverityLevelVariable" name="Map1">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                </path>
+              </result>
+              <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_99b534f629304a1d84eb7b4ca0f54984">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="log:SeverityLevelVariable" name="Map2">
+                <path>
+                  <stepByName xsi:type="StringLiteral" value="3" />
+                  <stepByName xsi:type="StringLiteral" value="6" />
+                  <stepByName xsi:type="StringLiteral" value="9" />
+                </path>
+              </result>
+              <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_eb3318483ae547f4a25f362e6848fb36">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="List1">
+                  <log:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </log:path>
+                </term>
+                <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_fff0a92d18dd4e308bd46cfb082137b5">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="Map1">
+                  <log:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                  </log:path>
+                </term>
+                <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_ed4b531d3fa54e518b2d8fb563aabaab">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="Map2">
+                  <log:path>
+                    <stepByName xsi:type="StringLiteral" value="3" />
+                    <stepByName xsi:type="StringLiteral" value="6" />
+                    <stepByName xsi:type="StringLiteral" value="9" />
+                  </log:path>
+                </term>
+                <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_8803f4616f1745c69a05cc3e60083e3a">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_3a9bb713eff242df8cf9d0fec6ba7f32">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_ceb6ec5a24d3489cbdf326c46a971d80">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_52c5d6ffebb14fa3b87ae46bf1f2513d">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_231b53ad56a9401d9f6c3b379c044691">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_74e2c452547f4f82a2518cb68f334e16">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_aa4d03dfc7234ae08b9c6fa73bc53e6b">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_3226fc2be7434e8dbd1015f1cd32583f">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_0c63a62702db4201b07d74db14d1438b">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_f4f2001e2bcc437da2e21416c6cbea86">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_4e2032da4cc44a74accf752f94565092">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_19de81f1d21b4097bdfac1a45e1be948">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_dc9dde89bfc24a7889ce0ac725a6d687">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_ed8dccea1762426097dbfe07ab769f01">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_8ac1609d962c4281b466b466c83deea8">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_7927643601344abba50be027271128be">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_208c6881b96a4040b3061f5ecf7a6747">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_96d17b69185740b3b991668de6d5dc49">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_6b0b2f2122074887a070707795c5b72f">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_470c0c3652b54496b8d699da864370ae">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_98ae6a38ceca4c3a81950bdeee0ab73d">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_c432d64fde034d0fa36fc3e53ca27fea">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_eca392a3ca754c4eb684e1b00a5bd095">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_5ea7786874b44a479b574e91159fb26a">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_fcf24467a08e49fea4213029ad887d69">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_03ebfc126f5c41d88416513f164c9a3c">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_c21d0c17f44345949a32649dc48abefb">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_d937323374374b049d046a8005e61beb">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_a3a652850f5e46ecbb74d4c32f617918">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_e3ea67c28fa74140851ec09c452db6a2">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="3" />
+                        <stepByName xsi:type="StringLiteral" value="6" />
+                        <stepByName xsi:type="StringLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_8d9c4add88234bae9c98110002572ed0">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_a687e23c1e8947138344c86c1e967c48">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="3" />
+                        <stepByName xsi:type="StringLiteral" value="5" />
+                        <stepByName xsi:type="StringLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_d10d5220dce04fb39bf5848f3c907a81">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_7043615a59ce4d3c9da32d079a5a18fd">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="3" />
+                        <stepByName xsi:type="StringLiteral" value="5" />
+                        <stepByName xsi:type="StringLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_fdb8504825484eabad8aa13c4f8982e2">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_e1c5249f002146a4a6997a1550f3e7da">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="2" />
+                        <stepByName xsi:type="StringLiteral" value="6" />
+                        <stepByName xsi:type="StringLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_9ce860fc1b094d838d580cd5ca66e033">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_b55dd2786b954299bd953bad06fae4ea">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="2" />
+                        <stepByName xsi:type="StringLiteral" value="6" />
+                        <stepByName xsi:type="StringLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_8c8909d6953b47048cb8b331b4b2d7ac">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_785c2a3d2c1e42ea911be92c74eedd56">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="log:SeverityLevelVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="2" />
+                        <stepByName xsi:type="StringLiteral" value="5" />
+                        <stepByName xsi:type="StringLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="log:SeverityLevelValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

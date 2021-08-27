@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:util="http://iso.org/OTX/1.0.0/Util" name="GetStackTrace" id="id_1ca12f6fd4b64b66bb648f5042798956" package="Core.Terms.ExceptionRelated" version="1.0.0.41626" timestamp="2021-05-10T16:26:29.057+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.41142</data>
+  </metaData>
+  <imports>
+    <import package="RootPackage1" document="Document1" prefix="Document11" />
+  </imports>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="GetStackTraceBase" id="TestProcedure_010f3fcc7c3548c1a291bf4030eb7d0b" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Exception1" id="VariableDeclaration_467eb42b305647269d0ed491d5b6c496">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+          <variable name="List1" id="VariableDeclaration_81eb9974e39549cb8df78748d6dda992">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <handler id="Handler_914a81923aca49c19c88d06007c7f40c">
+            <realisation>
+              <try>
+                <throw id="Throw_1be7452695af4d23975d7c4ee86b77a4">
+                  <realisation xsi:type="UserExceptionLiteral">
+                    <qualifier value="ExceptionQualifier" />
+                    <text value="ExceptionText" />
+                  </realisation>
+                </throw>
+              </try>
+              <catch>
+                <exception id="CatchHeader_364889c9177a461ea949d34c9375c4ec">
+                  <realisation>
+                    <type />
+                    <handle name="Exception1" />
+                  </realisation>
+                </exception>
+                <flow>
+                  <action id="Action_99d4cdabe4324f74aff65d1975c92ab5">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="ListVariable" name="List1" />
+                      <term xsi:type="GetStackTrace">
+                        <exception xsi:type="ExceptionValue" valueOf="Exception1" />
+                      </term>
+                    </realisation>
+                  </action>
+                </flow>
+              </catch>
+            </realisation>
+          </handler>
+          <action id="Action_90a081a911ab47bc9956fc4ae74e0729">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="util:Compare">
+                <util:term xsi:type="ListValue" valueOf="List1" />
+                <util:term xsi:type="ListLiteral">
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="Core.Terms.ExceptionRelated.GetStackTrace.GetStackTraceBase" />
+                  </items>
+                </util:term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_daa351e2571c463dbbe1343be889dea3">
+            <realisation xsi:type="ProcedureCall" procedure="Document11:CheckGetStackTrace1" />
+          </action>
+          <action id="Action_a320f1cbee674d6e9c905ccb715bd516">
+            <realisation xsi:type="ProcedureCall" procedure="Document11:CheckGetStackTrace2" />
+          </action>
+          <action id="Action_7c60bd00eb5f48d68157e99b30f68f4e">
+            <realisation xsi:type="ProcedureCall" procedure="Document11:CheckGetStackTrace3" />
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

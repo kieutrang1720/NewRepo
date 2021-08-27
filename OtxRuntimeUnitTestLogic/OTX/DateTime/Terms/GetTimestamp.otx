@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:dt="http://iso.org/OTX/1.0.0/DateTime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:event="http://iso.org/OTX/1.0.0/Event" name="GetTimestamp" id="id_8dc3c5462715488f80dcc44093e6cea3" package="DateTime.Terms" version="1.0.0.0" timestamp="2021-07-29T13:49:17.849+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42410</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="GetTimestamp_Base" id="TestProcedure_c8a0712acb6048249b0c0138748fb1ad" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Integer1" id="VariableDeclaration_bcdb309ca1b1401a8b8024ecdc943bcd">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="Integer2" id="VariableDeclaration_04c99f28c8bf40538b115b0a7bf9a070">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_6365ef7fb13e48e4add3499da63cca61">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Integer1" />
+              <term xsi:type="dt:GetTimestamp" />
+            </realisation>
+          </action>
+          <action id="Action_335a03c7336741acb33f660ca2c559dd">
+            <metaData>
+              <data key="EmotiveActivity">SleepActivity</data>
+            </metaData>
+            <realisation xsi:type="event:WaitForEvent">
+              <event:source xsi:type="event:TimerExpiredEventSource">
+                <event:timeout xsi:type="IntegerLiteral" value="1000" />
+              </event:source>
+            </realisation>
+          </action>
+          <action id="Action_6c1720a257174d03974c409bacdcb35f">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Integer2" />
+              <term xsi:type="dt:GetTimestamp" />
+            </realisation>
+          </action>
+          <action id="Action_0605754c9b3d443cb203117b0d0958b6">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicAnd">
+                <term xsi:type="IsLessOrEqual">
+                  <left xsi:type="IntegerLiteral" value="1000" />
+                  <right xsi:type="Subtract">
+                    <numeral xsi:type="IntegerValue" valueOf="Integer2" />
+                    <subtrahend xsi:type="IntegerValue" valueOf="Integer1" />
+                  </right>
+                </term>
+                <term xsi:type="IsLessOrEqual">
+                  <left xsi:type="Subtract">
+                    <numeral xsi:type="IntegerValue" valueOf="Integer2" />
+                    <subtrahend xsi:type="IntegerValue" valueOf="Integer1" />
+                  </left>
+                  <right xsi:type="IntegerLiteral" value="1100" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="GetTimestamp_Get10Times" id="TestProcedure_f261c3ef97764cdc85bc752fe1e11731" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_042f6f42f216411f88ed74cc6aa6a418">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="Integer" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Integer1" id="VariableDeclaration_edacc81de54f4ec4a419c6b8471d4041">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="Integer2" id="VariableDeclaration_cb49616e82614367a54d1ba912550536">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <loop name="ForLoop1" id="Loop_e5a65394ea694e0287e45e63f3683381">
+            <realisation>
+              <configuration id="LoopConfigurationHeader_7006762cf0644a8b8637d06527f264fd">
+                <realisation xsi:type="ForLoop">
+                  <counter name="Integer1" />
+                  <start xsi:type="IntegerLiteral" value="0" />
+                  <end xsi:type="IntegerLiteral" value="9" />
+                </realisation>
+              </configuration>
+              <flow>
+                <action id="Action_5f22178f60634204821bd986ba828d3f">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="1" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_69892aff363d4286821aadffe97aa9b0">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="IntegerVariable" name="Integer2" />
+                    <term xsi:type="dt:GetTimestamp" />
+                  </realisation>
+                </action>
+                <action id="Action_5e149e7657f0451998bb8cc6fa046f05">
+                  <realisation xsi:type="assert:Assert">
+                    <assert:condition xsi:type="IsEqual">
+                      <term xsi:type="ListContainsValue">
+                        <list xsi:type="ListValue" valueOf="List1" />
+                        <value xsi:type="IntegerValue" valueOf="Integer2" />
+                      </term>
+                      <term xsi:type="BooleanLiteral" value="false" />
+                    </assert:condition>
+                  </realisation>
+                </action>
+                <action id="Action_ba77178fc927480cab7f738220c89c82">
+                  <realisation xsi:type="ListAppendItems">
+                    <list name="List1" />
+                    <item xsi:type="IntegerValue" valueOf="Integer2" />
+                  </realisation>
+                </action>
+              </flow>
+            </realisation>
+          </loop>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

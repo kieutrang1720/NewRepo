@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:event="http://iso.org/OTX/1.0.0/Event" name="TerminateLanes" id="id_cd9d76de5f7c4ad99221000bfabbcfb4" package="Core.Nodes.EndNodes.TerminateLanes" version="1.0.0.0" timestamp="2021-07-08T11:14:34.98+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42078</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="TerminateLanes_01" id="id_dbc82390a33c4dabaf5f0255695e8927">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Index1" id="VariableDeclaration_c3e46cade8ee43f78f8b5a7cf87cf730">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <parallel id="Parallel_6e6ef086d4bf4459b87627fb6a027964">
+            <realisation>
+              <lane>
+                <action id="Action_b4308d0082224699b3ed050acc67d3e9">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="50" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <terminateLanes id="TerminateLanes_25f47f7d00f644a3880babd268de44c2" />
+              </lane>
+              <lane>
+                <loop name="ForLoop1" id="Loop_06045b7c9b4141839f7993310a392a09">
+                  <realisation>
+                    <configuration id="LoopConfigurationHeader_82661d09a7c6414e96c9df3225a101c5">
+                      <realisation xsi:type="ForLoop">
+                        <counter name="Index1" />
+                        <start xsi:type="IntegerLiteral" value="0" />
+                        <end xsi:type="IntegerLiteral" value="100" />
+                      </realisation>
+                    </configuration>
+                    <flow>
+                      <action id="Action_c2050a10946a49489713ea515d9552c7">
+                        <metaData>
+                          <data key="EmotiveActivity">SleepActivity</data>
+                        </metaData>
+                        <realisation xsi:type="event:WaitForEvent">
+                          <event:source xsi:type="event:TimerExpiredEventSource">
+                            <event:timeout xsi:type="IntegerLiteral" value="10" />
+                          </event:source>
+                        </realisation>
+                      </action>
+                    </flow>
+                  </realisation>
+                </loop>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_481f5807cad345febd0ff8b1d3048add">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicAnd">
+                <term xsi:type="IsLessOrEqual">
+                  <left xsi:type="IntegerLiteral" value="0" />
+                  <right xsi:type="IntegerValue" valueOf="Index1" />
+                </term>
+                <term xsi:type="IsLess">
+                  <left xsi:type="IntegerValue" valueOf="Index1" />
+                  <right xsi:type="IntegerLiteral" value="100" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="TerminateLanes_02" id="TestProcedure_49ae80134f974f8cbfb9a9313d3bc07e" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Index1" id="VariableDeclaration_c2d72d8428ea4491a4cdf2b133d0ca50">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_04a4187a27384436a2f42f0e833a0d84">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <parallel id="Parallel_8bd34758871b442599157bfa7cc60279">
+            <realisation>
+              <lane>
+                <action id="Action_d01f9fe18132456a93dfaf63539d6812">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="50" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <terminateLanes id="TerminateLanes_b0b689de95dc448cb93a04b234dc6510" />
+              </lane>
+              <lane>
+                <loop name="ForLoop1" id="Loop_35625dec000a4699bfd0d934c3f1fdf2">
+                  <realisation>
+                    <configuration id="LoopConfigurationHeader_521189d06a84419684fffb8453ab855f">
+                      <realisation xsi:type="ForLoop">
+                        <counter name="Index1" />
+                        <start xsi:type="IntegerLiteral" value="0" />
+                        <end xsi:type="IntegerLiteral" value="100" />
+                      </realisation>
+                    </configuration>
+                    <flow>
+                      <action id="Action_b0daa9abc9b043a58e6231785d7da351">
+                        <metaData>
+                          <data key="EmotiveActivity">SleepActivity</data>
+                        </metaData>
+                        <realisation xsi:type="event:WaitForEvent">
+                          <event:source xsi:type="event:TimerExpiredEventSource">
+                            <event:timeout xsi:type="IntegerLiteral" value="10" />
+                          </event:source>
+                        </realisation>
+                      </action>
+                    </flow>
+                  </realisation>
+                </loop>
+              </lane>
+              <lane>
+                <action id="Action_8cd75412d4b34d589f264e30cb1d43e6">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="2000" />
+                    </event:source>
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_b0409b077e62421ab403d85a4ea88f19">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicAnd">
+                <term xsi:type="IsEqual">
+                  <term xsi:type="ToString">
+                    <term xsi:type="event:EventValue" valueOf="Event1" />
+                  </term>
+                  <term xsi:type="StringLiteral" value="TimerExpiredEvent" />
+                </term>
+                <term xsi:type="IsLess">
+                  <left xsi:type="IntegerValue" valueOf="Index1" />
+                  <right xsi:type="IntegerLiteral" value="100" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="TerminateLanes_03" id="TestProcedure_0516fdc484ce44cea6fc30a30a729952" parallelizable="true">
+      <specification>TerminateLanes still have to prioritize Mutex operations to finish first</specification>
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Index1" id="VariableDeclaration_ac8599e3cf7b40ba94db585a84b2befa">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <parallel id="Parallel_3248cb03f242464d87d1d5e11d37d5df">
+            <realisation>
+              <lane>
+                <action id="Action_0569879a384b4f04a9e838a6ef67cf4e">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="20" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <terminateLanes id="TerminateLanes_d36c0f02ea2c4cab92e868bbe04c7540" />
+              </lane>
+              <lane>
+                <mutex id="MutexGroup_1db7b82d12df4cb19103f7511ee45f7a">
+                  <realisation>
+                    <loop name="ForLoop1" id="Loop_86167265bfdd4f39ae66f50e027b82e0">
+                      <realisation>
+                        <configuration id="LoopConfigurationHeader_d840dc1bd58b46ec9295ae05e7359165">
+                          <realisation xsi:type="ForLoop">
+                            <counter name="Index1" />
+                            <start xsi:type="IntegerLiteral" value="0" />
+                            <end xsi:type="IntegerLiteral" value="100" />
+                          </realisation>
+                        </configuration>
+                        <flow />
+                      </realisation>
+                    </loop>
+                  </realisation>
+                </mutex>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_e28b9c9894e24018a9b82f07d17bf3cc">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="Index1" />
+                <term xsi:type="IntegerLiteral" value="101" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="TerminateLanes_04" id="TestProcedure_7f74e6b91b3c49f4b6ffc24794e75df4" parallelizable="true">
+      <specification>TerminaleLanes after the previous acitivities is completed and other acitivities in the other lane are still active while the previous activity in the lane where TerminaleLanes is processing</specification>
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Index1" id="VariableDeclaration_3cbfa457d0de4d38831206cd3d0b6c5e">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <parallel id="Parallel_405af62bafdb4a1db1d8e543f23e4de3">
+            <realisation>
+              <lane>
+                <action id="Action_6ec3d2733a3447929862a127e01608d8">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="10" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <terminateLanes id="TerminateLanes_7d6713bf46fb4d028df1e9ded2a9d616" />
+              </lane>
+              <lane>
+                <handler id="Handler_f5b7c16f9d314032896c561d8bcf82c5">
+                  <realisation>
+                    <try />
+                    <catch>
+                      <exception id="CatchHeader_3c5d7a8a2a284c32802f5534f1466272">
+                        <realisation>
+                          <type />
+                        </realisation>
+                      </exception>
+                      <flow />
+                    </catch>
+                    <finally>
+                      <loop name="ForLoop1" id="Loop_9fb2efdd88354cb3a042d902b96e46ba">
+                        <realisation>
+                          <configuration id="LoopConfigurationHeader_5f9cd20f3b734dcba02af172c77cc841">
+                            <realisation xsi:type="ForLoop">
+                              <counter name="Index1" />
+                              <start xsi:type="IntegerLiteral" value="0" />
+                              <end xsi:type="IntegerLiteral" value="100" />
+                            </realisation>
+                          </configuration>
+                          <flow />
+                        </realisation>
+                      </loop>
+                    </finally>
+                  </realisation>
+                </handler>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_434ee74d4e4b46bbb41701ec6f4cf46b">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="Index1" />
+                <term xsi:type="IntegerLiteral" value="101" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="TerminateLanes_05" id="TestProcedure_993d3f04ab924a419c009b2429db1e07" parallelizable="true">
+      <specification>Case TerminateLanes as soon as it encounters to not execute another lane's activity</specification>
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Index1" id="VariableDeclaration_b6fa39a31897424285a8fd3c773c7620">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="999" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Boolean1" id="VariableDeclaration_d0e248b3d20e48348c1dc221a2f24cc4">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="true" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <parallel id="Parallel_15309fae39d14ce3b1bc9f818fae6a5f">
+            <realisation>
+              <lane>
+                <terminateLanes id="TerminateLanes_1bd7b183a2714ad383eaa73ea3fab964" />
+              </lane>
+              <lane>
+                <action id="Action_3adc19c963104d058d5eefb035bc689f">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="10" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <branch id="Branch_4464225cebb5480e83ac9c2b7d378e1a">
+                  <realisation>
+                    <if>
+                      <condition id="ConditionHeader_9696b8919baf487c849fffadfcfd7086">
+                        <realisation xsi:type="BooleanValue" valueOf="Boolean1" />
+                      </condition>
+                      <flow>
+                        <return id="Return_2829cdb786ff49bf85136b22edb7b651" />
+                      </flow>
+                    </if>
+                  </realisation>
+                </branch>
+              </lane>
+              <lane>
+                <loop name="ForLoop1" id="Loop_d8568b83ea9440b4ae5421513b0dcb7e">
+                  <realisation>
+                    <configuration id="LoopConfigurationHeader_5258d30e13cf49ddbde95c25697330f8">
+                      <realisation xsi:type="ForLoop">
+                        <counter name="Index1" />
+                        <start xsi:type="IntegerLiteral" value="0" />
+                        <end xsi:type="IntegerLiteral" value="100" />
+                      </realisation>
+                    </configuration>
+                    <flow />
+                  </realisation>
+                </loop>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_5dc2785462f541d79741663de37050fc">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="Index1" />
+                <term xsi:type="IntegerLiteral" value="999" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="TerminateLanes_06" id="TestProcedure_617fde11392c4518aa9b3f80b33395f2" parallelizable="true">
+      <specification>TerminaLanes after completing the Sleep activity</specification>
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Boolean1" id="VariableDeclaration_79b116fe26b04b8388f97fc53db91a0f">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="true" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <parallel id="Parallel_5331bca7e5404672ad22b0eb8a9f8a52">
+            <realisation>
+              <lane>
+                <action id="Action_6bdfd068371346c1bce158e6b65377fe">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="500" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <terminateLanes id="TerminateLanes_fcdc00f26a324fe887878578e4ec4348" />
+              </lane>
+              <lane>
+                <branch id="Branch_e03d0668802a49ea9ca5662a68b792a9">
+                  <realisation>
+                    <if>
+                      <condition id="ConditionHeader_86d5ecf01d6a42689e31618ed5945e6e">
+                        <realisation xsi:type="BooleanValue" valueOf="Boolean1" />
+                      </condition>
+                      <flow>
+                        <return id="Return_44139cf1eb524302a1ce2b8a89353e42" />
+                      </flow>
+                    </if>
+                  </realisation>
+                </branch>
+                <action id="Action_ad2256d104f44a5d93336960bd1ab0da">
+                  <realisation xsi:type="assert:Assert">
+                    <assert:condition xsi:type="BooleanLiteral" value="false" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_9641bacbd2254d169b63371aacd9616c">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="200" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_c664089af2b24b529f3b65a217358190">
+                  <realisation xsi:type="assert:Assert">
+                    <assert:condition xsi:type="BooleanLiteral" value="true" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_57207efb6e7c4a32936274313d3d85d2">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="BooleanLiteral" value="false" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="TerminateLanes_07" id="TestProcedure_07cb50f91674407ca0116a9a670b5ae2" parallelizable="true">
+      <specification>TerminateLanes into a Loop group</specification>
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Index1" id="VariableDeclaration_6bc19b1e5b644f2086749f3c0345a0de">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="999" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Index2" id="VariableDeclaration_dbfa0276b0d64b55954fb20e6e483d05">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="999" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <parallel id="Parallel_49fd74c4c93d461f89400c62453628ca">
+            <realisation>
+              <lane>
+                <loop name="ForLoop1" id="Loop_3528934cdcc44e409b8c1ca05876e146">
+                  <realisation>
+                    <configuration id="LoopConfigurationHeader_7eec6e1aa0da434b91984088f913f4d6">
+                      <realisation xsi:type="ForLoop">
+                        <counter name="Index1" />
+                        <start xsi:type="IntegerLiteral" value="0" />
+                        <end xsi:type="IntegerLiteral" value="9" />
+                      </realisation>
+                    </configuration>
+                    <flow>
+                      <loop name="ForLoop2" id="Loop_3064158519c84a6083f20e9857a65d57">
+                        <realisation>
+                          <configuration id="LoopConfigurationHeader_a2a4f5588be047f8b4fd7c423419c270">
+                            <realisation xsi:type="ForLoop">
+                              <counter name="Index2" />
+                              <start xsi:type="IntegerLiteral" value="0" />
+                              <end xsi:type="IntegerLiteral" value="9" />
+                            </realisation>
+                          </configuration>
+                          <flow>
+                            <terminateLanes id="TerminateLanes_0b1cc85192e3424a959d63472bcc4bc4" />
+                          </flow>
+                        </realisation>
+                      </loop>
+                    </flow>
+                  </realisation>
+                </loop>
+              </lane>
+              <lane />
+            </realisation>
+          </parallel>
+          <action id="Action_f182f968586f40faa92ad61e7d437b79">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicAnd">
+                <term xsi:type="IsEqual">
+                  <term xsi:type="IntegerValue" valueOf="Index1" />
+                  <term xsi:type="IntegerLiteral" value="0" />
+                </term>
+                <term xsi:type="IsEqual">
+                  <term xsi:type="IntegerValue" valueOf="Index2" />
+                  <term xsi:type="IntegerLiteral" value="0" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

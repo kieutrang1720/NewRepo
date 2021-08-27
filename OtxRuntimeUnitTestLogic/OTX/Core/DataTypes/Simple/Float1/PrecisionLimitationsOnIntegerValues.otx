@@ -1,0 +1,1038 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="PrecisionLimitationsOnIntegerValues" id="id_dae76eec1cd3470aa7df84e3b1381b39" package="Core.DataTypes.Simple.Float1" version="1.0.0.0" timestamp="2021-05-11T10:34:29.276+07:00">
+  <specification>Precision limitations on integer values
+    + Range1: Integers from −2^53 to 2^53 (−9,007,199,254,740,992 to 9,007,199,254,740,992) can be exactly represented
+    + Range2: Integers between 2^53 and 2^54 = 18,014,398,509,481,984 round to a multiple of 2 (even number)
+    + Range3: Integers between 2^54 and 2^55 = 36,028,797,018,963,968 round to a multiple of 4</specification>
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.3.0.41142</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="Range1" id="TestProcedure_8a59815befbe4061aff91574b5046f6c" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_a1e6381089f84ac3ac14045007eed645">
+            <specification>Integers from −2^53 to 2^53 (−9,007,199,254,740,992 to 9,007,199,254,740,992) can be exactly represented</specification>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="float1">
+                <unittest:value xsi:type="IntegerLiteral" value="-9007199254740992" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float2">
+                <unittest:value xsi:type="IntegerLiteral" value="9007199254740992" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float3">
+                <unittest:value xsi:type="IntegerLiteral" value="-9007199254740991" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float4">
+                <unittest:value xsi:type="IntegerLiteral" value="9007199254740991" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:outParam name="float1" id="OutParameterDeclaration_8a73fc7129624f998161e35988707845">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float2" id="OutParameterDeclaration_e7f0b8b031c74830b586d799aa4916e4">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float3" id="OutParameterDeclaration_845a11081c4a47b683dabefd7e37a26a">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float4" id="OutParameterDeclaration_0cde4c2ae5fa43d49bbed49eda0c9e10">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="9007199254740991" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_6e135f8284104a10b92ad4406df09a28">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float1" />
+              <term xsi:type="IntegerLiteral" value="-9007199254740992" />
+            </realisation>
+          </action>
+          <action id="Action_40e0385c2bfc43f595ae489c682b0575">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float2" />
+              <term xsi:type="IntegerLiteral" value="9007199254740992" />
+            </realisation>
+          </action>
+          <action id="Action_98aaf4229d1b4cf18d176f297642884c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float3" />
+              <term xsi:type="IntegerLiteral" value="-9007199254740991" />
+            </realisation>
+          </action>
+          <action id="Action_8850ef52ab1844509ef3a27de863913e">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float4" />
+              <term xsi:type="IntegerLiteral" value="9007199254740991" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Range2" id="TestProcedure_1bf2ae1e879a4f82b580ca36ea8a0503" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_36b0088b210e4136bd90e1fa96e6dfc8">
+            <specification>Integers between 2^53 and 2^54 = 18,014,398,509,481,984 round to a multiple of 2 (even number)</specification>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="float1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="9007199254740992" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9007199254740994" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float2">
+                <unittest:value xsi:type="IntegerLiteral" value="9007199254740994" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float3">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="9007199254740994" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9007199254740996" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float4">
+                <unittest:value xsi:type="IntegerLiteral" value="9007199254740996" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float5">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="9007199254740996" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9007199254740998" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float6">
+                <unittest:value xsi:type="IntegerLiteral" value="9007199254740998" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float7">
+                <unittest:value xsi:type="IntegerLiteral" value="9007199254741000" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float8">
+                <unittest:value xsi:type="IntegerLiteral" value="9007199254741000" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float9">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="9007199254741000" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9007199254741002" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float10">
+                <unittest:value xsi:type="IntegerLiteral" value="18014398509481984" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float11">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481982" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481984" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float12">
+                <unittest:value xsi:type="IntegerLiteral" value="18014398509481982" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float13">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481980" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481982" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:outParam name="float1" id="OutParameterDeclaration_9d459fba4d6a4386a1bb656f75d29d52">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float2" id="OutParameterDeclaration_4d810380b8614de3bfe8e731abb372fb">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float3" id="OutParameterDeclaration_8eb13ac45da840a9ab06f3f51ffacfb1">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float4" id="OutParameterDeclaration_0c28138bb4644e1bafd6095b54454cc7">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float5" id="OutParameterDeclaration_ff618e1167184b1ebd01ef550dd4de2b">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float6" id="OutParameterDeclaration_6fc7786cd8454fcbb075ffca45f07745">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float7" id="OutParameterDeclaration_68992da02bdd4931a81afde8888abbc0">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float8" id="OutParameterDeclaration_edbeb1c13d8546b19e0ec1a6c1e8d132">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float9" id="OutParameterDeclaration_0661a325ba464257800a599212e08a53">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float10" id="OutParameterDeclaration_e4ef10083c7549259f8a45b387692539">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float11" id="OutParameterDeclaration_342f21337a6d443d84c54449f472177f">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float12" id="OutParameterDeclaration_d2c09d4ced5246b5be4e728f4f0e3332">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float13" id="OutParameterDeclaration_6220984015cd42c0bfa9f97ef6675d17">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_02e1b5a99ca249d7ac2420f8f4d7117f">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float1" />
+              <term xsi:type="IntegerLiteral" value="9007199254740993" />
+            </realisation>
+          </action>
+          <action id="Action_7f693cf44d0a4e47bab1090f0c39126c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float2" />
+              <term xsi:type="IntegerLiteral" value="9007199254740994" />
+            </realisation>
+          </action>
+          <action id="Action_ae68e36ff9fe4a27abfc513e8cca3908">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float3" />
+              <term xsi:type="IntegerLiteral" value="9007199254740995" />
+            </realisation>
+          </action>
+          <action id="Action_585a0b8c36054dd2bad1819469a94566">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float4" />
+              <term xsi:type="IntegerLiteral" value="9007199254740996" />
+            </realisation>
+          </action>
+          <action id="Action_fef7b315ce3f4713a356f75c263041f2">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float5" />
+              <term xsi:type="IntegerLiteral" value="9007199254740997" />
+            </realisation>
+          </action>
+          <action id="Action_a0e74c6ae9324df08ec77dbd7c394357">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float6" />
+              <term xsi:type="IntegerLiteral" value="9007199254740998" />
+            </realisation>
+          </action>
+          <action id="Action_4e86b55f8e9240edb641f2c8a4aad82d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float7" />
+              <term xsi:type="IntegerLiteral" value="9007199254740999" />
+            </realisation>
+          </action>
+          <action id="Action_1f62542805694feca328baebb4ddf582">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float8" />
+              <term xsi:type="IntegerLiteral" value="9007199254741000" />
+            </realisation>
+          </action>
+          <action id="Action_268c2945d6324565a0e85a1b49b0dad9">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float9" />
+              <term xsi:type="IntegerLiteral" value="9007199254741001" />
+            </realisation>
+          </action>
+          <action id="Action_778566ed3d77406ca2bb1e778a01049a">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float10" />
+              <term xsi:type="IntegerLiteral" value="18014398509481984" />
+            </realisation>
+          </action>
+          <action id="Action_64e21de8f2484f0cbc68a3df83fadd0d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float11" />
+              <term xsi:type="IntegerLiteral" value="18014398509481983" />
+            </realisation>
+          </action>
+          <action id="Action_33a098aea00a450fbe27b7f62f0b07cf">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float12" />
+              <term xsi:type="IntegerLiteral" value="18014398509481982" />
+            </realisation>
+          </action>
+          <action id="Action_7d75dbac02f944e1bc577e1d16fd5846">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float13" />
+              <term xsi:type="IntegerLiteral" value="18014398509481981" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Range3" id="TestProcedure_61b667bd663d4b54a261cd79746e2ff1" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_af352dfd88704e0b90854d0fdffee7a3">
+            <specification>Range3: Integers between 2^54 and 2^55 = 36,028,797,018,963,968 round to a multiple of 4</specification>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="float1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481984" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481988" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float2">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481984" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481988" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float3">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481984" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481988" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float4">
+                <unittest:value xsi:type="IntegerLiteral" value="18014398509481988" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float5">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481988" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481992" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float6">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481992" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481996" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float7">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481992" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481996" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float8">
+                <unittest:value xsi:type="IntegerLiteral" value="18014398509481992" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float9">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481992" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481996" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float10">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481992" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481996" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float11">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481992" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481996" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float12">
+                <unittest:value xsi:type="IntegerLiteral" value="18014398509481996" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float13">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481996" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482000" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float14">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481996" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482000" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float15">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509481996" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482000" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float16">
+                <unittest:value xsi:type="IntegerLiteral" value="18014398509482000" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float17">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482000" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482004" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float18">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482000" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482004" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float19">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482000" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482004" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float20">
+                <unittest:value xsi:type="IntegerLiteral" value="18014398509482004" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float21">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482004" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482008" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float22">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482004" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482008" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float23">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482004" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482008" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float24">
+                <unittest:value xsi:type="IntegerLiteral" value="18014398509482008" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float25">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482008" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482012" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float26">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482008" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482012" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float27">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482008" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482012" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float28">
+                <unittest:value xsi:type="IntegerLiteral" value="18014398509482012" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float29">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482012" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482016" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float30">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482012" />
+                    <unittest:element xsi:type="IntegerLiteral" value="18014398509482016" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float31">
+                <unittest:value xsi:type="IntegerLiteral" value="36028797018963968" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float32">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="36028797018963964" />
+                    <unittest:element xsi:type="IntegerLiteral" value="36028797018963968" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float33">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="36028797018963964" />
+                    <unittest:element xsi:type="IntegerLiteral" value="36028797018963968" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float34">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="36028797018963964" />
+                    <unittest:element xsi:type="IntegerLiteral" value="36028797018963968" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float35">
+                <unittest:value xsi:type="IntegerLiteral" value="36028797018963964" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float36">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="36028797018963960" />
+                    <unittest:element xsi:type="IntegerLiteral" value="36028797018963964" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float37">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="36028797018963960" />
+                    <unittest:element xsi:type="IntegerLiteral" value="36028797018963964" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float38">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="36028797018963960" />
+                    <unittest:element xsi:type="IntegerLiteral" value="36028797018963964" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float39">
+                <unittest:value xsi:type="IntegerLiteral" value="36028797018963960" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="float40">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="36028797018963956" />
+                    <unittest:element xsi:type="IntegerLiteral" value="36028797018963960" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:outParam name="float1" id="OutParameterDeclaration_c11264ea777d44f5870de3c827a2e95c">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float2" id="OutParameterDeclaration_da7683f0a52e47c8bffe1a5baf2db6d1">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float3" id="OutParameterDeclaration_5f857ebb820541c196c271b7a99917b6">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float4" id="OutParameterDeclaration_8c1048b4c2834a59a2e0ed8670db4bc8">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float5" id="OutParameterDeclaration_eb20e74e016948319f508a8462d291a5">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float6" id="OutParameterDeclaration_385925024bc54e2bb5b592878f208aa4">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float7" id="OutParameterDeclaration_cc77c3ff0cdf44e6b649f49cd54914de">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float8" id="OutParameterDeclaration_f1634810d62840deb3325ead2f50ea08">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float9" id="OutParameterDeclaration_91449b8d9f8e48f3a4d6004205bf7032">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float10" id="OutParameterDeclaration_99c2ccef79f14ca7a0d727f50110fa04">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float11" id="OutParameterDeclaration_4610c9607d6b422eabf6900e9f488ad8">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float12" id="OutParameterDeclaration_659520ecf0ec49e9a90d205b4e263fea">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float13" id="OutParameterDeclaration_ce44991f0aef4d868858d3dcf13af1ed">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float14" id="OutParameterDeclaration_6ec1b59dccd348e4b1f214fe2deaf31e">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float15" id="OutParameterDeclaration_88a263bde080494798847ecd831c4b18">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float16" id="OutParameterDeclaration_fcc186b4cf074ca88cce6fb887592942">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float17" id="OutParameterDeclaration_589e78359bdd4d1bbd72790e2135c267">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float18" id="OutParameterDeclaration_b16d1a3c4cae4ab18e65003123230d1b">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float19" id="OutParameterDeclaration_4e5986e417d843ce9f3d76882518b29e">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float20" id="OutParameterDeclaration_9c99059f45924e3f8cbd8ffeeefec69a">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float21" id="OutParameterDeclaration_c8bb91e94ec84749b5a391a0a2106e7f">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float22" id="OutParameterDeclaration_3aa043306889440cbd090a85a466ce3b">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float23" id="OutParameterDeclaration_71599141fc884dbe9d4f1eb8c53c0c08">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float24" id="OutParameterDeclaration_b4954974d13f4bb68afe55556a6389f3">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float25" id="OutParameterDeclaration_5138d10476ff4e5aaef4c43c97a59ba5">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float26" id="OutParameterDeclaration_cf9cbafadafc4f1786ee69750f8040c8">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float27" id="OutParameterDeclaration_75653d2c330a4dbc870bf45c3ad131e0">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float28" id="OutParameterDeclaration_9ff6cb3df76c46b7bf5dd3b5c3224800">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float29" id="OutParameterDeclaration_5074f57a4f3740ed9ffc441e4c2331aa">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float30" id="OutParameterDeclaration_8c5e8c347de84ac5af45e56406912488">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float31" id="OutParameterDeclaration_59e3fc8b447f4ddea0d0788901b81369">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float32" id="OutParameterDeclaration_17165656a7fb4ebb9be74feada563fae">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float33" id="OutParameterDeclaration_dab3d9148664437ba54bf52b3df4e313">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float34" id="OutParameterDeclaration_25bf9348eb414b4ab4635d232b6b5fe2">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float35" id="OutParameterDeclaration_818ac4c992d4419faf79e33a7d39b0e9">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float36" id="OutParameterDeclaration_b5908df3408f48ecac8e11e232c15ffe">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float37" id="OutParameterDeclaration_6e869885af59427cbc256af808746950">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float38" id="OutParameterDeclaration_968e6416f83c4b30ac6a3ed78878cb7c">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float39" id="OutParameterDeclaration_4a3db1d0cb604c7dbda4396e25c5665c">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="float40" id="OutParameterDeclaration_6b4697c2b024439097bb223ea946041f">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_3b006bb97a434186ae234d0b8ceecccc">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float1" />
+              <term xsi:type="IntegerLiteral" value="18014398509481985" />
+            </realisation>
+          </action>
+          <action id="Action_6a001fd380a747d5b9318587a113fd48">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float2" />
+              <term xsi:type="IntegerLiteral" value="18014398509481986" />
+            </realisation>
+          </action>
+          <action id="Action_61dd16222a634f5080ea81bc9dc88d8b">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float3" />
+              <term xsi:type="IntegerLiteral" value="18014398509481987" />
+            </realisation>
+          </action>
+          <action id="Action_f7131dd0c4f54a0f8741a3e136f874f3">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float4" />
+              <term xsi:type="IntegerLiteral" value="18014398509481988" />
+            </realisation>
+          </action>
+          <action id="Action_66a9b34742994a6db0573a6c468037be">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float5" />
+              <term xsi:type="IntegerLiteral" value="18014398509481989" />
+            </realisation>
+          </action>
+          <action id="Action_0809b56bd0724d47a0976564bd7a7cb7">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float6" />
+              <term xsi:type="IntegerLiteral" value="18014398509481990" />
+            </realisation>
+          </action>
+          <action id="Action_9bf7d7a3a4414c9eb766d7d644676bc7">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float7" />
+              <term xsi:type="IntegerLiteral" value="18014398509481991" />
+            </realisation>
+          </action>
+          <action id="Action_a4f66ebdda5345ad8c086d31930d6044">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float8" />
+              <term xsi:type="IntegerLiteral" value="18014398509481992" />
+            </realisation>
+          </action>
+          <action id="Action_87e7a63f6f4946ae8df2244268c0dee4">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float9" />
+              <term xsi:type="IntegerLiteral" value="18014398509481993" />
+            </realisation>
+          </action>
+          <action id="Action_2c930caf182c494d8aabdf1da136c168">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float10" />
+              <term xsi:type="IntegerLiteral" value="18014398509481994" />
+            </realisation>
+          </action>
+          <action id="Action_3bb552352a1a45ee88a8424f81b2709b">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float11" />
+              <term xsi:type="IntegerLiteral" value="18014398509481995" />
+            </realisation>
+          </action>
+          <action id="Action_ccd31dd0df12493ea06158635b15f8c8">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float12" />
+              <term xsi:type="IntegerLiteral" value="18014398509481996" />
+            </realisation>
+          </action>
+          <action id="Action_99f1ae06e8d141c0ad417f04828d87c6">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float13" />
+              <term xsi:type="IntegerLiteral" value="18014398509481997" />
+            </realisation>
+          </action>
+          <action id="Action_8108c9b8f0864da5a19c1fac49d70c01">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float14" />
+              <term xsi:type="IntegerLiteral" value="18014398509481998" />
+            </realisation>
+          </action>
+          <action id="Action_fa72765412f74ad89f0476e6e306b22e">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float15" />
+              <term xsi:type="IntegerLiteral" value="18014398509481999" />
+            </realisation>
+          </action>
+          <action id="Action_4aca0d19f3a44a7290ed3fae8ae7c4f1">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float16" />
+              <term xsi:type="IntegerLiteral" value="18014398509482000" />
+            </realisation>
+          </action>
+          <action id="Action_2f34ca9d40e64f879a54b67a69e395ae">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float17" />
+              <term xsi:type="IntegerLiteral" value="18014398509482001" />
+            </realisation>
+          </action>
+          <action id="Action_42c3e65fd06d48ca988e1cc862e7d489">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float18" />
+              <term xsi:type="IntegerLiteral" value="18014398509482002" />
+            </realisation>
+          </action>
+          <action id="Action_eb96f1446daf4b5a8cb53957f165c917">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float19" />
+              <term xsi:type="IntegerLiteral" value="18014398509482003" />
+            </realisation>
+          </action>
+          <action id="Action_c5ed778e58b7454b8d7775438ced629e">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float20" />
+              <term xsi:type="IntegerLiteral" value="18014398509482004" />
+            </realisation>
+          </action>
+          <action id="Action_eead692b65de4b0b9ea79dcf52d62e75">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float21" />
+              <term xsi:type="IntegerLiteral" value="18014398509482005" />
+            </realisation>
+          </action>
+          <action id="Action_9bde2496ffc74c339cf3661bf1c6c9ab">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float22" />
+              <term xsi:type="IntegerLiteral" value="18014398509482006" />
+            </realisation>
+          </action>
+          <action id="Action_955452d6ca0b452cabc040e8c13561aa">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float23" />
+              <term xsi:type="IntegerLiteral" value="18014398509482007" />
+            </realisation>
+          </action>
+          <action id="Action_91ec8ff72c4e4fb79ee268b32e179965">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float24" />
+              <term xsi:type="IntegerLiteral" value="18014398509482008" />
+            </realisation>
+          </action>
+          <action id="Action_049bbfb3ef30479880da54b13ad1dd5b">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float25" />
+              <term xsi:type="IntegerLiteral" value="18014398509482009" />
+            </realisation>
+          </action>
+          <action id="Action_1de59d80b1474d0eb797362f9df26029">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float26" />
+              <term xsi:type="IntegerLiteral" value="18014398509482010" />
+            </realisation>
+          </action>
+          <action id="Action_0c7e448800904092922b35a7528fa52e">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float27" />
+              <term xsi:type="IntegerLiteral" value="18014398509482011" />
+            </realisation>
+          </action>
+          <action id="Action_b7816ce0972349ee998c476b8a2b55d0">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float28" />
+              <term xsi:type="IntegerLiteral" value="18014398509482012" />
+            </realisation>
+          </action>
+          <action id="Action_dd7369e33d624904b637c47f137be920">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float29" />
+              <term xsi:type="IntegerLiteral" value="18014398509482013" />
+            </realisation>
+          </action>
+          <action id="Action_a2c66e846bce410993563b94ca372c64">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float30" />
+              <term xsi:type="IntegerLiteral" value="18014398509482014" />
+            </realisation>
+          </action>
+          <action id="Action_84fbf39be6c64177ac46b9111ec914c1">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float31" />
+              <term xsi:type="IntegerLiteral" value="36028797018963968" />
+            </realisation>
+          </action>
+          <action id="Action_dfc957d0811945c3a4c8f93c26fbe417">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float32" />
+              <term xsi:type="IntegerLiteral" value="36028797018963967" />
+            </realisation>
+          </action>
+          <action id="Action_901a6c7bfb8a406d981a7a5829349c23">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float33" />
+              <term xsi:type="IntegerLiteral" value="36028797018963966" />
+            </realisation>
+          </action>
+          <action id="Action_f5ce89380f314e33adb4d5056d5b7e29">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float34" />
+              <term xsi:type="IntegerLiteral" value="36028797018963965" />
+            </realisation>
+          </action>
+          <action id="Action_3b53ea3a2bbd4359a3ec5587a26ba591">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float35" />
+              <term xsi:type="IntegerLiteral" value="36028797018963964" />
+            </realisation>
+          </action>
+          <action id="Action_7eeca51520d34fc5aed28db27cc8ae92">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float36" />
+              <term xsi:type="IntegerLiteral" value="36028797018963963" />
+            </realisation>
+          </action>
+          <action id="Action_d48338f6bd28479098f49f3d39fa85b2">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float37" />
+              <term xsi:type="IntegerLiteral" value="36028797018963962" />
+            </realisation>
+          </action>
+          <action id="Action_a19c412785b548abb0c3406707f11f70">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float38" />
+              <term xsi:type="IntegerLiteral" value="36028797018963961" />
+            </realisation>
+          </action>
+          <action id="Action_d27da0a7ba6442c29075e871f293b057">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float39" />
+              <term xsi:type="IntegerLiteral" value="36028797018963960" />
+            </realisation>
+          </action>
+          <action id="Action_5d14fb1ebab34b628a0298f49edbef8f">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="float40" />
+              <term xsi:type="IntegerLiteral" value="36028797018963959" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

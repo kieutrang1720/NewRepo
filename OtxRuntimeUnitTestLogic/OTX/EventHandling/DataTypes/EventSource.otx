@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:event="http://iso.org/OTX/1.0.0/Event" name="EventSource" id="id_890b1091d8d7458b8e7e8a91d1ac8d07" package="EventHandling.DataTypes" version="1.0.0.0" timestamp="2021-08-10T15:22:14.515+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42500</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="EventSource_MonitorChangeEvent" id="TestProcedure_d59bd1626eb3420481a768467a259e35" timeout="1000" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="EventSource1" id="VariableDeclaration_a0b01dba324f4ce492de8cdb1e92a30b">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_8e3d6ebeeed84393a7fe43559ab6afb7">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+          <variable name="String1" id="VariableDeclaration_362b72f5b8884252a24d2e81b4c5f457">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_870528962f1e41758e1198f66688c111">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:MonitorChangeEventSource">
+                <event:variable xsi:type="StringVariable" name="String1" />
+              </term>
+            </realisation>
+          </action>
+          <parallel id="Parallel_db3d4fea09664c0698d6e7fdd46aa36f">
+            <realisation>
+              <lane>
+                <action id="Action_42e1eeb9134a461ea2c8a25dd02dbfdb">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_5dd8d195da914cb79e0f697f0ca6147a">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="500" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_6b78b645b2ca4ab5a4979f59a236e54c">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="StringVariable" name="String1" />
+                    <term xsi:type="StringLiteral" value="Changed" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_9ff9efad6c1d40669fcd54d97331fc97">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="event:EventValue" valueOf="Event1" />
+                </term>
+                <term xsi:type="StringLiteral" value="MonitorChangeEvent" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EventSource_QueueStarts" id="TestProcedure_aeca642d78b74c09baa9ceb5ae0f8cf4" timeout="1000" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="EventSource1" id="VariableDeclaration_f69ca656be5542b7a35484389c0a7e52">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="EventSource2" id="VariableDeclaration_218c691da49441878467d7e6f08f4d23">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_5c16f394ec1f4fa0bfdaab1f0bf79314">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+          <variable name="String1" id="VariableDeclaration_114152a708264557964745fb3610d9df">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_21f8741130b04ccf8558d9ce474e84b0">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:MonitorChangeEventSource">
+                <event:variable xsi:type="StringVariable" name="String1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_202c22dca08e465b889cd27471b56ece">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:TimerExpiredEventSource">
+                <event:timeout xsi:type="IntegerLiteral" value="100" />
+              </term>
+            </realisation>
+          </action>
+          <parallel id="Parallel_71b94ef31cb241ac87cc5d7dd98fb4f0">
+            <realisation>
+              <lane>
+                <action id="Action_e5a07ea3ece3450a9c8f089072411f13">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_487450302ff647b4b97a93f0121d4332">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="500" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_e120e0a7295b4646b0d0f14e33c9bb7b">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="StringVariable" name="String1" />
+                    <term xsi:type="StringLiteral" value="Changed" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_3277c59edbaa4a9e997eca3e5fac7aec">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="event:EventValue" valueOf="Event1" />
+                </term>
+                <term xsi:type="StringLiteral" value="TimerExpiredEvent" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EventSource_ClosedEventSource" id="TestProcedure_5939974c546e4b1eab7615777843aeca" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="EventSource1" id="VariableDeclaration_a841ac4fe6ab404da51b5aa11310eb08">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="String1" id="VariableDeclaration_067116aad6c94707931eb4519808e19a">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_22ddc5feb476411fb0c3a41bd55a7a03">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:MonitorChangeEventSource">
+                <event:variable xsi:type="StringVariable" name="String1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_8b335bbe45554f66b645bb66845df206">
+            <realisation xsi:type="event:CloseEventSource">
+              <event:source name="EventSource1" />
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_0e3152907bdd4a95bb9b296f52ccfe9d">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="InvalidReferenceException" />
+              <unittest:flow>
+                <action id="Action_251fe25512ef459490e8067025700377">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="StringVariable" name="String1" />
+                    <term xsi:type="ToString">
+                      <term xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EventSource_InitalVariable" id="id_8ec4f773e85344dfbcf0b8e10a7362fa" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="EventSource1" id="VariableDeclaration_eee5194d9ab2426596881c0d08a33bd6">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <compoundNode id="ExtensibleCompoundNode_b979d07789ff428b8b665c8d892dd19a">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="InvalidReferenceException" />
+              <unittest:flow>
+                <branch id="Branch_81114deb2e1e4a6c88f0a9f5be9f25b9">
+                  <realisation>
+                    <if>
+                      <condition id="ConditionHeader_f65c6c4b8cb84421b68f1454cfb61897">
+                        <realisation xsi:type="IsEqual">
+                          <term xsi:type="ToString">
+                            <term xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                          </term>
+                          <term xsi:type="StringLiteral" value="" />
+                        </realisation>
+                      </condition>
+                      <flow />
+                    </if>
+                  </realisation>
+                </branch>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

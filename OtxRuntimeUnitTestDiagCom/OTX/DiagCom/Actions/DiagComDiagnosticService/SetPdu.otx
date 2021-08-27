@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:diag="http://iso.org/OTX/1.0.0/DiagCom" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:util="http://iso.org/OTX/1.0.0/Util" name="SetPdu" id="id_3149e0948cf746bd809cefbfe33121d1" package="DiagCom.Actions.DiagComDiagnosticService" version="1.0.0.0" timestamp="2021-08-24T11:43:49.227+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42602</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="SetPdu_SetParameterValue" id="TestProcedure_5f7c58b1add54dbc8e6c2db12e37eb2b">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_5de80b5764eb4f1d979e6b394b770bc3">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="DiagService1" id="VariableDeclaration_38ad1639992946de9c29b78aac321b61">
+            <realisation>
+              <dataType xsi:type="diag:DiagService" />
+            </realisation>
+          </variable>
+          <variable name="Request1" id="VariableDeclaration_8274b25a0cda408e93a0dd7cdd49e7a6">
+            <realisation>
+              <dataType xsi:type="diag:Request" />
+            </realisation>
+          </variable>
+          <variable name="ByteField1" id="VariableDeclaration_d9d89f37abfc47a8a44578af8cc278e7">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </variable>
+          <variable name="ByteField2" id="VariableDeclaration_08118238751c408aad320a05b6f4c6d9">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </variable>
+          <variable name="List1" id="VariableDeclaration_bb88246fdc8548dd8a3021f8ed67bb4f">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="diag:Parameter" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Integer1" id="VariableDeclaration_06ed9ef65003419da2a0bd0fcbfce6d4">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="Integer2" id="VariableDeclaration_9f2a5cb175f24ba2bcf7860ed93c4ad9">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="ByteField3" id="VariableDeclaration_83d920126d00471caafe5b0c4518fbd1">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_b5d8a06c45ec4c6b81ff316f4c8d62e0">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringLiteral" value="LL_GatewUDS" />
+                <diag:ecuVariantName xsi:type="StringLiteral" value="EV_Gatew31xAU65x_003" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_173c4f8167364b51a4520b275cba39af">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:DiagServiceVariable" name="DiagService1" />
+              <term xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:name xsi:type="StringLiteral" value="GenericReadDataByCommonIdentifier_Default_Codierung" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_1a07df69b0544e87ad602d10f46d2e5a">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:RequestVariable" name="Request1" />
+              <term xsi:type="diag:GetRequest">
+                <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_fc64803c27054c6497ceabdf67ba1390">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="ByteField1" />
+              <term xsi:type="diag:GetPdu">
+                <diag:message xsi:type="diag:RequestValue" valueOf="Request1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_f96298d9914e4df5994dd8d1ce3ba59d">
+            <realisation xsi:type="diag:SetPdu">
+              <diag:request xsi:type="diag:RequestValue" valueOf="Request1" />
+              <diag:pdu xsi:type="ByteFieldLiteral" value="220012" />
+            </realisation>
+          </action>
+          <action id="Action_fca86ab44e6844febfe8b48fa8d96e76">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="ByteField2" />
+              <term xsi:type="diag:GetPdu">
+                <diag:message xsi:type="diag:RequestValue" valueOf="Request1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_40b363dbc159403586fb55c82067af6b">
+            <realisation xsi:type="diag:ExecuteDiagService">
+              <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+              <diag:responseParameters>
+                <diag:name xsi:type="StringLiteral" value="PR_GenericReadDataByCommonIdentifier" />
+              </diag:responseParameters>
+              <diag:responseParameters>
+                <diag:name xsi:type="StringLiteral" value="NR_GenericReadDataByCommonIdentifier" />
+              </diag:responseParameters>
+              <diag:responseParameters>
+                <diag:name xsi:type="StringLiteral" value="UNSUPPORTED_SERVICE_NR" />
+              </diag:responseParameters>
+            </realisation>
+          </action>
+          <action id="Action_bc74830f82624d638f092e489ca83324">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="diag:GetParameterAsList">
+                <diag:parameterContainer xsi:type="diag:RequestValue" valueOf="Request1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_91a9746d4ef84a5ba4a4fd520ab8f533">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Integer1" />
+              <term xsi:type="diag:GetParameterValueAsInteger">
+                <diag:parameter xsi:type="diag:ParameterValue" valueOf="List1">
+                  <diag:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </diag:path>
+                </diag:parameter>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_2a6358e0f8764071b7776e6f74e75709">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Integer2" />
+              <term xsi:type="diag:GetParameterValueAsInteger">
+                <diag:parameter xsi:type="diag:ParameterValue" valueOf="List1">
+                  <diag:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                  </diag:path>
+                </diag:parameter>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_d655cd136fd34f7b86874d22fe1c6496">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+          <action id="Action_66ce7bedf98d4c13a186e922858d5f2f">
+            <realisation xsi:type="AppendByteField">
+              <byteField name="ByteField3" />
+              <otherByteField xsi:type="ToByteField">
+                <term xsi:type="IntegerValue" valueOf="Integer1" />
+              </otherByteField>
+              <otherByteField xsi:type="ByteFieldLiteral" value="00" />
+              <otherByteField xsi:type="ToByteField">
+                <term xsi:type="IntegerValue" valueOf="Integer2" />
+              </otherByteField>
+            </realisation>
+          </action>
+          <action id="Action_ad7922341c494134bc42230ed6a47dd1">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicAnd">
+                <term xsi:type="util:Compare">
+                  <util:term xsi:type="ByteFieldValue" valueOf="ByteField2" />
+                  <util:term xsi:type="ByteFieldValue" valueOf="ByteField3" />
+                </term>
+                <term xsi:type="util:Compare">
+                  <util:term xsi:type="ByteFieldValue" valueOf="ByteField1" />
+                  <util:term xsi:type="ByteFieldLiteral" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SetPdu_WithDiagServiceDoesNotExistParameters" id="TestProcedure_2de85b9116c34c319447dec43bfb1998">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_54ce7e2622be42e38434f65bf037d85d">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="DiagService1" id="VariableDeclaration_244c183a616b4e97b385b428aece9d0a">
+            <realisation>
+              <dataType xsi:type="diag:DiagService" />
+            </realisation>
+          </variable>
+          <variable name="Request1" id="VariableDeclaration_9532f6f9f17e448db4103b07d22f4d0e">
+            <realisation>
+              <dataType xsi:type="diag:Request" />
+            </realisation>
+          </variable>
+          <variable name="ByteField1" id="VariableDeclaration_f0fe9ccde1c840e7b5cf16ec38dd2325">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </variable>
+          <variable name="ByteField2" id="VariableDeclaration_deb5f45cd8eb47dcb6fc52357c602a8b">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action name="GetComChannel1" id="Action_16623cc0c04a4710bad347f0e8dff109">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringLiteral" value="LL_GatewUDS" />
+                <diag:ecuVariantName xsi:type="StringLiteral" value="EV_Gatew31xAU65x_003" />
+              </term>
+            </realisation>
+          </action>
+          <action name="CreateDiagServiceByName1" id="Action_251a4920bdf6492eb663238f9688acc8">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:DiagServiceVariable" name="DiagService1" />
+              <term xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:name xsi:type="StringLiteral" value="DiagnServi_ClearDiagnInfor" />
+              </term>
+            </realisation>
+          </action>
+          <action name="GetRequest1" id="Action_85fda693331f47da89f8749e05d6b4ee">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:RequestVariable" name="Request1" />
+              <term xsi:type="diag:GetRequest">
+                <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+              </term>
+            </realisation>
+          </action>
+          <action name="GetPdu1" id="Action_70a01926536d4e2698eb8f4435b2e65d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="ByteField1" />
+              <term xsi:type="diag:GetPdu">
+                <diag:message xsi:type="diag:RequestValue" valueOf="Request1" />
+              </term>
+            </realisation>
+          </action>
+          <action name="SetPdu1" id="SetPdu_249875103c5e4d2f8444d7eb1e14a27a">
+            <realisation xsi:type="diag:SetPdu">
+              <diag:request xsi:type="diag:RequestValue" valueOf="Request1" />
+              <diag:pdu xsi:type="ByteFieldLiteral" value="15000000" />
+            </realisation>
+          </action>
+          <action name="ExecuteDiagService1" id="ExecuteDiagService_461ce0ea61104f02b180607bc6c308fa">
+            <realisation xsi:type="diag:ExecuteDiagService">
+              <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+            </realisation>
+          </action>
+          <action name="GetRequest2" id="Action_6a9b238091c84152a4cb37d41a1c11f2">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:RequestVariable" name="Request1" />
+              <term xsi:type="diag:GetRequest">
+                <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+              </term>
+            </realisation>
+          </action>
+          <action name="GetPdu2" id="Action_55af69d656db45c7a62444ae4add2d68">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="ByteField2" />
+              <term xsi:type="diag:GetPdu">
+                <diag:message xsi:type="diag:RequestValue" valueOf="Request1" />
+              </term>
+            </realisation>
+          </action>
+          <action name="CloseComChannel1" id="CloseComChannel_a9f71ace5a9746cfa98f62c3a80871d9">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+          <action id="Action_7ae79efe570742b0895dbd0a2ca9e99b">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="util:Compare">
+                <util:term xsi:type="ByteFieldValue" valueOf="ByteField1" />
+                <util:term xsi:type="ByteFieldValue" valueOf="ByteField2" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SetPdu_ChangeParameterStringValue" id="TestProcedure_1f0da09f4edb45ef9a637241b4355302">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_17f509fd086e4e89850ae767d22aa49b">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="DiagService1" id="VariableDeclaration_1f829627d47540ae9b1a8cd0e74b085e">
+            <realisation>
+              <dataType xsi:type="diag:DiagService" />
+            </realisation>
+          </variable>
+          <variable name="Request1" id="VariableDeclaration_7acc690c374c4e2da302e0235d6069eb">
+            <realisation>
+              <dataType xsi:type="diag:Request" />
+            </realisation>
+          </variable>
+          <variable name="ByteField1" id="VariableDeclaration_e8750d3ab591464eb993b31d9fd7d851">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </variable>
+          <variable name="ByteField2" id="VariableDeclaration_ec6d202c25d34b74b283f6277e291f1f">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </variable>
+          <variable name="Parameter1" id="VariableDeclaration_fadcb10c31ac45db8501a95bb8c10a72">
+            <realisation>
+              <dataType xsi:type="diag:Parameter" />
+            </realisation>
+          </variable>
+          <variable name="String1" id="VariableDeclaration_fea9512117384bf0976e14c11a61a59a">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_2d94ed2bbe1442699680e6033666341d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringLiteral" value="LL_GatewUDS" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_f02370431f164316b9f75cf7bf5eda8d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:DiagServiceVariable" name="DiagService1" />
+              <term xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:name xsi:type="StringLiteral" value="DiagnServi_ReadDTCInforReporDTCByStatuMask" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_eaded1ad4fc44b2c86cd68c084394098">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:RequestVariable" name="Request1" />
+              <term xsi:type="diag:GetRequest">
+                <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_11315454d70d4898842a541099b7e710">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="ByteField1" />
+              <term xsi:type="diag:GetPdu">
+                <diag:message xsi:type="diag:RequestValue" valueOf="Request1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_1117995005234998b073754ea1b1fb88">
+            <realisation xsi:type="diag:SetPdu">
+              <diag:request xsi:type="diag:RequestValue" valueOf="Request1" />
+              <diag:pdu xsi:type="ByteFieldLiteral" value="190228" />
+            </realisation>
+          </action>
+          <action id="Action_b9ef362d71e24912aaee9da40083cb23">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="ByteField2" />
+              <term xsi:type="diag:GetPdu">
+                <diag:message xsi:type="diag:RequestValue" valueOf="Request1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_a3a3f9ab64a04de3a797e10ce3270796">
+            <realisation xsi:type="diag:ExecuteDiagService">
+              <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+            </realisation>
+          </action>
+          <action id="Action_d7fb010e8c8b4846861b3cb7afad1571">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ParameterVariable" name="Parameter1" />
+              <term xsi:type="diag:GetParameterByPath">
+                <diag:parameterContainer xsi:type="diag:RequestValue" valueOf="Request1" />
+                <diag:path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="2" />
+                </diag:path>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_f84344356a9e41898eac590ef86f69d0">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ParameterVariable" name="Parameter1" />
+              <term xsi:type="diag:GetParameterByPath">
+                <diag:parameterContainer xsi:type="diag:ParameterValue" valueOf="Parameter1" />
+                <diag:path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="2" />
+                </diag:path>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_ead1656c21e84399befa212e5ef2c62e">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="String1" />
+              <term xsi:type="diag:GetParameterValueAsString">
+                <diag:parameter xsi:type="diag:ParameterValue" valueOf="Parameter1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_026bb6070bea47a58f822652dcaa4d7d">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+          <action id="Action_4dc3f2a1f2cb49ddbbc25ee957fd5bdc">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicAnd">
+                <term xsi:type="util:Compare">
+                  <util:term xsi:type="ByteFieldValue" valueOf="ByteField2" />
+                  <util:term xsi:type="ByteFieldLiteral" value="190228" />
+                </term>
+                <term xsi:type="IsEqual">
+                  <term xsi:type="StringValue" valueOf="String1" />
+                  <term xsi:type="StringLiteral" value="Not Pending DTC" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SetPdu_CanNotSet" id="TestProcedure_dbc0ef5f7579466b8de97b5b09c33ab7">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_11da6883b81a4fb89557141886d84311">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="DiagService1" id="VariableDeclaration_071e137cf6d84095881f4f771c676205">
+            <realisation>
+              <dataType xsi:type="diag:DiagService" />
+            </realisation>
+          </variable>
+          <variable name="Request1" id="VariableDeclaration_5cc0c498862d46aeac3bc07a9122f170">
+            <realisation>
+              <dataType xsi:type="diag:Request" />
+            </realisation>
+          </variable>
+          <variable name="ByteField1" id="VariableDeclaration_2d398eb19f8742df9f19058143293930">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </variable>
+          <variable name="ByteField2" id="VariableDeclaration_ac271779a3fd4652aad6f9089541db51">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action name="GetComChannel1" id="Action_6a797ad773ec4386a1c23fbcb78c6473">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringLiteral" value="LL_GatewUDS" />
+                <diag:ecuVariantName xsi:type="StringLiteral" value="EV_Gatew31xAU65x_003" />
+              </term>
+            </realisation>
+          </action>
+          <action name="CreateDiagServiceByName1" id="Action_d813c1ab5dff4685b23689f79e68f911">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:DiagServiceVariable" name="DiagService1" />
+              <term xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:name xsi:type="StringLiteral" value="Activation_of_Development_Messages_Read" />
+              </term>
+            </realisation>
+          </action>
+          <action name="GetRequest1" id="Action_5e62f10437bb4a0eb3dd97717d19db29">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:RequestVariable" name="Request1" />
+              <term xsi:type="diag:GetRequest">
+                <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+              </term>
+            </realisation>
+          </action>
+          <action name="GetPdu1" id="Action_047903e246014771a356bd906d205fe2">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="ByteField1" />
+              <term xsi:type="diag:GetPdu">
+                <diag:message xsi:type="diag:RequestValue" valueOf="Request1" />
+              </term>
+            </realisation>
+          </action>
+          <action name="SetPdu1" id="SetPdu_6bbd92e9cc4f4cae8e415c01db2908e4">
+            <realisation xsi:type="diag:SetPdu">
+              <diag:request xsi:type="diag:RequestValue" valueOf="Request1" />
+              <diag:pdu xsi:type="ByteFieldLiteral" value="22FFFFFF" />
+            </realisation>
+          </action>
+          <action name="GetPdu2" id="Action_fbaefe0f3a914678b60ea9a23c4ecfb6">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="ByteField2" />
+              <term xsi:type="diag:GetPdu">
+                <diag:message xsi:type="diag:RequestValue" valueOf="Request1" />
+              </term>
+            </realisation>
+          </action>
+          <action name="CloseComChannel1" id="CloseComChannel_b179c0c01be94a4589c146113b1a9bfe">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+          <action name="Assert1" id="Assert_725ef2bfa71245fc9374b530636b5ae6">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="util:Compare">
+                <util:term xsi:type="ByteFieldValue" valueOf="ByteField1" />
+                <util:term xsi:type="ByteFieldValue" valueOf="ByteField2" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

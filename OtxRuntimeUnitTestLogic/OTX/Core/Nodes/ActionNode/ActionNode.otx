@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="ActionNode" id="id_8ef154b9e6844d4e8077b45f0aa5bf63" package="Core.Nodes.ActionNode" version="1.0.0.42098" timestamp="2021-07-06T10:59:14.095+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42078</data>
+  </metaData>
+  <declarations>
+    <context name="ContextVariable_String" id="ContextVariableDeclaration_a84caca84d05411b89c0e27876535a9b">
+      <realisation>
+        <dataType xsi:type="String" />
+      </realisation>
+    </context>
+  </declarations>
+  <validities>
+    <validity name="Validity_True" id="Validity_dc582755fff44133a9aba026148249dd">
+      <realisation xsi:type="BooleanLiteral" value="true" />
+    </validity>
+    <validity name="Validity_False" id="Validity_ba0e90da0a664b71bbdde4696ca8e38a">
+      <realisation xsi:type="BooleanLiteral" value="false" />
+    </validity>
+    <validity name="Validity_Equal_String" id="Validity_1ed1ed24e2454085b92b88cde29ea28a" visibility="PUBLIC">
+      <realisation xsi:type="IsEqual">
+        <term xsi:type="StringValue" valueOf="ContextVariable_String" />
+        <term xsi:type="StringLiteral" value="ContextVariable_String" />
+      </realisation>
+    </validity>
+  </validities>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ActionNode_01" id="id_d7f8815fde5c4912bdfb695809de43a2">
+      <unittest:realisation>
+        <unittest:flow>
+          <group name="Group" id="Group_970864ba7d9e41b28133a1aeb5129ccd">
+            <realisation validFor="Validity_True">
+              <action name="Assert1" id="Assert_9a41766cc0e54298809d98f838bf0d2c">
+                <realisation xsi:type="assert:Assert">
+                  <assert:condition xsi:type="BooleanLiteral" value="true" />
+                </realisation>
+              </action>
+            </realisation>
+            <realisation>
+              <action name="Assert2" id="Assert_3d8813a892774447a574b516f79a413d">
+                <realisation xsi:type="assert:Assert">
+                  <assert:condition xsi:type="BooleanLiteral" value="false" />
+                </realisation>
+              </action>
+            </realisation>
+          </group>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ActionNode_02" id="TestProcedure_3e067aa618264b0a90faa1865c0f2b3b">
+      <unittest:realisation>
+        <unittest:flow>
+          <group name="Group" id="Group_5548df10f3584b40a66b1b73592d6299">
+            <realisation validFor="Validity_False">
+              <action name="Assert1" id="Assert_55e5997bbb314dff91cbfc69f6ea4793">
+                <realisation xsi:type="assert:Assert">
+                  <assert:condition xsi:type="BooleanLiteral" value="false" />
+                </realisation>
+              </action>
+            </realisation>
+            <realisation>
+              <action name="Assert2" id="Assert_8f4bf548678045078dfa62c01793b173">
+                <realisation xsi:type="assert:Assert">
+                  <assert:condition xsi:type="BooleanLiteral" value="true" />
+                </realisation>
+              </action>
+            </realisation>
+          </group>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ActionNode_03" id="TestProcedure_170a5c3b3ec04ced940410c8b25a6745">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Boolean1" id="VariableDeclaration_36f51204ff4e442b912fb576731c5468">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="true" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action name="Assignment1" id="Assignment_4867194a2cfb49b991baba467cf74701">
+            <realisation xsi:type="Assignment" validFor="Validity_False">
+              <result xsi:type="BooleanVariable" name="Boolean1" />
+              <term xsi:type="BooleanLiteral" value="false" />
+            </realisation>
+          </action>
+          <action name="Assert1" id="Assert_6cf7954e13e34654ae69e275367add08">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="BooleanValue" valueOf="Boolean1" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

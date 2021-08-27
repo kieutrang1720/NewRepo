@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:diag="http://iso.org/OTX/1.0.0/DiagCom" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="Request" id="id_37a9f7484b924e1c9c1c80e470f2ee90" package="DiagCom.DataTypes" version="1.0.0.0" timestamp="2021-08-13T16:11:22.478+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42531</data>
+  </metaData>
+  <imports>
+    <import package="DiagCom" document="GlobalVariable" prefix="Import_Global" />
+  </imports>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="Request_Base" id="id_b246e2a3be3542cd96c51242ef9db866">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_1093ebb7c08b4c6d8ae0cffc684b48c6">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="DiagService1" id="VariableDeclaration_a265ec41175c44269c30c5f5e832b421">
+            <realisation>
+              <dataType xsi:type="diag:DiagService" />
+            </realisation>
+          </variable>
+          <variable name="Request1" id="VariableDeclaration_14963ada6c7044508373e373fe295372">
+            <realisation>
+              <dataType xsi:type="diag:Request" />
+            </realisation>
+          </variable>
+          <variable name="String1" id="VariableDeclaration_437d5c815deb4fcf9388db08137bf8b3">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_dc9e51a0403f411c9a8c4900a758980e">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringValue" valueOf="Import_Global:Identifier" />
+                <diag:ecuVariantName xsi:type="StringValue" valueOf="Import_Global:EcuVariantName" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_633800e0c1bb447585635798bc8231b2">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:DiagServiceVariable" name="DiagService1" />
+              <term xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:name xsi:type="StringValue" valueOf="Import_Global:DiagServiceName_CodinDateRead" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_810c7607d4b54ebe8afa665d85ccc62d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:RequestVariable" name="Request1" />
+              <term xsi:type="diag:GetRequest">
+                <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_390ebdcea744404cac78d62f7073a288">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="String1" />
+              <term xsi:type="ToString">
+                <term xsi:type="diag:RequestValue" valueOf="Request1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_a6f715ebbd0246428e5db1d7e6f46b2e">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="diag:RequestValue" valueOf="Request1" />
+                </term>
+                <term xsi:type="StringLiteral" value="RQ TesterdatumKodierung Lesen Read: 22F17B" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_d1eb805175e448d1b0a8ccbad6932bde">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

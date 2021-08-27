@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="Integer1" id="id_7f3df9b44bab4c88a61730b76bf0152f" package="Core.DataTypes.Simple.Integer1" version="1.0.0.0" timestamp="2021-05-10T15:17:46.471+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.3.0.41142</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="IntegerBase" id="TestProcedure_f4d2ba58dd504c9880eee4376ad23eda" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="integer1" id="VariableDeclaration_0bcad74ca22a4f10907b3288a63444f3">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="integer2" id="VariableDeclaration_afd972211f914dc0967213252afbfc81">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="integer3" id="VariableDeclaration_e1998a8b08dc4495a0b7477412fa75d8">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="-1" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="integer4" id="VariableDeclaration_fb090338fd034371a16fccd5c1cb809d">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="1" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="integer5" id="VariableDeclaration_2d64d0d1f54f4dcbbd62b95c698de64d">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="-9223372036854775808" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="integer6" id="VariableDeclaration_efee3e98e00545eca72bd97fbedc8019">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="9223372036854775807" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_47473018c6364a8d8843bf8fbd8b5696">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="integer1" />
+                <term xsi:type="IntegerLiteral" value="0" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_c59c2814e9854a1eafceb8a8d91f7f3b">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="integer2" />
+                <term xsi:type="IntegerLiteral" value="0" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_71d378d1e589427cb0b07f1d0b4f16d4">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="integer3" />
+                <term xsi:type="IntegerLiteral" value="-1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_6e1d1841c5e347f0bb77d8402106d5e1">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="integer4" />
+                <term xsi:type="IntegerLiteral" value="1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_ed9fb4d6a220491484fc18d1d7c96322">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="integer5" />
+                <term xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_67c2d052ee064d068e59a19ea1654749">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="integer6" />
+                <term xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="IntegerComparison" id="TestProcedure_c883395cdab3476ca9a1479ae2c48664" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="integer1" id="VariableDeclaration_3b7b7988b3274bafa0e3ddf0eda8d55c">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="-9223372036854775808" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="integer2" id="VariableDeclaration_33342514cc6c42d7b66c9140b06a0260">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="-1" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="integer3" id="VariableDeclaration_5ba3b916e72f42379fbd3ae6b6fdbbe6">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="integer4" id="VariableDeclaration_36eff6d448fc4dc188b1e952be6cb680">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="1" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="integer5" id="VariableDeclaration_db9a1c6059ba40b2ad51bf85d2a28355">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="9223372036854775807" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_9ff3e65155a9489485c5d88873d3d2f0">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="integer1" />
+                <term xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_cce5f028dc5e4ce0976057b9c6d6d362">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="integer2" />
+                <term xsi:type="IntegerLiteral" value="-1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_a3d481db2cea42d78195e45826084bdd">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="integer3" />
+                <term xsi:type="IntegerLiteral" value="0" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_e147f8c480644c02a1ea921cfbd43fb4">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="integer4" />
+                <term xsi:type="IntegerLiteral" value="1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_0143a955dfaa46d7ad72605eecea9ad2">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="integer5" />
+                <term xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_5fe1a069ad2c40ef83ed87751aa078d5">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="IntegerValue" valueOf="integer1" />
+                <term xsi:type="IntegerValue" valueOf="integer2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_63c52edef1fa4824a267db0255807170">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="IntegerValue" valueOf="integer2" />
+                <term xsi:type="IntegerValue" valueOf="integer3" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_0a1ff40f0f224dfe8d579cc2f3895f17">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="IntegerValue" valueOf="integer3" />
+                <term xsi:type="IntegerValue" valueOf="integer4" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_8e82e64a2b4f49fd952a0e8d6332d064">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="IntegerValue" valueOf="integer4" />
+                <term xsi:type="IntegerValue" valueOf="integer5" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_8a7af88df96c4ff6bb4bd217248f5606">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="IntegerValue" valueOf="integer1" />
+                <right xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_82f30d340a5c41f3ab53f66fc0cdfadd">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="IntegerValue" valueOf="integer1" />
+                <right xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_b9b258e5223a40f58e0761548992f8d1">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="IntegerValue" valueOf="integer2" />
+                <right xsi:type="IntegerLiteral" value="-1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_467bed6683a944f3baed854de78bcc5a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="IntegerValue" valueOf="integer2" />
+                <right xsi:type="IntegerLiteral" value="-1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_17fffd3f43a94c2f84f36ac05a2572da">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="IntegerValue" valueOf="integer3" />
+                <right xsi:type="IntegerLiteral" value="0" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_b18ef53940b14fb8bf4215bb4882d7bf">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="IntegerValue" valueOf="integer3" />
+                <right xsi:type="IntegerLiteral" value="0" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_d1c53821a30949659bb624666a115727">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="IntegerValue" valueOf="integer4" />
+                <right xsi:type="IntegerLiteral" value="1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_ad7ac966b3d24b74bf86e86339c5f327">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="IntegerValue" valueOf="integer4" />
+                <right xsi:type="IntegerLiteral" value="1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_958dab2f9e014673a77067afc6e49d6d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="IntegerValue" valueOf="integer5" />
+                <right xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_93a2549479a54320ab258b9537fa794c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="IntegerValue" valueOf="integer5" />
+                <right xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_4bf5d8b69a934167b6904f279673e170">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreater">
+                <left xsi:type="IntegerValue" valueOf="integer2" />
+                <right xsi:type="IntegerValue" valueOf="integer1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_e6edd7e86da34ebb8647b215e05ec8e8">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="IntegerValue" valueOf="integer2" />
+                <right xsi:type="IntegerValue" valueOf="integer1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_128c90f44b80413598e39db414053bb1">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLess">
+                <left xsi:type="IntegerValue" valueOf="integer1" />
+                <right xsi:type="IntegerValue" valueOf="integer2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_c73a21c4d049430a967d73d320bb2ad9">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="IntegerValue" valueOf="integer1" />
+                <right xsi:type="IntegerValue" valueOf="integer2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_ac2160b50ff6435ab7c5a60668de99ba">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreater">
+                <left xsi:type="IntegerValue" valueOf="integer3" />
+                <right xsi:type="IntegerValue" valueOf="integer2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_397f31da979141059e073bdf7195acfa">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="IntegerValue" valueOf="integer3" />
+                <right xsi:type="IntegerValue" valueOf="integer2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_cbb73db16bd74db08b790a73060f6414">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLess">
+                <left xsi:type="IntegerValue" valueOf="integer2" />
+                <right xsi:type="IntegerValue" valueOf="integer3" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_142e67b198eb4cff95fdf1cc2d604272">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="IntegerValue" valueOf="integer2" />
+                <right xsi:type="IntegerValue" valueOf="integer3" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_d3256e343d104839ab4fab254f465589">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreater">
+                <left xsi:type="IntegerValue" valueOf="integer4" />
+                <right xsi:type="IntegerValue" valueOf="integer3" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_f29c7204f5ad4a2da41c8f5c5e65e030">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="IntegerValue" valueOf="integer4" />
+                <right xsi:type="IntegerValue" valueOf="integer3" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_2209281a5dc74258b75a25a81d09dd97">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLess">
+                <left xsi:type="IntegerValue" valueOf="integer3" />
+                <right xsi:type="IntegerValue" valueOf="integer4" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_00eab2d6ecd54aa28ebf5c3ba96c151e">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="IntegerValue" valueOf="integer3" />
+                <right xsi:type="IntegerValue" valueOf="integer4" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_9fa6ca0403a24bdc84d736b5b1bb5a49">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreater">
+                <left xsi:type="IntegerValue" valueOf="integer5" />
+                <right xsi:type="IntegerValue" valueOf="integer4" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_d7e75c0d21c74e63a767454dbd248d12">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="IntegerValue" valueOf="integer5" />
+                <right xsi:type="IntegerValue" valueOf="integer4" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_4e3deadbd22c4a3bb82d66a22fcacb3a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLess">
+                <left xsi:type="IntegerValue" valueOf="integer4" />
+                <right xsi:type="IntegerValue" valueOf="integer5" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_fb7b4f5bed03454cb4dba3e34038fcba">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="IntegerValue" valueOf="integer4" />
+                <right xsi:type="IntegerValue" valueOf="integer5" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

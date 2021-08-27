@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:string="http://iso.org/OTX/1.0.0/StringUtil" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:event="http://iso.org/OTX/1.0.0/Event" name="Throw" id="id_5970cd97e4a4487e86d8403e98d1f15d" package="Core.Nodes.EndNodes.Throw" version="1.0.0.0" timestamp="2021-07-08T11:52:37.911+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42078</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="Throw_01" id="TestProcedure_a9cef9a2667a4f04ab7d52e29155c0b1" parallelizable="true">
+      <specification>Throw into any lane of a Parallel acitivity.\nOccur in root runtime</specification>
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Integer1" id="VariableDeclaration_e8c40cd7e6e642f887dc6c0dd65d9358">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="Exception1" id="VariableDeclaration_999b1b726b3644e2bf0f5a6f37594df8">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <handler id="Handler_7bb960720db74aa49cc48cc90ab64d0f">
+            <realisation>
+              <try>
+                <parallel id="Parallel_2da88bfd7d7e4f2983e374cfac746fcf">
+                  <realisation>
+                    <lane>
+                      <action id="Action_b6b5cc8537904b54a6de1c7b996aa380">
+                        <metaData>
+                          <data key="EmotiveActivity">SleepActivity</data>
+                        </metaData>
+                        <realisation xsi:type="event:WaitForEvent">
+                          <event:source xsi:type="event:TimerExpiredEventSource">
+                            <event:timeout xsi:type="IntegerLiteral" value="4000" />
+                          </event:source>
+                        </realisation>
+                      </action>
+                      <throw id="Throw_06a720edd7684fb488f2d1d9693772e4">
+                        <realisation xsi:type="UserExceptionCreate">
+                          <qualifier xsi:type="StringLiteral" value="Qualifier1" />
+                          <text xsi:type="StringLiteral" value="Text1" />
+                        </realisation>
+                      </throw>
+                    </lane>
+                    <lane>
+                      <action id="Action_79b6a587077d46839218e53d7c0850da">
+                        <metaData>
+                          <data key="EmotiveActivity">SleepActivity</data>
+                        </metaData>
+                        <realisation xsi:type="event:WaitForEvent">
+                          <event:source xsi:type="event:TimerExpiredEventSource">
+                            <event:timeout xsi:type="IntegerLiteral" value="2000" />
+                          </event:source>
+                        </realisation>
+                      </action>
+                      <throw id="Throw_8bbb25320a6b471a9663708a10f7bb57">
+                        <realisation xsi:type="UserExceptionCreate">
+                          <qualifier xsi:type="StringLiteral" value="Qualifier2" />
+                          <text xsi:type="StringLiteral" value="Text2" />
+                        </realisation>
+                      </throw>
+                    </lane>
+                    <lane>
+                      <throw id="Throw_bb28c07cb43a4c208116841adf758e01">
+                        <realisation xsi:type="UserExceptionCreate">
+                          <qualifier xsi:type="StringLiteral" value="Qualifier3" />
+                          <text xsi:type="StringLiteral" value="Text3" />
+                        </realisation>
+                      </throw>
+                    </lane>
+                  </realisation>
+                </parallel>
+              </try>
+              <catch>
+                <exception id="CatchHeader_a12360572a4945e4b7801db21011b2c4">
+                  <realisation>
+                    <type xsi:type="UserException" />
+                    <handle name="Exception1" />
+                  </realisation>
+                </exception>
+                <flow />
+              </catch>
+            </realisation>
+          </handler>
+          <action id="Action_49ba4fecb50148dca400518976548138">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="ExceptionValue" valueOf="Exception1" />
+                </term>
+                <term xsi:type="StringLiteral" value="Qualifier3:Text3" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Throw_02" id="TestProcedure_04ba540449af4f1ca30e02099d3ce898" parallelizable="true">
+      <specification>Throw into catch of a Handler activity</specification>
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Integer1" id="VariableDeclaration_05d993e3a3e9426f84aeeb14fb781b62">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="Exception2" id="VariableDeclaration_f0a1955281b848d09b555c8680578ce5">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+          <variable name="Exception1" id="VariableDeclaration_01b019cd955a4b8d8ddacb42cb87c983">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <handler id="Handler_b82b81c8798644b782eb71b0296d3547">
+            <realisation>
+              <try>
+                <handler id="Handler_404fc9fe8dcc494990322bcdbc9c7607">
+                  <realisation>
+                    <try>
+                      <action id="Action_61336eba6aaa49e9b11f99c61571a800">
+                        <realisation xsi:type="Assignment">
+                          <result xsi:type="IntegerVariable" name="Integer1" />
+                          <term xsi:type="Divide">
+                            <numeral xsi:type="IntegerLiteral" value="1" />
+                            <divisor xsi:type="IntegerLiteral" value="0" />
+                          </term>
+                        </realisation>
+                      </action>
+                    </try>
+                    <catch>
+                      <exception id="CatchHeader_7559045774f24852bbecdc1c4da449fd">
+                        <realisation>
+                          <type />
+                          <handle name="Exception2" />
+                        </realisation>
+                      </exception>
+                      <flow>
+                        <throw id="Throw_856e504a6988496495576cc361728986">
+                          <realisation xsi:type="ExceptionValue" valueOf="Exception2" />
+                        </throw>
+                      </flow>
+                    </catch>
+                  </realisation>
+                </handler>
+              </try>
+              <catch>
+                <exception id="CatchHeader_b68ef534d3ed41aa9fb5b32d315f3eeb">
+                  <realisation>
+                    <type xsi:type="ArithmeticException" />
+                  </realisation>
+                </exception>
+                <flow>
+                  <action id="Action_0c1cec285d294218b311bb4240f30685">
+                    <realisation xsi:type="assert:Assert">
+                      <assert:condition xsi:type="BooleanLiteral" value="true" />
+                    </realisation>
+                  </action>
+                </flow>
+              </catch>
+              <catch>
+                <exception id="CatchHeader_fb73b6fd64a8409b953266593ce3238d">
+                  <realisation>
+                    <type />
+                    <handle name="Exception1" />
+                  </realisation>
+                </exception>
+                <flow>
+                  <action id="Action_dff79bb8f6044eb2ac1dafbe0e2d33a9">
+                    <realisation xsi:type="assert:Assert">
+                      <assert:condition xsi:type="BooleanLiteral" value="false" />
+                      <assert:errorMessage xsi:type="string:StringConcatenate">
+                        <string:string xsi:type="StringLiteral" value="Wrong Exception: " />
+                        <string:string xsi:type="ToString">
+                          <term xsi:type="ExceptionValue" valueOf="Exception1" />
+                        </string:string>
+                        <string:string xsi:type="StringLiteral" value=" was thrown. ArithmeticException was expected" />
+                      </assert:errorMessage>
+                    </realisation>
+                  </action>
+                </flow>
+              </catch>
+            </realisation>
+          </handler>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Throw_03" id="TestProcedure_a1cd331ef1154c6cb1b3a5b2dd931c9a" parallelizable="true">
+      <specification>Throw into a Loop group</specification>
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Index1" id="VariableDeclaration_a78b425483b247a5a128a30f8954501d">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="Index2" id="VariableDeclaration_f4e478fb2e6347839299d18bd5fafac1">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <handler id="Handler_c177b3c3d0034d06add793d25869bf39">
+            <realisation>
+              <try>
+                <parallel id="Parallel_b5e46a2f5c4e45c3ba56444a133d4793">
+                  <realisation>
+                    <lane>
+                      <loop name="ForLoop1" id="Loop_6e4cb548b3ed4a73be8ec5a917d09fbe">
+                        <realisation>
+                          <configuration id="LoopConfigurationHeader_8d47e1b9db9945f8ae26c58db32575fd">
+                            <realisation xsi:type="ForLoop">
+                              <counter name="Index1" />
+                              <start xsi:type="IntegerLiteral" value="0" />
+                              <end xsi:type="IntegerLiteral" value="9" />
+                            </realisation>
+                          </configuration>
+                          <flow>
+                            <loop name="ForLoop2" id="Loop_7d3911a0f2ee419884474e93ca0780e8">
+                              <realisation>
+                                <configuration id="LoopConfigurationHeader_dc2451ca88c348f5802483fc985f25b3">
+                                  <realisation xsi:type="ForLoop">
+                                    <counter name="Index2" />
+                                    <start xsi:type="IntegerLiteral" value="0" />
+                                    <end xsi:type="IntegerLiteral" value="9" />
+                                  </realisation>
+                                </configuration>
+                                <flow>
+                                  <throw id="Throw_792fd1364ad54732995bfbfa94f581ea">
+                                    <realisation xsi:type="UserExceptionCreate">
+                                      <qualifier xsi:type="StringLiteral" value="a" />
+                                      <text xsi:type="StringLiteral" value="b" />
+                                    </realisation>
+                                  </throw>
+                                </flow>
+                              </realisation>
+                            </loop>
+                          </flow>
+                        </realisation>
+                      </loop>
+                    </lane>
+                    <lane />
+                  </realisation>
+                </parallel>
+              </try>
+              <catch>
+                <exception id="CatchHeader_b322806d5fe346b0bffaeb94fab55994">
+                  <realisation>
+                    <type />
+                  </realisation>
+                </exception>
+                <flow>
+                  <action id="Action_0db7bcaf12804d63a66e2bbdb99076b6">
+                    <realisation xsi:type="assert:Assert">
+                      <assert:condition xsi:type="LogicAnd">
+                        <term xsi:type="IsEqual">
+                          <term xsi:type="IntegerValue" valueOf="Index1" />
+                          <term xsi:type="IntegerLiteral" value="0" />
+                        </term>
+                        <term xsi:type="IsEqual">
+                          <term xsi:type="IntegerValue" valueOf="Index2" />
+                          <term xsi:type="IntegerLiteral" value="0" />
+                        </term>
+                      </assert:condition>
+                    </realisation>
+                  </action>
+                </flow>
+              </catch>
+            </realisation>
+          </handler>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Throw_04" id="TestProcedure_d806fed4417147e4b5563b0eeb11728d" parallelizable="true">
+      <specification>Throw in case easy</specification>
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Exception1" id="VariableDeclaration_17f0689f043f43089c18c7b23bef32c9">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <handler id="Handler_b4580484e0b549c3a291d20d5054d5c0">
+            <realisation>
+              <try>
+                <throw id="Throw_62e3acb753c34b228072233b04c11b55">
+                  <realisation xsi:type="UserExceptionCreate">
+                    <qualifier xsi:type="StringLiteral" value="ExceptionQualifier1" />
+                    <text xsi:type="StringLiteral" value="Exception description text" />
+                  </realisation>
+                </throw>
+              </try>
+              <catch>
+                <exception id="CatchHeader_aee2458de3304ea68b6fda17b2c2579c">
+                  <realisation>
+                    <type xsi:type="UserException" />
+                  </realisation>
+                </exception>
+                <flow>
+                  <action id="Action_8becfcae790e479d9f5992bc0f4d5fe7">
+                    <realisation xsi:type="assert:Assert">
+                      <assert:condition xsi:type="BooleanLiteral" value="true" />
+                    </realisation>
+                  </action>
+                </flow>
+              </catch>
+              <catch>
+                <exception id="CatchHeader_a6eff9fed9f84287ad78cd532705a1ef">
+                  <realisation>
+                    <type />
+                    <handle name="Exception1" />
+                  </realisation>
+                </exception>
+                <flow>
+                  <action id="Action_06f20e607b464e9ea39a28a918fa84df">
+                    <realisation xsi:type="assert:Assert">
+                      <assert:condition xsi:type="BooleanLiteral" value="false" />
+                      <assert:errorMessage xsi:type="string:StringConcatenate">
+                        <string:string xsi:type="StringLiteral" value="Wrong Exception: " />
+                        <string:string xsi:type="ToString">
+                          <term xsi:type="ExceptionValue" valueOf="Exception1" />
+                        </string:string>
+                        <string:string xsi:type="StringLiteral" value=" was thrown. UserException was expected" />
+                      </assert:errorMessage>
+                    </realisation>
+                  </action>
+                </flow>
+              </catch>
+            </realisation>
+          </handler>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:diag="http://iso.org/OTX/1.0.0/DiagCom" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="DiagServiceTerm" id="id_3a44076a402f4afa8a13f41ff3a1aeff" package="DiagCom.Terms.DiagComDiagnosticService" version="1.0.0.0" timestamp="2021-08-17T19:18:35.544+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42602</data>
+  </metaData>
+  <imports>
+    <import package="DiagCom" document="GlobalVariable" prefix="Import_Global" />
+  </imports>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="DiagServiceTerm" id="TestProcedure_75e7541a82a848a8bf86eef22a1db635" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_25d20055fb4c406d86ab89a94d987aaf">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="DiagService1" id="VariableDeclaration_a93f3018b532469c9abc6f03828e0a50">
+            <realisation>
+              <dataType xsi:type="diag:DiagService" />
+            </realisation>
+          </variable>
+          <variable name="DiagService2" id="VariableDeclaration_f2921473523a433a842a53136cf24a30">
+            <realisation>
+              <dataType xsi:type="diag:DiagService" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_98fec1dd6f9c46bb9b02990f6f1c6c83">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringValue" valueOf="Import_Global:Identifier" />
+                <diag:ecuVariantName xsi:type="StringValue" valueOf="Import_Global:EcuVariantName" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_fe2ddf5184ce4c57ade45a95602041dc">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:DiagServiceVariable" name="DiagService1" />
+              <term xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:name xsi:type="StringValue" valueOf="Import_Global:DiagServiceName_CodinDateRead" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_ba0417dd5bac4f99b2dbc3eb0190bf88">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:DiagServiceVariable" name="DiagService2" />
+              <term xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+            </realisation>
+          </action>
+          <action id="Action_5023325fccd745d8ab27a2b0793adf7d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+                <term xsi:type="diag:DiagServiceValue" valueOf="DiagService2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_bbded80aa7f0438da16e2fd53ed3682d">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

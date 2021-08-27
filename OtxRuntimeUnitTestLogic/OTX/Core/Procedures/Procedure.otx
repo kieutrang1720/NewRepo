@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="Procedure" id="id_506512d8c29c43519f9c34b29a1bfa2a" package="Core.Procedures" version="1.0.0.41680" timestamp="2021-06-03T10:02:21.57+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.41142</data>
+  </metaData>
+  <imports>
+    <import package="RootPackage1.Core.Procedures" document="Procedure" prefix="Document11" />
+  </imports>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ProcedureWithoutRealisation" id="TestProcedure_a8cea44002eb4f9bb29f5f6d192e10d5" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action name="main" id="ProcedureCall_91b83156f34543d8839d1f8f573c41be">
+            <realisation xsi:type="ProcedureCall" procedure="Document11:CheckProcedureWithoutRealisation" />
+          </action>
+          <endNode id="ExtensibleEndNode_76492f5978b44ebb80b344b4f9702424">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ProcedureVisibility" id="TestProcedure_7089b3d0520f492a9a4708ec12b23d5f" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_9f3df7339dd34242be91c0e7da64f79e">
+            <realisation xsi:type="ProcedureCall" procedure="Document11:CheckProcedureVisibility" />
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ProcedureValidForTrue" id="TestProcedure_8bd0efb1148142bc944248b636e5fecd" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_13c67463530749d8a0a9253764f45660">
+            <realisation xsi:type="ProcedureCall" procedure="Document11:CheckProcedureValidForTrue" />
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ProcedureValidForFalse" id="TestProcedure_fd04289e42bf4a23a54e1d5a6a9c8fb6" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_36fbfc48919e437ea110818a5700a68b">
+            <realisation xsi:type="ProcedureCall" procedure="Document11:CheckProcedureValidForFalse" />
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ProcedureImplementSignature" id="TestProcedure_7a373d6c0f38444a8612fe339378ba08" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Test1" id="VariableDeclaration_7cdc1d7427924df6b27dc54dfd228ec9">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_5a0a67f6051f47fe88f5c3d7786a3aa2">
+            <realisation xsi:type="ProcedureCall" procedure="Document11:CheckProcedureImplementSignature">
+              <arguments>
+                <outArg param="OutParameterDeclaration1">
+                  <variable xsi:type="BooleanVariable" name="Test1" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_d296eb9a27da41bab1deff299f38d2b1">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="BooleanValue" valueOf="Test1" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ProcedureSpecification" id="TestProcedure_9d322dd227f446a98f1e388ffdd52567" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_1b28a1bdc8b64bc5a36affa48849e1c6">
+            <realisation xsi:type="ProcedureCall" procedure="Document11:ProcedureSpecification" />
+          </action>
+          <endNode id="ExtensibleEndNode_6b610aa8437346c3aae88aa1ca27ec59">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ProcedureMetaData" id="TestProcedure_15a3ecf33bdc42159a57db1a626a28b6" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_fc10c9ddce12407cbb7b6b514024286e">
+            <realisation xsi:type="ProcedureCall" procedure="Document11:ProcedureMetaData" />
+          </action>
+          <endNode id="ExtensibleEndNode_65053b6312db415f9c2825bc0a406a59">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ProcedureThrows" id="TestProcedure_cf344ba273244c84badaf657b70ace03" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_06748645aacd4a988b242e7e983c3788">
+            <realisation xsi:type="ProcedureCall" procedure="Document11:ProcedureThrows" />
+          </action>
+          <endNode id="ExtensibleEndNode_6d193d552c3647f199d62358d494afc2">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

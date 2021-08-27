@@ -1,0 +1,1296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:string="http://iso.org/OTX/1.0.0/StringUtil" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:event="http://iso.org/OTX/1.0.0/Event" name="ProcedureCall1" id="id_81ea5d725af448a087d94f7571a98562" package="Core.Actions.ProcedureCall1" version="1.0.0.41197" timestamp="2021-05-05T23:15:24.189+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42312</data>
+  </metaData>
+  <imports>
+    <import package="RootPackage1" document="Document1" prefix="RootPackDoc1" />
+    <import package="RootPackage1" document="Document2" prefix="RootPackDoc2" />
+  </imports>
+  <declarations>
+    <variable name="IntegerDocVar1a" id="DocumentVariableDeclaration_0dd06ccd115a41d693be78e9ed9ec9c5">
+      <realisation>
+        <dataType xsi:type="Integer">
+          <init value="1" />
+        </dataType>
+      </realisation>
+    </variable>
+    <variable name="IntegerDocVar1b" id="DocumentVariableDeclaration_f8c75ac1e097442aa11b8c3b1876072d">
+      <realisation>
+        <dataType xsi:type="Integer">
+          <init value="1" />
+        </dataType>
+      </realisation>
+    </variable>
+    <variable name="IntegerDocVar1c" id="DocumentVariableDeclaration_d7bac6ddb41a4fdba9b1dcb5d73cf6fe">
+      <realisation>
+        <dataType xsi:type="Integer">
+          <init value="1" />
+        </dataType>
+      </realisation>
+    </variable>
+    <variable name="IntegerDocVar2a" id="DocumentVariableDeclaration_fcb95a1afd2647a28c8ab9f3795def29">
+      <realisation>
+        <dataType xsi:type="Integer">
+          <init value="9223372036854775805" />
+        </dataType>
+      </realisation>
+    </variable>
+    <variable name="IntegerDocVar2b" id="DocumentVariableDeclaration_a69235fc8fda4db59f977f4b6d6de0de">
+      <realisation>
+        <dataType xsi:type="Integer">
+          <init value="9223372036854775805" />
+        </dataType>
+      </realisation>
+    </variable>
+    <variable name="IntegerDocVar2c" id="DocumentVariableDeclaration_4bfc10449140473993c3c2f6f3f903c8">
+      <realisation>
+        <dataType xsi:type="Integer">
+          <init value="9223372036854775805" />
+        </dataType>
+      </realisation>
+    </variable>
+  </declarations>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="PC_SigNoRealization" id="TestProcedure_3ee735f6b88c430a9a9b309d6d4e1573">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_d1b55ef6166b4e07be3fbb4175667633">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:SignatureNoRealization1" />
+          </action>
+          <endNode id="ExtensibleEndNode_f17e193c5c1b4b12ba555e14058eec29">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_ProcNoRealization" id="TestProcedure_85f19aa3dcd8486e97e7f357d1d09e09">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_b65281e31af947f3bd9f1c6eb1698f2b">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:ProcedureNoRealization" />
+          </action>
+          <endNode id="ExtensibleEndNode_281cdcd4c2154d87a71bc1412e1a5aab">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_ProcSigNotImplemented" id="TestProcedure_90ac84c4ad0b4111a2d5613abd4ab0b7">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_e4eb9bc87eed4abdbd8f495bfb07d52d">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParam1">
+                <unittest:value xsi:type="IntegerLiteral" value="7" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="OutParam2">
+                <unittest:value xsi:type="IntegerLiteral" value="7" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="OutParam3">
+                <unittest:value xsi:type="IntegerLiteral" value="7" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="OutParam4">
+                <unittest:value xsi:type="IntegerLiteral" value="4" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="OutParam5">
+                <unittest:value xsi:type="IntegerLiteral" value="7" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="OutParam6">
+                <unittest:value xsi:type="IntegerLiteral" value="4" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:outParam name="OutParam1" id="OutParameterDeclaration_7210c2028b134557a6425d531701eb89">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="7" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="OutParam2" id="OutParameterDeclaration_9a49c3b449c04c57b652c4848c7d5b96">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="7" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="OutParam3" id="OutParameterDeclaration_fc0031109fc144d091ea7420f83b5e76">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="7" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="OutParam4" id="OutParameterDeclaration_ac9036d7d2c840b29232eed7a74bd708">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="7" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="OutParam5" id="OutParameterDeclaration_b2e9b53d36824806bcef9ce887c208bf">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="7" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="OutParam6" id="OutParameterDeclaration_38970575745b474d8e1f51554e42c061">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="7" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_22e5233ad54e4a4fac04a65f684633ee">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:ProcSigNotImpl1">
+              <arguments>
+                <inArg param="IntegerInParameter1">
+                  <term xsi:type="IntegerValue" valueOf="OutParam1" />
+                </inArg>
+                <inArg param="IntegerInParameter2">
+                  <term xsi:type="IntegerValue" valueOf="OutParam2" />
+                </inArg>
+                <inoutArg param="IntegerInOutParameter1">
+                  <variable xsi:type="IntegerVariable" name="OutParam3" />
+                </inoutArg>
+                <inoutArg param="IntegerInOutParameter2">
+                  <variable xsi:type="IntegerVariable" name="OutParam4" />
+                </inoutArg>
+                <outArg param="IntegerOutParameter1">
+                  <variable xsi:type="IntegerVariable" name="OutParam5" />
+                </outArg>
+                <outArg param="IntegerOutParameter2">
+                  <variable xsi:type="IntegerVariable" name="OutParam6" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_ProcNoArgs" id="id_14f56301ab924dccb8db56c40cee4440">
+      <unittest:realisation>
+        <unittest:flow>
+          <action name="OtxProcedureWithoutParameters" id="ProcedureCall_05892f5ae1e44eaa9d8e5cf0c194d8b4">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:ProcedureWithoutParams" />
+          </action>
+          <endNode id="ExtensibleEndNode_648f40134b9c4ce3969009d33286e636">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestInParam_OmitInParamWithInit" id="TestProcedure_4eb5f60d409e4eb2929f85e4d19033d1">
+      <specification>The caller may omit input arguments if there's an initial value defined for the in-parameter.
+(ISO_WD_13209-2, 7.11.3, 7.14.5.3)</specification>
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_16b3e368954a4b9f9fa8770ce1858675">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestInParam_OmitInParamWithInit" />
+          </action>
+          <endNode id="ExtensibleEndNode_3cb8b28cdb5b40c1ac8c495e3e1af7a5">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestInParam_InParamInitIsUsed" id="TestProcedure_7db9c465aeec498c978cbad5d0505625">
+      <specification>This initial values of the in-parameters will apply in place of the missing argument.
+(ISO_WD_13209-2, 7.11.3, 7.14.5.3)</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_c643603cad9449faa10ee78a6f2c9102">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParam1">
+                <unittest:value xsi:type="IntegerLiteral" value="4" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="OutParam2">
+                <unittest:value xsi:type="IntegerLiteral" value="12" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:outParam name="OutParam1" id="OutParameterDeclaration_6f4e5bcddc5a43f2b30e07f26d4b913a">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="OutParam2" id="OutParameterDeclaration_364831af1d9d4c748ed6f4d2b557234f">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_360ac7e5b8f54978969e5eebbd8abad6">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestInParam_InParamInitIsUsed">
+              <arguments>
+                <inArg param="InParam2">
+                  <term xsi:type="IntegerLiteral" value="12" />
+                </inArg>
+                <outArg param="OutParam1">
+                  <variable xsi:type="IntegerVariable" name="OutParam1" />
+                </outArg>
+                <outArg param="OutParam2">
+                  <variable xsi:type="IntegerVariable" name="OutParam2" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestInParam_ReceiveOnly_NotReturn_Caller" id="TestProcedure_f6857d20cdb14d20ab0bd0a382d02ed9">
+      <specification>The InParam can only receive value, it can not return value.</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_e8d7e05c047c422098741ab3f228ea99">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParam1">
+                <unittest:value xsi:type="IntegerLiteral" value="7" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="OutParam2">
+                <unittest:value xsi:type="IntegerLiteral" value="4" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:outParam name="OutParam1" id="OutParameterDeclaration_65cb35530faf4a5e87af5c578be980d0">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="7" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="OutParam2" id="OutParameterDeclaration_9a555114aecc45418ee0b5222566fc32">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="7" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_c1e5f840d2ee4f4b937d35ae4d6ab772">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestInParam_ReceiveOnly_NotReturn_Caller">
+              <arguments>
+                <outArg param="OutParam1">
+                  <variable xsi:type="IntegerVariable" name="OutParam1" />
+                </outArg>
+                <outArg param="OutParam2">
+                  <variable xsi:type="IntegerVariable" name="OutParam2" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestInOutParam_OmitInOutParamWithInit" id="TestProcedure_f79a61f8f2684dc2a2d25e970da48fb7">
+      <specification>The caller may omit input arguments if there's an initial value defined for the inOut-parameter.
+(ISO_WD_13209-2, 7.11.3, 7.14.5.3)</specification>
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_dd3bdd0e84fd4713b70edc25aeeef791">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestInOutParam_OmitInOutParamWithInit" />
+          </action>
+          <endNode id="ExtensibleEndNode_58983ae0ccc243639e3ab41b99c9f7ee">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestInOutParam_InOutParamInitIsUsed" id="TestProcedure_ab0a44a472484768a5ad628c1566ef1c">
+      <specification>This initial values of the inOut-parameters will apply in place of the missing argument.
+(ISO_WD_13209-2, 7.11.3, 7.14.5.3)</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_dadffbb38ae346b78041ea852870813d">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParam1">
+                <unittest:value xsi:type="IntegerLiteral" value="12" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="OutParam2">
+                <unittest:value xsi:type="IntegerLiteral" value="4" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="OutParam3">
+                <unittest:value xsi:type="IntegerLiteral" value="12" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:outParam name="OutParam1" id="OutParameterDeclaration_84a66f37b9144ce9a02a203c71f52336">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="12" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="OutParam2" id="OutParameterDeclaration_eded572cf1a947129b33d75bd0faedd1">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="OutParam3" id="OutParameterDeclaration_85771bd9b1444af5b65634efe99a703c">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_2276beb6719b4dd79a73c808b75c86fc">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestInOutParam_InOutParamInitIsUsed">
+              <arguments>
+                <inoutArg param="InOutParam2">
+                  <variable xsi:type="IntegerVariable" name="OutParam1" />
+                </inoutArg>
+                <outArg param="OutParam1">
+                  <variable xsi:type="IntegerVariable" name="OutParam2" />
+                </outArg>
+                <outArg param="OutParam2">
+                  <variable xsi:type="IntegerVariable" name="OutParam3" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestInOutParam_OutputValueAsync" id="TestProcedure_c88ff561319942f08f4633e9c528d289">
+      <specification>Arguments for in&amp;output parameters shall be passed by reference. This means that any change to the parameter value is visible to the caller also.
+(ISO_WD_13209-2, 7.11.3, 7.14.5.3)</specification>
+      <unittest:realisation>
+        <unittest:parameters>
+          <unittest:outParam name="OutParam1" id="OutParameterDeclaration_dc8e3dd739e14cd8b5f856bac5e7fc79">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="7" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="String1" id="VariableDeclaration_226358fe9eb4432d8e247289d8308371">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <parallel id="Parallel_0fe50e2dbbea48828e46132bb9e12b3b">
+            <realisation>
+              <lane>
+                <action id="Action_a3f19f065e454b7e995e270a9ccbb6cb">
+                  <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestInOutParam_OutputValueAsync">
+                    <arguments>
+                      <inoutArg param="InOutParam1">
+                        <variable xsi:type="IntegerVariable" name="OutParam1" />
+                      </inoutArg>
+                    </arguments>
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_5df265b467d348a1b06cf74f45a85e38">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="500" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_d271d0a1bf7e4cb4abdf7e1f90bbe425">
+                  <realisation xsi:type="assert:Assert">
+                    <assert:condition xsi:type="IsEqual">
+                      <term xsi:type="IntegerValue" valueOf="OutParam1" />
+                      <term xsi:type="IntegerLiteral" value="123" />
+                    </assert:condition>
+                  </realisation>
+                </action>
+                <action id="Action_5680bf38c7674314bfe2fec5b1ae5d11">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="StringVariable" name="String1" />
+                    <term xsi:type="string:StringConcatenate">
+                      <string:string xsi:type="StringLiteral" value="OutParam1=" />
+                      <string:string xsi:type="ToString">
+                        <term xsi:type="IntegerValue" valueOf="OutParam1" />
+                      </string:string>
+                    </term>
+                  </realisation>
+                </action>
+                <action id="Action_df9c1b7d64ab4829a0ab8651df200f09">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="3000" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_d1e8833ef59f42cf84b270296a370b15">
+                  <realisation xsi:type="assert:Assert">
+                    <assert:condition xsi:type="LogicAnd">
+                      <term xsi:type="IsLess">
+                        <left xsi:type="IntegerLiteral" value="0" />
+                        <right xsi:type="IntegerValue" valueOf="OutParam1" />
+                      </term>
+                      <term xsi:type="IsLess">
+                        <left xsi:type="IntegerValue" valueOf="OutParam1" />
+                        <right xsi:type="IntegerLiteral" value="9" />
+                      </term>
+                    </assert:condition>
+                  </realisation>
+                </action>
+                <action id="Action_d1650fe7e4f14544965f841686d395cc">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="StringVariable" name="String1" />
+                    <term xsi:type="string:StringConcatenate">
+                      <string:string xsi:type="StringLiteral" value="OutParam1=" />
+                      <string:string xsi:type="ToString">
+                        <term xsi:type="IntegerValue" valueOf="OutParam1" />
+                      </string:string>
+                    </term>
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_6533f37e7f104fb78d5dae4618c9eace">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="OutParam1" />
+                <term xsi:type="IntegerLiteral" value="10" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_754fc41b78744005b1494b636b66ae2c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="String1" />
+              <term xsi:type="string:StringConcatenate">
+                <string:string xsi:type="StringLiteral" value="OutParam1=" />
+                <string:string xsi:type="ToString">
+                  <term xsi:type="IntegerValue" valueOf="OutParam1" />
+                </string:string>
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestInOutParam_InputValueAsync" id="TestProcedure_9a2ed38a40a2404282f477bc4cd48364">
+      <specification>Arguments for in&amp;output parameters shall be passed by reference. This means that any change to the parameter value is visible to the caller also.
+(ISO_WD_13209-2, 7.11.3, 7.14.5.3)</specification>
+      <unittest:realisation>
+        <unittest:parameters>
+          <unittest:outParam name="OutParam1" id="OutParameterDeclaration_6fa4c157d7d04161838c31601c6dad42">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="7" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="OutParam2" id="OutParameterDeclaration_6e5b737d35ac47189b0358a8e0721528">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="7" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="String1" id="VariableDeclaration_f5fc7dc0a90a490281348f48de69e1ee">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <parallel id="Parallel_501a8b2817074efe99e2a99c9909ec92">
+            <realisation>
+              <lane>
+                <action id="Action_b483bf625bcc4cf8b1452fc1de2294d9">
+                  <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestInOutParam_InputValueAsync">
+                    <arguments>
+                      <inoutArg param="InOutParam1">
+                        <variable xsi:type="IntegerVariable" name="OutParam1" />
+                      </inoutArg>
+                      <inoutArg param="InOutParam2">
+                        <variable xsi:type="IntegerVariable" name="OutParam2" />
+                      </inoutArg>
+                    </arguments>
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_f191d31a16da4861b11514baac59f208">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="IntegerVariable" name="OutParam1" />
+                    <term xsi:type="IntegerLiteral" value="123" />
+                  </realisation>
+                </action>
+                <action id="Action_a75e56e48d614f96a141d38f084ed4b9">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="500" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <loop name="ForLoop1" id="Loop_f84e69dcfdda482ab128e4d0ea45ca66">
+                  <realisation>
+                    <configuration id="LoopConfigurationHeader_74602251ea4b45518d4039a9bf92fd5f">
+                      <realisation xsi:type="ForLoop">
+                        <counter name="OutParam1" />
+                        <start xsi:type="IntegerLiteral" value="0" />
+                        <end xsi:type="IntegerLiteral" value="9" />
+                      </realisation>
+                    </configuration>
+                    <flow>
+                      <action id="Action_1086d42a094b4906a74bdd2df8cdd196">
+                        <metaData>
+                          <data key="EmotiveActivity">SleepActivity</data>
+                        </metaData>
+                        <realisation xsi:type="event:WaitForEvent">
+                          <event:source xsi:type="event:TimerExpiredEventSource">
+                            <event:timeout xsi:type="IntegerLiteral" value="500" />
+                          </event:source>
+                        </realisation>
+                      </action>
+                    </flow>
+                  </realisation>
+                </loop>
+              </lane>
+              <lane>
+                <action id="Action_aecc9757bfe4489abbefc05083c3ba37">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="500" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_3c86954f0a9e4753b443366668474608">
+                  <realisation xsi:type="assert:Assert">
+                    <assert:condition xsi:type="IsEqual">
+                      <term xsi:type="IntegerValue" valueOf="OutParam2" />
+                      <term xsi:type="IntegerLiteral" value="123" />
+                    </assert:condition>
+                  </realisation>
+                </action>
+                <action id="Action_463acb3e167846cd94d2e38662deff79">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="3000" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_bb952deda7e74e62b484ed4ad1171531">
+                  <realisation xsi:type="assert:Assert">
+                    <assert:condition xsi:type="LogicAnd">
+                      <term xsi:type="IsLess">
+                        <left xsi:type="IntegerLiteral" value="0" />
+                        <right xsi:type="IntegerValue" valueOf="OutParam2" />
+                      </term>
+                      <term xsi:type="IsLess">
+                        <left xsi:type="IntegerValue" valueOf="OutParam2" />
+                        <right xsi:type="IntegerLiteral" value="9" />
+                      </term>
+                    </assert:condition>
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_89d20bbec66149ac8a97367c6bee1f9c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="OutParam2" />
+                <term xsi:type="IntegerLiteral" value="10" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestOutParam_OmitOutParamFreely" id="TestProcedure_c5e03169fb6543a5b37e6ed4ee8ef714">
+      <specification>The caller may omit output arguments freely (e.g. in the case when there is no interest in one of the returned data).
+(ISO_WD_13209-2, 7.11.3, 7.14.5.3)</specification>
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_d60d15d48ed64951b4ab36733d0ef9e1">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestOutParam_OmitOutParamFreely" />
+          </action>
+          <endNode id="ExtensibleEndNode_3c94658f1c0244ee95a4dce00f72aacb">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestOutParam_OutParamNoInitNoChanges" id="TestProcedure_e37048a18b374889b84191003c460837">
+      <specification>If the (called) procedure does never change (e.g. assignment of a new value or modification of an existing value, including deep changes on complex values)  a declared output parameter and there is no explicit initial value defined for it, the output argument variable stays unchanged.
+(ISO_WD_13209-2, 7.11.3)</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_5ffbbb881bd545c8947ee2558e449fbd">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParam1">
+                <unittest:value xsi:type="IntegerLiteral" value="12" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:outParam name="OutParam1" id="OutParameterDeclaration_b456a406f4674cd281a795a05aff95be">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="12" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_170a2b4e02864f02a3ac514d2e4ef9b1">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestOutParam_OutParamNoInitNoChanges">
+              <arguments>
+                <outArg param="OutParam1">
+                  <variable xsi:type="IntegerVariable" name="OutParam1" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestOutParam_NoReturnBecauseOfException1" id="TestProcedure_f0662419063f4026a5cdbf4ca438a5cf">
+      <specification>If the procedure throws an exception the output parameter stays unchanged.
+(ISO_WD_13209-2, 7.11.3)</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_e8efbd0c97154d7495ca2bd173beb2e5">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParam1">
+                <unittest:value xsi:type="IntegerLiteral" value="12" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:outParam name="OutParam1" id="OutParameterDeclaration_a1f9102360874706b325f61f58ac2123">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="12" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <handler id="Handler_6017cf3650744f65a202955188eccec2">
+            <realisation>
+              <try>
+                <action id="Action_c160a7dd6c964f5ab094e72529cca9eb">
+                  <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestOutParam_NoReturnBecauseOfException1">
+                    <arguments>
+                      <outArg param="OutParam1">
+                        <variable xsi:type="IntegerVariable" name="OutParam1" />
+                      </outArg>
+                    </arguments>
+                  </realisation>
+                </action>
+              </try>
+              <catch>
+                <exception id="CatchHeader_62b7322284f5491d8c7061143fdff941">
+                  <realisation>
+                    <type />
+                  </realisation>
+                </exception>
+                <flow />
+              </catch>
+            </realisation>
+          </handler>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestOutParam_NoReturnBecauseOfException2" id="TestProcedure_ffde412ab35546ce94be57e1768bc113">
+      <specification>If the procedure throws an exception the output parameter stays unchanged.
+(ISO_WD_13209-2, 7.11.3)</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_8ebaaa11fa0943eb8bef9e3a9900aa22">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParam1">
+                <unittest:value xsi:type="IntegerLiteral" value="12" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:outParam name="OutParam1" id="OutParameterDeclaration_a761e616f475431e9e5c4307dbe39a5f">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="12" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <handler id="Handler_1a4108d8ce024616ba6b4c02b17ba6ca">
+            <realisation>
+              <try>
+                <action id="Action_c4b328b945ee4decbd9e8eb9dfa8b6e6">
+                  <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestOutParam_NoReturnBecauseOfException2">
+                    <arguments>
+                      <outArg param="OutParam1">
+                        <variable xsi:type="IntegerVariable" name="OutParam1" />
+                      </outArg>
+                    </arguments>
+                  </realisation>
+                </action>
+              </try>
+              <catch>
+                <exception id="CatchHeader_d13c4a32f2824e549fa199047265dfd4">
+                  <realisation>
+                    <type />
+                  </realisation>
+                </exception>
+                <flow />
+              </catch>
+            </realisation>
+          </handler>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestOutParam_NoReturnBecauseProcValidForFalse" id="TestProcedure_9ef4f5f07b6149ab8a5c57ba92152d63">
+      <specification>In the direct case, if it is valid with respect to the context. If the procedure is not valid, nothing is executed (NOP).
+(ISO_WD_13209-2, 7.14.5.3)</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_7576cbda07b74989a2e067ad75450066">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParam1">
+                <unittest:value xsi:type="IntegerLiteral" value="7" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="OutParam2">
+                <unittest:value xsi:type="IntegerLiteral" value="7" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:outParam name="OutParam1" id="OutParameterDeclaration_41bb5c0226564ca08c0ed0f48ded80c9">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="7" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="OutParam2" id="OutParameterDeclaration_328885f26a4d4d92bed22ad2f494f4e8">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="7" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_dd4accdf958744b7b1ad98862218493f">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestOutParam_NoReturnBecauseProcValidForFalse">
+              <arguments>
+                <outArg param="OutParam1">
+                  <variable xsi:type="IntegerVariable" name="OutParam1" />
+                </outArg>
+                <outArg param="OutParam2">
+                  <variable xsi:type="IntegerVariable" name="OutParam2" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestOutParam_ReturnInitOrChangedValue1" id="TestProcedure_dddbcc2da78f4eef85568d1f8d33d92d">
+      <specification>If the parameter has an explicit initial value, or the procedure writes it, the value will be assigned to the corresponding output argument variable.
+(ISO_WD_13209-2, 7.11.3)</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_ef6293ee258247f9b911f9937121e99d">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParam1">
+                <unittest:value xsi:type="IntegerLiteral" value="4" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="OutParam2">
+                <unittest:value xsi:type="IntegerLiteral" value="12" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:outParam name="OutParam1" id="OutParameterDeclaration_2f97ab4d661e4e5bb43efb69e4be2f57">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="OutParam2" id="OutParameterDeclaration_99ad452314ee4dc0a60e2962566fac2b">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_dde0bc5ef2504fe09c3d3fefa8a40e80">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestOutParam_ReturnInitOrChangedValue1">
+              <arguments>
+                <outArg param="OutParam1">
+                  <variable xsi:type="IntegerVariable" name="OutParam1" />
+                </outArg>
+                <outArg param="OutParam2">
+                  <variable xsi:type="IntegerVariable" name="OutParam2" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestOutParam_ReturnInitOrChangedValue2" id="TestProcedure_73a00b46ea844d27a0aa47c56ff38ec1">
+      <specification>If the parameter has an explicit initial value, or the procedure writes it, the value will be assigned to the corresponding output argument variable.
+Test deep change on a complex value.
+(ISO_WD_13209-2, 7.11.3)</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_4c20108c3ff54fb795054580528bc871">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParam1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="01" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:outParam name="OutParam1" id="OutParameterDeclaration_27e0d190477d4d3eb438e21db337b45c">
+            <realisation>
+              <dataType xsi:type="ByteField">
+                <init value="00" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_fcce5ebc202b4131b0e6afc8fc6cfd37">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestOutParam_ReturnInitOrChangedValue2">
+              <arguments>
+                <outArg param="OutParam1">
+                  <variable xsi:type="ByteFieldVariable" name="OutParam1" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestOutParam_ReturnInitOrChangedValue3" id="TestProcedure_4e263390a7cd421aa1efce26b4d82cef">
+      <specification>Test1: If the parameter has an explicit initial value, or the procedure writes it, the value will be assigned to the corresponding output argument variable.
+(This rule is also applicable where a procedure is terminated as a result of TerminateLanes).
+Test2: The ProcedureCall is an exemption of atomic Action node. If a ProcedureCall is executed in a Parallel lane and a TerminateLanes node is executed in another lane, procedure execution shall be completed prematurely.
+(ISO_WD_13209-2, 7.11.3)</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_509b3bce01414bbb836383dccd81e6ba">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParam1">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="1" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="9" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:outParam name="OutParam1" id="OutParameterDeclaration_37308c280f014978ab3bb2dfcc3f6c6b">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <parallel id="Parallel_2018eadf84d3430ab0170b6d95f9aecb">
+            <realisation>
+              <lane>
+                <action id="Action_0d37e6ceec944509a03b0fac2127e611">
+                  <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestOutParam_ReturnInitOrChangedValue3">
+                    <arguments>
+                      <outArg param="OutParam1">
+                        <variable xsi:type="IntegerVariable" name="OutParam1" />
+                      </outArg>
+                    </arguments>
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_539c5234fc714e26aff2158c8ade344e">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="2000" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <terminateLanes id="TerminateLanes_777cc1c82dd046d8a39be50b564b6a57" />
+              </lane>
+            </realisation>
+          </parallel>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestUnitializedArgOfInParam" id="TestProcedure_4ca423645752411baacd9e93cd485b18">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_34e7377ed7694a9bad419e59b28dcc35">
+            <unittest:exception xsi:type="InvalidReferenceException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:declarations>
+          <variable name="Exception1" id="VariableDeclaration_f87258bddf224291be75e7a36f8a6a26">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_a80e1e05df804997b129f01ada4487c9">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestUnitializedArgOfInParam">
+              <arguments>
+                <inArg param="ExceptionInOutParam">
+                  <term xsi:type="ExceptionValue" valueOf="Exception1" />
+                </inArg>
+              </arguments>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestUnitializedArgOfInOutParam" id="TestProcedure_edc098cf06b847fab41ac815356c497e">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_b142e0a3ddda4718890da9f762f7114e">
+            <unittest:exception xsi:type="InvalidReferenceException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:declarations>
+          <variable name="Exception1" id="VariableDeclaration_04de490ff3a24ffca8741a58787db67f">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_ae054c6be3094782b3cb44d9f6c7e17c">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestUnitializedArgOfInOutParam">
+              <arguments>
+                <inoutArg param="ExceptionInOutParam">
+                  <variable xsi:type="ExceptionVariable" name="Exception1" />
+                </inoutArg>
+              </arguments>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestUnitializedArgOfOutParam" id="TestProcedure_2e21cddd0f0649069a6951eae30520c4">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Exception1" id="VariableDeclaration_2c47077f8ac542cd9de7ed2e29a71ecc">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_f2bd75b7f69c4b719fbce6b70222aa17">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestUnitializedArgOfOutParam">
+              <arguments>
+                <outArg param="ExceptionInOutParam">
+                  <variable xsi:type="ExceptionVariable" name="Exception1" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <endNode id="ExtensibleEndNode_0be673ee39b24402839aa701dc9376c1">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestAmbiguousCallWithException" id="TestProcedure_f81f611b8f914b4b8d4f3486e9be0ae3">
+      <specification>If two or more of the implementing procedures are valid, an AmbiguousCallException shall be thrown when throwExceptionOnAmbiguousCall="true".
+(ISO_WD_13209-2, 7.14.5.3)</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_66ee9d1d0b4f4db19f7316ef61409700">
+            <unittest:arguments>
+              <unittest:argument param="IntegerInParam1">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="AmbiguousCallException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="IntegerInParam1" id="InParameterDeclaration_aca543df95e34683a7bf0fb46b068ed0">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="IntegerOutParam1" id="OutParameterDeclaration_7441f960574f4e69b477aeffb23797f7">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="IntegerOutParam2" id="OutParameterDeclaration_4a23d863a5a543b4b9725bf4136775fb">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_92ad767db415475f837d4cdc2000fb6d">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:ProcSigTestAmbiguousCall1">
+              <arguments>
+                <inArg param="InParameter1">
+                  <term xsi:type="IntegerValue" valueOf="IntegerInParam1" />
+                </inArg>
+                <outArg param="OutParameter1">
+                  <variable xsi:type="IntegerVariable" name="IntegerOutParam1" />
+                </outArg>
+                <outArg param="OutParameter2">
+                  <variable xsi:type="StringVariable" name="IntegerOutParam2" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestAmbiguousCallNoException1" id="TestProcedure_84f112be65504922a2f1d52574f71d13">
+      <specification>If two or more of the implementing procedures are valid and throwExceptionOnAmbiguousCall="false", the first valid procedure in alphabetic order shall be executed.
+(ISO_WD_13209-2, 7.14.5.3)</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_3d1b3fd47cfe4b92987f348ce6743068">
+            <unittest:arguments>
+              <unittest:argument param="IntegerInParam1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="IntegerOutParam1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="IntegerOutParam2">
+                <unittest:value xsi:type="StringLiteral" value="ProcTestAmbiguousCall_B2" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="IntegerInParam1" id="InParameterDeclaration_553121e051ce4b43ae2980c332095f07">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="IntegerOutParam1" id="OutParameterDeclaration_70ab5b4cd7d04d7197fa8d47903d5493">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="IntegerOutParam2" id="OutParameterDeclaration_82ace20f56c041a1ac6abd1fbaced8c1">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_9fee17534488451eb261780c78ec9189">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:ProcSigTestAmbiguousCall1" throwExceptionOnAmbiguousCall="false">
+              <arguments>
+                <inArg param="InParameter1">
+                  <term xsi:type="IntegerValue" valueOf="IntegerInParam1" />
+                </inArg>
+                <outArg param="OutParameter1">
+                  <variable xsi:type="IntegerVariable" name="IntegerOutParam1" />
+                </outArg>
+                <outArg param="OutParameter2">
+                  <variable xsi:type="StringVariable" name="IntegerOutParam2" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestAmbiguousCallNoException2" id="TestProcedure_f741d94dbcef454782b4ecde4ed76415">
+      <specification>If two or more of the implementing procedures are valid and throwExceptionOnAmbiguousCall="false", the first valid procedure in alphabetic order shall be executed.
+(ISO_WD_13209-2, 7.14.5.3)</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_88c62da069074ceb808e8b974982b44c">
+            <unittest:arguments>
+              <unittest:argument param="IntegerInParam1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="IntegerOutParam1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+              <unittest:expectedResult param="IntegerOutParam2">
+                <unittest:value xsi:type="StringLiteral" value="ProcTestAmbiguousCall_A3" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="IntegerInParam1" id="InParameterDeclaration_2f1410d0b2a3495887227e1db01907da">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="IntegerOutParam1" id="OutParameterDeclaration_5c0e825c2e6542f4a2d45fdfdc9038ae">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="IntegerOutParam2" id="OutParameterDeclaration_85de9ae4e3ec4dedbcb4a55003054cc0">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_cc1f8d7eaa694e519bf699f7102c004e">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:ProcSigTestAmbiguousCall2" throwExceptionOnAmbiguousCall="false">
+              <arguments>
+                <inArg param="InParameter1">
+                  <term xsi:type="IntegerValue" valueOf="IntegerInParam1" />
+                </inArg>
+                <outArg param="OutParameter1">
+                  <variable xsi:type="IntegerVariable" name="IntegerOutParam1" />
+                </outArg>
+                <outArg param="OutParameter2">
+                  <variable xsi:type="StringVariable" name="IntegerOutParam2" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestAmbiguousCallNoException3" id="TestProcedure_1b2ecdf6c17d4127a045bbaed22805f1">
+      <specification>If two or more of the implementing procedures are valid and throwExceptionOnAmbiguousCall="false", the first valid procedure in alphabetic order shall be executed.
+In this test case, no valid implementing procedures are found, no procedure is executed.
+(ISO_WD_13209-2, 7.14.5.3)</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_c1ca2b84c84e4fcf89fd596f0aa54c41">
+            <unittest:arguments>
+              <unittest:argument param="IntegerInParam1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="IntegerOutParam1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+              <unittest:expectedResult param="IntegerOutParam2">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="IntegerInParam1" id="InParameterDeclaration_eee7be366b5549be9dd117794faf8e33">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="IntegerOutParam1" id="OutParameterDeclaration_d6757004c8154d3f9ed383f65bde28f7">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+          <unittest:outParam name="IntegerOutParam2" id="OutParameterDeclaration_b3a167fa80e64c90923e3b5eba865181">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_e3dc37f21dc843a6a05ee82ec632557e">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:ProcSigTestAmbiguousCall3" throwExceptionOnAmbiguousCall="false">
+              <arguments>
+                <inArg param="InParameter1">
+                  <term xsi:type="IntegerValue" valueOf="IntegerInParam1" />
+                </inArg>
+                <outArg param="OutParameter1">
+                  <variable xsi:type="IntegerVariable" name="IntegerOutParam1" />
+                </outArg>
+                <outArg param="OutParameter2">
+                  <variable xsi:type="StringVariable" name="IntegerOutParam2" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

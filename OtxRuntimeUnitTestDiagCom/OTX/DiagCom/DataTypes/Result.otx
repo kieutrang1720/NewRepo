@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:diag="http://iso.org/OTX/1.0.0/DiagCom" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="Result" id="id_6b227a0c4233413e83d692ae8c65e69a" package="DiagCom.DataTypes" version="1.0.0.0" timestamp="2021-08-12T16:46:51.013+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42500</data>
+  </metaData>
+  <imports>
+    <import package="DiagCom" document="GlobalVariable" prefix="Import_Global" />
+  </imports>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="Result_OfDiagnosticServiceObject" id="TestProcedure_2c9042d26ead4c7993959614d4e97538">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_d57b9992e992401c89c6f082b56f871c">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="DiagService1" id="VariableDeclaration_2239a7f26ac342ed968289f3b7699055">
+            <realisation>
+              <dataType xsi:type="diag:DiagService" />
+            </realisation>
+          </variable>
+          <variable name="Result1" id="VariableDeclaration_de4c0536a90a4aa09229a21ef88befa0">
+            <realisation>
+              <dataType xsi:type="diag:Result" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_14d639bc32334233bce518faeed6b529">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringValue" valueOf="Import_Global:Identifier" />
+                <diag:ecuVariantName xsi:type="StringValue" valueOf="Import_Global:EcuVariantName" />
+                <diag:performVariantSelection xsi:type="BooleanLiteral" value="false" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_102c39b3e13f4f1299179268757bcf84">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:DiagServiceVariable" name="DiagService1" />
+              <term xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:name xsi:type="StringValue" valueOf="Import_Global:DiagServiceName_CodinDateRead" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_bba136af6fc841fc914e8256bd8f2b83">
+            <realisation xsi:type="diag:ExecuteDiagService">
+              <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+              <diag:result name="Result1" />
+            </realisation>
+          </action>
+          <action id="Action_78fa9ef3810f4d4880ecbd876705c206">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                </term>
+                <term xsi:type="StringLiteral" value="1 response(s)" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_5eef46eb95464f96af344ff96ba9a6f0">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Result_ChildIsResponses" id="TestProcedure_5923d591e2594499bf4308bec190b3fa">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_def49fbdecec495e84c32acfd83a4fcd">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="Result1" id="VariableDeclaration_dc5ccbb6e91f491ebe842f376518db41">
+            <realisation>
+              <dataType xsi:type="diag:Result" />
+            </realisation>
+          </variable>
+          <variable name="List1" id="VariableDeclaration_714b33cad7f64db981a630b942a16f71">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="diag:Response" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_18d21765b06e425d866af211a49129ab">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringValue" valueOf="Import_Global:Identifier" />
+                <diag:ecuVariantName xsi:type="StringValue" valueOf="Import_Global:EcuVariantName" />
+                <diag:performVariantSelection xsi:type="BooleanLiteral" value="false" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_4d244800abe34ff9b8a93c5387ad963e">
+            <realisation xsi:type="diag:ExecuteDiagService">
+              <diag:diagService xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:name xsi:type="StringValue" valueOf="Import_Global:DiagServiceName_CodinDateRead" />
+              </diag:diagService>
+              <diag:result name="Result1" />
+            </realisation>
+          </action>
+          <action id="Action_b52c7c31c5ba4f24bc415a97d43d4b65">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="diag:GetAllResponses">
+                <diag:result xsi:type="diag:ResultValue" valueOf="Result1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_9e1af11c681d41fcb83e823e67914f3f">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ListGetLength">
+                  <list xsi:type="ListValue" valueOf="List1" />
+                </term>
+                <term xsi:type="IntegerLiteral" value="1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_8d08fa9cc3ee4c05a523039e96fd7950">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="ListValue" valueOf="List1" />
+                </term>
+                <term xsi:type="StringLiteral" value="{62 F1 7B 20 02 04}" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_0ebec39ba83d477383caaa457156a3eb">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

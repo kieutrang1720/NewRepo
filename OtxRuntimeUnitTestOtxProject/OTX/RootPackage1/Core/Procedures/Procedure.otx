@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:dmd="http://iso.org/OTX/1.0.0/Auxiliaries/DiagMetaData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="Procedure" id="id_02b6979fa647432fa9fe4c2a2245da5a" package="RootPackage1.Core.Procedures" version="1.0.0.41680" timestamp="2021-06-03T08:55:37.862+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42078</data>
+  </metaData>
+  <imports>
+    <import package="RootPackage1.Core.Procedures" document="ImportedProcedure" prefix="Import1" />
+    <import package="RootPackage1.Core.Procedures.AnotherPackage" document="ImportedProcedure" prefix="Import2" />
+  </imports>
+  <declarations>
+    <context name="ContextVariableTrue" id="ContextVariableDeclaration_56caa646815049018956991dd8fbd4e9">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="true" />
+        </dataType>
+      </realisation>
+    </context>
+    <constant name="GlobalConstantTrue" id="GlobalConstantDeclaration_81732e357df94f8e9780738ba374e80e">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="true" />
+        </dataType>
+      </realisation>
+    </constant>
+    <context name="ContextVariableFalse" id="ContextVariableDeclaration_8ce76345d4d5462fb8c832746a196f07">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="false" />
+        </dataType>
+      </realisation>
+    </context>
+    <constant name="GlobalConstantFalse" id="GlobalConstantDeclaration_8b52339fc0024c80b1edbaa14a0c3e24">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="false" />
+        </dataType>
+      </realisation>
+    </constant>
+  </declarations>
+  <validities>
+    <validity name="ValidityTrue" id="Validity_3b0452c56db04c2ea6aa77442c7dc638">
+      <realisation xsi:type="BooleanLiteral" value="true" />
+    </validity>
+    <validity name="ValidityFalse" id="Validity_8f8efbac135246698bdec38a8188429d">
+      <realisation xsi:type="BooleanLiteral" value="false" />
+    </validity>
+  </validities>
+  <signatures>
+    <signature name="ProcedureSignature1" id="Signature_3337b88ff10a45aa8ed26a8b4e98483e" visibility="PRIVATE">
+      <realisation xsi:type="ProcedureSignature">
+        <parameters>
+          <outParam name="OutParameterDeclaration1" id="OutParameterDeclaration_a768d1ec2f8e4f839df8e7d3262ede03">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </outParam>
+        </parameters>
+      </realisation>
+    </signature>
+  </signatures>
+  <procedures>
+    <procedure name="CheckProcedureWithoutRealisation" id="id_29fc0bf6f68e4957a9ee7a945a732686" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action name="PrivateProcedureWithoutRealisation" id="ProcedureCall_289df4faab2441ceba3d93bc3e2751d5">
+            <realisation xsi:type="ProcedureCall" procedure="PrivateProcedureWithoutRealisation" />
+          </action>
+          <action name="PackageProcedureWithoutRealisation1" id="ProcedureCall_a5a9e0ac29634db8b17be8ae2655e299">
+            <realisation xsi:type="ProcedureCall" procedure="PackageProcedureWithoutRealisation" />
+          </action>
+          <action name="PublicProcedureWithoutRealisation" id="ProcedureCall_c7ed9d8227444e98be3cd129e95b4d44">
+            <realisation xsi:type="ProcedureCall" procedure="PublicProcedureWithoutRealisation" />
+          </action>
+          <action name="PackageProcedureWithoutRealisation" id="ProcedureCall_ae014ce8e7a7463188470c10e24b7b75">
+            <realisation xsi:type="ProcedureCall" procedure="Import1:PackageProcedureWithoutRealisation" />
+          </action>
+          <action name="ProcedureCall1" id="ProcedureCall_8123fe19c8f94a03b4f9bdf10911ec4d">
+            <realisation xsi:type="ProcedureCall" procedure="Import2:PublicProcedureWithoutRealisation" />
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="PrivateProcedureWithoutRealisation" id="Procedure_1552cb27b0cc462d8fbb4659972a86ff" />
+    <procedure name="CheckProcedureVisibility" id="Procedure_05f1a99d94b44fe1b40a195bd7e96dd4" visibility="PUBLIC">
+      <realisation>
+        <declarations>
+          <variable name="Test1" id="VariableDeclaration_1b71b75f41b14f8d9991e753ff8dad91">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+          <variable name="Test2" id="VariableDeclaration_e0a72e8318ba4db6a8f282c845ae1aca">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+          <variable name="Test3" id="VariableDeclaration_4e84f4af7aa04f009e16818af56e0931">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+          <variable name="Test4" id="VariableDeclaration_82843932a01b4578ae70a400f4220c39">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+          <variable name="Test5" id="VariableDeclaration_f67aaf97cfb647039eb121fb69be08da">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+        </declarations>
+        <flow>
+          <action name="PrivateProcedure" id="ProcedureCall_0914a6a7d9c2443eab827999374ab158">
+            <realisation xsi:type="ProcedureCall" procedure="PrivateProcedure">
+              <arguments>
+                <outArg param="OutParameterDeclaration1">
+                  <variable xsi:type="BooleanVariable" name="Test1" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_9e4678e3b5554a7185fbce52d24096c8">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="BooleanValue" valueOf="Test1" />
+            </realisation>
+          </action>
+          <action name="PackageProcedure1" id="ProcedureCall_e8e55f80d61d477bbc3fcdfcd24e3d40">
+            <realisation xsi:type="ProcedureCall" procedure="PackageProcedure">
+              <arguments>
+                <outArg param="OutParameterDeclaration1">
+                  <variable xsi:type="BooleanVariable" name="Test2" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_0a662f88fc1c43d682c6e2c4a529ddf3">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="BooleanValue" valueOf="Test2" />
+            </realisation>
+          </action>
+          <action name="PublicProcedure1" id="ProcedureCall_7352b3a74b5b4e6a886a4238a7833b0b">
+            <realisation xsi:type="ProcedureCall" procedure="PublicProcedure">
+              <arguments>
+                <outArg param="OutParameterDeclaration1">
+                  <variable xsi:type="BooleanVariable" name="Test3" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_bf0127f1d3fc4de692ccc74141c88e05">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="BooleanValue" valueOf="Test3" />
+            </realisation>
+          </action>
+          <action name="PackageProcedure" id="ProcedureCall_22821cc842bd43cb86eb6e70ab52d83e">
+            <realisation xsi:type="ProcedureCall" procedure="Import1:PackageProcedure">
+              <arguments>
+                <outArg param="OutParameterDeclaration1">
+                  <variable xsi:type="BooleanVariable" name="Test4" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_766bb1a4ace04c748928c8b9617f9b99">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="BooleanValue" valueOf="Test4" />
+            </realisation>
+          </action>
+          <action name="PublicProcedure" id="ProcedureCall_55e929658727401b9a9c94b0b0b13069">
+            <realisation xsi:type="ProcedureCall" procedure="Import2:PublicProcedure">
+              <arguments>
+                <outArg param="OutParameterDeclaration1">
+                  <variable xsi:type="BooleanVariable" name="Test5" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_6768f319409b441193ab26ee606c61d0">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="BooleanValue" valueOf="Test5" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="PrivateProcedure" id="Procedure_27afd8afcffb48ed8d18ad3119e7fd50">
+      <realisation>
+        <parameters>
+          <outParam name="OutParameterDeclaration1" id="OutParameterDeclaration_4b4931200225441e85eaad082937c62c">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </outParam>
+        </parameters>
+        <flow>
+          <action id="Action_a6ba3b5f7efe44958e4543a97c4261bb">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="OutParameterDeclaration1" />
+              <term xsi:type="BooleanLiteral" value="true" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="CheckProcedureImplementSignature" id="Procedure_9a59a62f8a244fbe8c13aa2d4c4575fa" visibility="PUBLIC" implements="ProcedureSignature1">
+      <realisation>
+        <parameters>
+          <outParam name="OutParameterDeclaration1" id="OutParameterDeclaration_087db35b3d604e6e820c700688c2b993">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </outParam>
+        </parameters>
+        <declarations>
+          <variable name="Variable1" id="VariableDeclaration_5c3275341c754107820e8973284aed52">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </variable>
+          <constant name="Constant1" id="ConstantDeclaration_b718c41d40774839b349e683f0376456">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </constant>
+        </declarations>
+        <flow>
+          <action id="Action_896da1abc4014d8ea6ecce8f4bb049c3">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="OutParameterDeclaration1" />
+              <term xsi:type="BooleanLiteral" value="true" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="PackageProcedureWithoutRealisation" id="Procedure_29b06227aa77462eafa83b4ce895ced3" visibility="PACKAGE" />
+    <procedure name="PublicProcedureWithoutRealisation" id="Procedure_7012e859148b4c058725bb954ee8cb21" visibility="PUBLIC" />
+    <procedure name="PackageProcedure" id="Procedure_c6919ce313994c40b7267046238bd924" visibility="PACKAGE">
+      <realisation>
+        <parameters>
+          <outParam name="OutParameterDeclaration1" id="OutParameterDeclaration_bfa8699d5fa44c0db46844fa9f947e44">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </outParam>
+        </parameters>
+        <flow>
+          <action id="Action_82856a391d4d46d592874ae5cbb800a7">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="OutParameterDeclaration1" />
+              <term xsi:type="BooleanLiteral" value="true" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="PublicProcedure" id="Procedure_7d0addef906b49158e5a0b1ff7c8f7c2" visibility="PUBLIC">
+      <realisation>
+        <parameters>
+          <outParam name="OutParameterDeclaration1" id="OutParameterDeclaration_88fd6ae7541049e68e1617c50037486c">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </outParam>
+        </parameters>
+        <flow>
+          <action id="Action_66c587c0cbcb4d968785f4fbe0c969df">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="OutParameterDeclaration1" />
+              <term xsi:type="BooleanLiteral" value="true" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureValidForValidityTrue" id="Procedure_c1263e9871e44e549c5e6903e62654e8" validFor="ValidityTrue">
+      <realisation>
+        <parameters>
+          <outParam name="OutParameterDeclaration1" id="OutParameterDeclaration_f1e95f44823949c493a97c76092a6898">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </outParam>
+        </parameters>
+        <flow>
+          <action id="Action_1ec4fcce902d486c8fe68bb3283beb22">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="OutParameterDeclaration1" />
+              <term xsi:type="BooleanLiteral" value="true" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureValidForContextVariableTrue" id="Procedure_d644ca1af3d84b438d3e9b9046d1947c" validFor="ContextVariableTrue">
+      <realisation>
+        <parameters>
+          <outParam name="OutParameterDeclaration1" id="OutParameterDeclaration_fffe4e386ef5435e8ee4186487d1e625">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </outParam>
+        </parameters>
+        <flow>
+          <action id="Action_7f720371bb844be8ae16760e59516207">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="OutParameterDeclaration1" />
+              <term xsi:type="BooleanLiteral" value="true" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureValidForGlobalConstantTrue" id="Procedure_2a65181dc984401aa727d784fb761e5b" validFor="GlobalConstantTrue">
+      <realisation>
+        <parameters>
+          <outParam name="OutParameterDeclaration1" id="OutParameterDeclaration_2358f361fec148cc96b71d9e4583039c">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </outParam>
+        </parameters>
+        <flow>
+          <action id="Action_cf7a4be2b60242dd922a3f57f653855a">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="OutParameterDeclaration1" />
+              <term xsi:type="BooleanLiteral" value="true" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="CheckProcedureValidForTrue" id="Procedure_0cd6b6002f644593a7e38d13c21385bb" visibility="PUBLIC">
+      <realisation>
+        <declarations>
+          <variable name="Test1" id="VariableDeclaration_72155d5f12274e97a1c41db1adc479c7">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+          <variable name="Test2" id="VariableDeclaration_8edf8d8cd9544bac97dab7d96a1ec593">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+          <variable name="Test3" id="VariableDeclaration_b571ab71655b4e66b690860fef8bc9ca">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+        </declarations>
+        <flow>
+          <action id="Action_6891b44e0f2c47c4bd436a30e2a43acf">
+            <realisation xsi:type="ProcedureCall" procedure="ProcedureValidForValidityTrue">
+              <arguments>
+                <outArg param="OutParameterDeclaration1">
+                  <variable xsi:type="BooleanVariable" name="Test1" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_03cbac52ad6747ed901ec41b53694687">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="BooleanValue" valueOf="Test1" />
+            </realisation>
+          </action>
+          <action id="Action_e3ea9d9361f14cf58b25564bca553cca">
+            <realisation xsi:type="ProcedureCall" procedure="ProcedureValidForContextVariableTrue">
+              <arguments>
+                <outArg param="OutParameterDeclaration1">
+                  <variable xsi:type="BooleanVariable" name="Test2" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_65e746a4c331472b92ac1daf1eea5a21">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="BooleanValue" valueOf="Test2" />
+            </realisation>
+          </action>
+          <action id="Action_6476794ac1e64991936d22fc56c7d757">
+            <realisation xsi:type="ProcedureCall" procedure="ProcedureValidForGlobalConstantTrue">
+              <arguments>
+                <outArg param="OutParameterDeclaration1">
+                  <variable xsi:type="BooleanVariable" name="Test3" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_caf2904dccf4417e870f51648025c0b3">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="BooleanValue" valueOf="Test3" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureValidForValidityFalse" id="Procedure_7ef2d45c9cde42c08c1332e20e304ec0" validFor="ValidityFalse">
+      <realisation>
+        <parameters>
+          <outParam name="OutParameterDeclaration1" id="OutParameterDeclaration_2a4375e18e6f41d78564239e7d46475e">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </outParam>
+        </parameters>
+        <flow>
+          <action id="Action_1bc00e22fb604a1c8c9b784c971f6911">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="OutParameterDeclaration1" />
+              <term xsi:type="BooleanLiteral" value="true" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureValidForContextVariableFalse" id="Procedure_3a52820dcc90420aa033799819440892" validFor="ContextVariableFalse">
+      <realisation>
+        <parameters>
+          <outParam name="OutParameterDeclaration1" id="OutParameterDeclaration_324e4552a1804ed6be68913c868e12d4">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </outParam>
+        </parameters>
+        <flow>
+          <action id="Action_f089b81168a4425ea829a1c2b85b0282">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="OutParameterDeclaration1" />
+              <term xsi:type="BooleanLiteral" value="true" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureValidForGlobalConstantFalse" id="Procedure_3f535d56c6834f57b146a42a259147df" validFor="GlobalConstantFalse">
+      <realisation>
+        <parameters>
+          <outParam name="OutParameterDeclaration1" id="OutParameterDeclaration_05b6f3d3a2824dfc90ae6d7e351fc42b">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </outParam>
+        </parameters>
+        <flow>
+          <action id="Action_d385299ead9045e4846b968e43b71fe7">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="OutParameterDeclaration1" />
+              <term xsi:type="BooleanLiteral" value="true" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="CheckProcedureValidForFalse" id="Procedure_be54084e4ccf40ad94d39f0c2d5ab726" visibility="PUBLIC">
+      <realisation>
+        <declarations>
+          <variable name="Test1" id="VariableDeclaration_d37b7a3d3f1d44a9815ec4d8e4a9399a">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+          <variable name="Test2" id="VariableDeclaration_026324d0a4a64dc589f797a684cbce06">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+          <variable name="Test3" id="VariableDeclaration_899cb461cb9741daaff04203e823e60c">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+        </declarations>
+        <flow>
+          <action id="Action_446979304718414c9a48fed5689b46a2">
+            <realisation xsi:type="ProcedureCall" procedure="ProcedureValidForValidityFalse">
+              <arguments>
+                <outArg param="OutParameterDeclaration1">
+                  <variable xsi:type="BooleanVariable" name="Test1" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_aa8e990e1d8048fe87e5b768b9aa5208">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="BooleanValue" valueOf="Test1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_c1d7d81db96d46aca39db2a7b92b0f74">
+            <realisation xsi:type="ProcedureCall" procedure="ProcedureValidForContextVariableFalse">
+              <arguments>
+                <outArg param="OutParameterDeclaration1">
+                  <variable xsi:type="BooleanVariable" name="Test2" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_f66ffb09a14245daa548711d63ba6891">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="BooleanValue" valueOf="Test2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_74772ec448f9475795b9a7b9e4c22d2e">
+            <realisation xsi:type="ProcedureCall" procedure="ProcedureValidForGlobalConstantFalse">
+              <arguments>
+                <outArg param="OutParameterDeclaration1">
+                  <variable xsi:type="BooleanVariable" name="Test3" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_78de1596775e472c85303fafc99b33ef">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="BooleanValue" valueOf="Test3" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureSpecification" id="Procedure_4a4357f8f33e43ab968db49e4e54c64a" visibility="PUBLIC">
+      <specification>&lt;specification&gt; : xsd:string [0..1] (derived from NamedAndSpecified, see 7.16.4)
+The static string content of this optional element shall be used to specify the purpose of the procedure for
+the human reader. The complement of &lt;specification&gt; is the element &lt;realisation&gt; (see below).
+Associated checker rules:
+⎯ Core_Chk007 – have specification if no realisation exists
+
+123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM+-!@#$%^&amp;*()_~`\"\"[]{}'';:/?&lt;&gt;.,\n\t</specification>
+      <realisation>
+        <flow />
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureMetaData" id="Procedure_d56be3355942400fa70f88005ffa74f8" visibility="PUBLIC">
+      <metaData>
+        <data key="dmd1">
+          <dmd:diagMetaData>
+            <dmd:comChannelName value="LL_CentrElectUDS" />
+            <dmd:ecuVariantName value="EV_BCMCONTI_009" />
+          </dmd:diagMetaData>
+        </data>
+      </metaData>
+      <realisation>
+        <flow />
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureThrows" id="Procedure_77dae99b8f3f4503a0a223a83d9a22b2" visibility="PUBLIC">
+      <realisation>
+        <throws>
+          <exception />
+          <exception xsi:type="ArithmeticException" />
+          <exception xsi:type="OutOfBoundsException" />
+          <exception xsi:type="ConcurrentModificationException" />
+          <exception xsi:type="AmbiguousCallException" />
+          <exception xsi:type="InvalidReferenceException" />
+          <exception xsi:type="UserException" />
+        </throws>
+        <flow />
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureReturn" id="Procedure_d2aec1183a664863be5e32de1f47c2e1" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <return id="Return_0616ccc9f0354a48a0d31cc2c106a6cc" />
+        </flow>
+      </realisation>
+    </procedure>
+  </procedures>
+</otx>

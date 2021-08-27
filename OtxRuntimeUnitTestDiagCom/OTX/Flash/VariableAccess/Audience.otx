@@ -1,0 +1,1370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:flash="http://iso.org/OTX/1.0.0/Flash" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="Audience" id="id_dd9d92eb48204bec98f0f425fb069ac2" package="Flash.VariableAccess" version="1.0.0.0" timestamp="2021-08-16T16:37:00.212+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42536</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="AudienceVariable_Base" id="TestProcedure_20c326a18e4749369b0572732ebe6074" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_4672ed30c43744f98c011f592c292617">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_cf3e048e82ea4f0982e2b38ff8ad71d9">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="DEVELOPMENT" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7fd811893fd64980b4dc3d5b2ab353a9">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="MANUFACTURING" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e29c6ea9eff64cdb8c789ccfeb997f81">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="AFTERSALES" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e90d6fbc355949488a4d3a6f4a630a95">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="AFTERMARKET" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="input" id="InParameterDeclaration_a539c1ebd1ff4725b581c8ffc1d17651">
+            <realisation>
+              <dataType xsi:type="flash:Audience" />
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="Audience1" id="VariableDeclaration_230734922f0448299ecddc6420306189">
+            <realisation>
+              <dataType xsi:type="flash:Audience" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_5194f83f20574c58aef6a42f63c696d4">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:AudienceVariable" name="Audience1" />
+              <term xsi:type="flash:AudienceValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_c3fe1b7893b549a2ac1b69025dee52df">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:AudienceValue" valueOf="Audience1" />
+                <term xsi:type="flash:AudienceValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="AudienceVariable_1Step" id="TestProcedure_e461fa0cefc547f59238d40baa7c494e" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_a61b724e3a9e4ba1a69ad805860f37ca">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b8ae43062dfd471291916fc601066056">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="DEVELOPMENT" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e61045acb6a64c2bbdf09d128dd5d4b1">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="MANUFACTURING" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_15e60ca46ce2488a9c0b72a7d400d196">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="AFTERSALES" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2916d5f25315431d8fa3c59917698c2d">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="AFTERMARKET" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="input" id="InParameterDeclaration_a947585622cc4f70a38946149d7db169">
+            <realisation>
+              <dataType xsi:type="flash:Audience" />
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="List0" id="VariableDeclaration_c44f5fb6e02b422db869ff731de7e47d">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="flash:Audience" />
+                <init>
+                  <itemType xsi:type="flash:Audience" />
+                  <items>
+                    <item xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+                    <item xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map0" id="VariableDeclaration_1d722bd28552481aa8becf0f4bf65f5f">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="flash:Audience" />
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="flash:Audience" />
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="1" />
+                      <value xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="2" />
+                      <value xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_fa9a69019bea4281a82a7fbc050b0470">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="flash:Audience" />
+                <init>
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="flash:Audience" />
+                  <items>
+                    <item>
+                      <key xsi:type="StringLiteral" value="q" />
+                      <value xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="w" />
+                      <value xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Audience1" id="VariableDeclaration_3daa50bf58b44722b59d26bc16454386">
+            <realisation>
+              <dataType xsi:type="flash:Audience" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_12894a5e30824a4f921fbf762833ceb8">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:AudienceVariable" name="List0">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                </path>
+              </result>
+              <term xsi:type="flash:AudienceValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_ed9e5adce7aa4dc99d5e490c8f5a4a67">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:AudienceVariable" name="Map0">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="2" />
+                </path>
+              </result>
+              <term xsi:type="flash:AudienceValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_37d27c8407224e7a913166113b1aa2f0">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:AudienceVariable" name="Map1">
+                <path>
+                  <stepByName xsi:type="StringLiteral" value="w" />
+                </path>
+              </result>
+              <term xsi:type="flash:AudienceValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_76ecd8151dcf4826bf22425f8a6cf11f">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:AudienceValue" valueOf="List0">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:AudienceValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_302c79e60b544aa194aec06198fb5e6d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:AudienceValue" valueOf="Map0">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="2" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:AudienceValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_f9a3c003121842b59840d5ed4676b2c9">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:AudienceValue" valueOf="Map1">
+                  <flash:path>
+                    <stepByName xsi:type="StringLiteral" value="w" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:AudienceValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_093017c5a7ad46bfbc065193a6629b44">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_44143a2ed7eb4d4b9cead5472add5dca">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="List0">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="2" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_36244766e33b4e0291405cc98ad76707">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_ffced2dfa4fb4003b247f4fa49a93ad5">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map0">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_cee64af99d2147f5a3f040b077208544">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_23bb770d7b1f49d2b04c5630a01c80be">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map1">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="e" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="AudienceVariable_2Steps" id="TestProcedure_200af04617e24962abbc5f04fdf4ae84" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_ff944089b36942c8b96dc57cd71fd4bb">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1147abbd85964622890fbb44c1e1b936">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="DEVELOPMENT" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a64d10d76dcf45e58d9adcd7f4e91247">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="MANUFACTURING" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e52ecd16077647b3af1f1bfd6cfb3aca">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="AFTERSALES" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_663b30d00ee4493baba2d6437f45c70a">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="AFTERMARKET" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="input" id="InParameterDeclaration_b902663e54384f4c81f0945988a08c06">
+            <realisation>
+              <dataType xsi:type="flash:Audience" />
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="List0" id="VariableDeclaration_80b6f7e2af1f420f88cd4aef22092e03">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="flash:Audience" />
+                </itemType>
+                <init>
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="flash:Audience" />
+                  </itemType>
+                  <items>
+                    <item xsi:type="ListLiteral">
+                      <itemType xsi:type="flash:Audience" />
+                      <items>
+                        <item xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+                      </items>
+                    </item>
+                    <item xsi:type="ListLiteral">
+                      <itemType xsi:type="flash:Audience" />
+                      <items>
+                        <item xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+                      </items>
+                    </item>
+                    <item xsi:type="ListLiteral">
+                      <itemType xsi:type="flash:Audience" />
+                      <items>
+                        <item xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+                        <item xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+                      </items>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map0" id="VariableDeclaration_2bbea722df88486da50b6fed711ad684">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="flash:Audience" />
+                </valueType>
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="flash:Audience" />
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="5" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="Integer" />
+                        <valueType xsi:type="flash:Audience" />
+                        <items>
+                          <item>
+                            <key xsi:type="IntegerLiteral" value="1" />
+                            <value xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_efc7ccf71c2d4f018e3ebf6424dc4b72">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="flash:Audience" />
+                </valueType>
+                <init>
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="flash:Audience" />
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="StringLiteral" value="q" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="String" />
+                        <valueType xsi:type="flash:Audience" />
+                        <items>
+                          <item>
+                            <key xsi:type="StringLiteral" value="a" />
+                            <value xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+                          </item>
+                          <item>
+                            <key xsi:type="StringLiteral" value="z" />
+                            <value xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="w" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="String" />
+                        <valueType xsi:type="flash:Audience" />
+                        <items>
+                          <item>
+                            <key xsi:type="StringLiteral" value="s" />
+                            <value xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+                          </item>
+                          <item>
+                            <key xsi:type="StringLiteral" value="x" />
+                            <value xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Boolean1" id="VariableDeclaration_be2d53ad1f9f419298805fb68bd0febe">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_8fe492cd532e4a57bf086b618b9bcd79">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:AudienceVariable" name="List0">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="2" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                </path>
+              </result>
+              <term xsi:type="flash:AudienceValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_076e2b9f69ea45ee85ab7b94f2ac4871">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:AudienceVariable" name="Map0">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                </path>
+              </result>
+              <term xsi:type="flash:AudienceValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_0c438e614dec49beaf587eec05a1933d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:AudienceVariable" name="Map1">
+                <path>
+                  <stepByName xsi:type="StringLiteral" value="q" />
+                  <stepByName xsi:type="StringLiteral" value="a" />
+                </path>
+              </result>
+              <term xsi:type="flash:AudienceValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_737cc834d79645adb3682059b4807c68">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:AudienceValue" valueOf="List0">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="2" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:AudienceValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_4828905c6bfe4cecb0d485a300ec3e50">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:AudienceValue" valueOf="Map0">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:AudienceValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_4afa18a1adc94d1a964143a66ba66277">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:AudienceValue" valueOf="Map1">
+                  <flash:path>
+                    <stepByName xsi:type="StringLiteral" value="q" />
+                    <stepByName xsi:type="StringLiteral" value="a" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:AudienceValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_6b2170c340db4360993b4faee85a61c9">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_87f6a9f049f545939f2b468732291b8e">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="List0">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_24117b7614e74f12886db074bb8885ab">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_62c064adc85747cb98c6c680ff0e889b">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="List0">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_516556376a7942c596b604a4452bdb14">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_2bd4f6b2f45547cf95ce4a27854d5f52">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="List0">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="2" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_08c9d2d8b42d405ca624d28bd73b6ebb">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_684397d49c704f9983e0be632799c6e8">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map0">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_f14f024cba2c43708acc0f3c4aa8b2be">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_0ba9a72a9a6948a396793481fa7b33c0">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map0">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_33a9aaf6965f493d842ff3e68384b2ee">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_f8f28e2ce09549269e302f317ca8d9d3">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map0">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_ae57ff2557bd4bdc8f87ff983ce264c7">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_64a1a035a3d74b2f83c8da174bf79ed2">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map1">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="q" />
+                        <stepByName xsi:type="StringLiteral" value="w" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_a43a8d7ac5824e878aff367ee2587e44">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_661d3d0062734d6ba718036d08fc13c6">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map1">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_8e90c8ef81ac44f9bdc148789e92171e">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_c0363b91fb4f45afb5c4c3d130166d8b">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map1">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="w" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="AudienceVariable_3Steps" id="TestProcedure_fce1705e8fe844b1a3b9bfb75002b7ff" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_46df4df243a54ebaa67e15e8b89fd0cb">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8a30ee57ea1a484dbd24733eea436f51">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="DEVELOPMENT" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a39ae8ad151c4813b9df93e23a44c608">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="MANUFACTURING" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2be8a3d9a60e4147a1b7d0d692de27b5">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="AFTERSALES" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9c94042075b5457381c6de2fc114cfbb">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:AudienceLiteral" value="AFTERMARKET" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="input" id="InParameterDeclaration_18e4e2ba6fd74ed895a2fa5b5f642351">
+            <realisation>
+              <dataType xsi:type="flash:Audience" />
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="List2" id="VariableDeclaration_c0fc7c6e269b478885fab51879b1bf06">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="flash:Audience" />
+                  </itemType>
+                </itemType>
+                <init>
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="List">
+                      <itemType xsi:type="flash:Audience" />
+                    </itemType>
+                  </itemType>
+                  <items>
+                    <item xsi:type="ListLiteral">
+                      <itemType xsi:type="List">
+                        <itemType xsi:type="flash:Audience" />
+                      </itemType>
+                      <items>
+                        <item xsi:type="ListLiteral">
+                          <itemType xsi:type="flash:Audience" />
+                          <items>
+                            <item xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+                          </items>
+                        </item>
+                      </items>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_2c9d286c676349ed9e4dc3e3a252ca95">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="flash:Audience" />
+                  </valueType>
+                </valueType>
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="Map">
+                      <keyType xsi:type="Integer" />
+                      <valueType xsi:type="flash:Audience" />
+                    </valueType>
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="3" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="Integer" />
+                        <valueType xsi:type="Map">
+                          <keyType xsi:type="Integer" />
+                          <valueType xsi:type="flash:Audience" />
+                        </valueType>
+                        <items>
+                          <item>
+                            <key xsi:type="IntegerLiteral" value="6" />
+                            <value xsi:type="MapLiteral">
+                              <keyType xsi:type="Integer" />
+                              <valueType xsi:type="flash:Audience" />
+                              <items>
+                                <item>
+                                  <key xsi:type="IntegerLiteral" value="9" />
+                                  <value xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+                                </item>
+                              </items>
+                            </value>
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map3" id="VariableDeclaration_22e69ec3a9ee44699084e36cf8a5bb48">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="flash:Audience" />
+                  </valueType>
+                </valueType>
+                <init>
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="Map">
+                      <keyType xsi:type="String" />
+                      <valueType xsi:type="flash:Audience" />
+                    </valueType>
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="StringLiteral" value="1" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="String" />
+                        <valueType xsi:type="Map">
+                          <keyType xsi:type="String" />
+                          <valueType xsi:type="flash:Audience" />
+                        </valueType>
+                        <items>
+                          <item>
+                            <key xsi:type="StringLiteral" value="5" />
+                            <value xsi:type="MapLiteral">
+                              <keyType xsi:type="String" />
+                              <valueType xsi:type="flash:Audience" />
+                              <items>
+                                <item>
+                                  <key xsi:type="StringLiteral" value="9" />
+                                  <value xsi:type="flash:AudienceLiteral" value="SUPPLIER" />
+                                </item>
+                              </items>
+                            </value>
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_a2a0868d30654de79f2b57c57891f011">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:AudienceVariable" name="List2">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                </path>
+              </result>
+              <term xsi:type="flash:AudienceValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_87f4f6267e774c7d8ef8eeac13adb450">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:AudienceVariable" name="Map2">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="3" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="6" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                </path>
+              </result>
+              <term xsi:type="flash:AudienceValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_8931786c7b124041946d4a38e0744f43">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:AudienceVariable" name="Map3">
+                <path>
+                  <stepByName xsi:type="StringLiteral" value="1" />
+                  <stepByName xsi:type="StringLiteral" value="5" />
+                  <stepByName xsi:type="StringLiteral" value="9" />
+                </path>
+              </result>
+              <term xsi:type="flash:AudienceValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_e79d1ddedeed4bcfa95ed515ee840d17">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:AudienceValue" valueOf="List2">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:AudienceValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_e834e0a5632c45b9bd6a9b66ac6933cd">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:AudienceValue" valueOf="Map2">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="3" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="6" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:AudienceValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_ba849523ac2f46a3862d285e51f24fac">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:AudienceValue" valueOf="Map3">
+                  <flash:path>
+                    <stepByName xsi:type="StringLiteral" value="1" />
+                    <stepByName xsi:type="StringLiteral" value="5" />
+                    <stepByName xsi:type="StringLiteral" value="9" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:AudienceValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_6232bc5eaa93494a912e50be0d2a3fdb">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_db782a4382184b6a9d562fefff13244e">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_810a4e4b433348deaecdb7b21bfbebd2">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_a355526f004740c3a82f8c7156906654">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_b1c5d30bc3f54b999dc0af6786a65258">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_d681701c6c344056ae5212c3559e06fa">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_42a533ed345f4973a3e42c4302e74dfc">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_02664b46e04649959965ae1de90bb413">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_f7c2516171c646f4bd0894384ab06ad8">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_83fe7175a36044d4acd5ce36d3724061">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_642bbfb85588466f93e15d2dc511278a">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_88af1b32b2b14193a2e680649f6a1133">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_745dac545ed047a6876cd8504c751eb0">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_1719323a7093431bb1e6566b19af70af">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_eda8a8b7b6724b51a793eb59c53f9162">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_d38b513c6f8f4f819ca78298adedd5fe">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_77b10649c53441c3a4db7c171d642ccc">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_3815b6bde4c04689a75f42dbd6c45e81">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_7d0f3541e65b42358c3b3282178d5f8e">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_d42438c9c8504841bf6244ab6fb5c6a9">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_cc4baff4287b47249d57daad685859ef">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_e5949a87e9f34a6bbccaf8fbc52d4e1c">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_8ed2ce5df3dd43df9f1b3c3e66364a3c">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_22d82210f32a44fab65c4050eb8b6fb7">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_833bc2e4dae244f180ef3ea0b6528911">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_fb1916eebb36453da0c4e27b88f118e1">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_a969bab810be4367b479ddd6ea3fe23c">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_7053cd825bca44ddb076afa5713d4c8e">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_d7f1b41964564a86a064f493e2024e05">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_498b9617d76a4623985f13b16e78aff3">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map3">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="3" />
+                        <stepByName xsi:type="StringLiteral" value="6" />
+                        <stepByName xsi:type="StringLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_312201d6431c4ea9be5f660f926eaa15">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_89c5cece18224d3986f0ce0c65fae86f">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map3">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="3" />
+                        <stepByName xsi:type="StringLiteral" value="5" />
+                        <stepByName xsi:type="StringLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_e318f425dfd54eb488526fc02b6e9490">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_bfc9bbd9f587448eb30f0d57f77caa4c">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map3">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="3" />
+                        <stepByName xsi:type="StringLiteral" value="5" />
+                        <stepByName xsi:type="StringLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_819384602d9b4e7390fd7407946def6d">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_6b663fb47d84436d8b3fb3b90c917666">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map3">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="2" />
+                        <stepByName xsi:type="StringLiteral" value="6" />
+                        <stepByName xsi:type="StringLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_f9a80c4acef34a9b83b90f7e232adf0d">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_7a96737f47584072986c06ec90a0272c">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map3">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="2" />
+                        <stepByName xsi:type="StringLiteral" value="6" />
+                        <stepByName xsi:type="StringLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_52dee242261a48d3b867edd6588d90eb">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_a8f7f62670144bbb8abb15cad3e94d06">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:AudienceVariable" name="Map3">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="2" />
+                        <stepByName xsi:type="StringLiteral" value="5" />
+                        <stepByName xsi:type="StringLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:AudienceValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

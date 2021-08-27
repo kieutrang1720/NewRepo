@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="DisabledAttribute" id="id_462ffd138f4c406f97de339a014e5a69" package="Core.Nodes.Node" version="1.0.0.41074" timestamp="2021-04-15T16:58:40.061+02:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.3.0.40926</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ActionNode" id="id_9ed705354926486ead7148539457d0b7" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="number" id="VariableDeclaration_61deaf4ae4b5491ca6a472c4aee911cc">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_70fb91d9e0ae4eaebe7d961529c5c75f">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="number" />
+              <term xsi:type="Add">
+                <numeral xsi:type="IntegerValue" valueOf="number" />
+                <numeral xsi:type="IntegerLiteral" value="1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_7d9c8e9b29344140922d887d828af8c9" disabled="true">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="number" />
+              <term xsi:type="Add">
+                <numeral xsi:type="IntegerValue" valueOf="number" />
+                <numeral xsi:type="IntegerLiteral" value="1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_63c8cb5ad6a344b09090d834f1c5d88d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="number" />
+                <term xsi:type="IntegerLiteral" value="1" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="CompoundNodeGroup" id="TestProcedure_0db46f3f85e94783a9ace552f4032f3a" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="number" id="VariableDeclaration_db81734ef5d046669f7718a3349aa809">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <group id="Group_4b66acba381247518f12805893c45285">
+            <realisation>
+              <action id="Action_4fcb89118ea64782b55c09de99675fb0">
+                <realisation xsi:type="Assignment">
+                  <result xsi:type="IntegerVariable" name="number" />
+                  <term xsi:type="Add">
+                    <numeral xsi:type="IntegerValue" valueOf="number" />
+                    <numeral xsi:type="IntegerLiteral" value="1" />
+                  </term>
+                </realisation>
+              </action>
+            </realisation>
+          </group>
+          <group id="Group_18af2e4226894c7aa40858252383aac7" disabled="true">
+            <realisation>
+              <action id="Action_344ba567f37d42c48831c3c2f5552b5f">
+                <realisation xsi:type="Assignment">
+                  <result xsi:type="IntegerVariable" name="number" />
+                  <term xsi:type="Add">
+                    <numeral xsi:type="IntegerValue" valueOf="number" />
+                    <numeral xsi:type="IntegerLiteral" value="1" />
+                  </term>
+                </realisation>
+              </action>
+            </realisation>
+          </group>
+          <action id="Action_b8f1392b50564cdbbe0becaf98714d7d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="number" />
+                <term xsi:type="IntegerLiteral" value="1" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="CompoundNodeBranch" id="TestProcedure_6ea0f78ff0be4a119ab21478cfa14188" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="number" id="VariableDeclaration_7dfbe3a6d387403fa504fcdc4bec4f74">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <branch id="Branch_0e8ef1b8b1d040448040ba3496466420">
+            <realisation>
+              <if>
+                <condition id="ConditionHeader_7e986fccb12b4b96b1548d7aca833145">
+                  <realisation xsi:type="IsEqual">
+                    <term xsi:type="IntegerValue" valueOf="number" />
+                    <term xsi:type="IntegerLiteral" value="0" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_ea97d152222442ada6b9501e6c2c3eb3">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="IntegerVariable" name="number" />
+                      <term xsi:type="Add">
+                        <numeral xsi:type="IntegerValue" valueOf="number" />
+                        <numeral xsi:type="IntegerLiteral" value="1" />
+                      </term>
+                    </realisation>
+                  </action>
+                </flow>
+              </if>
+            </realisation>
+          </branch>
+          <branch id="Branch_53990ac4e6de472dbd5560492b6e99d8" disabled="true">
+            <realisation>
+              <if>
+                <condition id="ConditionHeader_178d83889c3f475ab8b4cc48f8298c21">
+                  <realisation xsi:type="IsEqual">
+                    <term xsi:type="IntegerValue" valueOf="number" />
+                    <term xsi:type="IntegerLiteral" value="1" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_96f2b657f9754068903503e1e104227e">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="IntegerVariable" name="number" />
+                      <term xsi:type="Add">
+                        <numeral xsi:type="IntegerValue" valueOf="number" />
+                        <numeral xsi:type="IntegerLiteral" value="1" />
+                      </term>
+                    </realisation>
+                  </action>
+                </flow>
+              </if>
+            </realisation>
+          </branch>
+          <action id="Action_ffa8d982408e45a88f04c038098d1372">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="number" />
+                <term xsi:type="IntegerLiteral" value="1" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="CompoundNodeLoop" id="TestProcedure_a91e56bde6a5472a8280a06d713f1f03" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="number" id="VariableDeclaration_47348035a7ed4d579d2cdb8ace592a79">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="Index1" id="VariableDeclaration_2014438146cd41a7bc094222ed911046">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <loop name="ForLoop1" id="Loop_1168d05073094930aa80f6d9c22797ac">
+            <realisation>
+              <configuration id="LoopConfigurationHeader_66a161ddc9d6401d9d4e51cfb9f80041">
+                <realisation xsi:type="ForLoop">
+                  <counter name="Index1" />
+                  <start xsi:type="IntegerLiteral" value="0" />
+                  <end xsi:type="IntegerLiteral" value="9" />
+                </realisation>
+              </configuration>
+              <flow>
+                <action id="Action_1d96efe27df54ec5b8f6b81342b1af9c">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="IntegerVariable" name="number" />
+                    <term xsi:type="Add">
+                      <numeral xsi:type="IntegerValue" valueOf="number" />
+                      <numeral xsi:type="IntegerLiteral" value="1" />
+                    </term>
+                  </realisation>
+                </action>
+              </flow>
+            </realisation>
+          </loop>
+          <loop name="ForLoop1" id="Loop_40326db930e34ba49b90bb4263a73883" disabled="true">
+            <realisation>
+              <configuration id="LoopConfigurationHeader_665c64794c9f4cb4bf8d40d5e8f0f5bd">
+                <realisation xsi:type="ForLoop">
+                  <counter name="Index1" />
+                  <start xsi:type="IntegerLiteral" value="0" />
+                  <end xsi:type="IntegerLiteral" value="9" />
+                </realisation>
+              </configuration>
+              <flow>
+                <action id="Action_debeaf1dee71477eb4847b8f8b505a1c">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="IntegerVariable" name="number" />
+                    <term xsi:type="Add">
+                      <numeral xsi:type="IntegerValue" valueOf="number" />
+                      <numeral xsi:type="IntegerLiteral" value="1" />
+                    </term>
+                  </realisation>
+                </action>
+              </flow>
+            </realisation>
+          </loop>
+          <action id="Action_d1e4f592725144da8f3fabdd6b75903c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="number" />
+                <term xsi:type="IntegerLiteral" value="10" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="CompoundNodeParallel" id="TestProcedure_143405a07eea4248bf3dcdea1afd80be" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="number" id="VariableDeclaration_73916cd294de4bb2b31364bc833ac539">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <parallel id="Parallel_4540dc7683764ab7be93bdc453cc035a">
+            <realisation>
+              <lane>
+                <mutex id="MutexGroup_26b5128ac6284cada7840bf7df844ff5">
+                  <realisation>
+                    <action id="Action_71c7a95c8c414c4f92759d02d32a1155">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="IntegerVariable" name="number" />
+                        <term xsi:type="Add">
+                          <numeral xsi:type="IntegerValue" valueOf="number" />
+                          <numeral xsi:type="IntegerLiteral" value="1" />
+                        </term>
+                      </realisation>
+                    </action>
+                  </realisation>
+                </mutex>
+              </lane>
+              <lane>
+                <mutex id="MutexGroup_1ea5084fa1d84903a26621a469e3b14d">
+                  <realisation>
+                    <action id="Action_a22f2eb8ced84f2681a580018d903b58">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="IntegerVariable" name="number" />
+                        <term xsi:type="Add">
+                          <numeral xsi:type="IntegerValue" valueOf="number" />
+                          <numeral xsi:type="IntegerLiteral" value="1" />
+                        </term>
+                      </realisation>
+                    </action>
+                  </realisation>
+                </mutex>
+              </lane>
+            </realisation>
+          </parallel>
+          <parallel id="Parallel_829d5b9d91384f77adaaed5df7da82fd" disabled="true">
+            <realisation>
+              <lane>
+                <mutex id="MutexGroup_f727cb0fa1d043afa0eb2b59e0f26a6b">
+                  <realisation>
+                    <action id="Action_55d419945aba47629ee033342ae6bf34">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="IntegerVariable" name="number" />
+                        <term xsi:type="Add">
+                          <numeral xsi:type="IntegerValue" valueOf="number" />
+                          <numeral xsi:type="IntegerLiteral" value="1" />
+                        </term>
+                      </realisation>
+                    </action>
+                  </realisation>
+                </mutex>
+              </lane>
+              <lane>
+                <mutex id="MutexGroup_4f344426beb24da9a50ae42d9820b067">
+                  <realisation>
+                    <action id="Action_70d8eed4b3fd443ead370e0f102fed9f">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="IntegerVariable" name="number" />
+                        <term xsi:type="Add">
+                          <numeral xsi:type="IntegerValue" valueOf="number" />
+                          <numeral xsi:type="IntegerLiteral" value="1" />
+                        </term>
+                      </realisation>
+                    </action>
+                  </realisation>
+                </mutex>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_34fe841272dc4379bedeebfa16385dc6">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="number" />
+                <term xsi:type="IntegerLiteral" value="2" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="CompoundNodeMutexGroup" id="TestProcedure_2ed6136b8bce4fe4b3422650fdda8af9" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="number" id="VariableDeclaration_e7f8fa1d14b24d87acb11fea880fea70">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <parallel id="Parallel_5cd37795923f479ba918f50894f3987a">
+            <realisation>
+              <lane>
+                <mutex id="MutexGroup_4a9b5086ed8446aca3fb824554679f7b">
+                  <realisation>
+                    <action id="Action_b4e805cd42d249d1b511bd1cfce12c89">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="IntegerVariable" name="number" />
+                        <term xsi:type="Add">
+                          <numeral xsi:type="IntegerValue" valueOf="number" />
+                          <numeral xsi:type="IntegerLiteral" value="1" />
+                        </term>
+                      </realisation>
+                    </action>
+                  </realisation>
+                </mutex>
+                <mutex id="MutexGroup_d92ad424edce4bd3867e4ddafe2d7f1d" disabled="true">
+                  <realisation>
+                    <action id="Action_9b25c5317b0e4903a33c9abe5d1fb1c4">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="IntegerVariable" name="number" />
+                        <term xsi:type="Add">
+                          <numeral xsi:type="IntegerValue" valueOf="number" />
+                          <numeral xsi:type="IntegerLiteral" value="1" />
+                        </term>
+                      </realisation>
+                    </action>
+                  </realisation>
+                </mutex>
+              </lane>
+              <lane>
+                <mutex id="MutexGroup_856a3a3133eb4b999488ad00f4504c04">
+                  <realisation>
+                    <action id="Action_293e150258c6410c9e93019f630d1af5">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="IntegerVariable" name="number" />
+                        <term xsi:type="Add">
+                          <numeral xsi:type="IntegerValue" valueOf="number" />
+                          <numeral xsi:type="IntegerLiteral" value="1" />
+                        </term>
+                      </realisation>
+                    </action>
+                  </realisation>
+                </mutex>
+                <mutex id="MutexGroup_538b9eb768da4f629820dbed937b3c3c" disabled="true">
+                  <realisation>
+                    <action id="Action_6412d69d96f246dda65578232cdf0d72">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="IntegerVariable" name="number" />
+                        <term xsi:type="Add">
+                          <numeral xsi:type="IntegerValue" valueOf="number" />
+                          <numeral xsi:type="IntegerLiteral" value="1" />
+                        </term>
+                      </realisation>
+                    </action>
+                  </realisation>
+                </mutex>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_1b2cc506ad744c72a7d64dc996eb0566">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="number" />
+                <term xsi:type="IntegerLiteral" value="2" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="CompoundNodeHandler" id="TestProcedure_37c00f47609e487a825a99e06feb5cb1" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="number" id="VariableDeclaration_5dfe47c4198d48158d977514b0ae0b48">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <handler id="Handler_bc280687c6bf47698ccf6f1813043aa5">
+            <realisation>
+              <try>
+                <action id="Action_a65b79ba42c34503bf543f81f7fd6586">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="IntegerVariable" name="number" />
+                    <term xsi:type="Add">
+                      <numeral xsi:type="IntegerValue" valueOf="number" />
+                      <numeral xsi:type="IntegerLiteral" value="1" />
+                    </term>
+                  </realisation>
+                </action>
+              </try>
+              <catch>
+                <exception id="CatchHeader_d73bfd63b61c4ed291c33e0a8d69e9ed">
+                  <realisation>
+                    <type />
+                  </realisation>
+                </exception>
+                <flow>
+                  <throw id="Throw_e0b92d80051e4b9da8c2ee181204f2ae">
+                    <realisation xsi:type="UserExceptionCreate">
+                      <qualifier xsi:type="StringLiteral" value="UserExceptionQualifier" />
+                      <text xsi:type="StringLiteral" value="Exception description text" />
+                    </realisation>
+                  </throw>
+                </flow>
+              </catch>
+            </realisation>
+          </handler>
+          <handler id="Handler_ae18d602b56044ab88157a8fc2df3031" disabled="true">
+            <realisation>
+              <try>
+                <action id="Action_c66f8b5ec9184485adcb056129805e33">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="IntegerVariable" name="number" />
+                    <term xsi:type="Add">
+                      <numeral xsi:type="IntegerValue" valueOf="number" />
+                      <numeral xsi:type="IntegerLiteral" value="1" />
+                    </term>
+                  </realisation>
+                </action>
+              </try>
+              <catch>
+                <exception id="CatchHeader_51d745dd765f44eaba1dedcc34c25717">
+                  <realisation>
+                    <type />
+                  </realisation>
+                </exception>
+                <flow>
+                  <throw id="Throw_72a51b9f9cc848d4a5c29284098a1e50">
+                    <realisation xsi:type="UserExceptionCreate">
+                      <qualifier xsi:type="StringLiteral" value="UserExceptionQualifier" />
+                      <text xsi:type="StringLiteral" value="Exception description text" />
+                    </realisation>
+                  </throw>
+                </flow>
+              </catch>
+            </realisation>
+          </handler>
+          <action id="Action_0cb1cd86ef564c7ea8c23bdecbe1c2c8">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="number" />
+                <term xsi:type="IntegerLiteral" value="1" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EndNodeReturn" id="TestProcedure_60bbb898a0f8411982cee1cdf61433bb" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_c03d64151011437785ee6b674ee1eed3" sequential="false">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="number">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:outParam name="number" id="OutParameterDeclaration_a505490ce87948a8b4508145d19ae072">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_bbce1393e54a44e8b9417702658550ab">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="number" />
+              <term xsi:type="Add">
+                <numeral xsi:type="IntegerValue" valueOf="number" />
+                <numeral xsi:type="IntegerLiteral" value="1" />
+              </term>
+            </realisation>
+          </action>
+          <return id="Return_9afba0a98b4447a58e430a8542fc9483" disabled="true" />
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:string="http://iso.org/OTX/1.0.0/StringUtil" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:event="http://iso.org/OTX/1.0.0/Event" name="CloseEventSource" id="id_57b9d37c4d3447a8a550856a0af635a0" package="EventHandling.Actions" version="1.0.0.0" timestamp="2021-08-10T09:13:11.85+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42466</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="CloseEventSource_EventChangeVariable" id="id_ea276175a0224834a8be9719bfd49a8f" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Integer1" id="VariableDeclaration_bcfefc2bf0824c89912e82439cce9049">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="EventSource1" id="VariableDeclaration_91fe99bdc71b4173b2dc817d96743b2e">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_6afe71b2a1544b399f668f7fea1f80d7">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_034067871b61463e8b823a1844ba2ca3">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Integer1" />
+              <term xsi:type="IntegerLiteral" value="0" />
+            </realisation>
+          </action>
+          <action id="Action_7186400aa33c48ed9230650253524ffe">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:MonitorChangeEventSource">
+                <event:variable xsi:type="IntegerVariable" name="Integer1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_5b5b624c21cc4ca69c9a8683d2b6b3d6">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Integer1" />
+              <term xsi:type="IntegerLiteral" value="12" />
+            </realisation>
+          </action>
+          <action id="Action_665b4eec699e451bb23182cc6b4fa0ff">
+            <realisation xsi:type="event:WaitForEvent">
+              <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+              <event:event name="Event1" />
+            </realisation>
+          </action>
+          <action id="Action_51410187541f4066a3933f99ef05cb27">
+            <realisation xsi:type="event:CloseEventSource">
+              <event:source name="EventSource1" />
+            </realisation>
+          </action>
+          <action id="Action_de6d2e826e3444069b1a0dd39ff1a644">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Integer1" />
+              <term xsi:type="IntegerLiteral" value="25" />
+            </realisation>
+          </action>
+          <action id="Action_6586ec7b7e7546e3936356c62aaea1a6">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="event:IsMonitorChangeEvent">
+                <event:event xsi:type="event:EventValue" valueOf="Event1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_74440eff7503460e91e8d73479132cbb">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToInteger">
+                  <term xsi:type="event:GetNewValue">
+                    <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                  </term>
+                </term>
+                <term xsi:type="IntegerLiteral" value="12" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="CloseEventSource_TimerExpiredEvent" id="TestProcedure_8eb79ad5c150407c8a19a409b5cd2426" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Integer1" id="VariableDeclaration_881aea21333149ebb4ee43d988b7dbeb">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="EventSource1" id="VariableDeclaration_26fc520c183745b08227adaa9c5b32b0">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_0284caca5516428bb1fd002c899c98b3">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_8f811e6ccb7747938ce5ef640fec454f">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Integer1" />
+              <term xsi:type="IntegerLiteral" value="0" />
+            </realisation>
+          </action>
+          <action id="Action_86a3940799a8476f93833945cce19425">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:MonitorChangeEventSource">
+                <event:variable xsi:type="IntegerVariable" name="Integer1" />
+              </term>
+            </realisation>
+          </action>
+          <parallel id="Parallel_6a19f1783dd346ce8cee62982ec4c564">
+            <realisation>
+              <lane>
+                <action id="Action_6d3b359aa0d1477f9151e7c46694c62f">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="2000" />
+                    </event:source>
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_fdb69e9b993342548452bdc5f712f1b5">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="100" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_1a4dc2567e18486888c7b17467f7da59">
+                  <realisation xsi:type="event:CloseEventSource">
+                    <event:source name="EventSource1" />
+                  </realisation>
+                </action>
+                <action id="Action_f7ea41b2ebd24c3f8ee1dd6fce53c2b3">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="IntegerVariable" name="Integer1" />
+                    <term xsi:type="IntegerLiteral" value="12" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_b492060f2a904b2d995dd09c5be77393">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="event:EventValue" valueOf="Event1" />
+                </term>
+                <term xsi:type="StringLiteral" value="TimerExpiredEvent" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="CloseEventSource_InvalidReferenceException" id="TestProcedure_f3b551de42214268b36fbf81428317e9" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Integer1" id="VariableDeclaration_3e31e7c41cec40e6a852b27c298803f5">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="EventSource1" id="VariableDeclaration_5c8726c347374b3fa3c1d4600c49a8db">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_1281213deb284e51b973006d9e763f80">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+          <variable name="Exception1" id="VariableDeclaration_2951d08960684ff799a94c735b3a30e3">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_2679b666075b49a39988acde4a8a22cd">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Integer1" />
+              <term xsi:type="IntegerLiteral" value="9" />
+            </realisation>
+          </action>
+          <action id="Action_e7b96b7a88304ae9a66639688a0fafb7">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:MonitorChangeEventSource">
+                <event:variable xsi:type="IntegerVariable" name="Integer1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_ab439e46b18f4e1fb76883be1ebd6139">
+            <realisation xsi:type="event:CloseEventSource">
+              <event:source name="EventSource1" />
+            </realisation>
+          </action>
+          <handler id="Handler_2b1d08cfb5054232b50237a4f5f3e8d6">
+            <realisation>
+              <try>
+                <action id="Action_4967aeedb6344a9a805f3ae103ac6bd4">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+                <action id="Action_9fc691994d1843e2b36538c16524b926">
+                  <realisation xsi:type="assert:Assert">
+                    <assert:condition xsi:type="BooleanLiteral" value="false" />
+                    <assert:errorMessage xsi:type="StringLiteral" value="No exception occur." />
+                  </realisation>
+                </action>
+              </try>
+              <catch>
+                <exception id="CatchHeader_c2a03760a6a94cf08986ff80dfff9317">
+                  <realisation>
+                    <type xsi:type="InvalidReferenceException" />
+                  </realisation>
+                </exception>
+                <flow>
+                  <action id="Action_ce5832acc7974ebea8ef273b89232a72">
+                    <realisation xsi:type="assert:Assert">
+                      <assert:condition xsi:type="BooleanLiteral" value="true" />
+                    </realisation>
+                  </action>
+                </flow>
+              </catch>
+              <catch>
+                <exception id="CatchHeader_55ad6734542d44caab246f976e28d393">
+                  <realisation>
+                    <type />
+                    <handle name="Exception1" />
+                  </realisation>
+                </exception>
+                <flow>
+                  <action id="Action_d939eff751b0448da84eec58c87831b4">
+                    <realisation xsi:type="assert:Assert">
+                      <assert:condition xsi:type="BooleanLiteral" value="false" />
+                      <assert:errorMessage xsi:type="string:StringConcatenate">
+                        <string:string xsi:type="StringLiteral" value="Wrong exception: " />
+                        <string:string xsi:type="ToString">
+                          <term xsi:type="ExceptionValue" valueOf="Exception1" />
+                        </string:string>
+                        <string:string xsi:type="StringLiteral" value=" was throw. InvalidReferenceException was expected." />
+                      </assert:errorMessage>
+                    </realisation>
+                  </action>
+                </flow>
+              </catch>
+            </realisation>
+          </handler>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:event="http://iso.org/OTX/1.0.0/Event" name="IsTimerExpiredEvent" id="id_9da6897b8d6e428e9ecbbd1db98616a2" package="EventHandling.Terms" version="1.0.0.0" timestamp="2021-08-10T14:58:42.42+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42500</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="IsTimerExpiredEvent_MonitorChangeEventSource" id="id_2483bd0582d4455fb541744341859bfb" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Boolean1" id="VariableDeclaration_207447954dcf41b484a6bc7b85af3801">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_09bd493c032d47ecb17fb4b0223ea9b0">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+          <variable name="EventSource1" id="VariableDeclaration_2e11d7c65cb64f19b8418f8d6551615f">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_c8f91abb453f4430b5f60942541764cb">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:MonitorChangeEventSource">
+                <event:variable xsi:type="BooleanVariable" name="Boolean1" />
+              </term>
+            </realisation>
+          </action>
+          <parallel id="Parallel_73866394c3d14f0194cad84b898c29a7">
+            <realisation>
+              <lane>
+                <action id="Action_daf299eda87f4d4ea698d6c9fe691093">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_7336f4ef13dd4de0a35b83c6fdb08284">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="100" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_bfbbe566d1cc4b4f92251503ae4bcb47">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="BooleanVariable" name="Boolean1" />
+                    <term xsi:type="BooleanLiteral" value="true" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_3a28784752e244f988754f5aad00c98d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="event:IsTimerExpiredEvent">
+                  <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="IsTimerExpiredEvent_UseThresholdExceededEvent" id="TestProcedure_6e23ddd9f12845189edaf09e255bbf96" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Boolean1" id="VariableDeclaration_448e1a15e38d45508db45ae72084dc35">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_49a6cb1f6d5f498085a0322915888556">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+          <variable name="EventSource1" id="VariableDeclaration_64e5808057054bfd9e174f8757a7e3ce">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_18c203f952874e9abdc89b2c1d28bc38">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:ThresholdExceededEventSource">
+                <event:variable xsi:type="BooleanVariable" name="Boolean1" />
+                <event:lowerThreshold xsi:type="BooleanLiteral" value="false" />
+                <event:upperThreshold xsi:type="BooleanLiteral" value="false" />
+              </term>
+            </realisation>
+          </action>
+          <parallel id="Parallel_c9d8ee74f68f4e78b2f66366e4aaec1c">
+            <realisation>
+              <lane>
+                <action id="Action_e31d367ed7e141058322cab4f3d777f8">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_34343fe0a9df4095b555364ebcb976fe">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="100" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_acbe51aa423b4cd9aa635c398a273d41">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="BooleanVariable" name="Boolean1" />
+                    <term xsi:type="BooleanLiteral" value="true" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_4cd2052f489c4a259f019858f0dc90bd">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="event:IsTimerExpiredEvent">
+                  <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="IsTimerExpiredEvent_HasUseButTimerNotExpired" id="TestProcedure_e27a22bd41ef4b80b97f67def8a1e9c1" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Boolean1" id="VariableDeclaration_bc07b4e1f51b4e45abd068e8ade93a90">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_bc311deae0884af5ae636693b4e1ce2c">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+          <variable name="EventSource1" id="VariableDeclaration_6438bb7c62f245b0ad568630e8ddf268">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="EventSource2" id="VariableDeclaration_86a93561122d45b7b724201f063f4c70">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_0315cb62404b400e8d48aa0d1777d938">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:MonitorChangeEventSource">
+                <event:variable xsi:type="BooleanVariable" name="Boolean1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_c86f6420cac14c7b9f66222f31f179ed">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource2" />
+              <term xsi:type="event:TimerExpiredEventSource">
+                <event:timeout xsi:type="IntegerLiteral" value="2000" />
+              </term>
+            </realisation>
+          </action>
+          <parallel id="Parallel_3cb3db1495764ed2a116f6a24fab84ad">
+            <realisation>
+              <lane>
+                <action id="Action_30fbe2e9cc3d4d568838b2072a859b11">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource2" />
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_598ac76324e94054b94838fe36b6da84">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="100" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_2d3a9d21abe841879eed5921069f0587">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="BooleanVariable" name="Boolean1" />
+                    <term xsi:type="BooleanLiteral" value="true" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_961c3efc414a4e21aaa0f8a9ff63a092">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="event:IsTimerExpiredEvent">
+                  <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="IsTimerExpiredEvent_HasUseTimerExpired" id="TestProcedure_00c85eb65abd431a89f3052709adbca4" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Boolean1" id="VariableDeclaration_511d5f176b9c4b889ffbf8f42cf99fb7">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_3be21e173b05484196dceac1a184e38b">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+          <variable name="EventSource1" id="VariableDeclaration_c1d14822ed7948478e78ebffbbac8bd6">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="EventSource2" id="VariableDeclaration_408de62a17544340a1dafa5f599e33e0">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_ba98cadd6a7e41ddbeeb82a9bb375127">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:MonitorChangeEventSource">
+                <event:variable xsi:type="BooleanVariable" name="Boolean1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_54cfe410a4fa4352981be0f1587d266c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource2" />
+              <term xsi:type="event:TimerExpiredEventSource">
+                <event:timeout xsi:type="IntegerLiteral" value="100" />
+              </term>
+            </realisation>
+          </action>
+          <parallel id="Parallel_7d87b8e1193d4f768baaa388c820b363">
+            <realisation>
+              <lane>
+                <action id="Action_25ec4ce43e034818a603545d5612b2dc">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource2" />
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_3acc34d318dd4923af0f9be663168732">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="1000" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_b71d4c27ace24cd5a495c86dd4900d77">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="BooleanVariable" name="Boolean1" />
+                    <term xsi:type="BooleanLiteral" value="true" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_a2c3cbb925714061bbd5575e52bf3e48">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="event:IsTimerExpiredEvent">
+                <event:event xsi:type="event:EventValue" valueOf="Event1" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

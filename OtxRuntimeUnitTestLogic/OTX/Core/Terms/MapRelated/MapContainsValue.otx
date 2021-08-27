@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="MapContainsValue" id="id_ba93c3bf33494d38a2e746275d048d90" package="Core.Terms.MapRelated" version="1.0.0.41636" timestamp="2021-05-14T10:40:44.631+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.41142</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="MapContainsValue_ValueBoolean" id="TestProcedure_03c451b363d949c49a0f62d811583173" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="EmptyMap" id="VariableDeclaration_4f6a3bffbca749b091c332ed3f7f53a9">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Boolean" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="MapIntegerBoolean_A" id="VariableDeclaration_a51c3019d5394647bd29f86f1a2c04a6">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Boolean" />
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Boolean" />
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="-100000" />
+                      <value xsi:type="BooleanLiteral" value="true" />
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="MapIntegerBoolean_B" id="VariableDeclaration_365c09739b6e49a0a8396eee353e3f6e">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Boolean" />
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Boolean" />
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="100000" />
+                      <value xsi:type="BooleanLiteral" value="false" />
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_fce4779d2ab54dda9b76cb5ca7326c6d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="EmptyMap" />
+                  <value xsi:type="BooleanLiteral" value="true" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_295e135a9ffd4e5c9e1e02f9bc40a000">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="EmptyMap" />
+                  <value xsi:type="BooleanLiteral" value="false" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_0bd2e200c3da432ca5f0573196f8fe2a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="MapIntegerBoolean_A" />
+                  <value xsi:type="BooleanLiteral" value="false" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_d31a6a3cd286409cbfb82c909d0c4bb5">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="MapContainsValue">
+                <map xsi:type="MapValue" valueOf="MapIntegerBoolean_A" />
+                <value xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_dc489be32e59498f96ac0db2a522f170">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="MapContainsValue">
+                <map xsi:type="MapValue" valueOf="MapIntegerBoolean_B" />
+                <value xsi:type="BooleanLiteral" value="false" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_0079d7ae765648ca865bbd6584ed1ac0">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="MapIntegerBoolean_B" />
+                  <value xsi:type="BooleanLiteral" value="true" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="MapContainsValue_ValueInteger" id="TestProcedure_cb22d566971245c187ef652bcb67d1af" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="EmptyMap" id="VariableDeclaration_8e9c890f37af47908559256689c5ce01">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Integer" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="MapIntegerInteger" id="VariableDeclaration_99a293aa10a54c7cb4929040a70efd7a">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Integer" />
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Integer" />
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="9223372036854775807" />
+                      <value xsi:type="IntegerLiteral" value="0" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="49" />
+                      <value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="0" />
+                      <value xsi:type="IntegerLiteral" value="9223372036854775807" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                      <value xsi:type="IntegerLiteral" value="49" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="-16" />
+                      <value xsi:type="IntegerLiteral" value="-16" />
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_ec76783e00d448aeb48a57ccea48fc11">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="EmptyMap" />
+                  <value xsi:type="IntegerLiteral" value="1" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_b170c5a713e5432396d5752f8424b821">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="EmptyMap" />
+                  <value xsi:type="IntegerLiteral" value="2" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_60d78b92653d45089b87416c654dc09d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="MapContainsValue">
+                <map xsi:type="MapValue" valueOf="MapIntegerInteger" />
+                <value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_346c951334ef45e59f07d3a0f02e36df">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="MapIntegerInteger" />
+                  <value xsi:type="IntegerLiteral" value="-30" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_abcff8e7c951471c8fb8b996daaa5162">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="MapContainsValue">
+                <map xsi:type="MapValue" valueOf="MapIntegerInteger" />
+                <value xsi:type="IntegerLiteral" value="49" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_e52fb977291c4dc3a9226136a62a562d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="MapIntegerInteger" />
+                  <value xsi:type="IntegerLiteral" value="-49" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_273afe0c8ddb4328a6161c6676c40673">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="MapContainsValue">
+                <map xsi:type="MapValue" valueOf="MapIntegerInteger" />
+                <value xsi:type="IntegerLiteral" value="0" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_46e0e5b090984fe692a22fb53a805577">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="MapIntegerInteger" />
+                  <value xsi:type="IntegerLiteral" value="10" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_14d6bd275da148b298c3f7edb793a4b6">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="MapContainsValue">
+                <map xsi:type="MapValue" valueOf="MapIntegerInteger" />
+                <value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_181f785db7ad47f5937f452fef049e3c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="MapIntegerInteger" />
+                  <value xsi:type="IntegerLiteral" value="30" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_26528c78fef745a2a5b7650c106dad02">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="MapContainsValue">
+                <map xsi:type="MapValue" valueOf="MapIntegerInteger" />
+                <value xsi:type="IntegerLiteral" value="-16" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="MapContainsValue_ValueFloat" id="TestProcedure_fcd6b665953a4d07b5dafa850f40df6c" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="EmptyMap" id="VariableDeclaration_c17e2f7a6e3249adbac5c7d67ad77162">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Float" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="MapIntegerFloat" id="VariableDeclaration_6b2d7c652a8340a48c2797167dc46bf7">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Float" />
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Float" />
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="-16" />
+                      <value xsi:type="FloatLiteral" value="0" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="547758" />
+                      <value xsi:type="FloatLiteral" value="INF" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                      <value xsi:type="FloatLiteral" value="-12.34" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="3685477" />
+                      <value xsi:type="FloatLiteral" value="49.77" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="-37203685" />
+                      <value xsi:type="FloatLiteral" value="NaN" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="0" />
+                      <value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="9223372036854775807" />
+                      <value xsi:type="FloatLiteral" value="-INF" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="49" />
+                      <value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_86f49545999e43ff82b8fea71dd7abc6">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="EmptyMap" />
+                  <value xsi:type="IntegerLiteral" value="1" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_2798cc9ad3574743b4731634e59f4d74">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="EmptyMap" />
+                  <value xsi:type="IntegerLiteral" value="2" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_06e5bde30ccc478da3bfea0f3212e88b">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="MapContainsValue">
+                <map xsi:type="MapValue" valueOf="MapIntegerFloat" />
+                <value xsi:type="FloatLiteral" value="INF" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_26285c10222c4d7aa283ac025e53cd93">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="MapContainsValue">
+                <map xsi:type="MapValue" valueOf="MapIntegerFloat" />
+                <value xsi:type="FloatLiteral" value="NaN" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_1091c9c536a74eca9c4ae312a26af10a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="MapContainsValue">
+                <map xsi:type="MapValue" valueOf="MapIntegerFloat" />
+                <value xsi:type="FloatLiteral" value="49.77" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_940ea0dd8a644812af08aff32e6f12ff">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="MapIntegerFloat" />
+                  <value xsi:type="FloatLiteral" value="49.74" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_24f09b093b1441c39fe4214aef125e87">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="MapContainsValue">
+                <map xsi:type="MapValue" valueOf="MapIntegerFloat" />
+                <value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_879e939408c84d8c92dacffff702a8e9">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="MapIntegerFloat" />
+                  <value xsi:type="FloatLiteral" value="1.7976931348623155E+308" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_77cbc22c51d74a5b8b1d8a041bf6e4a8">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="MapContainsValue">
+                <map xsi:type="MapValue" valueOf="MapIntegerFloat" />
+                <value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_a712a10c7913443daf6707afe4d3b225">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="MapIntegerFloat" />
+                  <value xsi:type="FloatLiteral" value="-1.7976931348623155E+308" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_d47a13f16901426a8424d2c46e1dc773">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="MapContainsValue">
+                <map xsi:type="MapValue" valueOf="MapIntegerFloat" />
+                <value xsi:type="IntegerLiteral" value="0" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_bf7ab2e03a904b6a861e98bcecd5dde2">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="MapIntegerFloat" />
+                  <value xsi:type="FloatLiteral" value="12.35" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="MapContainsValue_ValueString" id="TestProcedure_cca7641446f74fa48dc8ee996aebb51c" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="EmptyMap" id="VariableDeclaration_6222c1da2383488287f6e3b068c3d334">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="String" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="MapIntegerString" id="VariableDeclaration_c6701599cfd847ecb461bcdf155663b6">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="String" />
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="String" />
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="9223372036854775807" />
+                      <value xsi:type="StringLiteral" value="" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="49" />
+                      <value xsi:type="StringLiteral" value="  " />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="0" />
+                      <value xsi:type="StringLiteral" value="ASD" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                      <value xsi:type="StringLiteral" value="---" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="-16" />
+                      <value xsi:type="StringLiteral" value="#$%" />
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_26e694ecc53e4f028a8733ee40b15a11">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="EmptyMap" />
+                  <value xsi:type="StringLiteral" value="A" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_eb6e37b7b0dd446897324b4ed345ea71">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="EmptyMap" />
+                  <value xsi:type="StringLiteral" value="b" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_d2984a91de1f4f23be825298c41872c7">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="MapContainsValue">
+                <map xsi:type="MapValue" valueOf="MapIntegerString" />
+                <value xsi:type="StringLiteral" value="" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_d9193075c8064f39a5a9d3e32a36836f">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="MapIntegerString" />
+                  <value xsi:type="StringLiteral" value=" " />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_2c0d8d712e83480da9dbe69ead1b5c55">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="MapContainsValue">
+                <map xsi:type="MapValue" valueOf="MapIntegerString" />
+                <value xsi:type="StringLiteral" value="  " />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_ff6ca3937ee44e0c8b241e40ada46b3a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="MapIntegerString" />
+                  <value xsi:type="StringLiteral" value="   " />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_3b415f5c6c684ad993705b3791bc9183">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="MapIntegerString" />
+                  <value xsi:type="StringLiteral" value="---." />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_8805073d00e7482595fe73d01cef5508">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="MapContainsValue">
+                <map xsi:type="MapValue" valueOf="MapIntegerString" />
+                <value xsi:type="StringLiteral" value="ASD" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_67692fb040474d28bb69b1c2c0b5411a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="MapIntegerString" />
+                  <value xsi:type="StringLiteral" value="ASD " />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_08cc7e5c7744418b8f87b46a0ab50401">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="MapIntegerString" />
+                  <value xsi:type="StringLiteral" value="ASF" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_216b001b5f474783898243af60e5146a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="MapIntegerString" />
+                  <value xsi:type="StringLiteral" value=" #$%" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_295e6dce278049a8bdbf16706758c279">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="MapIntegerString" />
+                  <value xsi:type="StringLiteral" value="#$% " />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="MapContainsValue_ValueByteField" id="TestProcedure_e700d8e0be4c4690aec299d5a39ad963" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ByteFieldEmpty" id="VariableDeclaration_5c04802bd7d64ae980f4d705af7098c5">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </variable>
+          <variable name="MapIntegerByteField" id="VariableDeclaration_6dc1c0aa288d49349d0a7cf47a700e0d">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="ByteField" />
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="ByteField" />
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="49" />
+                      <value xsi:type="ByteFieldLiteral" value="0000000000000080" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="0" />
+                      <value xsi:type="ByteFieldLiteral" value="FFFFFFFFFFFFFF7F" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="-16" />
+                      <value xsi:type="ByteFieldLiteral" value="F0" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="-12357" />
+                      <value xsi:type="ByteFieldLiteral" value="0000" />
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_c969117d731b4e3a81d9a4b8e0eac179">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="MapIntegerByteField">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="-12357" />
+                </path>
+              </result>
+              <term xsi:type="ByteFieldValue" valueOf="ByteFieldEmpty" />
+            </realisation>
+          </action>
+          <action id="Action_6ef5ea2953534d56b9777790cac6fe46">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="MapContainsValue">
+                  <map xsi:type="MapValue" valueOf="MapIntegerByteField" />
+                  <value xsi:type="ByteFieldLiteral" value="00" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_4ba9eb4cfbf24a1ead9eb16f6875477a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="MapContainsValue">
+                <map xsi:type="MapValue" valueOf="MapIntegerByteField" />
+                <value xsi:type="ByteFieldValue" valueOf="MapIntegerByteField">
+                  <path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </path>
+                </value>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_1847a83bb059441e92b81aba75488ae4">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="MapContainsValue">
+                <map xsi:type="MapValue" valueOf="MapIntegerByteField" />
+                <value xsi:type="ByteFieldValue" valueOf="MapIntegerByteField">
+                  <path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="-12357" />
+                  </path>
+                </value>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_0284ac530a9a444fad9163a30fef2642">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="MapContainsValue">
+                <map xsi:type="MapValue" valueOf="MapIntegerByteField" />
+                <value xsi:type="ByteFieldValue" valueOf="ByteFieldEmpty" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:dt="http://iso.org/OTX/1.0.0/DateTime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:event="http://iso.org/OTX/1.0.0/Event" name="Sleep" id="id_fc918522dbe4446d96ed7c28099e2404" package="EventHandling.Actions" version="1.0.0.42074" timestamp="2021-07-06T12:18:30.02+02:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42010</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="SleepInteger" id="id_d3c7cf83b6054bd881cb3324b0d8495d" timeout="1000">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_364d200c42e1440ba285381d94f08934">
+            <unittest:arguments>
+              <unittest:argument param="timeout">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="duration">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="0" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="30" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_dedf5d6eab1f4e0493c2a756317649e6">
+            <unittest:arguments>
+              <unittest:argument param="timeout">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="duration">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="1" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="60" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7142b01d7e814982bab181e68f2dec6c">
+            <unittest:arguments>
+              <unittest:argument param="timeout">
+                <unittest:value xsi:type="IntegerLiteral" value="10" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="duration">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="10" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="80" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9de951097b784b88a226c4f5d82f6eb1">
+            <unittest:arguments>
+              <unittest:argument param="timeout">
+                <unittest:value xsi:type="IntegerLiteral" value="100" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="duration">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="100" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="300" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c20880bfd0c64d3c80bb2ba39c1195a8">
+            <unittest:arguments>
+              <unittest:argument param="timeout">
+                <unittest:value xsi:type="IntegerLiteral" value="-1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="timeout" id="InParameterDeclaration_aa15f024feca4e5099a8f879e1fdde94">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="duration" id="OutParameterDeclaration_5548b1dce7784a1dbcfbc23450528487">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="timestamp" id="VariableDeclaration_2de96a1e7e8242898765e4567d1e9a00">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_d5021fac97fd44f3811ad26916d2c5bc">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="timestamp" />
+              <term xsi:type="dt:GetTimestamp" />
+            </realisation>
+          </action>
+          <action id="Action_be27610d18164b05bf6fe50f801a1a44">
+            <metaData>
+              <data key="EmotiveActivity">SleepActivity</data>
+            </metaData>
+            <realisation xsi:type="event:WaitForEvent">
+              <event:source xsi:type="event:TimerExpiredEventSource">
+                <event:timeout xsi:type="IntegerValue" valueOf="timeout" />
+              </event:source>
+            </realisation>
+          </action>
+          <action id="Action_a99f7f6127e84b24882c86bfda536a01">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="duration" />
+              <term xsi:type="Subtract">
+                <numeral xsi:type="dt:GetTimestamp" />
+                <subtrahend xsi:type="IntegerValue" valueOf="timestamp" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SleepFloat" id="TestProcedure_a35a57e04e1b4fbcb960a3db4cac56f1" timeout="1000">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_f784a8f62002418bb57c5fdffef02169">
+            <unittest:arguments>
+              <unittest:argument param="timeout">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="duration">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="0" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="30" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9a7fc6e0b15145848a4e20c5cbc5ebb1">
+            <unittest:arguments>
+              <unittest:argument param="timeout">
+                <unittest:value xsi:type="FloatLiteral" value="1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="duration">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="1" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="60" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_fcaee1ae40ef47dd99c193a5cbc037a0">
+            <unittest:arguments>
+              <unittest:argument param="timeout">
+                <unittest:value xsi:type="FloatLiteral" value="10" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="duration">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="10" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="80" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a15d5dc96c5145ca9911058efce4edc7">
+            <unittest:arguments>
+              <unittest:argument param="timeout">
+                <unittest:value xsi:type="FloatLiteral" value="100" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="duration">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="100" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="300" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_27fc5a9bbe69418e86a90c37f713dae2">
+            <unittest:arguments>
+              <unittest:argument param="timeout">
+                <unittest:value xsi:type="IntegerLiteral" value="-1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_57a5bf0832dc451193571c597b2ae91b">
+            <unittest:arguments>
+              <unittest:argument param="timeout">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="duration">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="0" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="30" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_066062cd564a4ac19c326db7d17f41dc">
+            <unittest:arguments>
+              <unittest:argument param="timeout">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9e64c5b0b06d49b19cef216ead720ffc">
+            <unittest:arguments>
+              <unittest:argument param="timeout">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e9bf5721141b4abb8f100edcd534a3f0">
+            <unittest:arguments>
+              <unittest:argument param="timeout">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="timeout" id="InParameterDeclaration_aae0684a04714542bc8a41651de12e54">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="duration" id="OutParameterDeclaration_a611af08bbea43b7aa804ccbf6d9f555">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="timestamp" id="VariableDeclaration_c2515b9fa4ef45e6b7e6163e6f89ef2c">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_4827199893be46e9b20a5bd5080528c8">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="timestamp" />
+              <term xsi:type="dt:GetTimestamp" />
+            </realisation>
+          </action>
+          <action id="Action_835b91e5de71438da8419acd7f69d125">
+            <metaData>
+              <data key="EmotiveActivity">SleepActivity</data>
+            </metaData>
+            <realisation xsi:type="event:WaitForEvent">
+              <event:source xsi:type="event:TimerExpiredEventSource">
+                <event:timeout xsi:type="FloatValue" valueOf="timeout" />
+              </event:source>
+            </realisation>
+          </action>
+          <action id="Action_8fd61084aa7a43859d4f51cadfaceca1">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="duration" />
+              <term xsi:type="Subtract">
+                <numeral xsi:type="dt:GetTimestamp" />
+                <subtrahend xsi:type="IntegerValue" valueOf="timestamp" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

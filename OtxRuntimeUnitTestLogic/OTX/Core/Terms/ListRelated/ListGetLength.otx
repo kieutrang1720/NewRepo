@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="ListGetLength" id="id_b7eb57b50ef542999fb92f1e15a7068a" package="Core.Terms.ListRelated" version="1.0.0.41629" timestamp="2021-05-14T17:51:05.361+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.41142</data>
+  </metaData>
+  <declarations>
+    <variable name="EmptyListOfInteger" id="DocumentVariableDeclaration_108dd3ce07fb4c91871cc21b21c084d3">
+      <realisation>
+        <dataType xsi:type="List">
+          <itemType xsi:type="Integer" />
+        </dataType>
+      </realisation>
+    </variable>
+    <variable name="EmptyListOfString" id="DocumentVariableDeclaration_c3466c11b8664d908f01fabeaa5314ad">
+      <realisation>
+        <dataType xsi:type="List">
+          <itemType xsi:type="String" />
+        </dataType>
+      </realisation>
+    </variable>
+    <variable name="EmptyListOfFloat" id="DocumentVariableDeclaration_4d4bb4d5e6a8430997ec84f9059abca9">
+      <realisation>
+        <dataType xsi:type="List">
+          <itemType xsi:type="Float" />
+        </dataType>
+      </realisation>
+    </variable>
+    <variable name="EmptyListOfByteField" id="DocumentVariableDeclaration_b137017209ca45779bd32a7c4361a7f6">
+      <realisation>
+        <dataType xsi:type="List">
+          <itemType xsi:type="ByteField" />
+        </dataType>
+      </realisation>
+    </variable>
+  </declarations>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ListGetLengthInteger" id="id_78baf2304d5046c08bfcd1955b4dd2c4" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_92af27c9c108417d89bc1174d95b3460">
+            <unittest:arguments>
+              <unittest:argument param="List1">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="Integer" />
+                  <items>
+                    <item xsi:type="IntegerLiteral" value="1" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6024d863e37f495da22de20d75bcec33">
+            <unittest:arguments>
+              <unittest:argument param="List1">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="Integer" />
+                  <items>
+                    <item xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <item xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <item xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <item xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <item xsi:type="IntegerLiteral" value="9223372036854775807" />
+                    <item xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <item xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <item xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <item xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <item xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <item xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <item xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="12" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_329915c8cda4443a8655b6e8d1fec733">
+            <unittest:arguments>
+              <unittest:argument param="List1">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="Integer" />
+                  <items>
+                    <item xsi:type="IntegerLiteral" value="0" />
+                    <item xsi:type="IntegerLiteral" value="1" />
+                    <item xsi:type="IntegerLiteral" value="2" />
+                    <item xsi:type="IntegerLiteral" value="3" />
+                    <item xsi:type="IntegerLiteral" value="4" />
+                    <item xsi:type="IntegerLiteral" value="5" />
+                    <item xsi:type="IntegerLiteral" value="6" />
+                    <item xsi:type="IntegerLiteral" value="7" />
+                    <item xsi:type="IntegerLiteral" value="8" />
+                    <item xsi:type="IntegerLiteral" value="9" />
+                    <item xsi:type="IntegerLiteral" value="10" />
+                    <item xsi:type="IntegerLiteral" value="11" />
+                    <item xsi:type="IntegerLiteral" value="12" />
+                    <item xsi:type="IntegerLiteral" value="13" />
+                    <item xsi:type="IntegerLiteral" value="14" />
+                    <item xsi:type="IntegerLiteral" value="15" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="1" />
+                    <item xsi:type="IntegerLiteral" value="2" />
+                    <item xsi:type="IntegerLiteral" value="3" />
+                    <item xsi:type="IntegerLiteral" value="4" />
+                    <item xsi:type="IntegerLiteral" value="5" />
+                    <item xsi:type="IntegerLiteral" value="6" />
+                    <item xsi:type="IntegerLiteral" value="7" />
+                    <item xsi:type="IntegerLiteral" value="8" />
+                    <item xsi:type="IntegerLiteral" value="9" />
+                    <item xsi:type="IntegerLiteral" value="10" />
+                    <item xsi:type="IntegerLiteral" value="11" />
+                    <item xsi:type="IntegerLiteral" value="12" />
+                    <item xsi:type="IntegerLiteral" value="13" />
+                    <item xsi:type="IntegerLiteral" value="14" />
+                    <item xsi:type="IntegerLiteral" value="15" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                    <item xsi:type="IntegerLiteral" value="16" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="161" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e9d29ba41f324852b7061e7f6b6e83ae">
+            <unittest:arguments>
+              <unittest:argument param="List1">
+                <unittest:value xsi:type="ListValue" valueOf="EmptyListOfInteger" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="List1" id="InParameterDeclaration_1ce8f0c01a314739bc7a477cd245ed5e">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="Integer" />
+                <init>
+                  <itemType xsi:type="Integer" />
+                  <items>
+                    <item xsi:type="IntegerLiteral" value="1" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_e6ce55426ec1420f84609574f3eede5e">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action name="ListGetLength1" id="Action_f26a352865704f02a681665811568147">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Result" />
+              <term xsi:type="ListGetLength">
+                <list xsi:type="ListValue" valueOf="List1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ListGetLengthBoolean" id="TestProcedure_737ecd01edee4ff68da160f4afabcfef" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_bbe5b6d4768e4940b7f3db1b94ad8c68">
+            <unittest:arguments>
+              <unittest:argument param="List1">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="Boolean" />
+                  <items>
+                    <item xsi:type="BooleanLiteral" value="true" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d8b4438ace6f43e18c30a1b1c25547f9">
+            <unittest:arguments>
+              <unittest:argument param="List1">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="Boolean" />
+                  <items>
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="66" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="List1" id="InParameterDeclaration_61d8f548a32a439ead059db243d76634">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="Boolean" />
+                <init>
+                  <itemType xsi:type="Boolean" />
+                  <items>
+                    <item xsi:type="BooleanLiteral" value="false" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_66863df7f3344e5888a9b32c542b1e59">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_02f520a200d941ab89249b171cc7294e">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Result" />
+              <term xsi:type="ListGetLength">
+                <list xsi:type="ListValue" valueOf="List1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ListGetLengthString" id="TestProcedure_017c5e8ec52b45b3a4eaa74e8210cc81" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_2fa418240207442ea06250fd85859112">
+            <unittest:arguments>
+              <unittest:argument param="List1">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="hello" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8aefee955365415582983ee4442cab1f">
+            <unittest:arguments>
+              <unittest:argument param="List1">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="" />
+                    <item xsi:type="StringLiteral" value=" " />
+                    <item xsi:type="StringLiteral" value="/" />
+                    <item xsi:type="StringLiteral" value="NULL" />
+                    <item xsi:type="StringLiteral" value="ABCD" />
+                    <item xsi:type="StringLiteral" value="123" />
+                    <item xsi:type="StringLiteral" value="''" />
+                    <item xsi:type="StringLiteral" value="true" />
+                    <item xsi:type="StringLiteral" value="false" />
+                    <item xsi:type="StringLiteral" value="NaN" />
+                    <item xsi:type="StringLiteral" value="Infinity" />
+                    <item xsi:type="StringLiteral" value="-Infinity" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="12" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_75482077f2c74e6f87b7a0c2bf1a4d93">
+            <unittest:arguments>
+              <unittest:argument param="List1">
+                <unittest:value xsi:type="ListValue" valueOf="EmptyListOfString" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="List1" id="InParameterDeclaration_aca43b167a24446390d4783fcece0c5b">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+                <init>
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="abc" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_7eb7c76e687f46fda04cca3be53f1c56">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_c9c55fad207542ca8503f5b6d258e25c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Result" />
+              <term xsi:type="ListGetLength">
+                <list xsi:type="ListValue" valueOf="List1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ListGetLengthFloat" id="TestProcedure_23fbc5a4678940678fc204e35ef85ff7" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_a43ecdd69177448f8de2b29332dc4b83">
+            <unittest:arguments>
+              <unittest:argument param="List1">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="Float" />
+                  <items>
+                    <item xsi:type="FloatLiteral" value="1" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b2f6d8740e914f18851060841b5c2d64">
+            <unittest:arguments>
+              <unittest:argument param="List1">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="Float" />
+                  <items>
+                    <item xsi:type="FloatLiteral" value="0" />
+                    <item xsi:type="FloatLiteral" value="-0" />
+                    <item xsi:type="FloatLiteral" value="0" />
+                    <item xsi:type="FloatLiteral" value="-0" />
+                    <item xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <item xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <item xsi:type="FloatLiteral" value="4.94065645841247E-324" />
+                    <item xsi:type="FloatLiteral" value="NaN" />
+                    <item xsi:type="FloatLiteral" value="INF" />
+                    <item xsi:type="FloatLiteral" value="-INF" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="10" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3dded139ad1544829a38657e9170b034">
+            <unittest:arguments>
+              <unittest:argument param="List1">
+                <unittest:value xsi:type="ListValue" valueOf="EmptyListOfFloat" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="List1" id="InParameterDeclaration_c186848275dd49cfb4c3fff5842bbba7">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="Float" />
+                <init>
+                  <itemType xsi:type="Float" />
+                  <items>
+                    <item xsi:type="FloatLiteral" value="1" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_06660639763b428bb608c5a870988492">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_503826cec1114535af5fa0820b9bb4f8">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Result" />
+              <term xsi:type="ListGetLength">
+                <list xsi:type="ListValue" valueOf="List1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ListGetLengthBF" id="TestProcedure_56b6d4162d7b43e58fcb51e93e480c37" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_385730e7df3344609f45f7b1981c34a5">
+            <unittest:arguments>
+              <unittest:argument param="List1">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="ByteField" />
+                  <items>
+                    <item xsi:type="ByteFieldLiteral" value="01" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f9a5173abd2d4f6aa32fd93c36e3f46f">
+            <unittest:arguments>
+              <unittest:argument param="List1">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="ByteField" />
+                  <items>
+                    <item xsi:type="ByteFieldLiteral" value="00" />
+                    <item xsi:type="ByteFieldLiteral" value="1234567890" />
+                    <item xsi:type="ByteFieldLiteral" value="ABCD" />
+                    <item xsi:type="ByteFieldLiteral" value="AABBCCDDEEFFAABBCCDDEEFFAABBCCDDEEFF" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="4" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2f40b678876443ce9e2d283c35c6d25a">
+            <unittest:arguments>
+              <unittest:argument param="List1">
+                <unittest:value xsi:type="ListValue" valueOf="EmptyListOfByteField" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="List1" id="InParameterDeclaration_353812c4bedc4b97868f5883e209a6e5">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="ByteField" />
+                <init>
+                  <itemType xsi:type="ByteField" />
+                  <items>
+                    <item xsi:type="ByteFieldLiteral" value="00" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_671ddb586bc148ce9e99a379db4a6f94">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_27fb6737766946e5b45a7e2252a732e9">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Result" />
+              <term xsi:type="ListGetLength">
+                <list xsi:type="ListValue" valueOf="List1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

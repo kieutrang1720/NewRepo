@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:flash="http://iso.org/OTX/1.0.0/Flash" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagConf="http://iso.org/OTX/1.0.0/DiagConfiguration" name="GetCompressedSize" id="id_1ec6123703d843649801013b9d7c6029" package="Flash.Terms" version="1.0.0.0" timestamp="2021-08-25T15:51:09.67+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42617</data>
+  </metaData>
+  <declarations>
+    <variable name="CurrentProjectName" id="DocumentVariableDeclaration_5b2ed353c0cb4c2bb2862a363beac0cf">
+      <realisation>
+        <dataType xsi:type="String" />
+      </realisation>
+    </variable>
+    <variable name="CurrentVehicleName" id="DocumentVariableDeclaration_159a5e58474f4e689d33d51ca2f20a7d">
+      <realisation>
+        <dataType xsi:type="String" />
+      </realisation>
+    </variable>
+  </declarations>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ChangeOdxDb_p_918_v_918S" id="TestProcedure_eb2048f377574d2d9ffe40c09ea626ad">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_36445d92921643e99ebe7363cac4e37d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="CurrentProjectName" />
+              <term xsi:type="diagConf:GetActiveProject" />
+            </realisation>
+          </action>
+          <action id="Action_b790477ff6524911bd5605b5b4f33738">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="CurrentVehicleName" />
+              <term xsi:type="diagConf:GetActiveVehicleInformation" />
+            </realisation>
+          </action>
+          <branch id="Branch_4103312a07a64ea59b2c706006bfe5b9">
+            <realisation>
+              <if>
+                <condition id="ConditionHeader_3dd5c1187a914bc8b0b7dc6a2c2c5a5a">
+                  <realisation xsi:type="IsNotEqual">
+                    <term xsi:type="StringValue" valueOf="CurrentProjectName" />
+                    <term xsi:type="StringLiteral" value="918" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_1efcace3b28741a2969add213d2eea38">
+                    <realisation xsi:type="diagConf:SelectProject">
+                      <diagConf:projectName xsi:type="StringLiteral" value="918" />
+                    </realisation>
+                  </action>
+                  <action id="Action_26cb5949d8134968a7c0b7aa06eb5bcc">
+                    <realisation xsi:type="diagConf:SelectVehicleInformation">
+                      <diagConf:vehicleInformation xsi:type="StringLiteral" value="918S" />
+                    </realisation>
+                  </action>
+                </flow>
+              </if>
+            </realisation>
+          </branch>
+          <endNode id="ExtensibleEndNode_0a3aa8f9ad4a4fc8ba872fc0571c3416">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="GetStartAddressIntArgs" id="TestProcedure_fe1f53573f68412a9dc21cafaa463c6f">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_09a2c3c6f55b43a084f929f142267f6c">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:value xsi:type="StringLiteral" value="Getriebesteuerdatensaetze_Download" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutInteger">
+                <unittest:value xsi:type="IntegerLiteral" value="15872" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_32f612c7698e4f60bd1d19ddb0ab2e06">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="StringLiteral" value="_7PP907357F_7520" />
+                    <unittest:element xsi:type="StringLiteral" value="_7PP907357G_7530" />
+                    <unittest:element xsi:type="StringLiteral" value="_7PP907357H_7540" />
+                    <unittest:element xsi:type="StringLiteral" value="_7PP941472D_7500" />
+                    <unittest:element xsi:type="StringLiteral" value="_7PP941472G_7540" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutInteger">
+                <unittest:value xsi:type="IntegerLiteral" value="1818" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1b939a1381104446a4d1c3fb8fb2cf9d">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="StringLiteral" value="_7PP907357F_7520" />
+                    <unittest:element xsi:type="StringLiteral" value="_7PP907357G_7530" />
+                    <unittest:element xsi:type="StringLiteral" value="_7PP907357H_7540" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutInteger">
+                <unittest:value xsi:type="IntegerLiteral" value="217088" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_54d94c01a9ae4b739ecbaa54607139c8">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="StringLiteral" value="_7PP941472D_7500" />
+                    <unittest:element xsi:type="StringLiteral" value="_7PP941472G_7540" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutInteger">
+                <unittest:value xsi:type="IntegerLiteral" value="208896" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e0a299e653454553a6ecec3c3296f399">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:value xsi:type="StringLiteral" value="Getriebesteuerdatensaetze_Download" />
+              </unittest:argument>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e1c30ae2ace14d9299e5cfd58e03e9e4">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:value xsi:type="StringLiteral" value="_7PP907357F_7520" />
+              </unittest:argument>
+              <unittest:argument param="Block">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="2" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bfc2c7dd8dd544e38790b1c3b539f6b4">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:value xsi:type="StringLiteral" value="_7PP907357G_7530" />
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="SessionID" id="InParameterDeclaration_6c3a6e268c4e49e09d443d717d6a1206">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="Block" id="InParameterDeclaration_cdad24e369f34305b26e87955b98b7e9">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="Segment" id="InParameterDeclaration_d55700b030914bf8aa67e2036e84a0a6">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="OutInteger" id="OutParameterDeclaration_6c5d6b239a234638ab1ac1d2a54d525a">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="FlashSession1" id="VariableDeclaration_324c3d89a42b46ea97d4bbc88dc2334c">
+            <realisation>
+              <dataType xsi:type="flash:FlashSession" />
+            </realisation>
+          </variable>
+          <variable name="Integer1" id="VariableDeclaration_b48109906de548e28f45cf9160e119df">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_fc535ddfcfaf4398afa87941530d6f1d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashSessionVariable" name="FlashSession1" />
+              <term xsi:type="flash:GetFlashSession">
+                <flash:sessionID xsi:type="StringValue" valueOf="SessionID" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_2018e6467256478aa840f7647b40471e">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="OutInteger" />
+              <term xsi:type="flash:GetCompressedSize">
+                <flash:session xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+                <flash:block xsi:type="IntegerValue" valueOf="Block" />
+                <flash:segment xsi:type="IntegerValue" valueOf="Segment" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="GetStartAddressFloatArgs" id="TestProcedure_fd82d551f3ee41fbbee53ec5d4ce5016">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_6a0f70738b2043c1b334112865595b58">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:value xsi:type="StringLiteral" value="Getriebesteuerdatensaetze_Download" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutInteger">
+                <unittest:value xsi:type="IntegerLiteral" value="15872" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_037ff4901c9340c5b3ac326fede3956d">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="StringLiteral" value="_7PP907357F_7520" />
+                    <unittest:element xsi:type="StringLiteral" value="_7PP907357G_7530" />
+                    <unittest:element xsi:type="StringLiteral" value="_7PP907357H_7540" />
+                    <unittest:element xsi:type="StringLiteral" value="_7PP941472D_7500" />
+                    <unittest:element xsi:type="StringLiteral" value="_7PP941472G_7540" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutInteger">
+                <unittest:value xsi:type="IntegerLiteral" value="1818" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a1b8353b4fd245ecba73306f06a2f5ed">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="StringLiteral" value="_7PP907357F_7520" />
+                    <unittest:element xsi:type="StringLiteral" value="_7PP907357G_7530" />
+                    <unittest:element xsi:type="StringLiteral" value="_7PP907357H_7540" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="FloatLiteral" value="1.9999999999" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutInteger">
+                <unittest:value xsi:type="IntegerLiteral" value="217088" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_10818694b26b4af3935c58fdefadc7f8">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="StringLiteral" value="_7PP941472D_7500" />
+                    <unittest:element xsi:type="StringLiteral" value="_7PP941472G_7540" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="FloatLiteral" value="1.9999999999" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutInteger">
+                <unittest:value xsi:type="IntegerLiteral" value="208896" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_16d250eae0e04b44b4bdbf6c52d85062">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:value xsi:type="StringLiteral" value="Getriebesteuerdatensaetze_Download" />
+              </unittest:argument>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="FloatLiteral" value="1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4c0f9d54c60d4b9a8fbca581db4f5813">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:value xsi:type="StringLiteral" value="_7PP907357F_7520" />
+              </unittest:argument>
+              <unittest:argument param="Block">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="NaN" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1" />
+                    <unittest:element xsi:type="FloatLiteral" value="2" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b119e2fd506f4cfdab01f3847603dbda">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:value xsi:type="StringLiteral" value="_7PP907357G_7530" />
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="NaN" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1" />
+                    <unittest:element xsi:type="FloatLiteral" value="1" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="SessionID" id="InParameterDeclaration_68bfa47f74c54bdc87665be86cb2b045">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="Block" id="InParameterDeclaration_286f215a0b384c7fbfae0b223f5696f7">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="-0.9999999999" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="Segment" id="InParameterDeclaration_bb97a3590590497782bfcb2867ea2b22">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="-0.9999999999" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="OutInteger" id="OutParameterDeclaration_b56bef8f1db64ea980781daed5a770cb">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="FlashSession1" id="VariableDeclaration_603e52916424479cbec8f0f252f28a06">
+            <realisation>
+              <dataType xsi:type="flash:FlashSession" />
+            </realisation>
+          </variable>
+          <variable name="Integer1" id="VariableDeclaration_1f064e4f4b954da5a1d443688822f6c7">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_aacb026d68a84c5a9a8319e7c064dae6">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashSessionVariable" name="FlashSession1" />
+              <term xsi:type="flash:GetFlashSession">
+                <flash:sessionID xsi:type="StringValue" valueOf="SessionID" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_24bff5cb26594603abb8b4d20f485abe">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="OutInteger" />
+              <term xsi:type="flash:GetCompressedSize">
+                <flash:session xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+                <flash:block xsi:type="FloatValue" valueOf="Block" />
+                <flash:segment xsi:type="FloatValue" valueOf="Segment" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ChangeOdxDb_LastDb" id="TestProcedure_cda5e12356de4f9db99de84f3fb19c4a">
+      <unittest:realisation>
+        <unittest:flow>
+          <branch id="Branch_ed54f39fe82e42a587ac9188e11e5a37">
+            <realisation>
+              <if>
+                <condition id="ConditionHeader_f6f07a28bb5344f5a7bd01cb697e4c60">
+                  <realisation xsi:type="IsEqual">
+                    <term xsi:type="StringValue" valueOf="CurrentProjectName" />
+                    <term xsi:type="StringLiteral" value="918" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_7925db5626084f41a741cb88f6040070">
+                    <realisation xsi:type="diagConf:SelectProject">
+                      <diagConf:projectName xsi:type="StringValue" valueOf="CurrentProjectName" />
+                    </realisation>
+                  </action>
+                  <action id="Action_c339cdb4b8794bd49c3d5a9092ea543b">
+                    <realisation xsi:type="diagConf:SelectVehicleInformation">
+                      <diagConf:vehicleInformation xsi:type="StringValue" valueOf="CurrentVehicleName" />
+                    </realisation>
+                  </action>
+                </flow>
+              </if>
+            </realisation>
+          </branch>
+          <endNode id="ExtensibleEndNode_a2380d01e04c4732a6f125b5fc736dc8">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

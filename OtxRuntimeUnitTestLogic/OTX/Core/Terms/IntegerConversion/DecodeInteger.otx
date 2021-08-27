@@ -1,0 +1,2162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="DecodeInteger" id="id_8a076722954e4355a0a8c92bf515c557" package="Core.Terms.IntegerConversion" version="1.0.0.41805" timestamp="2021-06-01T13:59:25.365+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.41142</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="DecodeInteger_BigEndian_Unsigned" id="TestProcedure_0a603525824e4daaa855a04248c57369" parallelizable="true">
+      <specification>Range: 0 to 9223372036854775807</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_221eec3c95b54831b878062f2ffe551b">
+            <specification>ByteField1'size = 0</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_db6ce2e505a941cf8487d462b2cb325d">
+            <specification>ByteField1'size = 1. HEX = 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_24e5a54b505f4b12af2b2956863057b6">
+            <specification>ByteField1'size = 1. HEX = FE</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FE" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="254" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_860c91afb6af4781a067b3185b2fbad3">
+            <specification>ByteField1'size = 2. HEX = 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_dff2adb6f9014ba39325061b16ee74ee">
+            <specification>ByteField1'size = 2. HEX = 10 FF</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="10FF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="4351" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_de83dee761184fcb9e1783ac292b3ce3">
+            <specification>ByteField1'size = 3. HEX = 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_21e89559f9e348dcaf603b8775340f88">
+            <specification>ByteField1'size = 3. HEX = 00 10 00 FF</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="1000FF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="1048831" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_48e32c3273b846d49728971ed32ece82">
+            <specification>ByteField1'size = 4. HEX = 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3bb6644b052948eeb07d521c9857839a">
+            <specification>ByteField1'size = 4. HEX = FF 01 AB 99</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF01AB99" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="4278299545" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4a4023df9c3a4d3eb18b33bd5d0d17fe">
+            <specification>ByteField1'size = 5. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_14d8899a2969471b9ce81bc28816a86f">
+            <specification>ByteField1'size = 5. HEX = 00 00 00 AA BB CC DD EE</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="AABBCCDDEE" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="733295205870" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3aeb5bc679a94123a7bea26dc238bc02">
+            <specification>ByteField1'size = 6. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d9f21cd135c94d619e59d0500328d4c0">
+            <specification>ByteField1'size = 6. HEX = 00 00 AA BB CC DD EE FF</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="AABBCCDDEEFF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="187723572702975" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e3172397676b45878ace2ebc6c2e7ded">
+            <specification>ByteField1'size = 7. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c432175db2844f0ea6c594c3656fe3fc">
+            <specification>ByteField1'size = 7. HEX = 00 01 AA BB CC DD EE FF</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="01AABBCCDDEEFF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="469198549413631" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9a891823533147939a266c615b1862a7">
+            <specification>ByteField1'size = 8. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7cff0cd377aa4d33920e46adc2d07293">
+            <specification>ByteField1'size = 8. HEX = 7F FF FF FF FF FF FF FF. Decoded value is max Integer</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7FFFFFFFFFFFFFFF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5a5a4d57b67c47bbacc3eb34716d1b7d">
+            <specification>ByteField1'size = 8. HEX = 80 00 00 00 00 00 00 00. Decoded value is (max Integer + 1)</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="8000000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_23807ff12a084a4cabf6993a42429f75">
+            <specification>ByteField1'size &gt; 8</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_01f6c365a9ee44b189b9bc49dcc068c9">
+            <specification>ByteField1'size &gt; 8</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000000001" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="ByteField1" id="InParameterDeclaration_06beb9ae48d24a37bb9230bc8133670e">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_c60cad7a431b400d83a4f18d0e660001">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_a614984ee10f4c08aafa36e725bc4d8f">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Result" />
+              <term xsi:type="DecodeInteger" encodingType="UNSIGNED" byteOrder="BIG-ENDIAN">
+                <bytes xsi:type="ByteFieldValue" valueOf="ByteField1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="DecodeInteger_BigEndian_SignedBinary" id="TestProcedure_9443c73ba41741eca3e7bb02e4ba91c2" parallelizable="true">
+      <specification>Range: -9223372036854775807 to 9223372036854775807</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_7e6d961c96d04979a40ffc4171762b82">
+            <specification>ByteField1'size = 0</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2ba0c236daad4388b64103c8a4a3dfd8">
+            <specification>ByteField1'size = 1. HEX = 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d9b4f5a7ff344d77acbaba00ef62c725">
+            <specification>ByteField1'size = 1. HEX = 80</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="80" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_52df3e45e04f4b4bad8775831119c8a7">
+            <specification>ByteField1'size = 1. HEX = 7E</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7E" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="126" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e046efb2935347f699aa09df560009e4">
+            <specification>ByteField1'size = 1. HEX = FE (-7E)</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FE" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-126" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5b40a94ab1b94fd1b19c666ed76c1460">
+            <specification>ByteField1'size = 2. HEX = 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7a7874169d0f436288edd41a33b09b1c">
+            <specification>ByteField1'size = 2. HEX = 80 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="8000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c7271250eb7c49a9a131d6f5ba87ea92">
+            <specification>ByteField1'size = 2. HEX = 01 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0100" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="256" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c27da36109584bc7b7759817586d9dd7">
+            <specification>ByteField1'size = 2. HEX = 81 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="8100" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-256" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2da60a900aee4a67b6240d8996ec83a9">
+            <specification>ByteField1'size = 3. HEX = 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_dc8ad99fa9ac460da2eab25435be5e75">
+            <specification>ByteField1'size = 3. HEX = 00 7F 00 10</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7F0010" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="8323088" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5b0f2957e1db4c94b321a414fe5ea297">
+            <specification>ByteField1'size = 4. HEX = 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9ab2ad61dc6340969a728a5c9d49c39c">
+            <specification>ByteField1'size = 4. HEX = 80 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="80000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_92209521616848319ebdf8662c499a2d">
+            <specification>ByteField1'size = 4. HEX = 80 7F 00 10</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="807F0010" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-8323088" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_38713e6327964e9c8576adacd6805f34">
+            <specification>ByteField1'size = 4. HEX = 19 AB 01 FF</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="19AB01FF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="430637567" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_aa03babcbb59442bb5adfe64087856d5">
+            <specification>ByteField1'size = 4. HEX = 99 AB 01 FF</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="99AB01FF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-430637567" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_79d90d0500314ce091d27bede24f139a">
+            <specification>ByteField1'size = 5. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8419dada41954ffbb38b937e6c56b822">
+            <specification>ByteField1'size = 5. HEX = 00 00 00 2A BB CC DD EE</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="2ABBCCDDEE" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="183539391982" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_baa4d2a3bf8042fe8215fedb0879057a">
+            <specification>ByteField1'size = 6. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6af981c6c93b4daab867cf82f06af33f">
+            <specification>ByteField1'size = 6. HEX = 00 00 2A BB CC DD EE 01</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="2ABBCCDDEE01" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="46986084347393" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e97c829360f140e78eb9e8f19b61abac">
+            <specification>ByteField1'size = 7. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ccf78d14d37648039320f535afc593fe">
+            <specification>ByteField1'size = 7. HEX = 00 2A BB CC DD EE 01 02</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="2ABBCCDDEE0102" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="12028437592932610" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5f14cfe1b5784ba0896087ce30495da1">
+            <specification>ByteField1'size = 8. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_03317ae37d64416198e23c59dbfeae28">
+            <specification>ByteField1'size = 8. HEX = 80 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="8000000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_df047789f608436288ac3f0ddf3d9ba2">
+            <specification>ByteField1'size = 8. HEX = 80 00 00 2A BB CC DD EE</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="802ABBCCDDEE0102" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-12028437592932610" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e9de3b25b4dd4b308bbb558c22c490b0">
+            <specification>ByteField1'size = 8. HEX = 7F FF FF FF FF FF FF FF. Decoded value is max Integer</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7FFFFFFFFFFFFFFF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_813a6fb77be34b9a89a456e39487cfbc">
+            <specification>ByteField1'size = 8. HEX = FF FF FF FF FF FF FF FF</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFFFFFFFFFF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775807" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bee69729424c44648c94e09fa1b8a1da">
+            <specification>ByteField1'size &gt; 8</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b3044a7c29aa4129ac40072fb4dac7bb">
+            <specification>ByteField1'size &gt; 8</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000000001" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="ByteField1" id="InParameterDeclaration_ba091cdd7904407e8992680b2908e596">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_bc28cf9012b74808941bebe9282b0b39">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_271beed1e60b429d934beeef25b18ccf">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Result" />
+              <term xsi:type="DecodeInteger" encodingType="SIGNED-BINARY" byteOrder="BIG-ENDIAN">
+                <bytes xsi:type="ByteFieldValue" valueOf="ByteField1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="DecodeInteger_BigEndian_TwosComplement" id="TestProcedure_b7db49ae48004d51b2767352d1ed09bd" parallelizable="true">
+      <specification>Range: -9223372036854775808 to 9223372036854775807</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_c45faedb28394f9ea3dda73afec06c93">
+            <specification>ByteField1'size = 0</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5f6ccf65a2ab4ce0bcdff878d531d137">
+            <specification>ByteField1'size = 1. HEX = 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_85effe563af04a12ab3babec68aeaa8f">
+            <specification>ByteField1'size = 1. HEX = 7E</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7E" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="126" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9ede3b51470b40e7946e86b258823cdd">
+            <specification>ByteField1'size = 1. HEX = 82</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="82" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-126" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a88836a05130485fb6b9993a918d35d4">
+            <specification>ByteField1'size = 2. HEX = 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a6f0a9cfdcda440e9b8842ed2f253644">
+            <specification>ByteField1'size = 2. HEX = 01 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0100" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="256" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8dd3a41545d843acbdd43897395edae5">
+            <specification>ByteField1'size = 2. HEX = FF 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF00" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-256" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_18414e559cb34728896475bde8a75f88">
+            <specification>ByteField1'size = 3. HEX = 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d024ce3e908040fd93f73cfde37f6a63">
+            <specification>ByteField1'size = 3. HEX = 00 7F 00 10</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7F0010" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="8323088" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a417f6304e934afb82a78fbf3c6350fb">
+            <specification>ByteField1'size = 4. HEX = 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2b290ef82a3f475ebf6b9fb7661ecd25">
+            <specification>ByteField1'size = 4. HEX = FF 80 FF F0</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF80FFF0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-8323088" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_fcf5dc7e600841bdb9189b5c3d7558c0">
+            <specification>ByteField1'size = 4. HEX = 19 AB 01 FF</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="19AB01FF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="430637567" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ec08b73487b84e169fe86cbfd4b23052">
+            <specification>ByteField1'size = 4. HEX = E6 54 FE 01</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="E654FE01" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-430637567" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b16d3c8bae614ae193153195fccc88bd">
+            <specification>ByteField1'size = 5. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3c119953287246dd909ac6e31eb8bf10">
+            <specification>ByteField1'size = 5. HEX = 00 00 00 2A BB CC DD EE</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="2ABBCCDDEE" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="183539391982" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9a0a474df3b4470fb73343fe5f7d7990">
+            <specification>ByteField1'size = 6. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_0599514414554ad6874eb6043d0f1fd7">
+            <specification>ByteField1'size = 6. HEX = 00 00 2A BB CC DD EE 01</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="2ABBCCDDEE01" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="46986084347393" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8fc4749e15564705900734e67d678cde">
+            <specification>ByteField1'size = 7. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c40e3a8bbdb24c39bac743bf34a31e92">
+            <specification>ByteField1'size = 7. HEX = 00 2A BB CC DD EE 01 02</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="2ABBCCDDEE0102" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="12028437592932610" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5e816a9ba1804364916d93852ab45aa7">
+            <specification>ByteField1'size = 8. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_235ce757e8f14df59c558ad75082a978">
+            <specification>ByteField1'size = 8. HEX = FF FF FF D5 44 33 22 12</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFD544332212" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-183539391982" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_596834a9595642e4ad9c8f66849ba6dd">
+            <specification>ByteField1'size = 8. HEX = D5 44 33 22 11 FF</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFD544332211FF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-46986084347393" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_85912fede4ca443fa63f06f75ce3b7ef">
+            <specification>ByteField1'size = 8. HEX = FF D5 44 33 22 11 FE FE</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFD544332211FEFE" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-12028437592932610" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ef3771f617eb46b99b1e8e8934aff03c">
+            <specification>ByteField1'size = 8. HEX = 7F FF FF FF FF FF FF FF. Decoded value is max Integer</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7FFFFFFFFFFFFFFF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_34464230394e40bc8d4eab8d80736102">
+            <specification>ByteField1'size = 8. HEX = 80 00 00 00 00 00 00 01</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="8000000000000001" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775807" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4fa831a896d04269a9204c74a403e9fc">
+            <specification>ByteField1'size = 8. HEX = 80 00 00 00 00 00 00 00. Decoded value is min Integer</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="8000000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="ByteField1" id="InParameterDeclaration_ad18090911e8473abf0dd84d49a81beb">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_51ebee49d0b94db79c45d6e3a811111b">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_aa80b3ee0be24b63b91a7762c01cb66c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Result" />
+              <term xsi:type="DecodeInteger" byteOrder="BIG-ENDIAN">
+                <bytes xsi:type="ByteFieldValue" valueOf="ByteField1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="DecodeInteger_LittleEndian_Unsigned" id="TestProcedure_9a628df0912b47929f5aacc2a653eb9c" parallelizable="true">
+      <specification>Range: 0 to 9223372036854775807</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_431933905e8449229715e1ec2be9dccc">
+            <specification>ByteField1'size = 0</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c9f698e2a8ab442fa4b7b1e8dd4ee840">
+            <specification>ByteField1'size = 1. HEX = 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8af8164958d54588bd5b0d2034714c8b">
+            <specification>ByteField1'size = 1. HEX = FE</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FE" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="254" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_dc425757a91943eab875c7402d5fc936">
+            <specification>ByteField1'size = 2. HEX = 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a41a0adda6ba4ea590b96b41e1c24246">
+            <specification>ByteField1'size = 2. HEX = 10 FF</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF10" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="4351" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e04af8f741764239a16778cdc3f3a880">
+            <specification>ByteField1'size = 3. HEX = 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_13d623e4a3804eb79630909fa44d02c2">
+            <specification>ByteField1'size = 3. HEX = FF 00 10 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="1000FF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="4278194176" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_772986fdc8a54b56a8d8b174a98acc68">
+            <specification>ByteField1'size = 4. HEX = 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_130717e9893b4f4ea68df40d24a0c744">
+            <specification>ByteField1'size = 4. HEX = FF 01 AB 99</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="99AB01FF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="4278299545" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8f3e85038c354a1d9d9baf882fc0e10b">
+            <specification>ByteField1'size = 5. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_fa8762635aa5430c81e365354e1fdb02">
+            <specification>ByteField1'size = 5. HEX = 00 00 CC BB AA 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="AABBCC0000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="225106383077376" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_93fbc95f90484e9ebd1250d19831ae95">
+            <specification>ByteField1'size = 6. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9f1dd2e8e39e44a8bbded07a6954934e">
+            <specification>ByteField1'size = 6. HEX = 01 00 00 CC BB AA 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="AABBCC000001" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="72058473359736832" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_eb9b671564e6400097151791aaa9c1aa">
+            <specification>ByteField1'size = 7. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c34bf16ec7c84d37bdea3c2087a69178">
+            <specification>ByteField1'size = 7. HEX = 06 00 00 00 BB AA 01 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="01AABB00000006" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="432345567376048384" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_81de2fcc4c4f4edaab3be931e7c61f89">
+            <specification>ByteField1'size = 8. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d42662b14fa84ec297e91a558fcd4f02">
+            <specification>ByteField1'size = 8. HEX = 7F FF FF FF FF FF FF FF. Decoded value is max Integer</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFFFFFFFF7F" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_279734310c304979beb26f2865a296a1">
+            <specification>ByteField1'size = 8. HEX = 80 00 00 00 00 00 00 00. Decoded value is (max Integer + 1)</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000000080" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_02aa00aed9db42eb82b8ff8a543ab773">
+            <specification>ByteField1'size &gt; 8</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6d2f8cf189ba449ba5eae681b8bfe442">
+            <specification>ByteField1'size &gt; 8</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000000001" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="ByteField1" id="InParameterDeclaration_09edf242528549d78a62f8f23bae9837">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_01b9f21378d74a4fb43104a438c954c0">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_f815bdd95e644036be7e4762bdee5463">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Result" />
+              <term xsi:type="DecodeInteger" encodingType="UNSIGNED">
+                <bytes xsi:type="ByteFieldValue" valueOf="ByteField1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="DecodeInteger_LittleEndian_SignedBinary" id="TestProcedure_e3033645e38a4dc681629e6d739100b7" parallelizable="true">
+      <specification>Range: -9223372036854775807 to 9223372036854775807</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_b480fbcf1a07465daed22ddfe0b47723">
+            <specification>ByteField1'size = 0</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_06ae31e3f55e4f9eaf090e759e8d381f">
+            <specification>ByteField1'size = 1. HEX = 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e2bdc8a5aee2450488a8de83e5fbc7b8">
+            <specification>ByteField1'size = 1. HEX = 80</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="80" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_657c11d2717c4be091691577c255d2c8">
+            <specification>ByteField1'size = 1. HEX = 7E</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7E" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="126" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e610d75376c64bb99b43bd7dd25f7c7b">
+            <specification>ByteField1'size = 1. HEX = FE (-7E)</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FE" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-126" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bf16c338fcfb4dfdbb797c32fb6e8b86">
+            <specification>ByteField1'size = 2. HEX = 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_980fafdcb0a94c3dbf181593bce0e27e">
+            <specification>ByteField1'size = 2. HEX = 80 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0080" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7dd0e19f5ba644519782da8cdf633bdb">
+            <specification>ByteField1'size = 2. HEX = 01 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0001" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="256" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b77c4ef6a24a45d9acf5e93815176d33">
+            <specification>ByteField1'size = 2. HEX = 81 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0081" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-256" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_835a1ca13afa4a668cf1405a6b956d60">
+            <specification>ByteField1'size = 3. HEX = 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a915ef7fe5134b7ebbbc5c25322095c5">
+            <specification>ByteField1'size = 3. HEX = 7F 00 10 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="10007F" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="2130710528" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_537c8da7b5b54052895f38f03af9f813">
+            <specification>ByteField1'size = 3. HEX = FF 00 10 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="1000FF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-2130710528" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_324db1c6d5144162acf0944c30dee148">
+            <specification>ByteField1'size = 4. HEX = 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_75b9bfe9bf764fd0834b3df2abef14ed">
+            <specification>ByteField1'size = 4. HEX = 80 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000080" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_fb1d90003d1b47eea39174c824e8b7fa">
+            <specification>ByteField1'size = 4. HEX = 19 AB 01 FF</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF01AB19" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="430637567" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7be768a676604c44ade7278057de4f78">
+            <specification>ByteField1'size = 4. HEX = 99 AB 01 FF</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF01AB99" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-430637567" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_21ade37740e4420bbc4d4e522c7cb7a7">
+            <specification>ByteField1'size = 5. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_80cde4c8a69f445088185a6079bdbd13">
+            <specification>ByteField1'size = 5. HEX =  51 00 00 BB AA 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="AABB000051" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="5836665923083173888" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_aa1b3872136346e9ae9371ca1a1687bc">
+            <specification>ByteField1'size = 5. HEX =  D1 00 00 BB AA 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="AABB0000D1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-5836665923083173888" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3f2473316d93498c8f5f878c9a08ac7f">
+            <specification>ByteField1'size = 6. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_402de427d4ef4460920d5051a5c2ce58">
+            <specification>ByteField1'size = 6. HEX = 51 00 00 BB AA 22 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="22AABB000051" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="5836665923085402112" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c9ff3735c92640e895665680f2c84275">
+            <specification>ByteField1'size = 6. HEX = D1 00 00 BB AA 22 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="22AABB0000D1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-5836665923085402112" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_95a7b17ec2c44e14a373a87b813b2300">
+            <specification>ByteField1'size = 7. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2eed4e960832495586a0f9309f218c2d">
+            <specification>ByteField1'size = 7. HEX = 51 00 00 BB AA 22 FF 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF22AABB000051" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="5836665923085467392" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3d4d350d614049a19db6eb7de6df8fd0">
+            <specification>ByteField1'size = 7. HEX = D1 00 00 BB AA 22 FF 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF22AABB0000D1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-5836665923085467392" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_dffcc69deeb34ff4a63e453f5465582b">
+            <specification>ByteField1'size = 8. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4f3a612dfce74651b3467e0132e26829">
+            <specification>ByteField1'size = 8. HEX = 80 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000000080" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2ada41e475de4bb493c2945a70db0fa3">
+            <specification>ByteField1'size = 8. HEX = 80 2A BB CC DD EE 01 02</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0201EEDDCCBB2A80" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-12028437592932610" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_448193d14c3f4c23b7af3e7cd0b2c90b">
+            <specification>ByteField1'size = 8. HEX = 7F FF FF FF FF FF FF FF. Decoded value is max Integer</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFFFFFFFF7F" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6733b941b0964e25af986e5b7d25c68e">
+            <specification>ByteField1'size = 8. HEX = FF FF FF FF FF FF FF FF</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFFFFFFFFFF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775807" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_356226d9efb146c4bf4c6e11333d84e6">
+            <specification>ByteField1'size &gt; 8</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9fd9ce8075214da48a70377b80c9ac6a">
+            <specification>ByteField1'size &gt; 8</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000000001" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="ByteField1" id="InParameterDeclaration_2805529c032244019ea16bfb6a9fcce8">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_21730299fd3b4d6db08f5b74a6a96a3f">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_676fe6f1781c499681ae1af8b9d6e5db">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Result" />
+              <term xsi:type="DecodeInteger" encodingType="SIGNED-BINARY">
+                <bytes xsi:type="ByteFieldValue" valueOf="ByteField1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="DecodeInteger_LittleEndian_TwosComplement" id="TestProcedure_7dd489abdd6a44ba9da372dae4eb2f2b" parallelizable="true">
+      <specification>Range: -9223372036854775808 to 9223372036854775807</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_e73fa5da0966467e9a4ec1c1bc2216df">
+            <specification>ByteField1'size = 0</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_abfd916c97ee4200aab51780b6334c19">
+            <specification>ByteField1'size = 1. HEX = 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_eec64001bc5d4176933bbedfb3392c03">
+            <specification>ByteField1'size = 1. HEX = 7E</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7E" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="126" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_0af393e5d7c442e59566a435208363f8">
+            <specification>ByteField1'size = 1. HEX = 82</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="82" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-126" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d0ae42cf3de14c12be44445e02296e79">
+            <specification>ByteField1'size = 2. HEX = 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5d73f940cb864d61ac9d7fa17cbde9f5">
+            <specification>ByteField1'size = 2. HEX = 01 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0001" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="256" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7235e115368c465e967befaf4901c315">
+            <specification>ByteField1'size = 2. HEX = FF 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00FF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-256" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8624d722fa2d47c795675a5cc114551e">
+            <specification>ByteField1'size = 3. HEX = 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5da91e86346a441db498f18eb00daa4f">
+            <specification>ByteField1'size = 3. HEX = 7F 00 10 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="10007F" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="2130710528" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9bcf397c47e04a8cb4f930f77b000cac">
+            <specification>ByteField1'size = 3. HEX = 80 FF F0 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="F0FF80" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-2130710528" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5767e373744a4f62b41a9be6bb55d7d2">
+            <specification>ByteField1'size = 4. HEX = 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e6dbfd92adb34861b6e5a2ab47375077">
+            <specification>ByteField1'size = 4. HEX = 19 AB 01 FF</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF01AB19" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="430637567" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bcfc402c732d434f9c9e5757b3f6f987">
+            <specification>ByteField1'size = 4. HEX = E6 54 FE 01</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="01FE54E6" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-430637567" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5ca5817328904e708991b8d3b238fa3b">
+            <specification>ByteField1'size = 5. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7848727249c743e0866b501e25f39484">
+            <specification>ByteField1'size = 5. HEX =  51 00 00 BB AA 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="AABB000051" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="5836665923083173888" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_45db84561aba4d0886c265fa343de40c">
+            <specification>ByteField1'size = 5. HEX =  AE FF FF 44 56 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="5644FFFFAE" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-5836665923083173888" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_090f7c353e164970adebb0ca149412f7">
+            <specification>ByteField1'size = 6. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ae2c1d3572cb4134918c562f19ca18d1">
+            <specification>ByteField1'size = 6. HEX = 51 00 00 BB AA 22 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="22AABB000051" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="5836665923085402112" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_81e73b9be6e34bb7916ec5a5b53b5869">
+            <specification>ByteField1'size = 6. HEX = AE FF FF 44 55 DE 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="DE5544FFFFAE" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-5836665923085402112" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d64662b1c7524c6286fb21fc2f3a5a12">
+            <specification>ByteField1'size = 7. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_54533b818b014545a099fc23e22b9cca">
+            <specification>ByteField1'size = 7. HEX = 51 00 00 BB AA 22 FF 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF22AABB000051" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="5836665923085467392" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_be5ceb51c6124265bf25a0f967a06aa0">
+            <specification>ByteField1'size = 7. HEX = AE FF FF 44 55 DD 01 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="01DD5544FFFFAE" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-5836665923085467392" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f5bf0e95111b4cbf99812a75209e8a93">
+            <specification>ByteField1'size = 8. HEX = 00 00 00 00 00 00 00 00</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000000000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4a860e18444e4e1cbb865e4cf067b1f7">
+            <specification>ByteField1'size = 8. HEX = 7F FF FF FF FF FF FF FF. Decoded value is max Integer</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFFFFFFFF7F" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_484662bd85a343589f07303597fc8567">
+            <specification>ByteField1'size = 8. HEX = 80 00 00 00 00 00 00 01</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0100000000000080" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775807" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_af0a2bbca2714f418a15d5024f0a63d6">
+            <specification>ByteField1'size = 8. HEX = 80 00 00 00 00 00 00 00. Decoded value is min Integer</specification>
+            <unittest:arguments>
+              <unittest:argument param="ByteField1">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000000080" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="ByteField1" id="InParameterDeclaration_8951e3e0f2634e36b587c2865224b0f4">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_7ace6fec027c470e90621408c26980d6">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_805dd8719cc54cb3b33b048937d0bca7">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Result" />
+              <term xsi:type="DecodeInteger">
+                <bytes xsi:type="ByteFieldValue" valueOf="ByteField1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="DecodeInteger_MixedEndian_Unsigned" id="TestProcedure_3d7ca9be4a7f4beaaaa0ffc6e79be300" disabled="true" parallelizable="true">
+      <specification>Mixed Endian is not tested, because the runtime behavior is unclear</specification>
+      <unittest:realisation>
+        <unittest:parameters>
+          <unittest:inParam name="ByteField1" id="InParameterDeclaration_54f9609407594a8da2d64db92a97d408">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_01e88aa96abe48c5a72908d8ad2e93dc">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow />
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="DecodeInteger_MixedEndian_SignedBinary" id="TestProcedure_661dd68233ba454b929b66be4003cf8d" disabled="true" parallelizable="true">
+      <specification>Mixed Endian is not tested, because the runtime behavior is unclear</specification>
+      <unittest:realisation>
+        <unittest:parameters>
+          <unittest:inParam name="ByteField1" id="InParameterDeclaration_c222a19ff04f443bbc73d7b78b417567">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_de35264e3a3243d68eb0ac888673fe0f">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow />
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="DecodeInteger_MixedEndian_TwosComplement" id="TestProcedure_997b22619496451da1a3ead0b80bf7c0" disabled="true" parallelizable="true">
+      <specification>Mixed Endian is not tested, because the runtime behavior is unclear</specification>
+      <unittest:realisation>
+        <unittest:parameters>
+          <unittest:inParam name="ByteField1" id="InParameterDeclaration_8be89966df674dceba90a56fb1e6a835">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_5f2b64a7583d49e4ad2841ba1f40d64a">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow />
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:flash="http://iso.org/OTX/1.0.0/Flash" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="FlashFileFormat" id="id_389283abb6c1477a95649accfa89fb96" package="Flash.DataTypes" version="1.0.0.0" timestamp="2021-08-02T16:03:35.999+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42490</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="FlashFileFormatBase" id="TestProcedure_6d12b893bd6343a084a67f2f05473587">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="FlashFileFormat1" id="VariableDeclaration_83e3d6508ada447d8f2f1ad58d6680f3">
+            <realisation>
+              <dataType xsi:type="flash:FlashFileFormat" />
+            </realisation>
+          </variable>
+          <variable name="FlashFileFormat2" id="VariableDeclaration_ed343d133ea046beb7b1f024f43648b8">
+            <realisation>
+              <dataType xsi:type="flash:FlashFileFormat">
+                <flash:init value="BINARY" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="FlashFileFormat3" id="VariableDeclaration_1bba3026193a421c85e80ef27a4f0457">
+            <realisation>
+              <dataType xsi:type="flash:FlashFileFormat">
+                <flash:init value="INTEL" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="FlashFileFormat4" id="VariableDeclaration_1909a88cb96b4277a0a0783b1e53ae4d">
+            <realisation>
+              <dataType xsi:type="flash:FlashFileFormat">
+                <flash:init value="SREC" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_0fb64d048f8b4c3b99a8fe7a36bb1376">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="FlashFileFormat1" />
+                <term xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_90cd3089a4b248059676bb4b4aa2c35d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="FlashFileFormat2" />
+                <term xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_74ac387a3e2a44d8aa326187316d206c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="FlashFileFormat3" />
+                <term xsi:type="flash:FlashFileFormatLiteral" value="INTEL" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_653b912d30db4079a288262b2c581164">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="FlashFileFormat4" />
+                <term xsi:type="flash:FlashFileFormatLiteral" value="SREC" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="FlashFileFormatComparison1" id="id_caea4c36ab91456ca9a1e881614fd06b">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="FlashFileFormat1" id="VariableDeclaration_8e041794cb4a42c2b09966208c047f7b">
+            <realisation>
+              <dataType xsi:type="flash:FlashFileFormat">
+                <flash:init value="BINARY" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="FlashFileFormat2" id="VariableDeclaration_35d7b8e445714ccfb39721396ee1e304">
+            <realisation>
+              <dataType xsi:type="flash:FlashFileFormat">
+                <flash:init value="INTEL" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="FlashFileFormat3" id="VariableDeclaration_aa7d2354dc4d405a9f9c8d96ec67720b">
+            <realisation>
+              <dataType xsi:type="flash:FlashFileFormat">
+                <flash:init value="SREC" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_2559fcf41c6c4e9ba90ba35bb9de18fd">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLess">
+                <left xsi:type="flash:FlashFileFormatValue" valueOf="FlashFileFormat1" />
+                <right xsi:type="flash:FlashFileFormatValue" valueOf="FlashFileFormat2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_4809d6545f7143328568219fabcc3c1c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLess">
+                <left xsi:type="flash:FlashFileFormatValue" valueOf="FlashFileFormat2" />
+                <right xsi:type="flash:FlashFileFormatValue" valueOf="FlashFileFormat3" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="FlashFileFormatComparison2" id="TestProcedure_48223cb39e1e49e0b0d91434d1b3cf84">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_22fdda24ff294882987af393f14e594e">
+            <specification>Less than or equal, less than value.</specification>
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                <right xsi:type="flash:FlashFileFormatLiteral" value="INTEL" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_3bebd0dec6894577bcb52969d40acc34">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="flash:FlashFileFormatLiteral" value="INTEL" />
+                <right xsi:type="flash:FlashFileFormatLiteral" value="SREC" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_6427bab7b92e4711bc7fd4aa23466442">
+            <specification>Less than or equal, equal value.</specification>
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                <right xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_9064ea751fc646449eb5cd706069a5ce">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="flash:FlashFileFormatLiteral" value="INTEL" />
+                <right xsi:type="flash:FlashFileFormatLiteral" value="INTEL" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_0a26ad9d608f45cdbfa771c57f385d02">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="flash:FlashFileFormatLiteral" value="SREC" />
+                <right xsi:type="flash:FlashFileFormatLiteral" value="SREC" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_ba2e7b03d641410d9a6fa21fa381ee1d">
+            <specification>Greater than.</specification>
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreater">
+                <left xsi:type="flash:FlashFileFormatLiteral" value="SREC" />
+                <right xsi:type="flash:FlashFileFormatLiteral" value="INTEL" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_0d80a483fdbb4df5baa597cedec78ade">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreater">
+                <left xsi:type="flash:FlashFileFormatLiteral" value="INTEL" />
+                <right xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_d30b95f450a44c62847f1068f09ed37d">
+            <specification>Greater than or equal, greater than value.</specification>
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="flash:FlashFileFormatLiteral" value="SREC" />
+                <right xsi:type="flash:FlashFileFormatLiteral" value="INTEL" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_e6ae4c9a5e324b32b451fb2164ba954d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="flash:FlashFileFormatLiteral" value="INTEL" />
+                <right xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_871b9679547c4098b35d06054ab9ac57">
+            <specification>Greater than or equal, equal value.</specification>
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                <right xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_708112ae9c6d4b61926e7f491d45d421">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="flash:FlashFileFormatLiteral" value="INTEL" />
+                <right xsi:type="flash:FlashFileFormatLiteral" value="INTEL" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_387dc38ee288417391ef1760e176885a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="flash:FlashFileFormatLiteral" value="SREC" />
+                <right xsi:type="flash:FlashFileFormatLiteral" value="SREC" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_a7de3e76f78442eebc2c115339e9eb61">
+            <specification>Not equal.</specification>
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                <term xsi:type="flash:FlashFileFormatLiteral" value="INTEL" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_5e8850de0ab042b7bfd82f71d2f73ff3">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="flash:FlashFileFormatLiteral" value="INTEL" />
+                <term xsi:type="flash:FlashFileFormatLiteral" value="SREC" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_bf03e8d439344c0ca866e41c97fb8f29">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="flash:FlashFileFormatLiteral" value="SREC" />
+                <term xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="FlashFileFormatToInteger" id="TestProcedure_049e1eefc7d04293addeec0d2dccbc3c">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="FlashFileFormat1" id="VariableDeclaration_eff3041af89a4149ad14052489f92139">
+            <realisation>
+              <dataType xsi:type="flash:FlashFileFormat">
+                <flash:init value="BINARY" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="FlashFileFormat2" id="VariableDeclaration_3fe1e610be3d4a50acd00877d3ebba09">
+            <realisation>
+              <dataType xsi:type="flash:FlashFileFormat">
+                <flash:init value="INTEL" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="FlashFileFormat3" id="VariableDeclaration_76cda192cf8047c4a3a3696bc8160790">
+            <realisation>
+              <dataType xsi:type="flash:FlashFileFormat">
+                <flash:init value="SREC" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_e42d2cb5e4964d77b913198a75511895">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToInteger">
+                  <term xsi:type="flash:FlashFileFormatValue" valueOf="FlashFileFormat1" />
+                </term>
+                <term xsi:type="IntegerLiteral" value="0" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_34ace8c9d49349a9af319fc165287e55">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToInteger">
+                  <term xsi:type="flash:FlashFileFormatValue" valueOf="FlashFileFormat2" />
+                </term>
+                <term xsi:type="IntegerLiteral" value="1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_5919c4a8e2214b81ad16576a3e8e3fb2">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToInteger">
+                  <term xsi:type="flash:FlashFileFormatValue" valueOf="FlashFileFormat3" />
+                </term>
+                <term xsi:type="IntegerLiteral" value="2" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="FlashFileFormatToString" id="TestProcedure_5ca4220c07ca4f9fa506e037cb10a7d7">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="FlashFileFormat1" id="VariableDeclaration_7bc842b4882f4c3ba1005e9e0bcd31a7">
+            <realisation>
+              <dataType xsi:type="flash:FlashFileFormat">
+                <flash:init value="BINARY" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="FlashFileFormat2" id="VariableDeclaration_ea22eebf05f946cea261086ca992d18f">
+            <realisation>
+              <dataType xsi:type="flash:FlashFileFormat">
+                <flash:init value="INTEL" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="FlashFileFormat3" id="VariableDeclaration_f84700932d67462b8b8bafb4a1421a27">
+            <realisation>
+              <dataType xsi:type="flash:FlashFileFormat">
+                <flash:init value="SREC" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_8ae056d11c504537b1b4993fa7b00779">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="flash:FlashFileFormatValue" valueOf="FlashFileFormat1" />
+                </term>
+                <term xsi:type="StringLiteral" value="BINARY" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_b23793736bde4831a154016352a3727a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="flash:FlashFileFormatValue" valueOf="FlashFileFormat2" />
+                </term>
+                <term xsi:type="StringLiteral" value="INTEL" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_d693c6d51a3046a48753adacb870371d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="flash:FlashFileFormatValue" valueOf="FlashFileFormat3" />
+                </term>
+                <term xsi:type="StringLiteral" value="SREC" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

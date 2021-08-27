@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="ProcedureCall1" id="id_81ea5d725af448a087d94f7571a98562" package="Core.Actions.ProcedureCall1" version="1.0.0.41197" timestamp="2021-05-05T23:15:24.189+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42370</data>
+  </metaData>
+  <imports>
+    <import package="RootPackage1" document="Document1" prefix="RootPackDoc1" />
+    <import package="RootPackage1" document="Document2" prefix="RootPackDoc2" />
+  </imports>
+  <declarations>
+    <variable name="IntegerDocVar1a" id="DocumentVariableDeclaration_0dd06ccd115a41d693be78e9ed9ec9c5">
+      <realisation>
+        <dataType xsi:type="Integer">
+          <init value="1" />
+        </dataType>
+      </realisation>
+    </variable>
+    <variable name="IntegerDocVar1b" id="DocumentVariableDeclaration_f8c75ac1e097442aa11b8c3b1876072d">
+      <realisation>
+        <dataType xsi:type="Integer">
+          <init value="1" />
+        </dataType>
+      </realisation>
+    </variable>
+    <variable name="IntegerDocVar1c" id="DocumentVariableDeclaration_d7bac6ddb41a4fdba9b1dcb5d73cf6fe">
+      <realisation>
+        <dataType xsi:type="Integer">
+          <init value="1" />
+        </dataType>
+      </realisation>
+    </variable>
+    <variable name="IntegerDocVar2a" id="DocumentVariableDeclaration_fcb95a1afd2647a28c8ab9f3795def29">
+      <realisation>
+        <dataType xsi:type="Integer">
+          <init value="9223372036854775805" />
+        </dataType>
+      </realisation>
+    </variable>
+    <variable name="IntegerDocVar2b" id="DocumentVariableDeclaration_a69235fc8fda4db59f977f4b6d6de0de">
+      <realisation>
+        <dataType xsi:type="Integer">
+          <init value="9223372036854775805" />
+        </dataType>
+      </realisation>
+    </variable>
+    <variable name="IntegerDocVar2c" id="DocumentVariableDeclaration_4bfc10449140473993c3c2f6f3f903c8">
+      <realisation>
+        <dataType xsi:type="Integer">
+          <init value="9223372036854775805" />
+        </dataType>
+      </realisation>
+    </variable>
+  </declarations>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="PC_TestUnitializedArgOfInParam" id="TestProcedure_4ca423645752411baacd9e93cd485b18">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_34e7377ed7694a9bad419e59b28dcc35">
+            <unittest:exception xsi:type="InvalidReferenceException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:declarations>
+          <variable name="Exception1" id="VariableDeclaration_f87258bddf224291be75e7a36f8a6a26">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_a80e1e05df804997b129f01ada4487c9">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestUnitializedArgOfInParam">
+              <arguments>
+                <inArg param="ExceptionInOutParam">
+                  <term xsi:type="ExceptionValue" valueOf="Exception1" />
+                </inArg>
+              </arguments>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="PC_TestUnitializedArgOfInOutParam" id="TestProcedure_edc098cf06b847fab41ac815356c497e">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_b142e0a3ddda4718890da9f762f7114e">
+            <unittest:exception xsi:type="InvalidReferenceException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:declarations>
+          <variable name="Exception1" id="VariableDeclaration_04de490ff3a24ffca8741a58787db67f">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_ae054c6be3094782b3cb44d9f6c7e17c">
+            <realisation xsi:type="ProcedureCall" procedure="RootPackDoc1:TestUnitializedArgOfInOutParam">
+              <arguments>
+                <inoutArg param="ExceptionInOutParam">
+                  <variable xsi:type="ExceptionVariable" name="Exception1" />
+                </inoutArg>
+              </arguments>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

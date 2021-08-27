@@ -1,0 +1,1244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:util="http://iso.org/OTX/1.0.0/Util" name="ExceptionVariable1" id="id_d8e3e17cf3c14799830a36bac3f22a7e" package="Core.VariableAccess" version="1.0.0.0" timestamp="2021-07-23T17:16:36.165+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42312</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ExceptionVariable_Base" id="TestProcedure_012ecadcd13e415a90a712edbcbc79fd" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_9c496bd510d0470ea45248cfd7ca6279">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="UserExceptionLiteral">
+                  <qualifier value="ExceptionQualifier" />
+                  <text value="ExceptionText" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="input" id="InParameterDeclaration_0b664765c64e40c3a7ff3980939c6537">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="Exception0" id="VariableDeclaration_6818afb19ceb41d4ad00ea79dee78fa4">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_8deb2d526fea4c80b0227291243485b0">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ExceptionVariable" name="Exception0" />
+              <term xsi:type="ExceptionValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_a5664970f8504939a10a9644091b7596">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="util:Compare">
+                <util:term xsi:type="ExceptionValue" valueOf="Exception0" />
+                <util:term xsi:type="ExceptionValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ExceptionVariable_1Step" id="TestProcedure_88400f163c154e86be8deef3934a9822" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_ec07f69556c7491eb12a67c5e9a4cc54">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="UserExceptionLiteral">
+                  <qualifier value="ExceptionQualifier" />
+                  <text value="ExceptionText" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="input" id="InParameterDeclaration_d60964044205405fb0926288ea792839">
+            <realisation>
+              <dataType xsi:type="UserException" />
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="List0" id="VariableDeclaration_9c7e87b0894d448cb51e93c22d190d5a">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="UserException" />
+                <init>
+                  <itemType xsi:type="UserException" />
+                  <items>
+                    <item xsi:type="UserExceptionLiteral">
+                      <qualifier value="" />
+                      <text value="" />
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map0" id="VariableDeclaration_b3e30e59edc34277942f074e597d61d3">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="UserException" />
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="UserException" />
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="1" />
+                      <value xsi:type="UserExceptionLiteral">
+                        <qualifier value="" />
+                        <text value="" />
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_ddc8f6f8d0b448519d46b2749bc99b69">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="UserException" />
+                <init>
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="UserException" />
+                  <items>
+                    <item>
+                      <key xsi:type="StringLiteral" value="5" />
+                      <value xsi:type="UserExceptionLiteral">
+                        <qualifier value="" />
+                        <text value="" />
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_b005cc0537d5420eb33284be552de6ff">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ExceptionVariable" name="List0">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                </path>
+              </result>
+              <term xsi:type="ExceptionValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_5f5a185f81834c44a1f58726ff1b2ff7">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ExceptionVariable" name="Map0">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                </path>
+              </result>
+              <term xsi:type="ExceptionValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_1ac0bfb7c63644c6b0bb2ff84e6d8ab9">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ExceptionVariable" name="Map1">
+                <path>
+                  <stepByName xsi:type="StringLiteral" value="5" />
+                </path>
+              </result>
+              <term xsi:type="ExceptionValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_1bc218c909654eca97017b9180c7866e">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="util:Compare">
+                <util:term xsi:type="ExceptionValue" valueOf="List0">
+                  <path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </path>
+                </util:term>
+                <util:term xsi:type="ExceptionValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_6ec3174eed1148bc85463c0020770b21">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="util:Compare">
+                <util:term xsi:type="ExceptionValue" valueOf="Map0">
+                  <path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                  </path>
+                </util:term>
+                <util:term xsi:type="ExceptionValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_505a96ab9e604525a84042eae3cace27">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="util:Compare">
+                <util:term xsi:type="ExceptionValue" valueOf="Map1">
+                  <path>
+                    <stepByName xsi:type="StringLiteral" value="5" />
+                  </path>
+                </util:term>
+                <util:term xsi:type="ExceptionValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_bee10a1c7af84b2fb31970dbec77ef98">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_16a30be6a993490fae77d0459ef30475">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="List0">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_85995d29b3f64e8a931899aa9171757a">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_07836283f240402aa1b64cfdd7dd4a39">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map0">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_4d7b6e0c1e594679939d13f79c5910e9">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_73c1dfeb6e5640318d8ca9eebb05f08d">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map1">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ExceptionVariable_2Steps" id="TestProcedure_1160e54ff2414e01acb50f87cccf0faa" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_38d06e9b7106436c8cb7c661f840da25">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="UserExceptionLiteral">
+                  <qualifier value="ExceptionQualifier" />
+                  <text value="ExceptionText" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="input" id="InParameterDeclaration_37202547a0f7421c96dcdf04b676ada0">
+            <realisation>
+              <dataType xsi:type="UserException" />
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_3c4d73cb12634bc691c3bb620cae92d9">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="UserException" />
+                </itemType>
+                <init>
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="UserException" />
+                  </itemType>
+                  <items>
+                    <item xsi:type="ListLiteral">
+                      <itemType xsi:type="UserException" />
+                      <items>
+                        <item xsi:type="UserExceptionLiteral">
+                          <qualifier value="" />
+                          <text value="" />
+                        </item>
+                      </items>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_acc52321c4f94e13af2cfec3badfaacf">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="UserException" />
+                </valueType>
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="UserException" />
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="5" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="Integer" />
+                        <valueType xsi:type="UserException" />
+                        <items>
+                          <item>
+                            <key xsi:type="IntegerLiteral" value="1" />
+                            <value xsi:type="UserExceptionLiteral">
+                              <qualifier value="" />
+                              <text value="" />
+                            </value>
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_bd60ee13e3e14c79803fd0fecf354fdf">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="UserException" />
+                </valueType>
+                <init>
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="UserException" />
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="StringLiteral" value="3" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="String" />
+                        <valueType xsi:type="UserException" />
+                        <items>
+                          <item>
+                            <key xsi:type="StringLiteral" value="9" />
+                            <value xsi:type="UserExceptionLiteral">
+                              <qualifier value="" />
+                              <text value="" />
+                            </value>
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_aa3a7431ed544760afeb8fdd40495d39">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ExceptionVariable" name="List1">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                </path>
+              </result>
+              <term xsi:type="ExceptionValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_dd6b4cfa2481481fadd7f231acf3b857">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ExceptionVariable" name="Map1">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                </path>
+              </result>
+              <term xsi:type="ExceptionValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_205f204c39f64cde9325cd60edd50a44">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ExceptionVariable" name="Map2">
+                <path>
+                  <stepByName xsi:type="StringLiteral" value="3" />
+                  <stepByName xsi:type="StringLiteral" value="9" />
+                </path>
+              </result>
+              <term xsi:type="ExceptionValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_10719f0a9a9844d5b940b25f7c58fc4d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="util:Compare">
+                <util:term xsi:type="ExceptionValue" valueOf="List1">
+                  <path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </path>
+                </util:term>
+                <util:term xsi:type="ExceptionValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_090dd8984e2b4c6a94dbdd52b2dc4160">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="util:Compare">
+                <util:term xsi:type="ExceptionValue" valueOf="Map1">
+                  <path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                  </path>
+                </util:term>
+                <util:term xsi:type="ExceptionValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_44515e88e82f49c8aa642a4a1ffb9078">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="util:Compare">
+                <util:term xsi:type="ExceptionValue" valueOf="Map2">
+                  <path>
+                    <stepByName xsi:type="StringLiteral" value="3" />
+                    <stepByName xsi:type="StringLiteral" value="9" />
+                  </path>
+                </util:term>
+                <util:term xsi:type="ExceptionValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_4272bc1c2e3d4f20aba5a4e029582b87">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_fe361a74514849d3a6b1677ae17ed812">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_87bd3a9288e24d1da6b5d633346a24b9">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_589c1cfc0c88428da9d767369cce8589">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_03c7112a4a9442e9a1e3eb03cf817d00">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_1c453296624d4d07bc9ca8b8af928eca">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_5a52762fd1a44de38c0183b034f63743">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_a1141f4983724d9ebffb7170afffdd1a">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_fd32ded16b3a4f94b5f6983a59587a4e">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_9d4b33d9cf9c47828bda9a6d4acd147a">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_8336699626a449ba80a63d713fa41557">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_0f99b69b134b4fe3922569f649d02470">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_c2069d3090b345deb5b0ab8bc433c86b">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_74444df4e3904b66ad5f5fe0ae74aa73">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="3" />
+                        <stepByName xsi:type="StringLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_6984035519e442dcb2b25c4b6fa15f73">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_e3067a80dc154d9887ff25d3a78b3722">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="4" />
+                        <stepByName xsi:type="StringLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_66c24f6d4ee54e72963862fcc413da2a">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_b00f464a2930467b8286e7bfc4f004b6">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="4" />
+                        <stepByName xsi:type="StringLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ExceptionVariable_3Steps" id="TestProcedure_b8938fbf224c45b7a9a04de3224fee74" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_a7d43898849640eab1bbaf756a0ee278">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="UserExceptionLiteral">
+                  <qualifier value="ExceptionQualifier" />
+                  <text value="ExceptionText" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="input" id="InParameterDeclaration_8a6f9c994e14472ebf2d868559c2a54c">
+            <realisation>
+              <dataType xsi:type="UserException" />
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="List2" id="VariableDeclaration_166ad58ba6654433a95e536518489ab2">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="UserException" />
+                  </itemType>
+                </itemType>
+                <init>
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="List">
+                      <itemType xsi:type="UserException" />
+                    </itemType>
+                  </itemType>
+                  <items>
+                    <item xsi:type="ListLiteral">
+                      <itemType xsi:type="List">
+                        <itemType xsi:type="UserException" />
+                      </itemType>
+                      <items>
+                        <item xsi:type="ListLiteral">
+                          <itemType xsi:type="UserException" />
+                          <items>
+                            <item xsi:type="UserExceptionLiteral">
+                              <qualifier value="" />
+                              <text value="" />
+                            </item>
+                          </items>
+                        </item>
+                      </items>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_8b9c9b3b49634e5982b84044f1707bd9">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="UserException" />
+                  </valueType>
+                </valueType>
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="Map">
+                      <keyType xsi:type="Integer" />
+                      <valueType xsi:type="UserException" />
+                    </valueType>
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="9" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="Integer" />
+                        <valueType xsi:type="Map">
+                          <keyType xsi:type="Integer" />
+                          <valueType xsi:type="UserException" />
+                        </valueType>
+                        <items>
+                          <item>
+                            <key xsi:type="IntegerLiteral" value="5" />
+                            <value xsi:type="MapLiteral">
+                              <keyType xsi:type="Integer" />
+                              <valueType xsi:type="UserException" />
+                              <items>
+                                <item>
+                                  <key xsi:type="IntegerLiteral" value="1" />
+                                  <value xsi:type="UserExceptionLiteral">
+                                    <qualifier value="" />
+                                    <text value="" />
+                                  </value>
+                                </item>
+                              </items>
+                            </value>
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map3" id="VariableDeclaration_f61a1a0aeea84bacb28a4d78b0f2ccd5">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="UserException" />
+                  </valueType>
+                </valueType>
+                <init>
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="Map">
+                      <keyType xsi:type="String" />
+                      <valueType xsi:type="UserException" />
+                    </valueType>
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="StringLiteral" value="3" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="String" />
+                        <valueType xsi:type="Map">
+                          <keyType xsi:type="String" />
+                          <valueType xsi:type="UserException" />
+                        </valueType>
+                        <items>
+                          <item>
+                            <key xsi:type="StringLiteral" value="6" />
+                            <value xsi:type="MapLiteral">
+                              <keyType xsi:type="String" />
+                              <valueType xsi:type="UserException" />
+                              <items>
+                                <item>
+                                  <key xsi:type="StringLiteral" value="9" />
+                                  <value xsi:type="UserExceptionLiteral">
+                                    <qualifier value="" />
+                                    <text value="" />
+                                  </value>
+                                </item>
+                              </items>
+                            </value>
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_19320887a3674fc18134673716223bcb">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ExceptionVariable" name="List2">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                </path>
+              </result>
+              <term xsi:type="ExceptionValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_65077c9a33b2477f94a9dc9a3078151f">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ExceptionVariable" name="Map2">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                </path>
+              </result>
+              <term xsi:type="ExceptionValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_7ea3907e99784454990fd63cf60c786c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ExceptionVariable" name="Map3">
+                <path>
+                  <stepByName xsi:type="StringLiteral" value="3" />
+                  <stepByName xsi:type="StringLiteral" value="6" />
+                  <stepByName xsi:type="StringLiteral" value="9" />
+                </path>
+              </result>
+              <term xsi:type="ExceptionValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_0ccc7e6c5bed4549acdde713d52b36a6">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="util:Compare">
+                <util:term xsi:type="ExceptionValue" valueOf="List2">
+                  <path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </path>
+                </util:term>
+                <util:term xsi:type="ExceptionValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_611bbde2559e49d18ceba7bc0f10b49d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="util:Compare">
+                <util:term xsi:type="ExceptionValue" valueOf="Map2">
+                  <path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                  </path>
+                </util:term>
+                <util:term xsi:type="ExceptionValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_597444cb872d42d89ea7614f838fb9b1">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="util:Compare">
+                <util:term xsi:type="ExceptionValue" valueOf="Map3">
+                  <path>
+                    <stepByName xsi:type="StringLiteral" value="3" />
+                    <stepByName xsi:type="StringLiteral" value="6" />
+                    <stepByName xsi:type="StringLiteral" value="9" />
+                  </path>
+                </util:term>
+                <util:term xsi:type="ExceptionValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_743919ecd1c74c57a4a090575e91b6da">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_6d1c82e31479465a9f294bddecb8ccb0">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_b390bb61927a4a9780e9333a60985ef9">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_c819d55f5ee94a18984e7af8972db678">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_23c82f936251477e8847407bd30db2fc">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_65e429677e1c4d4ea2ead4d5679eb420">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_809e0e0ee271446e8c4c5d28a0276d2f">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_077f217e26a341c0989c744a8f75e216">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_b0c01dc18da847bc94aa61db4136e683">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_eb00c22ce4b647c58a1ca72e4f4ec589">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_08c0228e5e7a416fa432aadbf4b576eb">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_11232c341f124458ad55f965e759bc92">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_ed9ed433b67f44509f5c027713c9cd4b">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_4ea1b5ca8d054a21a567f4b9b290e482">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_4f79b8bde3bd4fb5866497e63eafa75b">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_880414cfcbd44099881d5a36d4f86a89">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_252cd277b1af4fd9afa9e294ed9d0d9f">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_9871e667402443eb98725caeb9de8a6d">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_6d6980e2c0b94054a9d3730e63f7a94a">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_35385707af8244a59b710c4170582ce8">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_9084437631ef4696bf8fda8a7ed2d065">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_65841653a9b84734b2b4dd1c72ec2a7d">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_d5a8f3245a58467b92a4eb94e28bb1d6">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_db91ff8272ad459687855247485ed6bc">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_ca87e1bf09e24af09042b0d1066781a7">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_acbaa7a668804189b0b09592153c3780">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_8604807244314840b5bc7231c2ea16de">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_5d698ff71da84b4cb603dc65e54c2509">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_eba2e47ad547445997df0548a8e93dd2">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_25a425dcc50b4ceb9bbba394f02e086c">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map3">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="3" />
+                        <stepByName xsi:type="StringLiteral" value="6" />
+                        <stepByName xsi:type="StringLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_b05631f487744e7d88a781d82f49226b">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_e871c6a2cd0a434ab75c78e95cef3c55">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map3">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="3" />
+                        <stepByName xsi:type="StringLiteral" value="5" />
+                        <stepByName xsi:type="StringLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_d2b9488c77f44b8bad2c879e0db680bb">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_5d03f1304c7a4ecbb5431c2a17a22b9b">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map3">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="3" />
+                        <stepByName xsi:type="StringLiteral" value="5" />
+                        <stepByName xsi:type="StringLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_9d9d2759f2b447a08d3cd68b163774a5">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_2ff2bc05998846abb4e3b4c67bd206d2">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map3">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="2" />
+                        <stepByName xsi:type="StringLiteral" value="6" />
+                        <stepByName xsi:type="StringLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_75577e88c6744d74b8e681fa50f34e08">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_a025fe9d54bf425a93a49b5a3cd76a40">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map3">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="2" />
+                        <stepByName xsi:type="StringLiteral" value="6" />
+                        <stepByName xsi:type="StringLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_0264452cf12e493caa72a47ddbd9d4a6">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_897d15cc61ab4959a81ac6805a41a5ed">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ExceptionVariable" name="Map3">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="2" />
+                        <stepByName xsi:type="StringLiteral" value="5" />
+                        <stepByName xsi:type="StringLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="ExceptionValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

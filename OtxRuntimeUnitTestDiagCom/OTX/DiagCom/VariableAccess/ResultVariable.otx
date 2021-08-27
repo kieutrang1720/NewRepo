@@ -1,0 +1,1416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:diag="http://iso.org/OTX/1.0.0/DiagCom" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="ResultVariable" id="id_49e254ee482b4b54b75fca80ba174a4a" package="DiagCom.VariableAccess" version="1.0.0.0" timestamp="2021-08-13T17:14:02.991+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42531</data>
+  </metaData>
+  <imports>
+    <import package="DiagCom" document="GlobalVariable" prefix="Import_Global" />
+  </imports>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ResultVariable_Base" id="TestProcedure_585238531c8f40fe92c71a6080f7d48e" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_37eeb6af6489475fb6e9baf2c684912d">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="DiagService1" id="VariableDeclaration_8fff9f4887a04bbe8ce04cbd0aa407d5">
+            <realisation>
+              <dataType xsi:type="diag:DiagService" />
+            </realisation>
+          </variable>
+          <variable name="Result1" id="VariableDeclaration_cc6f28e632c2449a89c497c099c4aaa1">
+            <realisation>
+              <dataType xsi:type="diag:Result" />
+            </realisation>
+          </variable>
+          <variable name="Result2" id="VariableDeclaration_8aeef1280bea47dcbd436df9becb098f">
+            <realisation>
+              <dataType xsi:type="diag:Result" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_c1c97c481d22477f9ffa841ea62bd195">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringValue" valueOf="Import_Global:Identifier" />
+                <diag:ecuVariantName xsi:type="StringValue" valueOf="Import_Global:EcuVariantName" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_681b2966342b40ffb4d67bae7b0cc0b1">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:DiagServiceVariable" name="DiagService1" />
+              <term xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:name xsi:type="StringValue" valueOf="Import_Global:DiagServiceName_CodinDateRead" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_4626e2d706f74e9bb40647983189c1c2">
+            <realisation xsi:type="diag:ExecuteDiagService">
+              <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+              <diag:result name="Result1" />
+            </realisation>
+          </action>
+          <action id="Action_e8b860857ba64cd58ad81cbad7f2cf2a">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ResultVariable" name="Result2" />
+              <term xsi:type="diag:ResultValue" valueOf="Result1" />
+            </realisation>
+          </action>
+          <action id="Action_7ecc242f2f3b49d899c650199401d713">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ResultValue" valueOf="Result2" />
+                <term xsi:type="diag:ResultValue" valueOf="Result1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_35b75caf99654b8883c1877a83380ade">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ResultVariable_1Step" id="TestProcedure_4e2239376458457c8dedf828d264532d" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_483b04ba70c24cf2a6d0d2ab26eeb92c">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="diag:Result" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_1048a86fac1b40d997ee77bf9b9c6f29">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="diag:Result" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_192a4872446b446d8b0de985256c853e">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="diag:Result" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="ComChannel1" id="VariableDeclaration_c2ba545e3e0343af9bb58b0e3ff74e51">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="DiagService1" id="VariableDeclaration_9aa56b44bad34dc4b5f295270167400f">
+            <realisation>
+              <dataType xsi:type="diag:DiagService" />
+            </realisation>
+          </variable>
+          <variable name="Result1" id="VariableDeclaration_3ba23911eb944fe7a71379e5193758fc">
+            <realisation>
+              <dataType xsi:type="diag:Result" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_205d55988f6c43ba9a4969bf13e0677d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringValue" valueOf="Import_Global:Identifier" />
+                <diag:ecuVariantName xsi:type="StringValue" valueOf="Import_Global:EcuVariantName" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_4035ae35a3dd48ffb908de16ef48f626">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:DiagServiceVariable" name="DiagService1" />
+              <term xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:name xsi:type="StringValue" valueOf="Import_Global:DiagServiceName_CodinDateRead" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_e347f4b5af804de0b5c39ed268f05998">
+            <realisation xsi:type="diag:ExecuteDiagService">
+              <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+              <diag:result name="Result1" />
+            </realisation>
+          </action>
+          <action id="Action_11105b1cf437414999fb9d488a7159e1">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="diag:Result" />
+                <items>
+                  <item xsi:type="diag:ResultValue" valueOf="Result1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_cbe790c9ac6b45b2bf20100b999fa146">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="diag:Result" />
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="5" />
+                    <value xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_14ae0807690a477e8d70ee470aca259c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="diag:Result" />
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="g" />
+                    <value xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_764aeac4d645401c873839f90699c972">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ResultValue" valueOf="List1">
+                  <diag:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </diag:path>
+                </term>
+                <term xsi:type="diag:ResultValue" valueOf="Result1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_fd7b336bfc2d4cce93d2b73d85010fd9">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ResultValue" valueOf="Map1">
+                  <diag:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                  </diag:path>
+                </term>
+                <term xsi:type="diag:ResultValue" valueOf="Result1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_c2c31687d49a4039b030b96b6387ab4f">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ResultValue" valueOf="Map2">
+                  <diag:path>
+                    <stepByName xsi:type="StringLiteral" value="g" />
+                  </diag:path>
+                </term>
+                <term xsi:type="diag:ResultValue" valueOf="Result1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_d70d1449ad5a41dbb1719561ce84f809">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_76062ea7a55a4569b88ff3ab9f07f38c">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_96e3d623cd364c9c8dc41760131c5053">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_a9d86bde899643d4a735d50e8899f10b">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_f2d780b009e3428292a1cb9219562a7c">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_64bb1ee744dd42458a7fee7469ca6923">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <action id="Action_c045f033cfef48e8a947c376499d7b2d">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ResultVariable_2Steps" id="TestProcedure_7a24c5e217944237aa260474c2a82ffd" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_47544e4d906542d09ea4895c632d5455">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="diag:Result" />
+                </itemType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List1_Step1" id="VariableDeclaration_9dd4ffdbfd16405aa607f0215b80b668">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="diag:Result" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_ded95f4eee9345958454fae9bb2b5c95">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="diag:Result" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1_Step1" id="VariableDeclaration_95c352f03b544d74b59f5c5efa7ec68e">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="diag:Result" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_be37cc3a7b244d48a5b8da0e019baba7">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="diag:Result" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2_Step1" id="VariableDeclaration_ea206497525f4f3c9a89feb89e4063db">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="diag:Result" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="ComChannel1" id="VariableDeclaration_96d20a9e486a4cefa0bdd6f75d3b7a1c">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="DiagService1" id="VariableDeclaration_6911b72851054702a329445946e44200">
+            <realisation>
+              <dataType xsi:type="diag:DiagService" />
+            </realisation>
+          </variable>
+          <variable name="Result1" id="VariableDeclaration_c9868b75bb3644f6a98e0309fb6fd7c8">
+            <realisation>
+              <dataType xsi:type="diag:Result" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_3a58ecb4debe4bfd9680b93fb91182a0">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringValue" valueOf="Import_Global:Identifier" />
+                <diag:ecuVariantName xsi:type="StringValue" valueOf="Import_Global:EcuVariantName" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_b800875e4fa140c9933939f8ade71fdc">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:DiagServiceVariable" name="DiagService1" />
+              <term xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:name xsi:type="StringValue" valueOf="Import_Global:DiagServiceName_CodinDateRead" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_42c5f996ca5c408b8e2461b5e9c18372">
+            <realisation xsi:type="diag:ExecuteDiagService">
+              <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+              <diag:result name="Result1" />
+            </realisation>
+          </action>
+          <action id="Action_18ac537bbc91454da8c54b9e3992147d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1_Step1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="diag:Result" />
+                <items>
+                  <item xsi:type="diag:ResultValue" valueOf="Result1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_565441598c794191a8521cbaedd48e90">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="diag:Result" />
+                </itemType>
+                <items>
+                  <item xsi:type="ListValue" valueOf="List1_Step1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_d3e63282b7244affa3c134edb35d2a21">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1_Step1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="diag:Result" />
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="5" />
+                    <value xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_8c06960a6b2c4f7c841c73891e33c459">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="diag:Result" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="1" />
+                    <value xsi:type="MapValue" valueOf="Map1_Step1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_66ae8a23851b4b79a7fcfb109973d4bf">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2_Step1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="diag:Result" />
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="g" />
+                    <value xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_8f45b4e402a24a87b2c23ab56cbfb9a0">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="diag:Result" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="s" />
+                    <value xsi:type="MapValue" valueOf="Map2_Step1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_54cc4b748a744850a6bd8d25ce908ba1">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ResultValue" valueOf="List1">
+                  <diag:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </diag:path>
+                </term>
+                <term xsi:type="diag:ResultValue" valueOf="Result1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_790ddac3987d4cc9934917983c1dfb4b">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ResultValue" valueOf="Map1">
+                  <diag:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                  </diag:path>
+                </term>
+                <term xsi:type="diag:ResultValue" valueOf="Result1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_06468f3d982642448c62d3e45f98952c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ResultValue" valueOf="Map2">
+                  <diag:path>
+                    <stepByName xsi:type="StringLiteral" value="s" />
+                    <stepByName xsi:type="StringLiteral" value="g" />
+                  </diag:path>
+                </term>
+                <term xsi:type="diag:ResultValue" valueOf="Result1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_a7726cbb1a0b48c6b918de0ea064092f">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_554a7ed56d4844cdb7221b1856461d54">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_35969a84e9404be889f9c653d55cc3e5">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_2cf776f065ed416482be9aec2678394b">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_db5af26626674a3c8eb1bf0f521f8ff2">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_e0cf41ac8ecc441bbf09735bbda005d6">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_3b21161607d3420387a35791d69d77d1">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_605cd455985e4721a1af7fcdaccb4eec">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="6" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_979fdff892df43fc82ff34094ceaca8c">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_20f93f50e91f4c80b825df38c076602a">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_523bc97c8f50447ab642d5948d22dd6a">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_b6ab610b00274550aa9a5fbe83e45843">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="6" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_02a24b9bb09d484d9731c84af685f0f9">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_4670502dffe34d2cadf8f5809b5bb5df">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="g" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_1df93b48691a4dc8b475d09d4933000e">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_c44d836ca2bb4330bceca5bc4340991f">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                        <stepByName xsi:type="StringLiteral" value="h" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_5d902632e103496bb5af7fea876de3f2">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_ecc0a3b887b244f698b6531b967919c4">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="h" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <action id="Action_a301d89a9fb44c368517cddadc145f68">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ResultVariable_3Steps" id="TestProcedure_43d3f8401ea04e09a3764d3442f27269" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1_Step1" id="VariableDeclaration_718901462a0f4560a88faa349942bc85">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="diag:Result" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List1_Step2" id="VariableDeclaration_3ad1df003bcc409b9eb60449da688faf">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="diag:Result" />
+                </itemType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List1" id="VariableDeclaration_dca1fefe7db44919ad37a4f2eaa5b88e">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="diag:Result" />
+                  </itemType>
+                </itemType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1_Step1" id="VariableDeclaration_2362d80944e84900a037c8b8e93aefc1">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="diag:Result" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1_Step2" id="VariableDeclaration_a7d9b4c4a41644ba8e153f75a4c05bbe">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="diag:Result" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_9f8053d8150e481d8bb8a101835881a8">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="diag:Result" />
+                  </valueType>
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2_Step1" id="VariableDeclaration_781aa5f17da547699fff6dfa04c8884d">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="diag:Result" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2_Step2" id="VariableDeclaration_b73f8077aaec402e8b61b7bcf8566f15">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="diag:Result" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_0516d7b7c1624ca19f3abada913ec890">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="diag:Result" />
+                  </valueType>
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="DiagService1" id="VariableDeclaration_a9533927449f4097ae624569272f318e">
+            <realisation>
+              <dataType xsi:type="diag:DiagService" />
+            </realisation>
+          </variable>
+          <variable name="Result1" id="VariableDeclaration_d8f519e88cdf4c658800675315aa0ce6">
+            <realisation>
+              <dataType xsi:type="diag:Result" />
+            </realisation>
+          </variable>
+          <variable name="ComChannel1" id="VariableDeclaration_d49bc900a5b343588b92806cacd2436a">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_5679131b32c94a9b9f2737cdbbf599b7">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringValue" valueOf="Import_Global:Identifier" />
+                <diag:ecuVariantName xsi:type="StringValue" valueOf="Import_Global:EcuVariantName" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_f5027abdeec440c99e8f4d54c1fe2fc2">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:DiagServiceVariable" name="DiagService1" />
+              <term xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:name xsi:type="StringValue" valueOf="Import_Global:DiagServiceName_CodinDateRead" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_84e1edc73a3b46d5ae4d929ad6698bcb">
+            <realisation xsi:type="diag:ExecuteDiagService">
+              <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+              <diag:result name="Result1" />
+            </realisation>
+          </action>
+          <action id="Action_918af03935394c00ba405d6da1ae9b5c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1_Step1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="diag:Result" />
+                <items>
+                  <item xsi:type="diag:ResultValue" valueOf="Result1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_ad33c9307306476390b3645971ddce43">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1_Step2" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="diag:Result" />
+                </itemType>
+                <items>
+                  <item xsi:type="ListValue" valueOf="List1_Step1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_0014d99094044ac9b2293e50e24b3e4e">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="diag:Result" />
+                  </itemType>
+                </itemType>
+                <items>
+                  <item xsi:type="ListValue" valueOf="List1_Step2" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_a5173c4b33a74db3b0f44fc45c1b9f03">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1_Step1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="diag:Result" />
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="9" />
+                    <value xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_0e1be706f3de45beb81e31c5b079c703">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1_Step2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="diag:Result" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="5" />
+                    <value xsi:type="MapValue" valueOf="Map1_Step1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_928c9ff9bd1f44f1be45aaeb47518496">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="diag:Result" />
+                  </valueType>
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="1" />
+                    <value xsi:type="MapValue" valueOf="Map1_Step2" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_660918684c454293965f40837055a519">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2_Step1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="diag:Result" />
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="e" />
+                    <value xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_f2b4670845394308a0418ec4a7a97464">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2_Step2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="diag:Result" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="w" />
+                    <value xsi:type="MapValue" valueOf="Map2_Step1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_e002b9ada1a4429cb289802c8b86fddb">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="diag:Result" />
+                  </valueType>
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="q" />
+                    <value xsi:type="MapValue" valueOf="Map2_Step2" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_a85a8a84f0794e458aba2fae3754fd56">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ResultValue" valueOf="List1">
+                  <diag:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </diag:path>
+                </term>
+                <term xsi:type="diag:ResultValue" valueOf="Result1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_5fb30ab536a743bbbbc95b3f9a6a534b">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ResultValue" valueOf="Map1">
+                  <diag:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                  </diag:path>
+                </term>
+                <term xsi:type="diag:ResultValue" valueOf="Result1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_f597faafe896410ba493f81789100c4a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ResultValue" valueOf="Map2">
+                  <diag:path>
+                    <stepByName xsi:type="StringLiteral" value="q" />
+                    <stepByName xsi:type="StringLiteral" value="w" />
+                    <stepByName xsi:type="StringLiteral" value="e" />
+                  </diag:path>
+                </term>
+                <term xsi:type="diag:ResultValue" valueOf="Result1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_67d2669872ea4de8a3077c26ec3abec8">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_6f3581065dff4f68bdbb8e42084fe627">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_f5db151200b7438fbe3b2127a4879851">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_28e2c3bd3ea94996ae042eb7e12a2ac9">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_c4094ebd813d4515948cafef19c65a70">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_f54e1568f96147a0b74e86766c5dd6c7">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_121ecde22f4744708feef330db795fc2">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_1e9c45b0bbf746d1b605546d625e5861">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_b6ce510be6df4b2eadbdde64134da716">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_afb22939a17f4b12a8dab91270c4fb23">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_4619612a69934e58b79689a7a30415a6">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_5d0f097efbee466aad47decf4ac268ed">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_2376e7ce0943498ea7e4db1e195a1012">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_4ef8f38dd5164d5cbc1f898f7546ba2a">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_980474fbe44e4d49a92c1b8bf22eedac">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_44483636eee342069f38b33a81738a5b">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_1d4c4849c8694e118fe9f3df043141f8">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_b3f931de218f4805be3c913ca92b5d48">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_3609502c710b4598a1ee042dd6cb8d24">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_59617f0d9ef343419b23d8df53e5b9b7">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_b7f94a1be1bc4cb88cd2028a60189579">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_aef529a01d2a4b73a2dcdf213749c4c3">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_dc3ee737f47943f3933b91413ac41b46">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_d6ebb4b6854d478589ea8f21c5966210">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_c468b0f15123409490b40a34be45119d">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_d5cfe937922c42459cca0be07559db50">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_567e24f682b844bca8d78b89b5ddbd50">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_7fda8a4260a844fe87d0a57668da5531">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_e02daa02fcf847769fb2ff74489ade4e">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_16a9409939ff4157b7c86d6b6bb09940">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="q" />
+                        <stepByName xsi:type="StringLiteral" value="w" />
+                        <stepByName xsi:type="StringLiteral" value="d" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_9e891ae3a6e047e3a6bfa04599947182">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_f646dd34ef0e4c10acf7e8ff8ef91fde">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="q" />
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                        <stepByName xsi:type="StringLiteral" value="e" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_ef99e633de5048508d8e2faf9795f248">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_c4a899be7e5c4173a49d3022b356c9af">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="q" />
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                        <stepByName xsi:type="StringLiteral" value="d" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_438546d297ef4eadb34d741064a7e7bf">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_7fcc09b827424705bfced54ab6ac6e6b">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="w" />
+                        <stepByName xsi:type="StringLiteral" value="e" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_c91025bb445648c79279b57b9043dd51">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_66d0d881649840f28a229d0bb354ef53">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="w" />
+                        <stepByName xsi:type="StringLiteral" value="d" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_5a3e9555b7034e67aae469e401948349">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_943142ff86c14598af993aa374daf3d9">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                        <stepByName xsi:type="StringLiteral" value="e" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_17dc4241cefb4439940eff07629b1787">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_bbede06212664ad6b375e56fcdb2fc24">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ResultVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                        <stepByName xsi:type="StringLiteral" value="d" />
+                      </path>
+                    </result>
+                    <term xsi:type="diag:ResultValue" valueOf="Result1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <action id="Action_6c613e821a8d4385a3360264b554d765">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

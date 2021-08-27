@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="GlobalConstant" id="id_1784e1089def4bcb8f21c0c58e1f9cca" package="RootPackage1.Core.GlobalDeclarations" version="1.0.0.0" timestamp="2021-05-07T09:31:12.756+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.3.0.41142</data>
+  </metaData>
+  <imports>
+    <import package="RootPackage1.Core.GlobalDeclarations" document="ImportedGlobalConstant" prefix="Import1" />
+    <import package="RootPackage1.Core.GlobalDeclarations.AnotherPackage" document="ImportedGlobalConstant" prefix="Import2" />
+  </imports>
+  <declarations>
+    <constant name="PrivateGlobalConstant1" id="GlobalConstantDeclaration_ab57ef2f8dae47e4976efd24b51bc1c6">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="true" />
+        </dataType>
+      </realisation>
+    </constant>
+    <constant name="PackageGlobalConstant1" id="GlobalConstantDeclaration_ae8c0c41f9d44ff4bdce81980c5e18a8" visibility="PACKAGE">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="true" />
+        </dataType>
+      </realisation>
+    </constant>
+    <constant name="PublicGlobalConstant1" id="GlobalConstantDeclaration_8869e79fb0254218ac4f54055fc84c7d" visibility="PUBLIC">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="true" />
+        </dataType>
+      </realisation>
+    </constant>
+  </declarations>
+  <validities>
+    <validity name="ValidityUsePackageGlobalConstant" id="Validity_4b800413446c432395dd9f45c0ac81f6" visibility="PUBLIC">
+      <realisation xsi:type="BooleanValue" valueOf="PackageGlobalConstant1" />
+    </validity>
+    <validity name="ValidityUsePrivateGlobalConstant" id="Validity_e1c585febefa4f55be9d016fdff47fa1" visibility="PUBLIC">
+      <realisation xsi:type="BooleanValue" valueOf="PrivateGlobalConstant1" />
+    </validity>
+    <validity name="ValidityUsePublicGlobalConstant" id="Validity_9cdaee420cb44d8fab940d8d7d8791cb" visibility="PUBLIC">
+      <realisation xsi:type="BooleanValue" valueOf="PublicGlobalConstant1" />
+    </validity>
+    <validity name="ValidityUseImportedPackageGlobalConstantInSamePackage" id="Validity_9961c060abfa40fca506d346067922c9" visibility="PUBLIC">
+      <realisation xsi:type="BooleanValue" valueOf="Import1:PackageGlobalConstant1" />
+    </validity>
+    <validity name="ValidityUseImportedPublicGlobalConstantInSamePackage" id="Validity_cb08f7f731c9496899b26c3b30da86ba" visibility="PUBLIC">
+      <realisation xsi:type="BooleanValue" valueOf="Import1:PublicGlobalConstant1" />
+    </validity>
+    <validity name="ValidityUseImportedPublicGlobalConstantInAnotherPackage" id="Validity_b09f91d91e6745f28c133dda99ea0c4b" visibility="PUBLIC">
+      <realisation xsi:type="BooleanValue" valueOf="Import2:PublicGlobalConstant1" />
+    </validity>
+  </validities>
+  <procedures>
+    <procedure name="ProcedureUsePrivateGlobalConstant" id="id_fd6b35aa964848869521dc9ffe25e20f" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_d9bd2821123746cf8a34c7463692ce05">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="BooleanValue" valueOf="PrivateGlobalConstant1" />
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureUsePackageGlobalConstant" id="Procedure_f053c52e1292493fbb9f471733f493ab" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_52c65254d5364eed87b1ab4ea00cf920">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="BooleanValue" valueOf="PackageGlobalConstant1" />
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureUsePublicGlobalConstant" id="Procedure_81eef8f2aa7241f2bd5e33259892ffa9" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_f7aa584de3f34c66913e9975a2f7d84b">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="BooleanValue" valueOf="PublicGlobalConstant1" />
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureUseImportedPackageGlobalConstantInSamePackage" id="Procedure_f9570cbee7c546a4b9e8a4e910fd8c0d" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_e746836ce95e402bb098a32fa5484cd2">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="BooleanValue" valueOf="Import1:PackageGlobalConstant1" />
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureUseImportedPublicGlobalConstantInSamePackage" id="Procedure_cb3b6d6f2b2441968a2b916d6e6a9132" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_d5d6d71f9b5f4428b621ff705c67d5b9">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="BooleanValue" valueOf="Import1:PublicGlobalConstant1" />
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureUseImportedPublicGlobalConstantInAnotherPackage" id="Procedure_da28ca3214fa4ceb8e6f034120f4545f" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_e15b37907dab4e1aa4b68c2c8bcf526d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="BooleanValue" valueOf="Import2:PublicGlobalConstant1" />
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ValidityUsePrivateGlobalConstant" id="Procedure_f7602c75dd4d4f47b9ffd5dcc73f7d1f" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_7c9d547d4443439c86b0c85f23b1b1c9">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsValid" validity="ValidityUsePrivateGlobalConstant" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ValidityUsePackageGlobalConstant" id="Procedure_f4cca503114340d093cb58a84bf2fdde" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_d8e68448172d4477b22be236e2a139fc">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsValid" validity="ValidityUsePackageGlobalConstant" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ValidityUsePublicGlobalConstant" id="Procedure_38cda175adda4a108b92c3296ea24510" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_ec3f2ed39bdc4f4daff161e0439c6aab">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsValid" validity="ValidityUsePublicGlobalConstant" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ValidityUseImportedPackageGlobalConstantInSamePackage" id="Procedure_bb87a4fea9e149e7ac0a15eea145d925" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_f56ea422d9e5422c8ef1f67ad3558dc7">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsValid" validity="ValidityUseImportedPackageGlobalConstantInSamePackage" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ValidityUseImportedPublicGlobalConstantInSamePackage" id="Procedure_132b714989324371bc46c54ca809ff3b" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_c162295f733d433abccc0a4b06712dec">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsValid" validity="ValidityUseImportedPublicGlobalConstantInSamePackage" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ValidityUseImportedPublicGlobalConstantInAnotherPackage" id="Procedure_751e26bb433f47a88abffa2dc9ddb0f5" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_942d0ac1a1ce436f8625d88e7649c6a6">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsValid" validity="ValidityUseImportedPublicGlobalConstantInAnotherPackage" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+  </procedures>
+</otx>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Signature" id="id_f0775bfa1aed4a73a6469eeca006e858" package="Core.Signatures" version="1.0.0.41679" timestamp="2021-06-03T17:59:07.401+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.41142</data>
+  </metaData>
+  <imports>
+    <import package="RootPackage1.Core.Signatures" document="Signature" prefix="Import1" />
+  </imports>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="SignatureWithoutRealisation" id="id_322f65e52abb46918e7154d66a499471" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_261246edbf7143ddb48f6184d65b3407">
+            <realisation xsi:type="ProcedureCall" procedure="Import1:CheckSignatureWithoutRealisation" />
+          </action>
+          <endNode id="ExtensibleEndNode_e7c49687389840ab9c0f02321b7134eb">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SignatureVisiblity" id="TestProcedure_0aa45f8c06ae4c2b9fa0754396abd5c5" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_c0d51b589f124e78acf5f6b9f879b56a">
+            <realisation xsi:type="ProcedureCall" procedure="Import1:CheckSignatureVisiblity" />
+          </action>
+          <endNode id="ExtensibleEndNode_1ff03b832fc24952944c4e254b3c7458">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SignatureSpecification" id="TestProcedure_bfcf7cc02b964d8187ea929d411a2ae5" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_c5560cd8740e44318de2b9a7171feee5">
+            <realisation xsi:type="ProcedureCall" procedure="Import1:ProcedureSignatureSpecification" />
+          </action>
+          <endNode id="ExtensibleEndNode_2c002e9c83814b5db715cba0d199ec07">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SignatureMetaData" id="TestProcedure_c4645219a2e7430d93c651848352f5bc" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_e9c425517b974679ba94951b41e9b86f">
+            <realisation xsi:type="ProcedureCall" procedure="Import1:ProcedureSignatureMetaData" />
+          </action>
+          <endNode id="ExtensibleEndNode_295f8e267fd14bb6bc97e320f775f451">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SignatureThrows" id="TestProcedure_d3b3be1c7dd343a2a4a8893ee7af51c5" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_a85e57dfabbe4af180329faa38624f22">
+            <realisation xsi:type="ProcedureCall" procedure="Import1:ProcedureSignatureThrows" />
+          </action>
+          <endNode id="ExtensibleEndNode_eedc962f9b2f45ca801e475a2c78c599">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

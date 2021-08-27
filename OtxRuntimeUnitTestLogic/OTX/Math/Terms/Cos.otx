@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:math="http://iso.org/OTX/1.0.0/Math" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Cos" id="id_3a3708eb4c8345aeb5b62867536b67a9" package="Math.Terms" version="1.0.0.0" timestamp="2021-07-29T09:46:08.808+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42370</data>
+  </metaData>
+  <declarations>
+    <variable name="Pi" id="DocumentVariableDeclaration_2042d406e5ff4bae9b8bcf99ff4326e6">
+      <specification>1 Pi = 180</specification>
+      <realisation>
+        <dataType xsi:type="Float">
+          <init value="3.1415926535897931" />
+        </dataType>
+      </realisation>
+    </variable>
+  </declarations>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="Cos_Float" id="TestProcedure_10a81b51ecdc4cb88da18a8c654978e6" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_b9219f91a7194fffb8ed03a2942a04d7">
+            <specification>Cos(-Infinity)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_972b96f1343642b899de001ae419f694">
+            <specification>Cos(-60)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="FloatValue" valueOf="Pi" />
+                  <divisor xsi:type="IntegerLiteral" value="-3" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="0.5" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e73d74bae7a340b39bf7bd7978534603">
+            <specification>Cos(NaN)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_497ee5ef118845829a04ca3a14d4e4f1">
+            <specification>Cos(30)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="FloatValue" valueOf="Pi" />
+                  <divisor xsi:type="IntegerLiteral" value="6" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="0.866025403784439" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3abfc6597f15478388be63dc2f3b90ea">
+            <specification>Cos(35)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="35" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="180" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="0.819152044288992" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a6cc93a1f50f47e48b82d94edc630c67">
+            <specification>Cos(45)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="FloatValue" valueOf="Pi" />
+                  <divisor xsi:type="IntegerLiteral" value="4" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="0.707106781186548" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_46cd39ae12fb4e189bd462e13cb47cec">
+            <specification>Cos(55)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="55" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="180" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="0.573576436351046" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1d4c4f9f18154c5faa6ba7945ecee2bd">
+            <specification>Cos(60)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="FloatValue" valueOf="Pi" />
+                  <divisor xsi:type="IntegerLiteral" value="3" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="0.5" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_37b492596de9428d95114c1eade36bea">
+            <specification>Cos(90)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="FloatValue" valueOf="Pi" />
+                  <divisor xsi:type="IntegerLiteral" value="2" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_30f43705a3b449b3bc41f0a54cc9b90a">
+            <specification>Cos(91)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="91" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="180" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-0.0174524064372835" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_094359424abe4b799a35578d62e9c90b">
+            <specification>Cos(100)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="100" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="180" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-0.17364817766693036" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_228d80382e464b948b1dfdf57ad62c6a">
+            <specification>Cos(120)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="120" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="180" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-0.5" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_874325abcf6745dd982f6bddb8b3c12a">
+            <specification>Cos(125)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="125" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="180" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="Negate">
+                  <numeral xsi:type="FloatLiteral" value="0.573576436351046" />
+                </unittest:value>
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_60c4f2c68e254eb692d5b5b3fc532a2d">
+            <specification>Cos(180)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="FloatValue" valueOf="Pi" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="-1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e682f92777a942e7960cfa8d97d5df74">
+            <specification>Cos(300)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="5" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="3" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="0.5" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b80c3653ea5b4932ae6ba3f008e140bb">
+            <specification>Cos(415)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="415" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="180" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="0.573576436351046" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4617049760d24e82acdfda7bc7b54812">
+            <specification>Cos(Infinity)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="rad" id="InParameterDeclaration_221b298c8acf4029901d948508551898">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_b6b3d7eccb664139af2e2f01368cd752">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_13abbdefa6b943998da4f0c9fc8571ae">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="result" />
+              <term xsi:type="math:Cos">
+                <math:rad xsi:type="FloatValue" valueOf="rad" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Cos_Integer" id="TestProcedure_77a776e641b44ad0ac0c80c876cf98a7" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_81cfe063fa614fa79bcd60f5b2451da7">
+            <specification>Cos(0)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="rad" id="InParameterDeclaration_d5ce45d8ce0c43e5a90a0c558194ebf6">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_bd54c350652a40c0be069bef54008e4f">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_ff80cdedeb724692b83b40d96ca5211b">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="result" />
+              <term xsi:type="math:Cos">
+                <math:rad xsi:type="IntegerValue" valueOf="rad" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

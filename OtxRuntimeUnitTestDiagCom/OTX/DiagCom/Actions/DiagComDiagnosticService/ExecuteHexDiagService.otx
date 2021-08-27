@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:diag="http://iso.org/OTX/1.0.0/DiagCom" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="ExecuteHexDiagService" id="id_7b7c81fc25fe429d916517f44e1cc94c" package="DiagCom.Actions.DiagComDiagnosticService" version="1.0.0.0" timestamp="2021-08-19T16:25:15.174+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42554</data>
+  </metaData>
+  <declarations>
+    <variable name="ComChannel1" id="DocumentVariableDeclaration_c06e2595282a4fbf8941d4a176c77606">
+      <realisation>
+        <dataType xsi:type="diag:ComChannel" />
+      </realisation>
+    </variable>
+  </declarations>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ExecuteHexDiagService_Base" id="id_2fa2487f967349d9a1641bc56995d1af">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_ebff118fceff4cfd92f98750c56f6cd4">
+            <unittest:arguments>
+              <unittest:argument param="IdentifierName">
+                <unittest:value xsi:type="StringLiteral" value="LL_GatewUDS" />
+              </unittest:argument>
+              <unittest:argument param="EcuVariantname">
+                <unittest:value xsi:type="StringLiteral" value="EV_Gatew31xAU65x_003" />
+              </unittest:argument>
+              <unittest:argument param="hexRequest">
+                <unittest:value xsi:type="ByteFieldLiteral" value="22F1A2" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="hexResponse">
+                <unittest:value xsi:type="ByteFieldLiteral" value="62F1A2303033313930" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1975cc4d87ec496f9390ea80f5c65053">
+            <unittest:arguments>
+              <unittest:argument param="IdentifierName">
+                <unittest:value xsi:type="StringLiteral" value="LL_GatewUDS" />
+              </unittest:argument>
+              <unittest:argument param="EcuVariantname">
+                <unittest:value xsi:type="StringLiteral" value="EV_Gatew31xAU65x_003" />
+              </unittest:argument>
+              <unittest:argument param="hexRequest">
+                <unittest:value xsi:type="ByteFieldLiteral" value="3E00" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="hexResponse">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7E00" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_07f64621431846df95276b52f6adc74a">
+            <unittest:arguments>
+              <unittest:argument param="IdentifierName">
+                <unittest:value xsi:type="StringLiteral" value="LL_GatewUDS" />
+              </unittest:argument>
+              <unittest:argument param="EcuVariantname">
+                <unittest:value xsi:type="StringLiteral" value="EV_Gatew31xAU65x_003" />
+              </unittest:argument>
+              <unittest:argument param="hexRequest">
+                <unittest:value xsi:type="ByteFieldLiteral" value="010203" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="diag:LossOfComException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d9bcb037dd5e4a77901dfd43a9d349cd">
+            <unittest:arguments>
+              <unittest:argument param="IdentifierName">
+                <unittest:value xsi:type="StringLiteral" value="LL_GatewUDS" />
+              </unittest:argument>
+              <unittest:argument param="EcuVariantname">
+                <unittest:value xsi:type="StringLiteral" value="EV_Gatew31xAU65x_003" />
+              </unittest:argument>
+              <unittest:argument param="hexRequest">
+                <unittest:value xsi:type="ByteFieldLiteral" value="22F187" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="hexResponse">
+                <unittest:value xsi:type="ByteFieldLiteral" value="62F187344B303930373436385320" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bc3c99b3a67346929026a42898cf25ca">
+            <unittest:arguments>
+              <unittest:argument param="IdentifierName">
+                <unittest:value xsi:type="StringLiteral" value="LL_AllWheelContrUDS" />
+              </unittest:argument>
+              <unittest:argument param="EcuVariantname">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+              <unittest:argument param="hexRequest">
+                <unittest:value xsi:type="ByteFieldLiteral" value="220100" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="diag:LossOfComException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e08b8f952a5d4cfb9d63e2c73bd65a58">
+            <unittest:arguments>
+              <unittest:argument param="IdentifierName">
+                <unittest:value xsi:type="StringLiteral" value="LL_AllWheelContrUDS" />
+              </unittest:argument>
+              <unittest:argument param="EcuVariantname">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+              <unittest:argument param="hexRequest">
+                <unittest:value xsi:type="ByteFieldLiteral" value="220600" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="hexResponse">
+                <unittest:value xsi:type="ByteFieldLiteral" value="62060001020000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_04c3748b8cc64f54bbf85a6fa0f5e7a5">
+            <unittest:arguments>
+              <unittest:argument param="IdentifierName">
+                <unittest:value xsi:type="StringLiteral" value="LL_AllWheelContrUDS" />
+              </unittest:argument>
+              <unittest:argument param="EcuVariantname">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+              <unittest:argument param="hexRequest">
+                <unittest:value xsi:type="ByteFieldLiteral" value="22A230" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="diag:LossOfComException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_132d50b18dc5456abd49279fcc0b2f61">
+            <unittest:arguments>
+              <unittest:argument param="IdentifierName">
+                <unittest:value xsi:type="StringLiteral" value="LL_ActuaForStrucBorneSoundUDS" />
+              </unittest:argument>
+              <unittest:argument param="EcuVariantname">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+              <unittest:argument param="hexRequest">
+                <unittest:value xsi:type="ByteFieldLiteral" value="2204FC" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="hexResponse">
+                <unittest:value xsi:type="ByteFieldLiteral" value="6204FC000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c15206bb42804af5a6d38665b6bf47da">
+            <unittest:arguments>
+              <unittest:argument param="IdentifierName">
+                <unittest:value xsi:type="StringLiteral" value="LL_ActuaForStrucBorneSoundUDS" />
+              </unittest:argument>
+              <unittest:argument param="EcuVariantname">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+              <unittest:argument param="hexRequest">
+                <unittest:value xsi:type="ByteFieldLiteral" value="03" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="diag:LossOfComException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d4b0a4fc6ae24ac2b32cd30c61d95059">
+            <unittest:arguments>
+              <unittest:argument param="IdentifierName">
+                <unittest:value xsi:type="StringLiteral" value="LL_ActuaForStrucBorneSoundUDS" />
+              </unittest:argument>
+              <unittest:argument param="EcuVariantname">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+              <unittest:argument param="hexRequest">
+                <unittest:value xsi:type="ByteFieldLiteral" value="280101" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="diag:LossOfComException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7b0b9937942c46bba0fc7f5a0505a818">
+            <unittest:arguments>
+              <unittest:argument param="IdentifierName">
+                <unittest:value xsi:type="StringLiteral" value="LL_AirbaUDS" />
+              </unittest:argument>
+              <unittest:argument param="EcuVariantname">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+              <unittest:argument param="hexRequest">
+                <unittest:value xsi:type="ByteFieldLiteral" value="226EAC" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="hexResponse">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7F2231" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_70b26e7408684388a6cdaeb0d91e2a84">
+            <unittest:arguments>
+              <unittest:argument param="IdentifierName">
+                <unittest:value xsi:type="StringLiteral" value="LL_AirbaUDS" />
+              </unittest:argument>
+              <unittest:argument param="EcuVariantname">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+              <unittest:argument param="hexRequest">
+                <unittest:value xsi:type="ByteFieldLiteral" value="222366" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="hexResponse">
+                <unittest:value xsi:type="ByteFieldLiteral" value="622366FA" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_df87a27468494323b9eeb07c73b322d9">
+            <unittest:arguments>
+              <unittest:argument param="IdentifierName">
+                <unittest:value xsi:type="StringLiteral" value="LL_TelemCommuUnitUDS" />
+              </unittest:argument>
+              <unittest:argument param="EcuVariantname">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+              <unittest:argument param="hexRequest">
+                <unittest:value xsi:type="ByteFieldLiteral" value="2202E4" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="hexResponse">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7F2231" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d6a062bdafff4a8297fd2d83694c5eb5">
+            <unittest:arguments>
+              <unittest:argument param="IdentifierName">
+                <unittest:value xsi:type="StringLiteral" value="LL_TelemCommuUnitUDS" />
+              </unittest:argument>
+              <unittest:argument param="EcuVariantname">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+              <unittest:argument param="hexRequest">
+                <unittest:value xsi:type="ByteFieldLiteral" value="19022C" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="hexResponse">
+                <unittest:value xsi:type="ByteFieldLiteral" value="590299110703091101030911020309110903091121010911130309" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_221e9ce732904f4c9b3aaa23cf83b34c">
+            <unittest:arguments>
+              <unittest:argument param="IdentifierName">
+                <unittest:value xsi:type="StringLiteral" value="LL_TelemCommuUnitUDS" />
+              </unittest:argument>
+              <unittest:argument param="EcuVariantname">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+              <unittest:argument param="hexRequest">
+                <unittest:value xsi:type="ByteFieldLiteral" value="14FFFFFF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="hexResponse">
+                <unittest:value xsi:type="ByteFieldLiteral" value="54" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_35b6bacb391e474292e63ffe6bb28191">
+            <unittest:arguments>
+              <unittest:argument param="IdentifierName">
+                <unittest:value xsi:type="StringLiteral" value="LL_TelemCommuUnitUDS" />
+              </unittest:argument>
+              <unittest:argument param="EcuVariantname">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+              <unittest:argument param="hexRequest">
+                <unittest:value xsi:type="ByteFieldLiteral" value="2202F9" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="hexResponse">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7F2222" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_cbc59066a2454033828207eaa88ca4cc">
+            <unittest:arguments>
+              <unittest:argument param="IdentifierName">
+                <unittest:value xsi:type="StringLiteral" value="LL_TelemCommuUnitUDS" />
+              </unittest:argument>
+              <unittest:argument param="EcuVariantname">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+              <unittest:argument param="hexRequest">
+                <unittest:value xsi:type="ByteFieldLiteral" value="3E00" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="hexResponse">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7E00" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="IdentifierName" id="InParameterDeclaration_dabd0c937b984607b803b57b50d3af61">
+            <realisation>
+              <dataType xsi:type="String">
+                <init value="LL_TelemCommuUnitUDS" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="EcuVariantname" id="InParameterDeclaration_cba4ba8f78594c519b71275557703c75">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="hexRequest" id="InParameterDeclaration_8cbb9d0ae52744bbb4f95e2023525c12">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="hexResponse" id="OutParameterDeclaration_5a3c1506c62b4f6a8fcd3b3e3e869fca">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_56d9d84c2f1347d5b192a938d7263df1">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringValue" valueOf="IdentifierName" />
+                <diag:ecuVariantName xsi:type="StringValue" valueOf="EcuVariantname" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_6349a9f9522f4203ba7384ad0e3d6279">
+            <realisation xsi:type="diag:ExecuteHexDiagService">
+              <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+              <diag:hexRequest xsi:type="ByteFieldValue" valueOf="hexRequest" />
+              <diag:hexResponse name="hexResponse" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:tearDownProcedure name="ExecuteHexDiagService_CloseComChannel" id="SetupProcedure_0180bc7445014849a89b9dca5fd0eafe">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_1f366608af604a27949c00055f8c2183">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:tearDownProcedure>
+  </extendedElement>
+</otx>

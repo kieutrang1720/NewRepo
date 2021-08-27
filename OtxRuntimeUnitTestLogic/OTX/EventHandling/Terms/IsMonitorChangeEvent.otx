@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:event="http://iso.org/OTX/1.0.0/Event" name="IsMonitorChangeEvent" id="id_8fa7377b0cf5455e99c59f9db783a557" package="EventHandling.Terms" version="1.0.0.0" timestamp="2021-08-10T08:44:48.356+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42466</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="IsMonitorChangeEvent_WithInteger" id="id_0876b48518814c549420fa6886c96395" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Integer1" id="VariableDeclaration_c0bc444d0efb48a38b946ce7c8a63954">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="Integer2" id="VariableDeclaration_90bf240144a54ed5b7457cb49a757fa7">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="EventSource1" id="VariableDeclaration_5ad3db22fd6a4afdba4e96f6c085740b">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="EventSource2" id="VariableDeclaration_deca781162f4433a94f870d5eb9d6a0a">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_ad1a46bfb76a4dc082dbe15507ee824c">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_a5cc3da7cf374ab6a8f490c743296e78">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Integer1" />
+              <term xsi:type="IntegerLiteral" value="12" />
+            </realisation>
+          </action>
+          <action id="Action_e54d088ab96143b791c1bd87a620e14d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Integer2" />
+              <term xsi:type="IntegerLiteral" value="12" />
+            </realisation>
+          </action>
+          <action id="Action_b6615c8ade7341c7b12709375a30a395">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:MonitorChangeEventSource">
+                <event:variable xsi:type="IntegerVariable" name="Integer1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_e307c7d17bfe4b58b15ff594b1b427dd">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource2" />
+              <term xsi:type="event:ThresholdExceededEventSource">
+                <event:variable xsi:type="IntegerVariable" name="Integer2" />
+                <event:lowerThreshold xsi:type="IntegerLiteral" value="0" />
+                <event:upperThreshold xsi:type="IntegerLiteral" value="100" />
+              </term>
+            </realisation>
+          </action>
+          <parallel id="Parallel_fd4f1443d29f459096b22ec4b78791bc">
+            <realisation>
+              <lane>
+                <action id="Action_bd468a760bd44ed2ba2539f4ebcbc7f6">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource2" />
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_8af9e4fc03cb4dfdb7553aa1cf7a8b34">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="500" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_6dbad6af800044bb9d22fae4c426604d">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="IntegerVariable" name="Integer1" />
+                    <term xsi:type="IntegerLiteral" value="12" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_fde9e03f393043ca81d67b2de80c3826">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="1000" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_f856da115e1a4e0786840319e57eb3e6">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="IntegerVariable" name="Integer2" />
+                    <term xsi:type="IntegerLiteral" value="14400" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_050734f80dd04c1cac8787a1ffd79da3">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="event:IsMonitorChangeEvent">
+                  <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                  <event:variable xsi:type="IntegerVariable" name="Integer1" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_37d9ecc1167f466fb838303490dcb7fd">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="event:IsMonitorChangeEvent">
+                <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                <event:variable xsi:type="IntegerVariable" name="Integer2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_53f03e9d3e7a4ecdae1b539d5d3acb55">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToInteger">
+                  <term xsi:type="event:GetNewValue">
+                    <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                  </term>
+                </term>
+                <term xsi:type="IntegerLiteral" value="14400" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

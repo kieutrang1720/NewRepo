@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:flash="http://iso.org/OTX/1.0.0/Flash" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:diagConf="http://iso.org/OTX/1.0.0/DiagConfiguration" name="FlashSessionValue" id="id_935bc2b2f42d4c45827cb5f457a2fbbe" package="Flash.Terms" version="1.0.0.0" timestamp="2021-08-18T17:04:44.313+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42602</data>
+  </metaData>
+  <declarations>
+    <variable name="CurrentProjectName" id="DocumentVariableDeclaration_f4539cf25b284ec9ad20fe8bef58cc33">
+      <realisation>
+        <dataType xsi:type="String" />
+      </realisation>
+    </variable>
+    <variable name="CurrentVehicleName" id="DocumentVariableDeclaration_6be64c63bed946e2ab78a4885d8015a4">
+      <realisation>
+        <dataType xsi:type="String" />
+      </realisation>
+    </variable>
+  </declarations>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ChangeOdxDb_p_918_v_918S" id="TestProcedure_387414cc93fc4e4f8e1a1a4fc209a43d">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_afe481b368bc4e86a2409b959bfa1708">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="CurrentProjectName" />
+              <term xsi:type="diagConf:GetActiveProject" />
+            </realisation>
+          </action>
+          <action id="Action_aba99c3c47e54188902b6879c16bed73">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="CurrentVehicleName" />
+              <term xsi:type="diagConf:GetActiveVehicleInformation" />
+            </realisation>
+          </action>
+          <branch id="Branch_b289550c62c64a38b95b4330c0d04abf">
+            <realisation>
+              <if>
+                <condition id="ConditionHeader_0a46119071c64a698b2814232fe18fd0">
+                  <realisation xsi:type="IsNotEqual">
+                    <term xsi:type="StringValue" valueOf="CurrentProjectName" />
+                    <term xsi:type="StringLiteral" value="918" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_449e7a78e3d24b0c8fc09756154f7cf9">
+                    <realisation xsi:type="diagConf:SelectProject">
+                      <diagConf:projectName xsi:type="StringLiteral" value="918" />
+                    </realisation>
+                  </action>
+                  <action id="Action_7d9f096cd5a947d4bbb4f30efd920a62">
+                    <realisation xsi:type="diagConf:SelectVehicleInformation">
+                      <diagConf:vehicleInformation xsi:type="StringLiteral" value="918S" />
+                    </realisation>
+                  </action>
+                </flow>
+              </if>
+            </realisation>
+          </branch>
+          <endNode id="ExtensibleEndNode_49a3c616cfd2407893148ecf106690bf">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="FlashSessionBase" id="TestProcedure_e3ee11da41e44e8aafe2695c7ce04555">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="FlashSession1" id="VariableDeclaration_64941df61b0c4107a2b06ac62ac6da65">
+            <realisation>
+              <dataType xsi:type="flash:FlashSession" />
+            </realisation>
+          </variable>
+          <variable name="FlashSession2" id="VariableDeclaration_f9281b4825ed4668844d0addf82d6e21">
+            <realisation>
+              <dataType xsi:type="flash:FlashSession" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <compoundNode id="Action_b317620601204e21862d36124ead246b">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="InvalidReferenceException" />
+              <unittest:flow>
+                <action id="Action_6657bfd3d2d0446eb40e6baae1d98190">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashSessionVariable" name="FlashSession2" />
+                    <term xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <action id="Action_9854e0206c674d99a1a59610d389f6e5">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashSessionVariable" name="FlashSession1" />
+              <term xsi:type="flash:GetFlashSession">
+                <flash:sessionID xsi:type="StringLiteral" value="Getriebesteuerdatensaetze_Download" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_3ccb2f8698974de29e313fc6d5048d5f">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashSessionVariable" name="FlashSession2" />
+              <term xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+            </realisation>
+          </action>
+          <action id="Action_fd36b097f4ca4ae18998c59bcf49a37c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+                <term xsi:type="flash:FlashSessionValue" valueOf="FlashSession2" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="FlashSession_1Step" id="TestProcedure_7bd004f87c11498997f0041ee82c8b1c">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_0d1c3ed39aeb45c087c940de96c6a9e2">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="flash:FlashSession" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_38cef7f3216a4698b7acfc0e72f9c9f1">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="flash:FlashSession" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_bbf057ac403c423a9a415c9596308530">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="flash:FlashSession" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="FlashSession1" id="VariableDeclaration_4d53419ef28d430d87fa58a2116a7953">
+            <realisation>
+              <dataType xsi:type="flash:FlashSession" />
+            </realisation>
+          </variable>
+          <variable name="FlashSession2" id="VariableDeclaration_dfacf3b75bd14a69b2a8edfd2ac09006">
+            <realisation>
+              <dataType xsi:type="flash:FlashSession" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_ec2ad02fb5b6408baef792cb51a14290">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashSessionVariable" name="FlashSession1" />
+              <term xsi:type="flash:GetFlashSession">
+                <flash:sessionID xsi:type="StringLiteral" value="Getriebesteuerdatensaetze_Download" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_17674a00fda943548256bfd24f7d886c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="flash:FlashSession" />
+                <items>
+                  <item xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_906d33041b6342b0aa6a9067ef2a56e5">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="flash:FlashSession" />
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="5" />
+                    <value xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_2866ca05fdb84429a2fef8702994b2e1">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="flash:FlashSession" />
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="g" />
+                    <value xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_53a884844bf8479299c1384277d2fd51">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashSessionValue" valueOf="List1">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_664b6e4194fb46868eab647c7b87ed20">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashSessionValue" valueOf="Map1">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_5f500e1b0ad84d3488b8e8b4361261d9">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashSessionValue" valueOf="Map2">
+                  <flash:path>
+                    <stepByName xsi:type="StringLiteral" value="g" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_97b361b9425542988c14f2f1901cead1">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_b95ab00c36a3411798a6a3bc21d6c5bc">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashSessionVariable" name="FlashSession2" />
+                    <term xsi:type="flash:FlashSessionValue" valueOf="List1">
+                      <flash:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </flash:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_8b09afe5b2f54cc59ab1a7a45719c815">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_2bb84b9cca0c4e00b7118f1485f3627c">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashSessionVariable" name="FlashSession2" />
+                    <term xsi:type="flash:FlashSessionValue" valueOf="Map1">
+                      <flash:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </flash:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_8eb16c6515c343608580546567671ef2">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_c04fa44bf4b04b24af239c2fe2c96732">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashSessionVariable" name="FlashSession2" />
+                    <term xsi:type="flash:FlashSessionValue" valueOf="Map2">
+                      <flash:path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                      </flash:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="FlashSession_2Steps" id="TestProcedure_1bd1e6424dec4944b07d1a105d6c4366">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_3117f608d50344879adfb141a5bfb317">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="flash:FlashSession" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List2Levels1" id="VariableDeclaration_66db636585594e6a86eba9a67f37a4f7">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="flash:FlashSession" />
+                </itemType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_af5eb3ca8c704d6297ed8955db3a4e7a">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="flash:FlashSession" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2Levels1" id="VariableDeclaration_c2d3fe5a88d84804ad9ff81c57bac797">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="flash:FlashSession" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_7d42267d102441a09ebe0ab4f2f376c4">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="flash:FlashSession" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2Levels2" id="VariableDeclaration_90e192cf151f4f7dbe01f8032db87c45">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="flash:FlashSession" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="FlashSession1" id="VariableDeclaration_f643bb387c9c41c59f4159766dec155b">
+            <realisation>
+              <dataType xsi:type="flash:FlashSession" />
+            </realisation>
+          </variable>
+          <variable name="FlashSession2" id="VariableDeclaration_a28de1568bf04011971bb24ce1bdcfba">
+            <realisation>
+              <dataType xsi:type="flash:FlashSession" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_df1d76670fb14eb285bcdc243753dc32">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashSessionVariable" name="FlashSession1" />
+              <term xsi:type="flash:GetFlashSession">
+                <flash:sessionID xsi:type="StringLiteral" value="Getriebesteuerdatensaetze_Download" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_b294e874e542430fad0ba9cec20db1a0">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="flash:FlashSession" />
+                <items>
+                  <item xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_8be9d7f9cef74e42b58c1c13d08d12f8">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List2Levels1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="flash:FlashSession" />
+                </itemType>
+                <items>
+                  <item xsi:type="ListValue" valueOf="List1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_0d14eabb33e74818be94659650c570c1">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="flash:FlashSession" />
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="5" />
+                    <value xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_7cee09a985ab444a8b4e2ec06bc1f6db">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2Levels1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="flash:FlashSession" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="1" />
+                    <value xsi:type="MapValue" valueOf="Map1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_4565a6ba847c442e9801d86a3acb5152">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="flash:FlashSession" />
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="g" />
+                    <value xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_cf588a84a25947e186de0003a4c26a85">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2Levels2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="flash:FlashSession" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="s" />
+                    <value xsi:type="MapValue" valueOf="Map2" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_cb6fb4578da24133acf0c17b427f826b">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashSessionValue" valueOf="List2Levels1">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_22ab57238a6743ff8b95ad89f861baf8">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashSessionValue" valueOf="Map2Levels1">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_6677b15ddde3460b9d5beed8f87ce2f2">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashSessionValue" valueOf="Map2Levels2">
+                  <flash:path>
+                    <stepByName xsi:type="StringLiteral" value="s" />
+                    <stepByName xsi:type="StringLiteral" value="g" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_72214b11434d46b4b4f5f9cff6c23d58">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_7b2dd62f68424171b132fe3ca5476540">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashSessionVariable" name="FlashSession2" />
+                    <term xsi:type="flash:FlashSessionValue" valueOf="List2Levels1">
+                      <flash:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </flash:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_4e7945e6c0f949429a05e138899d6d3c">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_dc8008796c22434d93e1239475def3d9">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashSessionVariable" name="FlashSession2" />
+                    <term xsi:type="flash:FlashSessionValue" valueOf="Map2Levels1">
+                      <flash:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="6" />
+                      </flash:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_eec59158afdb47fd8156391b6de48db1">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_66b0627fa2274a8faaff45e512f2fdfb">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashSessionVariable" name="FlashSession2" />
+                    <term xsi:type="flash:FlashSessionValue" valueOf="Map2Levels2">
+                      <flash:path>
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                        <stepByName xsi:type="StringLiteral" value="h" />
+                      </flash:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="FlashSession_3Steps" id="TestProcedure_eacfc0a4f4084fdb8c965bf88c002692">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_92b7f8c6119941f1ae6aea6003442ad3">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="flash:FlashSession" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List2Levels1" id="VariableDeclaration_b8fadb59b387496f94cf1d370910cb8e">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="flash:FlashSession" />
+                </itemType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List3Levels1" id="VariableDeclaration_9836c4be67a24948a4471f4c74bf7b6e">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="flash:FlashSession" />
+                  </itemType>
+                </itemType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_8841e226518941e08cb4b494230d1ba9">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="flash:FlashSession" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2Levels1" id="VariableDeclaration_fea13f012019413f972924e5b6c4bc96">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="flash:FlashSession" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map3Levels1" id="VariableDeclaration_24460059c9a542a89a522dd8637cc6cd">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="flash:FlashSession" />
+                  </valueType>
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_c8d9016f47944bfda63fdec94dc28698">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="flash:FlashSession" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2Levels2" id="VariableDeclaration_dd4d592163c2488586aad32e820a9325">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="flash:FlashSession" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map3Levels2" id="VariableDeclaration_8cabc943c14041ae95350b3c7072224d">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="flash:FlashSession" />
+                  </valueType>
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="FlashSession1" id="VariableDeclaration_1af84d9917d54934b75063d8182b003b">
+            <realisation>
+              <dataType xsi:type="flash:FlashSession" />
+            </realisation>
+          </variable>
+          <variable name="FlashSession2" id="VariableDeclaration_b4663b73a48b4a349887ad75267f7a33">
+            <realisation>
+              <dataType xsi:type="flash:FlashSession" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_e6aefe82a8794938b4233b137303d841">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashSessionVariable" name="FlashSession1" />
+              <term xsi:type="flash:GetFlashSession">
+                <flash:sessionID xsi:type="StringLiteral" value="Getriebesteuerdatensaetze_Download" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_f6e3463bb4844097a41d80ea6dd71718">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="flash:FlashSession" />
+                <items>
+                  <item xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_38283198d9114f968c0bf3958992b15b">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List2Levels1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="flash:FlashSession" />
+                </itemType>
+                <items>
+                  <item xsi:type="ListValue" valueOf="List1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_85700d87d3a34b85bb0fe100832b901b">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List3Levels1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="flash:FlashSession" />
+                  </itemType>
+                </itemType>
+                <items>
+                  <item xsi:type="ListValue" valueOf="List2Levels1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_dc0cad9404f040388d479381382b9d8c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="flash:FlashSession" />
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="9" />
+                    <value xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_038e901b013c4b8b9299822712e3db88">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2Levels1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="flash:FlashSession" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="5" />
+                    <value xsi:type="MapValue" valueOf="Map1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_1d97be1f6b784c4292c0263fb4597fcb">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map3Levels1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="flash:FlashSession" />
+                  </valueType>
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="1" />
+                    <value xsi:type="MapValue" valueOf="Map2Levels1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_67156b23d86c4b85af7f886e0d5f909f">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="flash:FlashSession" />
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="e" />
+                    <value xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_6d9318b251d042ac91d0d0ef7ec473ec">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2Levels2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="flash:FlashSession" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="w" />
+                    <value xsi:type="MapValue" valueOf="Map2" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_56cd7a8b171b49ca87cfcc2cf552bb78">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map3Levels2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="flash:FlashSession" />
+                  </valueType>
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="q" />
+                    <value xsi:type="MapValue" valueOf="Map2Levels2" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_8b7657b5e2dc40a484d0a3b2830e2759">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashSessionValue" valueOf="List3Levels1">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_c6d52e583fbe4192a7a1195f38b53343">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashSessionValue" valueOf="Map3Levels1">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_fe05272c8d284c268afe945ad8a3ec3f">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashSessionValue" valueOf="Map3Levels2">
+                  <flash:path>
+                    <stepByName xsi:type="StringLiteral" value="q" />
+                    <stepByName xsi:type="StringLiteral" value="w" />
+                    <stepByName xsi:type="StringLiteral" value="e" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_0aaa1178f9574becadb1c98bffbbd096">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_af99c1ac8cf44a83bf6841904cc19b49">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashSessionVariable" name="FlashSession2" />
+                    <term xsi:type="flash:FlashSessionValue" valueOf="List3Levels1">
+                      <flash:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </flash:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_7f6aef2dff504b0a9d7af2b838371d98">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_db92ac1fcc784ab380a89370130cebde">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashSessionVariable" name="FlashSession2" />
+                    <term xsi:type="flash:FlashSessionValue" valueOf="Map3Levels1">
+                      <flash:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="12" />
+                      </flash:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_50e17f666e5e4dc2a6934853881c1916">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_5c8220ddc9914afcbfc3c8f4608c34af">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashSessionVariable" name="FlashSession2" />
+                    <term xsi:type="flash:FlashSessionValue" valueOf="Map3Levels2">
+                      <flash:path>
+                        <stepByName xsi:type="StringLiteral" value="q" />
+                        <stepByName xsi:type="StringLiteral" value="w" />
+                        <stepByName xsi:type="StringLiteral" value="z" />
+                      </flash:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ChangeOdxDb_LastDb" id="TestProcedure_9692676f80254b6587e5b3ffc25f065b">
+      <unittest:realisation>
+        <unittest:flow>
+          <branch id="Branch_846f1caf0dbb4655a8c1de2382b8daee">
+            <realisation>
+              <if>
+                <condition id="ConditionHeader_935b59d6ce074a398ef43bb8c02facc1">
+                  <realisation xsi:type="IsEqual">
+                    <term xsi:type="StringValue" valueOf="CurrentProjectName" />
+                    <term xsi:type="StringLiteral" value="918" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_18b576141b544ff8a5c36ec766940522">
+                    <realisation xsi:type="diagConf:SelectProject">
+                      <diagConf:projectName xsi:type="StringValue" valueOf="CurrentProjectName" />
+                    </realisation>
+                  </action>
+                  <action id="Action_6e949305f9d94caca00103e3d803b5ce">
+                    <realisation xsi:type="diagConf:SelectVehicleInformation">
+                      <diagConf:vehicleInformation xsi:type="StringValue" valueOf="CurrentVehicleName" />
+                    </realisation>
+                  </action>
+                </flow>
+              </if>
+            </realisation>
+          </branch>
+          <endNode id="ExtensibleEndNode_a0e59c39e74d46f9bd825bbb27b5397c">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

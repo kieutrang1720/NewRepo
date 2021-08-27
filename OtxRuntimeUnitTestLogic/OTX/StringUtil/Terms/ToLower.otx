@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:string="http://iso.org/OTX/1.0.0/StringUtil" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="ToLower" id="id_78c26730665b4303905bc2bc825361af" package="StringUtil.Terms" version="1.0.0.0" timestamp="2021-08-09T14:27:33.598+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42466</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ToLower_Base" id="id_9f2c73e86c984719bfc340c7e463c50e" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_85e10bf115164a3382183bd362d67ee0">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_0f23e32ffabe4d11b80f93dc938427cd">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="!@#$%^&amp;()QWERTYUIOP{}:&lt;&gt;qwertyuiop" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="!@#$%^&amp;()qwertyuiop{}:&lt;&gt;qwertyuiop" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="string" id="InParameterDeclaration_e9601db205724f7eae53f3ab67d4f52c">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_9470d22542df4e49b64fda8bf8db9422">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_b7e1653cfeec4dcb9ffed68af3a6be70">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="result" />
+              <term xsi:type="string:ToLower">
+                <string:string xsi:type="StringValue" valueOf="string" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

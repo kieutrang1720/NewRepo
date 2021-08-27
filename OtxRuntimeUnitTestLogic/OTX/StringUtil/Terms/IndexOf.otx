@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:string="http://iso.org/OTX/1.0.0/StringUtil" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="IndexOf" id="id_e0ce092cde5742b78c875fef13be667a" package="StringUtil.Terms" version="1.0.0.0" timestamp="2021-08-09T12:19:09.957+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42466</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="IndexOf_Base" id="id_eedd891c739141faaab382242a964e42" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_6c00919e1489470db7af83644cd436f7">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="asdf" />
+              </unittest:argument>
+              <unittest:argument param="pattern">
+                <unittest:value xsi:type="StringLiteral" value="12" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="-1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2a3ecda85c9f4e748a960d986fd0dd1f">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="asdf" />
+              </unittest:argument>
+              <unittest:argument param="pattern">
+                <unittest:value xsi:type="StringLiteral" value="as" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4fb38d89a73846509edd039eba6e28b8">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="asdf" />
+              </unittest:argument>
+              <unittest:argument param="pattern">
+                <unittest:value xsi:type="StringLiteral" value="df" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="2" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_eb8e36f7e7194bcabdc3b7d6cced072e">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="a" />
+              </unittest:argument>
+              <unittest:argument param="pattern">
+                <unittest:value xsi:type="StringLiteral" value="4a" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="-1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="string" id="InParameterDeclaration_4fe4f451dea24a81a65526f605dcb4c2">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="pattern" id="InParameterDeclaration_8ec9cbf2d1664cb588df9b3effefb2db">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_228443a4ccf74b999286ad3a233a1675">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_6bb162dc834f4cd481ba28ce9d44db95">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="result" />
+              <term xsi:type="string:IndexOf">
+                <string:string xsi:type="StringValue" valueOf="string" />
+                <string:pattern xsi:type="StringValue" valueOf="pattern" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

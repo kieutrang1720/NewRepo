@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:math="http://iso.org/OTX/1.0.0/Math" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Ln" id="id_c2e5aa9cfbef42e18035339589865bf8" package="Math.Terms" version="1.0.0.0" timestamp="2021-07-28T14:23:34.954+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42368</data>
+  </metaData>
+  <declarations>
+    <constant name="e" id="GlobalConstantDeclaration_00794b7bc5584d7d8c2be9e09ad3c4c0">
+      <realisation>
+        <dataType xsi:type="Float">
+          <init value="2.7182818284590451" />
+        </dataType>
+      </realisation>
+    </constant>
+  </declarations>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="Ln_Float" id="TestProcedure_35dbcc15fe7b463193a08b1a0e5b6192" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_f4115c44ae0a434caa6ef246c2d4ba14">
+            <unittest:arguments>
+              <unittest:argument param="numeral">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_090945df809f41dab14f9ced564f8f9a">
+            <unittest:arguments>
+              <unittest:argument param="numeral">
+                <unittest:value xsi:type="Negate">
+                  <numeral xsi:type="FloatLiteral" value="0" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7a2bdd096d1446f594715fae351be574">
+            <unittest:arguments>
+              <unittest:argument param="numeral">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9715c8a4fe1f4ff8879715da2bcc49ce">
+            <unittest:arguments>
+              <unittest:argument param="numeral">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_fae1b697d52a42f3a50d0239b5956eb6">
+            <unittest:arguments>
+              <unittest:argument param="numeral">
+                <unittest:value xsi:type="FloatLiteral" value="1.11111111111111" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="0.105360515657826" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_dbe172c0334e4a29a72b64af73478ed8">
+            <unittest:arguments>
+              <unittest:argument param="numeral">
+                <unittest:value xsi:type="math:Power">
+                  <math:numeral xsi:type="FloatValue" valueOf="e" />
+                  <math:exponent xsi:type="FloatLiteral" value="2.99999" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="2.99999" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_03072b47d77044a4b22d4c3705b454b9">
+            <unittest:arguments>
+              <unittest:argument param="numeral">
+                <unittest:value xsi:type="FloatValue" valueOf="e" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-30" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9f174295c3f94378bb0721d0de9e79f7">
+            <unittest:arguments>
+              <unittest:argument param="numeral">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="numeral" id="InParameterDeclaration_8ded82bd3ecb4a9190650e9551cd5621">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_ca5dca83e6e349349253aabbb4499b1b">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_9e6450603fbf46a0932181448ab0a795">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="result" />
+              <term xsi:type="math:Ln">
+                <math:numeral xsi:type="FloatValue" valueOf="numeral" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Ln_Integer" id="TestProcedure_0f84239eb5f948abb192eb41f06bf420" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_eed3959973004833992d4a6025616970">
+            <unittest:arguments>
+              <unittest:argument param="numeral">
+                <unittest:value xsi:type="IntegerLiteral" value="-1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b31bc08630474295a779a43df14dbf20">
+            <unittest:arguments>
+              <unittest:argument param="numeral">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_51db5621d6e34368896216a6e94eb31b">
+            <unittest:arguments>
+              <unittest:argument param="numeral">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-30" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_85f821107b9044009584d73b30cd0431">
+            <unittest:arguments>
+              <unittest:argument param="numeral">
+                <unittest:value xsi:type="IntegerLiteral" value="2" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="0.693147180559945" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="numeral" id="InParameterDeclaration_67d8c8df1e054b8ba2cb60d6bbd4ea25">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_e105013efaf54dd98e72d1b95b0d116c">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_01a0a402ee024d7ab8aeafc683a0897a">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="result" />
+              <term xsi:type="math:Ln">
+                <math:numeral xsi:type="IntegerValue" valueOf="numeral" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

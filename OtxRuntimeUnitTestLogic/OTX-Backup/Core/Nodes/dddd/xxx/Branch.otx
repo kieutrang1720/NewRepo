@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="Branch" id="id_b2e2b7922f244c60906be51d1c09d157" package="Core.Nodes.dddd.Branch" version="1.0.0.0" timestamp="2021-06-03T15:27:14.729+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42044</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="BranchIf" id="id_04778f4fa468479795819942e76beda1" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Integer1" id="VariableDeclaration_45d95ff7abf3438bbafa6c28b667c614">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="-3" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="String1" id="VariableDeclaration_ea684f6cff2449e4a67473ae63ea094d">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <branch id="Branch_5514cc53e9f141a996e4adca9adea0df">
+            <realisation>
+              <if>
+                <condition id="ConditionHeader_4e349cafb71b40ce858eb2097910c894">
+                  <realisation xsi:type="IsLess">
+                    <left xsi:type="IntegerValue" valueOf="Integer1" />
+                    <right xsi:type="IntegerLiteral" value="0" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_fbeafde819f44f2b9b2241b057b3dbe5">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="String1" />
+                      <term xsi:type="StringLiteral" value="negative" />
+                    </realisation>
+                  </action>
+                </flow>
+              </if>
+              <elseif>
+                <condition id="ConditionHeader_bc11ead160a6442bb5f5a0b7faa49597">
+                  <realisation xsi:type="IsEqual">
+                    <term xsi:type="IntegerValue" valueOf="Integer1" />
+                    <term xsi:type="IntegerLiteral" value="0" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_5ee05df6e1de40388b8aa75112728e75">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="String1" />
+                      <term xsi:type="StringLiteral" value="neutral" />
+                    </realisation>
+                  </action>
+                </flow>
+              </elseif>
+              <else>
+                <action id="Action_89412ef2c66d4645925ca27e83d96d59">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="StringVariable" name="String1" />
+                    <term xsi:type="StringLiteral" value="positive" />
+                  </realisation>
+                </action>
+              </else>
+            </realisation>
+          </branch>
+          <action id="Action_ad4c54a19897497da0a90eb9c195435c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="String1" />
+                <term xsi:type="StringLiteral" value="negative" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="BranchElseIf" id="TestProcedure_72d02002ca0d4f56bd3d53b05db5fad3" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Integer1" id="VariableDeclaration_5dbdb4010f494bec8363086bb8f82bf1">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="String1" id="VariableDeclaration_471fd59767b94db19f96f4bc67afadc9">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <branch id="Branch_d3fe2a148ee24a4fac50bad1e9222b7d">
+            <realisation>
+              <if>
+                <condition id="ConditionHeader_a14b8fcc3d294c109467b9ae5e34c24b">
+                  <realisation xsi:type="IsLess">
+                    <left xsi:type="IntegerValue" valueOf="Integer1" />
+                    <right xsi:type="IntegerLiteral" value="0" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_1eb9e803c378467d8493ef3c7bde9b19">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="String1" />
+                      <term xsi:type="StringLiteral" value="negative" />
+                    </realisation>
+                  </action>
+                </flow>
+              </if>
+              <elseif>
+                <condition id="ConditionHeader_a7d5e6ccc7474832b5767cc95d92df8d">
+                  <realisation xsi:type="IsEqual">
+                    <term xsi:type="IntegerValue" valueOf="Integer1" />
+                    <term xsi:type="IntegerLiteral" value="0" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_44f978b2bf1b4b9da72bbb6068975f6f">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="String1" />
+                      <term xsi:type="StringLiteral" value="neutral" />
+                    </realisation>
+                  </action>
+                </flow>
+              </elseif>
+              <else>
+                <action id="Action_bdce5f0cb9cb41cf85ee423658130bcc">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="StringVariable" name="String1" />
+                    <term xsi:type="StringLiteral" value="positive" />
+                  </realisation>
+                </action>
+              </else>
+            </realisation>
+          </branch>
+          <action id="Action_0e679029e2fd4070b1670613ac9a541b">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="String1" />
+                <term xsi:type="StringLiteral" value="neutral" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="BranchElse" id="TestProcedure_9dba887e7d114b23935ee255e4745ba9" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="String1" id="VariableDeclaration_06e1155f8ab643b495a83e0c5b969bd8">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+          <variable name="Integer1" id="VariableDeclaration_4b6d64be0b944d8a906e2cddd6138e29">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="12" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <branch id="Branch_9a40403d13cb47809813f23fe67cd825">
+            <realisation>
+              <if>
+                <condition id="ConditionHeader_c3d7770fe76d48fabde5954924557176">
+                  <realisation xsi:type="IsLess">
+                    <left xsi:type="IntegerValue" valueOf="Integer1" />
+                    <right xsi:type="IntegerLiteral" value="0" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_cd9058f466384cdbb696fcf6c9998449">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="String1" />
+                      <term xsi:type="StringLiteral" value="negative" />
+                    </realisation>
+                  </action>
+                </flow>
+              </if>
+              <elseif>
+                <condition id="ConditionHeader_8541f54b266c4252ab9161927fbdef7a">
+                  <realisation xsi:type="IsEqual">
+                    <term xsi:type="IntegerValue" valueOf="Integer1" />
+                    <term xsi:type="IntegerLiteral" value="0" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_480457daf30f41759b07fcde86c4b97a">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="String1" />
+                      <term xsi:type="StringLiteral" value="neutral" />
+                    </realisation>
+                  </action>
+                </flow>
+              </elseif>
+              <else>
+                <action id="Action_304a6ff66b8847b69c08b3593e2cda3d">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="StringVariable" name="String1" />
+                    <term xsi:type="StringLiteral" value="positive" />
+                  </realisation>
+                </action>
+              </else>
+            </realisation>
+          </branch>
+          <action id="Action_7a760f04a23c46e4b2f67a16fb7e580c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="String1" />
+                <term xsi:type="StringLiteral" value="positive" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ManyElseIf" id="TestProcedure_bef372d98aa04ad0908f86bf17ca4146" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Float1" id="VariableDeclaration_31110b7d23954bbf9c5f668b8dee265d">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="0.00098" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="String1" id="VariableDeclaration_2d1a306adf294649845d7520478e7732">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <branch id="Branch_04ef0f69f12343efa21fd2f8e83df721">
+            <realisation>
+              <if>
+                <condition id="ConditionHeader_4d7191715d794e2fa33a40ff420d5b89">
+                  <realisation xsi:type="IsLess">
+                    <left xsi:type="FloatValue" valueOf="Float1" />
+                    <right xsi:type="IntegerLiteral" value="0" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_0526c12a13864107aae0377828a6f816">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="String1" />
+                      <term xsi:type="StringLiteral" value="false" />
+                    </realisation>
+                  </action>
+                </flow>
+              </if>
+              <elseif>
+                <condition id="ConditionHeader_bf6c6ca5376142c78db4aa2e49453345">
+                  <realisation xsi:type="IsLessOrEqual">
+                    <left xsi:type="FloatValue" valueOf="Float1" />
+                    <right xsi:type="FloatLiteral" value="0.0009799" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_065f87f460f44d10b263625541a82e71">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="String1" />
+                      <term xsi:type="StringLiteral" value="false" />
+                    </realisation>
+                  </action>
+                </flow>
+              </elseif>
+              <elseif>
+                <condition id="ConditionHeader_628fb9d275714e749f64116193567612">
+                  <realisation xsi:type="IsGreaterOrEqual">
+                    <left xsi:type="FloatValue" valueOf="Float1" />
+                    <right xsi:type="FloatLiteral" value="0.0009799" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_aef2baa6fd9f4275b233384f3b393446">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="String1" />
+                      <term xsi:type="StringLiteral" value="first true" />
+                    </realisation>
+                  </action>
+                </flow>
+              </elseif>
+              <elseif>
+                <condition id="ConditionHeader_6d4d719ac0ad4b429c2747c54f497f4b">
+                  <realisation xsi:type="IsEqual">
+                    <term xsi:type="FloatValue" valueOf="Float1" />
+                    <term xsi:type="FloatLiteral" value="0.00098" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_c779194bbb284e139f92c891d99b1ac4">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="String1" />
+                      <term xsi:type="StringLiteral" value="second true" />
+                    </realisation>
+                  </action>
+                </flow>
+              </elseif>
+              <else>
+                <action id="Action_3ecf2b6e4c7f49448a4ac94761ff9d36">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="StringVariable" name="String1" />
+                    <term xsi:type="StringLiteral" value="third true" />
+                  </realisation>
+                </action>
+              </else>
+            </realisation>
+          </branch>
+          <action id="Action_471d24953dae4bfab1995bacb4c412c9">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="String1" />
+                <term xsi:type="StringLiteral" value="first true" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="NotElse" id="TestProcedure_95a0ec2f95b046e0b7a033a5e37a21b3" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Integer1" id="VariableDeclaration_c537222096f940f09af1eda56e1d22d7">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="String1" id="VariableDeclaration_c747abbc854d4ede96d0d4956f2877ad">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_c3b8e922d9344c868c978ca158c0119d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Integer1" />
+              <term xsi:type="IntegerLiteral" value="12" />
+            </realisation>
+          </action>
+          <action id="Action_6809e7595dd741c480d29a2c09bd882e">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="String1" />
+              <term xsi:type="StringLiteral" value="all conditions fails" />
+            </realisation>
+          </action>
+          <branch id="Branch_8a315f9b206949d1bc6cf38a16f3e39c">
+            <realisation>
+              <if>
+                <condition id="ConditionHeader_9408095366564e94bb5beca9ab128051">
+                  <realisation xsi:type="IsEqual">
+                    <term xsi:type="IntegerValue" valueOf="Integer1" />
+                    <term xsi:type="IntegerLiteral" value="1" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_165257961e074a469328ab01dc1b2864">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="String1" />
+                      <term xsi:type="StringLiteral" value="equal 1" />
+                    </realisation>
+                  </action>
+                </flow>
+              </if>
+              <elseif>
+                <condition id="ConditionHeader_e1e4770952df4ddfa897e95571a9ce20">
+                  <realisation xsi:type="IsEqual">
+                    <term xsi:type="IntegerValue" valueOf="Integer1" />
+                    <term xsi:type="IntegerLiteral" value="2" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_eb24415327ff428083f93fdd7baa788b">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="String1" />
+                      <term xsi:type="StringLiteral" value="equal 2" />
+                    </realisation>
+                  </action>
+                </flow>
+              </elseif>
+              <elseif>
+                <condition id="ConditionHeader_8dc238d54e734f1e80b99b8b32897873">
+                  <realisation xsi:type="IsEqual">
+                    <term xsi:type="IntegerValue" valueOf="Integer1" />
+                    <term xsi:type="IntegerLiteral" value="3" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_c008d967717f4c89ac8f9969dd3a8164">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="String1" />
+                      <term xsi:type="StringLiteral" value="equal 3" />
+                    </realisation>
+                  </action>
+                </flow>
+              </elseif>
+            </realisation>
+          </branch>
+          <action id="Action_7c32c1b017c449cd9148d20b2d9d9bbb">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="String1" />
+                <term xsi:type="StringLiteral" value="all conditions fails" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

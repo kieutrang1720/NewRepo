@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:string="http://iso.org/OTX/1.0.0/StringUtil" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="StringConcatenate" id="id_8806be67d6c54d70875c28e5518b1b5f" package="StringUtil.Terms" version="1.0.0.0" timestamp="2021-08-09T11:21:10.895+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42466</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="StringConcatenate_AllLiteral" id="id_b98cd91259654a4ebc2e4a9f6d2bae7f" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_7d4f19acb3db47f28ce1f49fb75a7dda">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringLiteral" value="ab !@#$%^&amp;*()-_+{}:\&quot;&lt;&gt;?,./" />
+                <term xsi:type="string:StringConcatenate">
+                  <string:string xsi:type="StringLiteral" value="a" />
+                  <string:string xsi:type="StringLiteral" value="b" />
+                  <string:string xsi:type="StringLiteral" value=" " />
+                  <string:string xsi:type="StringLiteral" value="!@#$%^&amp;*()-_+{}:\&quot;&lt;&gt;?,./" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="StringConcatenate_LiteralAndVariable" id="TestProcedure_3a109bf713ec4daebb8bdabda3e0b496" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="String1" id="VariableDeclaration_8767af51e4e5490a8d12c9b4a6bbaa9d">
+            <realisation>
+              <dataType xsi:type="String">
+                <init value="a" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_7c7805a626094aa6b058d31ccee2e6f0">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringLiteral" value="aab !@#$%^&amp;*()-_+{}:\&quot;&lt;&gt;?,./" />
+                <term xsi:type="string:StringConcatenate">
+                  <string:string xsi:type="StringValue" valueOf="String1" />
+                  <string:string xsi:type="StringLiteral" value="a" />
+                  <string:string xsi:type="StringLiteral" value="b" />
+                  <string:string xsi:type="StringLiteral" value=" " />
+                  <string:string xsi:type="StringLiteral" value="!@#$%^&amp;*()-_+{}:\&quot;&lt;&gt;?,./" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="StringConcatenate_AllVariable" id="TestProcedure_fcf32f1522c643aab8175951d7506b49" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="String1" id="VariableDeclaration_0821bbb9a3914a41a9dd720998482894">
+            <realisation>
+              <dataType xsi:type="String">
+                <init value="a" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_48fd45bd56df48318ab792014123a413">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringLiteral" value="aaaaa" />
+                <term xsi:type="string:StringConcatenate">
+                  <string:string xsi:type="StringValue" valueOf="String1" />
+                  <string:string xsi:type="StringValue" valueOf="String1" />
+                  <string:string xsi:type="StringValue" valueOf="String1" />
+                  <string:string xsi:type="StringValue" valueOf="String1" />
+                  <string:string xsi:type="StringValue" valueOf="String1" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="StringConcatenate_InParameter" id="TestProcedure_335edeee7c3140518ede0a5c89e0523b" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_f56dce7230ef428591f3410aa26c6c0a">
+            <unittest:arguments>
+              <unittest:argument param="String1">
+                <unittest:value xsi:type="StringLiteral" value="asd" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="String1" id="InParameterDeclaration_ae658c48415f4c01aec9523181b70da3">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_6028657e67964cb1bc4e05321a66782a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringLiteral" value="asdasdasdasdasd" />
+                <term xsi:type="string:StringConcatenate">
+                  <string:string xsi:type="StringValue" valueOf="String1" />
+                  <string:string xsi:type="StringValue" valueOf="String1" />
+                  <string:string xsi:type="StringValue" valueOf="String1" />
+                  <string:string xsi:type="StringValue" valueOf="String1" />
+                  <string:string xsi:type="StringValue" valueOf="String1" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

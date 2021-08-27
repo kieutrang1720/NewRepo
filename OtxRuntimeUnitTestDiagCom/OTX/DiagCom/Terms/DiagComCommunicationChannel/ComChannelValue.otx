@@ -1,0 +1,1332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:diag="http://iso.org/OTX/1.0.0/DiagCom" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="ComChannelValue" id="id_4b539cc779754266b79bb6cf4531b3ab" package="DiagCom.Terms.DiagComCommunicationChannel" version="1.0.0.0" timestamp="2021-08-17T19:06:21.376+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42531</data>
+  </metaData>
+  <imports>
+    <import package="DiagCom" document="GlobalVariable" prefix="Import_Global" />
+  </imports>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ComChannelValue_Base" id="TestProcedure_f34e8cc7b53447abb6089e0c975b6af6" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_a58eae9721134d568f461a737e20751a">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="ComChannel2" id="VariableDeclaration_c5b3e4fdf7c14355980e5c4493345abb">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="Boolean1" id="VariableDeclaration_78e8084e00e24204ac7c317ea766129d">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_26d054a0daaf4f1983632e9364d748d2">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringValue" valueOf="Import_Global:Identifier" />
+                <diag:ecuVariantName xsi:type="StringValue" valueOf="Import_Global:EcuVariantName" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_1b6469057396430694b541d278e6020d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel2" />
+              <term xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+            </realisation>
+          </action>
+          <action id="Action_e80f1254f55b4a8dbb586b0308241936">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="Boolean1" />
+              <term xsi:type="IsEqual">
+                <term xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <term xsi:type="diag:ComChannelValue" valueOf="ComChannel2" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_9a8959a5942d43b686d19554fa0f4fb4">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+          <action id="Action_2b15eb4d5bb143ac93ad238387abd42a">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel2" />
+            </realisation>
+          </action>
+          <action id="Action_9e0adcbf3468496eacf2730000cb57e9">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="BooleanValue" valueOf="Boolean1" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ComChannelValue_1Step" id="TestProcedure_64157f9366be4e04874730835607da29" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_9194e2f8e6ba4d43b96754528bb3135c">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="diag:ComChannel" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_1fda394d9d3a451d85de21f2ebcbf14d">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="diag:ComChannel" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_2b8badf2ebbf4a58ab6a98e5fc1b87b3">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="diag:ComChannel" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="ComChannel1" id="VariableDeclaration_c839c7d5c34048bb825282665995e0f6">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_4a1d19151e554ad78b7564fdd1bc0281">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringValue" valueOf="Import_Global:Identifier" />
+                <diag:ecuVariantName xsi:type="StringValue" valueOf="Import_Global:EcuVariantName" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_16bf4179c1ea450cb0921225631f8b38">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="diag:ComChannel" />
+                <items>
+                  <item xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_3e81075dfa3e461c891365f2cf265d97">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="diag:ComChannel" />
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="5" />
+                    <value xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_60940dcd20314678b9b68b750ee392eb">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="diag:ComChannel" />
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="g" />
+                    <value xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_09d686675a544b40966a28ddc9a9c207">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <term xsi:type="diag:ComChannelValue" valueOf="List1">
+                  <diag:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </diag:path>
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_5c044140fc1045f1bf16ad7be03d876a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <term xsi:type="diag:ComChannelValue" valueOf="Map1">
+                  <diag:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                  </diag:path>
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_e1da66334dee4c939ce2201dd189cf86">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <term xsi:type="diag:ComChannelValue" valueOf="Map2">
+                  <diag:path>
+                    <stepByName xsi:type="StringLiteral" value="g" />
+                  </diag:path>
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_f121318adc17411dacf054d7bf5e0ab5">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_ff0800e850af4f029e1369304a54ea75">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="List1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_f67c91dec8ba45ffbb0af96462372c66">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_b1e911df2b5e4d34a2d11c822691dce4">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_9a261e8bca0a4b26b5e7173371f18b33">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_cd42db770396423a82dd743d6de4e018">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map2">
+                      <diag:path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <action id="Action_85f3dbe2cb244ecfa2182114298c0366">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ComChannelValue_2Steps" id="TestProcedure_1f30f1259c824785b7aadb24856a4c48" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_260d70b86f12451b89939c19681cd207">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="diag:ComChannel" />
+                </itemType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List1_Step1" id="VariableDeclaration_93368532646c49758242e12142f5dd00">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="diag:ComChannel" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_f59f754beb904d52828d637fb27f24ab">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="diag:ComChannel" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1_Step1" id="VariableDeclaration_093edf99cb4544c89475ca6e3c58d691">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="diag:ComChannel" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_155da80eb5794de68aed88d33efb6d2a">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="diag:ComChannel" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2_Step1" id="VariableDeclaration_61d3f5c054604d52a0bf4a5504380f57">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="diag:ComChannel" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="ComChannel1" id="VariableDeclaration_439678dcf06741cf8a0bb224a0585cf9">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_d1aaabdb1b3042299d6f9f623d75c45f">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringValue" valueOf="Import_Global:Identifier" />
+                <diag:ecuVariantName xsi:type="StringValue" valueOf="Import_Global:EcuVariantName" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_c487ac9361be4297a4eea0663695e2db">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1_Step1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="diag:ComChannel" />
+                <items>
+                  <item xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_e456971fff774aa7bf2be49f17bf117b">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="diag:ComChannel" />
+                </itemType>
+                <items>
+                  <item xsi:type="ListValue" valueOf="List1_Step1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_c4977e94be0a423eb7e6cbc1a18215f0">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1_Step1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="diag:ComChannel" />
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="5" />
+                    <value xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_219fc1a1e71246c5971c12de41af5aeb">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="diag:ComChannel" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="1" />
+                    <value xsi:type="MapValue" valueOf="Map1_Step1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_df41590b358b4adcbac02bd07fb2d301">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2_Step1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="diag:ComChannel" />
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="g" />
+                    <value xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_1cecc1c077584b3a8bbd9f17964287af">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="diag:ComChannel" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="s" />
+                    <value xsi:type="MapValue" valueOf="Map2_Step1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_6759cc80d6f24e7db01d11266f2f33b8">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <term xsi:type="diag:ComChannelValue" valueOf="List1">
+                  <diag:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </diag:path>
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_f8dda14c95bc48e183375e2c43b25c8c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <term xsi:type="diag:ComChannelValue" valueOf="Map1">
+                  <diag:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                  </diag:path>
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_da97ecf8dbdb48ffb17b2baedeabcdf0">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <term xsi:type="diag:ComChannelValue" valueOf="Map2">
+                  <diag:path>
+                    <stepByName xsi:type="StringLiteral" value="s" />
+                    <stepByName xsi:type="StringLiteral" value="g" />
+                  </diag:path>
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_9a5c0721d5ff4e4796fb3a2dbe7469a8">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_ef18200650514634a7a7dac41cd32940">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="List1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_62e8f70ee9834836bae65ae29d831b49">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_8d7aa1ab0b5c47a69638355b9decda9f">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="List1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_e9e4c2ecd3ed4b43affc0635d39cf2b3">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_6feb978719e64b6e8acd9b917952e394">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="List1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_391ad033d2954e4887b01920245099f4">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_2a08fbf5718a493aa69abe5cc4f1b688">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="6" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_f260bf3d62de4b769003844af0987d36">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_b7823f829e8e4d7487d7aedd67b0246a">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_bfd0ae8f9f4a482fb459db4f1fa1f378">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_f34480b6fff54295b3bdcce9065bb7e8">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="6" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_159ca864b34a4c449824a9827eb46b4b">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_b41dffd1cb9b480fa1eac129c1e850eb">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map2">
+                      <diag:path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="g" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_40ad0a69bfd8407380e0f1cca8108c29">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_4d1c548e3fdf45518b219477a8e070ef">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map2">
+                      <diag:path>
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                        <stepByName xsi:type="StringLiteral" value="h" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_a3d501a448134f16b0dc65c37d911283">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_bfa1a1975f5c4a8e9bea85ac52035b5c">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map2">
+                      <diag:path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="h" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <action id="Action_2f77ba3f66924d0eae6dca254fa4852c">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ComChannelValue_3Steps" id="TestProcedure_748ed9c7427e4338a701a45dd18385a3" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1_Step1" id="VariableDeclaration_3c916239e7934144bbc0f831933bc8ab">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="diag:ComChannel" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List1_Step2" id="VariableDeclaration_f0e7eba515b9473ea19ebaf49656e7c0">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="diag:ComChannel" />
+                </itemType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List1" id="VariableDeclaration_855a8d69ced0442faad01819b8e06e26">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="diag:ComChannel" />
+                  </itemType>
+                </itemType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1_Step1" id="VariableDeclaration_0d2d4db39590477cad7c6476f64d11a7">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="diag:ComChannel" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1_Step2" id="VariableDeclaration_862b0c1c518b49ca9f94255d10e02c55">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="diag:ComChannel" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_2c5ae74aaa8a4f17b0e6f6cb1fedfb1b">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="diag:ComChannel" />
+                  </valueType>
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2_Step1" id="VariableDeclaration_75782826264449209ee151a98245988b">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="diag:ComChannel" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2_Step2" id="VariableDeclaration_203a06b8f9a044a887b75f2304a2565c">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="diag:ComChannel" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_ca60c8d9bb1146e3b4a9427a5bae26de">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="diag:ComChannel" />
+                  </valueType>
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="ComChannel1" id="VariableDeclaration_0f5d58382f77462488293a1ab05b3cee">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_aeff9d062f3b4c0ba5afe3512efe6145">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringValue" valueOf="Import_Global:Identifier" />
+                <diag:ecuVariantName xsi:type="StringValue" valueOf="Import_Global:EcuVariantName" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_176bb3c4c0ac465a89ab94cc8519e9ea">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1_Step1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="diag:ComChannel" />
+                <items>
+                  <item xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_a29bb2b96a384b50a35246d0385a6413">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1_Step2" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="diag:ComChannel" />
+                </itemType>
+                <items>
+                  <item xsi:type="ListValue" valueOf="List1_Step1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_d573f8205926406181470bc2bf876240">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="diag:ComChannel" />
+                  </itemType>
+                </itemType>
+                <items>
+                  <item xsi:type="ListValue" valueOf="List1_Step2" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_00ce05ea8abf4a93923004be9767ef4c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1_Step1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="diag:ComChannel" />
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="9" />
+                    <value xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_00dec326b41b4d22999542fa54624835">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1_Step2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="diag:ComChannel" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="5" />
+                    <value xsi:type="MapValue" valueOf="Map1_Step1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_7ab5cea086fc4491b945fd6dddae8a0b">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="diag:ComChannel" />
+                  </valueType>
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="1" />
+                    <value xsi:type="MapValue" valueOf="Map1_Step2" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_ad5f0aedb02a49f69aa360eec4e7a75a">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2_Step1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="diag:ComChannel" />
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="e" />
+                    <value xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_f1059ac6c42e4799b4124314e8ace27d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2_Step2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="diag:ComChannel" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="w" />
+                    <value xsi:type="MapValue" valueOf="Map2_Step1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_8d11277bdae04dafb5b2a5509e990f1d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="diag:ComChannel" />
+                  </valueType>
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="q" />
+                    <value xsi:type="MapValue" valueOf="Map2_Step2" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_dd754f5254a14efbbd4e6e159b3a82cd">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <term xsi:type="diag:ComChannelValue" valueOf="List1">
+                  <diag:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </diag:path>
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_5e4d339bc0764e7ab535a7d4f230e40f">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <term xsi:type="diag:ComChannelValue" valueOf="Map1">
+                  <diag:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                  </diag:path>
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_32c6073f03c6449987361f83c4050e68">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <term xsi:type="diag:ComChannelValue" valueOf="Map2">
+                  <diag:path>
+                    <stepByName xsi:type="StringLiteral" value="q" />
+                    <stepByName xsi:type="StringLiteral" value="w" />
+                    <stepByName xsi:type="StringLiteral" value="e" />
+                  </diag:path>
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_b9f25457d1be45569d6bde33a7869597">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_f82662a9c5354b5ca55b82823c0c2add">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="List1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_ad83a191e4384494b7dda4bfcdcd9e5e">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_f9a3d6db71e24126b78715b61d029af5">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="List1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_c398670fc3764f22995d6f1c67ae731f">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_38e032c79e4442fb8163cd2b59031dd7">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="List1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_7f21444ef1eb4155936da843c6cb4d4c">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_c558f674c8cd4bd78aada00eea98fec2">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="List1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_0c2036310561429281970c5a8d1da552">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_e1f9c8d3db9b4c8bb29bab619be8badd">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="List1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_0a542c20f6ab4851b0b8544d737f7d62">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_bc2f345bf7784666b51723fb753691cf">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="List1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_d1200713c15d4958ac3f3401a03f27f5">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_f028e247ea8c4940a574c828c0a1914f">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="List1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_2ac8df4a168547a9a28813457156c66f">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_5d098abe7f8e4a708a766ea4d0d0c2c1">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_712cba54ba9f4646bd8709938c7f22e5">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_7d281001df1a41ec8afae614390b06f7">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_f2084f04f5d94ddf80c95d5247781570">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_b9115d2284534ec2aae11f6e9082dda9">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_dfcb5d8a9d3c4d0aafb938b5031ea0c9">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_6e082a6e759c44108d2c26b4ad20a82d">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_e26565b6ac924c9a9826b56ad5604294">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_e57cf90b9aaa4ba2a6fa656e93bbf552">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_9c2379ef7c5946568c7f657ee954ccc5">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_aaa06b7e91fb40a69d3705338b76f34b">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_a786cb2ab8ac4c0fb32eacfaa0de3518">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_65b910138d6d44a1977a301cb08db3ab">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map1">
+                      <diag:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_872fb68647f04b688c32ed0d5e638e43">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_47057ba1b59e432c8629caa8c73f8c33">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map2">
+                      <diag:path>
+                        <stepByName xsi:type="StringLiteral" value="q" />
+                        <stepByName xsi:type="StringLiteral" value="w" />
+                        <stepByName xsi:type="StringLiteral" value="d" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_d6adac12d95c4d7fa2f8f73bac60bfc5">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_77d8565276e54b9d963926f511078c30">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map2">
+                      <diag:path>
+                        <stepByName xsi:type="StringLiteral" value="q" />
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                        <stepByName xsi:type="StringLiteral" value="e" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_88455916201e44df9348c5717d12249a">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_8dcbe551347c494b80ce7e5428f22413">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map2">
+                      <diag:path>
+                        <stepByName xsi:type="StringLiteral" value="q" />
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                        <stepByName xsi:type="StringLiteral" value="d" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_5977f437892a47e0ad53a4a510e1759a">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_142dce17faa04abdb10491230a95c35b">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map2">
+                      <diag:path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="w" />
+                        <stepByName xsi:type="StringLiteral" value="e" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_106ed2499de044648889d9f6ef9d9b61">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_6f229a47cb8146eb962623b520741123">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map2">
+                      <diag:path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="w" />
+                        <stepByName xsi:type="StringLiteral" value="d" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_79f49ce0a7be49818584626e0fba3964">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_471468d9f40b4e34a83598a3684c665d">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map2">
+                      <diag:path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                        <stepByName xsi:type="StringLiteral" value="e" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_287a6e0c09ea48f2926ffe03b6948b22">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_d377d3f0380345b28c2d412c279e249b">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:ComChannelValue" valueOf="Map2">
+                      <diag:path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                        <stepByName xsi:type="StringLiteral" value="d" />
+                      </diag:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <action id="Action_b3fcfd573a2f442888404f62cf281780">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

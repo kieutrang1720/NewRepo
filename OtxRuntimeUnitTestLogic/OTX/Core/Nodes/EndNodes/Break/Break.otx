@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:string="http://iso.org/OTX/1.0.0/StringUtil" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:util="http://iso.org/OTX/1.0.0/Util" name="Break" id="id_ea763e2d5fa04703b0241134607f643e" package="Core.Nodes.EndNodes.Break" version="1.0.0.0" timestamp="2021-07-08T08:26:20.606+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42078</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="Break_01" id="TestProcedure_c6d8a23a6da2483c9d7bd32e8fb60258" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_98df32387ebb4a6d8aefd7a386f5386c">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+                <init>
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Index1" id="VariableDeclaration_d8aa095971504b57b482b67e26fa4685">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="Index2" id="VariableDeclaration_e2adddc8d7e6428ebf1f1ad0d0ef8042">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="List2" id="VariableDeclaration_35e79eae1a5548ffa5f148bae2c651bc">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+                <init>
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="1" />
+                    <item xsi:type="StringLiteral" value="2" />
+                    <item xsi:type="StringLiteral" value="3" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List3" id="VariableDeclaration_b254e4c79e99462ba4320ee8e104a286">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <loop name="ForEachLoop1" id="Loop_263fc095db1944b2a8dc73e326f440a9">
+            <realisation>
+              <configuration id="LoopConfigurationHeader_a47ca4bee63b41158b19ce28af08c237">
+                <realisation xsi:type="ForEachLoop">
+                  <locator xsi:type="IntegerVariable" name="Index1" />
+                  <collection xsi:type="ListValue" valueOf="List1" />
+                </realisation>
+              </configuration>
+              <flow>
+                <loop name="ForEachLoop2" id="Loop_978af47c187f41b98e6a75a50fda87d0">
+                  <realisation>
+                    <configuration id="LoopConfigurationHeader_42240171213a48d987cccba5287971bb">
+                      <realisation xsi:type="ForEachLoop">
+                        <locator xsi:type="IntegerVariable" name="Index2" />
+                        <collection xsi:type="ListValue" valueOf="List2" />
+                      </realisation>
+                    </configuration>
+                    <flow>
+                      <branch id="Branch_4c969ae24bbb45c0b9292f02ebed3c0a">
+                        <realisation>
+                          <if>
+                            <condition id="ConditionHeader_cdd0bd431b5b4fb3b869e4f77b2018b5">
+                              <realisation xsi:type="IsEqual">
+                                <term xsi:type="IntegerValue" valueOf="Index2" />
+                                <term xsi:type="IntegerLiteral" value="1" />
+                              </realisation>
+                            </condition>
+                            <flow>
+                              <break id="Break_cc5c7b002a0a43caa3d49372a46bff1d" />
+                            </flow>
+                          </if>
+                          <else>
+                            <action id="Action_6b9ea911385443eab832572337c32c7e">
+                              <realisation xsi:type="ListAppendItems">
+                                <list name="List3" />
+                                <item xsi:type="string:StringConcatenate">
+                                  <string:string xsi:type="StringValue" valueOf="List1">
+                                    <path>
+                                      <stepByIndex xsi:type="IntegerValue" valueOf="Index1" />
+                                    </path>
+                                  </string:string>
+                                  <string:string xsi:type="StringValue" valueOf="List2">
+                                    <path>
+                                      <stepByIndex xsi:type="IntegerValue" valueOf="Index2" />
+                                    </path>
+                                  </string:string>
+                                </item>
+                              </realisation>
+                            </action>
+                          </else>
+                        </realisation>
+                      </branch>
+                    </flow>
+                  </realisation>
+                </loop>
+              </flow>
+            </realisation>
+          </loop>
+          <action id="Action_6ccc1ecbba0241768cb728607f4295e3">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="util:Compare">
+                <util:term xsi:type="ListValue" valueOf="List3" />
+                <util:term xsi:type="ListLiteral">
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="a1" />
+                    <item xsi:type="StringLiteral" value="b1" />
+                    <item xsi:type="StringLiteral" value="c1" />
+                  </items>
+                </util:term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Break_02" id="TestProcedure_135fb0e692ea4575b84e318229695359" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_3f1b4499352f46b6b18ea930f598f6f4">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+                <init>
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="A" />
+                    <item xsi:type="StringLiteral" value="B" />
+                    <item xsi:type="StringLiteral" value="C" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List2" id="VariableDeclaration_fa25611764a24b51b8d43ab41ef6e4a4">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+                <init>
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List3" id="VariableDeclaration_67500c042f814d56bfb4b854ad82edd0">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+                <init>
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="1" />
+                    <item xsi:type="StringLiteral" value="2" />
+                    <item xsi:type="StringLiteral" value="3" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Index1" id="VariableDeclaration_464df946140c4bd4b4560439780e3253">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="Index2" id="VariableDeclaration_808cf69378a24aa3914ddfbd8d037683">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="Index3" id="VariableDeclaration_cc5ffc73c3804db5877e87c2ef499b5d">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="List4" id="VariableDeclaration_7f9857767cc14909aa18a14bb8bcaad9">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <loop name="ForEachLoop1" id="Loop_35230042f1dc4252bb3689dbc32f3f66">
+            <realisation>
+              <configuration id="LoopConfigurationHeader_2b11b0da391843dea6c730132ba2407d">
+                <realisation xsi:type="ForEachLoop">
+                  <locator xsi:type="IntegerVariable" name="Index1" />
+                  <collection xsi:type="ListValue" valueOf="List1" />
+                </realisation>
+              </configuration>
+              <flow>
+                <loop name="ForEachLoop2" id="Loop_100a059d1ce047af9351aa343b522b28">
+                  <realisation>
+                    <configuration id="LoopConfigurationHeader_f9ed714d3a044c11915803702a33c79e">
+                      <realisation xsi:type="ForEachLoop">
+                        <locator xsi:type="IntegerVariable" name="Index2" />
+                        <collection xsi:type="ListValue" valueOf="List2" />
+                      </realisation>
+                    </configuration>
+                    <flow>
+                      <loop name="ForEachLoop3" id="Loop_3d1be5acfbe441cc92b16fa5748bcf1a">
+                        <realisation>
+                          <configuration id="LoopConfigurationHeader_55fdaa46c7fc4244a3c2f43a8d3a4613">
+                            <realisation xsi:type="ForEachLoop">
+                              <locator xsi:type="IntegerVariable" name="Index3" />
+                              <collection xsi:type="ListValue" valueOf="List3" />
+                            </realisation>
+                          </configuration>
+                          <flow>
+                            <branch id="Branch_95c80e2cc7184f84bb70e4b5e5ee8bd6">
+                              <realisation>
+                                <if>
+                                  <condition id="ConditionHeader_14052a9b233a4810959a95dc5ee2bf74">
+                                    <realisation xsi:type="IsEqual">
+                                      <term xsi:type="IntegerValue" valueOf="Index1" />
+                                      <term xsi:type="IntegerLiteral" value="1" />
+                                    </realisation>
+                                  </condition>
+                                  <flow>
+                                    <break id="Break_b5a88063018d40dd927eead16c103f0d" target="ForEachLoop1" />
+                                  </flow>
+                                </if>
+                                <elseif>
+                                  <condition id="ConditionHeader_964f0f112178450192c5a797c7767114">
+                                    <realisation xsi:type="IsEqual">
+                                      <term xsi:type="IntegerValue" valueOf="Index3" />
+                                      <term xsi:type="IntegerLiteral" value="1" />
+                                    </realisation>
+                                  </condition>
+                                  <flow>
+                                    <break id="Break_74590250e28e44ce8b56a0dec67c1ef1" />
+                                  </flow>
+                                </elseif>
+                                <else>
+                                  <action id="Action_6a4ea2faf11e47cda985fe9a9eb52ad3">
+                                    <realisation xsi:type="ListAppendItems">
+                                      <list name="List4" />
+                                      <item xsi:type="string:StringConcatenate">
+                                        <string:string xsi:type="StringValue" valueOf="List1">
+                                          <path>
+                                            <stepByIndex xsi:type="IntegerValue" valueOf="Index1" />
+                                          </path>
+                                        </string:string>
+                                        <string:string xsi:type="StringValue" valueOf="List2">
+                                          <path>
+                                            <stepByIndex xsi:type="IntegerValue" valueOf="Index2" />
+                                          </path>
+                                        </string:string>
+                                        <string:string xsi:type="StringValue" valueOf="List3">
+                                          <path>
+                                            <stepByIndex xsi:type="IntegerValue" valueOf="Index3" />
+                                          </path>
+                                        </string:string>
+                                      </item>
+                                    </realisation>
+                                  </action>
+                                </else>
+                              </realisation>
+                            </branch>
+                          </flow>
+                        </realisation>
+                      </loop>
+                    </flow>
+                  </realisation>
+                </loop>
+              </flow>
+            </realisation>
+          </loop>
+          <action id="Action_a2b8c85f0af549c9b0e5c72212a4b993">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="util:Compare">
+                <util:term xsi:type="ListValue" valueOf="List4" />
+                <util:term xsi:type="ListLiteral">
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="Aa1" />
+                    <item xsi:type="StringLiteral" value="Ab1" />
+                    <item xsi:type="StringLiteral" value="Ac1" />
+                  </items>
+                </util:term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Break_03" id="TestProcedure_f6822f6b9bb04438baba2ba99f858895" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Index1" id="VariableDeclaration_118544be2474401f934a958688b20d46">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+          <variable name="Index2" id="VariableDeclaration_8b26cc6aeac54bc1b363370f6b4ee261">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+          <variable name="List1" id="VariableDeclaration_2682ee8afd1d438db1b23ba8df17b6c9">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List2" id="VariableDeclaration_c68c0e06106346ca9fc4ded56d06faad">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+                <init>
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="a1" />
+                    <item xsi:type="StringLiteral" value="a2" />
+                    <item xsi:type="StringLiteral" value="a3" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List3" id="VariableDeclaration_00a8e6874bfc471d8d9b1782d8619508">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+                <init>
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="b1" />
+                    <item xsi:type="StringLiteral" value="b2" />
+                    <item xsi:type="StringLiteral" value="b3" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Index3" id="VariableDeclaration_07a4fc95920949048c1032b1199346e9">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <loop name="ForEachLoop1" id="Loop_449fc7cd7bdc4c088a7bfc052def1f42">
+            <realisation>
+              <configuration id="LoopConfigurationHeader_e599b78ec62d4c02aa0ec4b532eee36e">
+                <realisation xsi:type="ForEachLoop">
+                  <locator xsi:type="StringVariable" name="Index1" />
+                  <collection xsi:type="MapLiteral">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="String" />
+                    <items>
+                      <item>
+                        <key xsi:type="StringLiteral" value="a" />
+                        <value xsi:type="StringLiteral" value="..." />
+                      </item>
+                      <item>
+                        <key xsi:type="StringLiteral" value="b" />
+                        <value xsi:type="StringLiteral" value="..." />
+                      </item>
+                      <item>
+                        <key xsi:type="StringLiteral" value="c" />
+                        <value xsi:type="StringLiteral" value="..." />
+                      </item>
+                    </items>
+                  </collection>
+                </realisation>
+              </configuration>
+              <flow>
+                <loop name="ForEachLoop2" id="Loop_85bf387d898045a28c3dd610318436dd">
+                  <realisation>
+                    <configuration id="LoopConfigurationHeader_44d7c6826f3e49358dbf5519575d75bb">
+                      <realisation xsi:type="ForEachLoop">
+                        <locator xsi:type="StringVariable" name="Index2" />
+                        <collection xsi:type="MapLiteral">
+                          <keyType xsi:type="String" />
+                          <valueType xsi:type="String" />
+                          <items>
+                            <item>
+                              <key xsi:type="StringLiteral" value="1" />
+                              <value xsi:type="StringLiteral" value="..." />
+                            </item>
+                            <item>
+                              <key xsi:type="StringLiteral" value="2" />
+                              <value xsi:type="StringLiteral" value="..." />
+                            </item>
+                            <item>
+                              <key xsi:type="StringLiteral" value="3" />
+                              <value xsi:type="StringLiteral" value="..." />
+                            </item>
+                          </items>
+                        </collection>
+                      </realisation>
+                    </configuration>
+                    <flow>
+                      <branch id="Branch_f1d09cc0606040239f13d111280bb8e4">
+                        <realisation>
+                          <if>
+                            <condition id="ConditionHeader_14df6d0ef69a4634a71ca52a628eff7b">
+                              <realisation xsi:type="IsEqual">
+                                <term xsi:type="StringValue" valueOf="Index1" />
+                                <term xsi:type="StringLiteral" value="b" />
+                              </realisation>
+                            </condition>
+                            <flow>
+                              <break id="Break_4ac9674bea044ef0bfcab7d0f7302906" target="ForEachLoop1" />
+                            </flow>
+                          </if>
+                          <else>
+                            <action id="Action_d74f39ea5f834c0db5790ba064314b27">
+                              <realisation xsi:type="ListAppendItems">
+                                <list name="List1" />
+                                <item xsi:type="string:StringConcatenate">
+                                  <string:string xsi:type="StringValue" valueOf="Index1" />
+                                  <string:string xsi:type="StringValue" valueOf="Index2" />
+                                </item>
+                              </realisation>
+                            </action>
+                          </else>
+                        </realisation>
+                      </branch>
+                    </flow>
+                  </realisation>
+                </loop>
+              </flow>
+            </realisation>
+          </loop>
+          <loop name="ForEachLoop3" id="Loop_67a09659ddee47fcb53fa387d0b81db2">
+            <realisation>
+              <configuration id="LoopConfigurationHeader_7b4c53fd446c45dd93fdfbabfabe1826">
+                <realisation xsi:type="ForEachLoop">
+                  <locator xsi:type="IntegerVariable" name="Index3" />
+                  <collection xsi:type="ListValue" valueOf="List2" />
+                </realisation>
+              </configuration>
+              <flow>
+                <action id="Action_26048eddbca946b29f5c1fa6eff1afea">
+                  <realisation xsi:type="assert:Assert">
+                    <assert:condition xsi:type="ListContainsValue">
+                      <list xsi:type="ListValue" valueOf="List1" />
+                      <value xsi:type="StringValue" valueOf="List2">
+                        <path>
+                          <stepByIndex xsi:type="IntegerValue" valueOf="Index3" />
+                        </path>
+                      </value>
+                    </assert:condition>
+                  </realisation>
+                </action>
+              </flow>
+            </realisation>
+          </loop>
+          <loop name="ForEachLoop4" id="Loop_850eb88a004d4f88a1e7fce5affec92b">
+            <realisation>
+              <configuration id="LoopConfigurationHeader_5fb4df7619e44e9dbb011309ebd7cadc">
+                <realisation xsi:type="ForEachLoop">
+                  <locator xsi:type="IntegerVariable" name="Index3" />
+                  <collection xsi:type="ListValue" valueOf="List3" />
+                </realisation>
+              </configuration>
+              <flow>
+                <action id="Action_47c57d9b2fb949b8b67dcf0f46ce07eb">
+                  <realisation xsi:type="assert:Assert">
+                    <assert:condition xsi:type="LogicNot">
+                      <term xsi:type="ListContainsValue">
+                        <list xsi:type="ListValue" valueOf="List1" />
+                        <value xsi:type="StringValue" valueOf="List3">
+                          <path>
+                            <stepByIndex xsi:type="IntegerValue" valueOf="Index3" />
+                          </path>
+                        </value>
+                      </term>
+                    </assert:condition>
+                  </realisation>
+                </action>
+              </flow>
+            </realisation>
+          </loop>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Break_04" id="TestProcedure_1c6a1f23f3944cf38b3368e688ac5875" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Counter1" id="VariableDeclaration_903904261de3449c91e320663363690d">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="Counter2" id="VariableDeclaration_d9076e289aa444bea840cfeea78bea69">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <parallel id="Parallel_8df2345f50f442d1b35096d8aea382d4">
+            <realisation>
+              <lane>
+                <loop name="ForLoop1" id="Loop_04478db3d064479480908d1186ec0002">
+                  <realisation>
+                    <configuration id="LoopConfigurationHeader_747ef44345cc4151819b6cd3169eae89">
+                      <realisation xsi:type="ForLoop">
+                        <counter name="Counter1" />
+                        <start xsi:type="IntegerLiteral" value="0" />
+                        <end xsi:type="IntegerLiteral" value="9" />
+                      </realisation>
+                    </configuration>
+                    <flow>
+                      <loop name="ForLoop2" id="Loop_cf0e7202be344d6f92844bd8b2d0f32f">
+                        <realisation>
+                          <configuration id="LoopConfigurationHeader_a8b150caaab3415e90f3b87e797e3739">
+                            <realisation xsi:type="ForLoop">
+                              <counter name="Counter2" />
+                              <start xsi:type="IntegerLiteral" value="0" />
+                              <end xsi:type="IntegerLiteral" value="9" />
+                            </realisation>
+                          </configuration>
+                          <flow>
+                            <break id="Break_10e2499ebb724c9fb0335511eab4f961" target="ForLoop1" />
+                          </flow>
+                        </realisation>
+                      </loop>
+                    </flow>
+                  </realisation>
+                </loop>
+              </lane>
+              <lane />
+            </realisation>
+          </parallel>
+          <action id="Action_2aee5e6ab75d41ac9b03dc4a9db05eb3">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicAnd">
+                <term xsi:type="IsEqual">
+                  <term xsi:type="IntegerValue" valueOf="Counter1" />
+                  <term xsi:type="IntegerLiteral" value="0" />
+                </term>
+                <term xsi:type="IsEqual">
+                  <term xsi:type="IntegerValue" valueOf="Counter2" />
+                  <term xsi:type="IntegerLiteral" value="0" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

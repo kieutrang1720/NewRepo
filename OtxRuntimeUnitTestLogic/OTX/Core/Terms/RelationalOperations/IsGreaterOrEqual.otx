@@ -1,0 +1,1529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="IsGreaterOrEqual" id="id_4f6a43decc4744bc8f9a68f8d2ee57a8" package="Core.Terms.RelationalOperations" version="1.0.0.0" timestamp="2021-05-11T17:57:50.301+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42093</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="IsGreaterOrEqual_BooleanBoolean" id="id_af34c26446c64c6eb969de436bfae9d4" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_a8378da55973420fb941aa34954c1c28">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a7a847e2d2614bf5ad77348cc145c1bd">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_25be177e05db4c418d324697e57056c5">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7b863b2145b04b71b6e89a6352c5b306">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="myLeft" id="InParameterDeclaration_dfe9975ad2a4495daef5837df2525746">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="myRight" id="InParameterDeclaration_bf3ba4608f744b5fb394dbfc408b7921">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_c3864205171c4a32a717bbd3dcc1127b">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_15795aec2fcb4adaa7c2b08991b8926b">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="result" />
+              <term xsi:type="IsGreaterOrEqual">
+                <left xsi:type="BooleanValue" valueOf="myLeft" />
+                <right xsi:type="BooleanValue" valueOf="myRight" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="IsGreaterOrEqual_IntegerInteger" id="TestProcedure_cbbbd1c6989d4c4bb858757eb341e226" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_2b1689fef5ab4c43818b407a92a3bd5e">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-2" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="IntegerLiteral" value="-1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_34d80b615c5a4371a0c5d8d817a2b889">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-1" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="IntegerLiteral" value="-2" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e85f77e87f914129bcdef186b6fd3ffc">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-1" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="IntegerLiteral" value="-1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1f62ae04f85f41feaab03f9db43bf46d">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="IntegerLiteral" value="-1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_05b980a9654f4228a793ed5d8b39d0b2">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="2" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="IntegerLiteral" value="-1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c648fe92e9e44ba6bcc4986a7f7c32af">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="2" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_925d5e1938754bb086b481fefbfa560c">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="2" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="IntegerLiteral" value="2" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1063a28fccc54fc989e6ce583bba0f82">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="2" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="IntegerLiteral" value="3" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="myLeft" id="InParameterDeclaration_4d32be72c0b44745b7ec3b85ef3da9b4">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="myRight" id="InParameterDeclaration_5db74d33729d4790b2c2f288e55b6f15">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_d255edfc3f284730a26fb3b3f1b79289">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_cf58b1fd4cc143acaf5dca6a5a0b41e9">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="result" />
+              <term xsi:type="IsGreaterOrEqual">
+                <left xsi:type="IntegerValue" valueOf="myLeft" />
+                <right xsi:type="IntegerValue" valueOf="myRight" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="IsGreaterOrEqual_FloatFloat" id="TestProcedure_e126de54652844b18dc7fb794d059f6a" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_b1d75d2fc56e4cd6b84641765c97ec35">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="-2E-12" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-1E-12" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d975f87450b542bd8a3b6908e9d0e65e">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="-1E-12" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-1E-12" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bac4eaf3a07446bbbf78bb22e65b8743">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="-1E-12" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-2E-12" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c45c824ef3db456db2eeba694c9d5175">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-1E-12" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8b6881d3f97945609a1c9f64f841e402">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="2E-12" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-1E-12" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3522fe44825545d68a5925e6109860ca">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="2E-12" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="1E-12" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6728c119d8b444f7b59a8e13776db983">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="2E-12" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="2E-12" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f21b9c99367d482db85897c7eb6399b8">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="2E-12" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="3E-12" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c26696818f2443ac8cbf072632d9bb08">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c1f9240eb7ac4dd1a1d895fb8457a941">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f58315d401b241738d61e4ddc5e980ba">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_cbdd3914d5f147d9b9614ac346691057">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9509848b356f4ee497ce03ecc6c222dd">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c4560801a0ca4b56ae195a12e410f1e9">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_01da064bb2564649a835a8afbd3b7c2c">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d5085ea9b9554556a3ab3ece0c667f81">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c91d2294ef9542dcbd446fc291944244">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ac9cf380dc95469a8acb445315b5cde5">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6c741df85e64473e96ce06b128eed9f9">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1385ac068f7047e3b0cfd671204998cc">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_53094a2698894c2d88248eba001c676c">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_0e8a5a7bca04466f8aadc7de24716c4d">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_86306969b98940aabfed1bfa484ee0af">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="myLeft" id="InParameterDeclaration_1d29c8be0ba247759588a5950ebff39e">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="myRight" id="InParameterDeclaration_6ebc1e808ee444cda934c008ded8b163">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_244324f5bf3f4a7db29505484a639964">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_6a3acdbed89c44ce8a8ebfb260bbd1e2">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="result" />
+              <term xsi:type="IsGreaterOrEqual">
+                <left xsi:type="FloatValue" valueOf="myLeft" />
+                <right xsi:type="FloatValue" valueOf="myRight" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="IsGreaterOrEqual_IntegerFloat" id="TestProcedure_ea2884ffbc3142d8bfc187e2eb45dfab" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_4c7b0e120cfd49468aea5ed32eac17f1">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6f6b6e9cf3ff4ef38118fdb8593273e0">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7227eb088e8a4c758f2e236b839bca75">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_60acde61d7854e7a96468116515b3b9d">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d6213a2a5efa402bbee84a15d1624daf">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_41f9aa295bd64aeb85fab70365f2de37">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ecc3a15d389d4ba4ae35c986fd16c13b">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e298c84885f242f798ae78eb5e18020b">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c112b636b1574335aeaf239e5cc9e4ee">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d9bc15528f774001bf9a5826408f2ebd">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2412ea342f554736ba839ab446a3ecf8">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_898ffe48bd4e496abe8ea5162e101836">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_481917d52bb14411be83958eb32e2e8b">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_acc6347c3d3f4af7a03e7f51c8c789d6">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e54e66feec7a4846a144071cf7d35511">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_32b12d09932346b9a76298218c17a1a4">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_565c4b7ea1f74aaea962d30fa123fde3">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7c1f82ada5254394bb1cf0317955f547">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5bacaa17b0b9489f87e84c2846075aba">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bbf00f231abb40b58807a51775c93b5b">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_24032c05734f4d61be1c003f2c805f17">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2a4f609501484d849a6489c4d9b49b6b">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6e2443839974402089dcca70545c8f40">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4cd43463299a4fe59ef1e74cf34d2c8f">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2744245d13a24b55a37833103398b8fb">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c41bde61eaf04249abc8def278d45af5">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_51dc726f35bc416995fd30227492596e">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_41b1190d363c4cc4b9bda8168ee4f1fa">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f475d9a6ef724224b010ee4cb6593a63">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2cd26611e85b483c89b058c5dd2ca7f3">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bd7f8e6d96054256bb7a57e0bfabebde">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8bc25134f93e481f9a08649c45799521">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f78e5a0bb5d749729bfbac6e6af0f1ee">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_166685978be94497aea657b138e03f10">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_59a09f79421e449e919c066b88987d2a">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9b00c91a84524b518d152171e2ac10d2">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_fe872f37dcbe4690a9c662ca093e0762">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_cc159737286d4e789e0227a6ba8512ce">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d8a22bb8ade146aa9115414b47e9db7c">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_19639b2d94a7441a9f7ee040433c8db8">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f6138aae32a840e684ceb99ef6e5af79">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5f1781e8952148499dee8743f9902a61">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7124b3d478f741e9b61909207dcd59cc">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_207e768af40548d5ab2d9f84568fe11d">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d6c43673f3f347c1a12b77c29b73f6bb">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="myLeft" id="InParameterDeclaration_d89071278d1240c088af1e75b3f70005">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="myRight" id="InParameterDeclaration_105291e7ea574709b0fa20d39129aed7">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_562467b2c25e4f5aa2ea6ad640e14c26">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_1eef9a4e84074f0c9cf71a5fd74be293">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="result" />
+              <term xsi:type="IsGreaterOrEqual">
+                <left xsi:type="IntegerValue" valueOf="myLeft" />
+                <right xsi:type="FloatValue" valueOf="myRight" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="IsGreaterOrEqual_StringString" id="TestProcedure_3c203be39f524b07bd9dac7a37f87d78" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_b979a82e08f946b79a1a5117c549f9dc">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="StringLiteral" value="b" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="StringLiteral" value="a" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_fa47ecfd50d345b3aaa46d24421e2b20">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="StringLiteral" value="a" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="StringLiteral" value="a" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_0b68006932304900a39112b3145c2aab">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="StringLiteral" value="a" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="StringLiteral" value="b" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_378f1f0f79954391998715d15f53f020">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="StringLiteral" value="c" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="StringLiteral" value="c" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c489a66682fc4b88a18492b27dbe16ff">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="StringLiteral" value="b" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="StringLiteral" value="a" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_68804d254b9a4a75aaaaf5783bea1a2f">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="StringLiteral" value="abf" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="StringLiteral" value="abf " />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b068fc5490804fc3936b66e7caeecfc9">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="StringLiteral" value="abf" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="StringLiteral" value="abf" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_89859b0c872e4567bcbaea6c03019f12">
+            <unittest:arguments>
+              <unittest:argument param="myLeft">
+                <unittest:value xsi:type="StringLiteral" value="abcf" />
+              </unittest:argument>
+              <unittest:argument param="myRight">
+                <unittest:value xsi:type="StringLiteral" value="abf" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="myLeft" id="InParameterDeclaration_9c5d273db69e46e892ea3b1b1e5a3206">
+            <realisation>
+              <dataType xsi:type="String">
+                <init value="" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="myRight" id="InParameterDeclaration_8998495b262e46ddbfd020992f3521d0">
+            <realisation>
+              <dataType xsi:type="String">
+                <init value="" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_64509d68e8474b6ab1947a0d76af0b54">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_2a5712dd3bb74a71990120945e9bc3eb">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="result" />
+              <term xsi:type="IsGreaterOrEqual">
+                <left xsi:type="StringValue" valueOf="myLeft" />
+                <right xsi:type="StringValue" valueOf="myRight" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

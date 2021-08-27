@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:event="http://iso.org/OTX/1.0.0/Event" xmlns:util="http://iso.org/OTX/1.0.0/Util" name="ForEachLoop" id="id_a5a89d92f91442af8bfb54ac8b83f8e6" package="Core.Nodes.CompoundNodes.Loop" version="1.0.0.0" timestamp="2021-06-03T19:22:01.214+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42010</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ForEachLoopWithList" id="TestProcedure_6d2a2603988047c3b6bd04c2ff648ef7" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_5132024850734432b0395377e8d22a59">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="Integer" />
+                <init>
+                  <itemType xsi:type="Integer" />
+                  <items>
+                    <item xsi:type="IntegerLiteral" value="1" />
+                    <item xsi:type="IntegerLiteral" value="2" />
+                    <item xsi:type="IntegerLiteral" value="3" />
+                    <item xsi:type="IntegerLiteral" value="4" />
+                    <item xsi:type="IntegerLiteral" value="5" />
+                    <item xsi:type="IntegerLiteral" value="6" />
+                    <item xsi:type="IntegerLiteral" value="7" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List2" id="VariableDeclaration_c69da6d7f77a40a7baeeb520fe24f90c">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="Integer" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Locator1" id="VariableDeclaration_4e97268fa5fc43be8046ef6998b2fa97">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <loop name="ForEachLoop1" id="Loop_49b73521b5244e1d8f3a8fd22b989cef">
+            <realisation>
+              <configuration id="LoopConfigurationHeader_60414cd38e7d4b4d99bb82d11fc9ebb1">
+                <realisation xsi:type="ForEachLoop">
+                  <locator xsi:type="IntegerVariable" name="Locator1" />
+                  <collection xsi:type="ListValue" valueOf="List1" />
+                </realisation>
+              </configuration>
+              <flow>
+                <action id="Action_56034dcb16664cc1bbf30c819d6285a4">
+                  <realisation xsi:type="ListAppendItems">
+                    <list name="List2" />
+                    <item xsi:type="IntegerValue" valueOf="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerValue" valueOf="Locator1" />
+                      </path>
+                    </item>
+                  </realisation>
+                </action>
+              </flow>
+            </realisation>
+          </loop>
+          <action id="Action_2ffaf8d1cfe44f1faf5d5cb1ac5e8a2c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicAnd">
+                <term xsi:type="util:Compare">
+                  <util:term xsi:type="ListValue" valueOf="List2" />
+                  <util:term xsi:type="ListLiteral">
+                    <itemType xsi:type="Integer" />
+                    <items>
+                      <item xsi:type="IntegerLiteral" value="1" />
+                      <item xsi:type="IntegerLiteral" value="2" />
+                      <item xsi:type="IntegerLiteral" value="3" />
+                      <item xsi:type="IntegerLiteral" value="4" />
+                      <item xsi:type="IntegerLiteral" value="5" />
+                      <item xsi:type="IntegerLiteral" value="6" />
+                      <item xsi:type="IntegerLiteral" value="7" />
+                    </items>
+                  </util:term>
+                </term>
+                <term xsi:type="IsEqual">
+                  <term xsi:type="IntegerValue" valueOf="Locator1" />
+                  <term xsi:type="IntegerLiteral" value="6" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ForEachLoopMap" id="TestProcedure_418ae8eef06942029c213fab9a85f4d1" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Map1" id="VariableDeclaration_f804b1d0c2354aad8611434c6bb1c2a3">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Integer" />
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Integer" />
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="1" />
+                      <value xsi:type="IntegerLiteral" value="100" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="2" />
+                      <value xsi:type="IntegerLiteral" value="200" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="3" />
+                      <value xsi:type="IntegerLiteral" value="300" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="4" />
+                      <value xsi:type="IntegerLiteral" value="400" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="5" />
+                      <value xsi:type="IntegerLiteral" value="500" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="6" />
+                      <value xsi:type="IntegerLiteral" value="600" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="7" />
+                      <value xsi:type="IntegerLiteral" value="700" />
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_eec1e1c63dc5474887b4b776f5f08737">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Integer" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Locator1" id="VariableDeclaration_8f5ff4a2f14447a09a87bcae97f333a0">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <loop name="ForEachLoop1" id="Loop_cb714e4e7bc64c0bb2e3571c6cfe8721">
+            <realisation>
+              <configuration id="LoopConfigurationHeader_2caaeb7c584a4998984048fa491ff9e4">
+                <realisation xsi:type="ForEachLoop">
+                  <locator xsi:type="IntegerVariable" name="Locator1" />
+                  <collection xsi:type="MapValue" valueOf="Map1" />
+                </realisation>
+              </configuration>
+              <flow>
+                <action id="Action_f501bc3c2f974b6aa5b70f495bea4406">
+                  <realisation xsi:type="MapPutItems">
+                    <map name="Map2" />
+                    <item>
+                      <key xsi:type="IntegerValue" valueOf="Locator1" />
+                      <value xsi:type="IntegerValue" valueOf="Map1">
+                        <path>
+                          <stepByIndex xsi:type="IntegerValue" valueOf="Locator1" />
+                        </path>
+                      </value>
+                    </item>
+                  </realisation>
+                </action>
+              </flow>
+            </realisation>
+          </loop>
+          <action id="Action_a6740a7bd11c469db7b72956fd571681">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicAnd">
+                <term xsi:type="util:Compare">
+                  <util:term xsi:type="MapValue" valueOf="Map2" />
+                  <util:term xsi:type="MapLiteral">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="Integer" />
+                    <items>
+                      <item>
+                        <key xsi:type="IntegerLiteral" value="1" />
+                        <value xsi:type="IntegerLiteral" value="100" />
+                      </item>
+                      <item>
+                        <key xsi:type="IntegerLiteral" value="2" />
+                        <value xsi:type="IntegerLiteral" value="200" />
+                      </item>
+                      <item>
+                        <key xsi:type="IntegerLiteral" value="3" />
+                        <value xsi:type="IntegerLiteral" value="300" />
+                      </item>
+                      <item>
+                        <key xsi:type="IntegerLiteral" value="4" />
+                        <value xsi:type="IntegerLiteral" value="400" />
+                      </item>
+                      <item>
+                        <key xsi:type="IntegerLiteral" value="5" />
+                        <value xsi:type="IntegerLiteral" value="500" />
+                      </item>
+                      <item>
+                        <key xsi:type="IntegerLiteral" value="6" />
+                        <value xsi:type="IntegerLiteral" value="600" />
+                      </item>
+                      <item>
+                        <key xsi:type="IntegerLiteral" value="7" />
+                        <value xsi:type="IntegerLiteral" value="700" />
+                      </item>
+                    </items>
+                  </util:term>
+                </term>
+                <term xsi:type="IsEqual">
+                  <term xsi:type="IntegerValue" valueOf="Locator1" />
+                  <term xsi:type="IntegerLiteral" value="7" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ForEachLoopWithParallel" id="TestProcedure_3bda3ef444d844e892937f3e4598282f" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_f576c7c9817848d298bfc6fba09d75d6">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="Integer" />
+                <init>
+                  <itemType xsi:type="Integer" />
+                  <items>
+                    <item xsi:type="IntegerLiteral" value="1" />
+                    <item xsi:type="IntegerLiteral" value="2" />
+                    <item xsi:type="IntegerLiteral" value="3" />
+                    <item xsi:type="IntegerLiteral" value="4" />
+                    <item xsi:type="IntegerLiteral" value="5" />
+                    <item xsi:type="IntegerLiteral" value="6" />
+                    <item xsi:type="IntegerLiteral" value="7" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List2" id="VariableDeclaration_69511e5816f84406aba8e7a5fc229774">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="Integer" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Locator1" id="VariableDeclaration_cd6143885f1548b680677c10fa8c6aea">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <compoundNode id="ExtensibleCompoundNode_46b5b51b9e0343efaf1493ee36fe0c88">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="ConcurrentModificationException" />
+              <unittest:flow>
+                <parallel id="Parallel_7deb556564d54a1ea4e6a63a83eb5068">
+                  <realisation>
+                    <lane>
+                      <loop name="ForEachLoop1" id="Loop_6376ba98b55a4ae2b3cb04e0137e021c">
+                        <realisation>
+                          <configuration id="LoopConfigurationHeader_5a548961bec64da2adb9cd9bff5278f6">
+                            <realisation xsi:type="ForEachLoop">
+                              <locator xsi:type="IntegerVariable" name="Locator1" />
+                              <collection xsi:type="ListValue" valueOf="List1" />
+                            </realisation>
+                          </configuration>
+                          <flow>
+                            <action id="Action_de1eb061935740e19b762895fc7c70af">
+                              <realisation xsi:type="ListAppendItems">
+                                <list name="List2" />
+                                <item xsi:type="IntegerValue" valueOf="List1">
+                                  <path>
+                                    <stepByIndex xsi:type="IntegerValue" valueOf="Locator1" />
+                                  </path>
+                                </item>
+                              </realisation>
+                            </action>
+                            <action id="Action_a59d07b3dc034b949f7a149717a99675">
+                              <metaData>
+                                <data key="EmotiveActivity">SleepActivity</data>
+                              </metaData>
+                              <realisation xsi:type="event:WaitForEvent">
+                                <event:source xsi:type="event:TimerExpiredEventSource">
+                                  <event:timeout xsi:type="IntegerLiteral" value="10" />
+                                </event:source>
+                              </realisation>
+                            </action>
+                          </flow>
+                        </realisation>
+                      </loop>
+                    </lane>
+                    <lane>
+                      <action id="Action_c135bc0334214a37a3fc5674453efd5a">
+                        <metaData>
+                          <data key="EmotiveActivity">SleepActivity</data>
+                        </metaData>
+                        <realisation xsi:type="event:WaitForEvent">
+                          <event:source xsi:type="event:TimerExpiredEventSource">
+                            <event:timeout xsi:type="IntegerLiteral" value="10" />
+                          </event:source>
+                        </realisation>
+                      </action>
+                      <action id="Action_99229a65440d42568f5090d9edea0281">
+                        <realisation xsi:type="ListAppendItems">
+                          <list name="List1" />
+                          <item xsi:type="IntegerLiteral" value="8" />
+                        </realisation>
+                      </action>
+                    </lane>
+                  </realisation>
+                </parallel>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

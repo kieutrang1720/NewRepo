@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:util="http://iso.org/OTX/1.0.0/Util" name="Exception1" id="id_08045633c6ca41c39d8df7119ec14da8" package="Core.DataTypes.Complex.Exception1" version="1.0.0.41843" timestamp="2021-05-13T18:10:22.757+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.41810</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ExceptionBase" id="TestProcedure_fe4c0e176af44b0f8ea5ea471d3505c6" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="exception1" id="VariableDeclaration_2d2bd07360984bb1bf717503b1bb517e">
+            <realisation>
+              <dataType xsi:type="OutOfBoundsException" />
+            </realisation>
+          </variable>
+          <variable name="exception2" id="VariableDeclaration_f3b1a08102094e79a297908154f4374a">
+            <realisation>
+              <dataType xsi:type="AmbiguousCallException" />
+            </realisation>
+          </variable>
+          <variable name="exception3" id="VariableDeclaration_3855bbe3c1ec401386873f2d3afeb6dd">
+            <realisation>
+              <dataType xsi:type="ConcurrentModificationException" />
+            </realisation>
+          </variable>
+          <variable name="exception4" id="VariableDeclaration_ac130b05bc7649558d504672a14ee801">
+            <realisation>
+              <dataType xsi:type="ArithmeticException" />
+            </realisation>
+          </variable>
+          <variable name="exception5" id="VariableDeclaration_bece18436edb4644964018e01ce13f72">
+            <realisation>
+              <dataType xsi:type="TypeMismatchException" />
+            </realisation>
+          </variable>
+          <variable name="exception6" id="VariableDeclaration_cada4734898a492a8fd28857a9d64883">
+            <realisation>
+              <dataType xsi:type="InvalidReferenceException" />
+            </realisation>
+          </variable>
+          <variable name="exception7" id="VariableDeclaration_91c131584a964742ac102c516e28f9f3">
+            <realisation>
+              <dataType xsi:type="UserException">
+                <init>
+                  <qualifier value="ExceptionQualifier" />
+                  <text value="ExceptionText" />
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_3d7af0b2b4f645268e31e06540f65caf">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="util:Compare">
+                <util:term xsi:type="ExceptionValue" valueOf="exception7" />
+                <util:term xsi:type="UserExceptionLiteral">
+                  <qualifier value="ExceptionQualifier" />
+                  <text value="ExceptionText" />
+                </util:term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <endNode id="ExtensibleEndNode_9a98d7a00cf642aabd14fb21451a8eca">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ExceptionComparison" id="TestProcedure_9c92e6067c0d4b1abce9139fafa78fb4" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="exception1" id="VariableDeclaration_2741ce4d90ca44909dd1e1cf68569a9f">
+            <realisation>
+              <dataType xsi:type="UserException">
+                <init>
+                  <qualifier value="ExceptionQualifier" />
+                  <text value="ExceptionText" />
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="exception2" id="VariableDeclaration_9f29eb9d605842689fa2ca1839f40a7e">
+            <realisation>
+              <dataType xsi:type="UserException">
+                <init>
+                  <qualifier value="ExceptionQualifier" />
+                  <text value="ExceptionText" />
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_bd1f374a416047db82aad00bae63eaf7">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ExceptionValue" valueOf="exception1" />
+                <term xsi:type="ExceptionValue" valueOf="exception1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_85d0927f81a14830b6ae38b0cdc08f5d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="ExceptionValue" valueOf="exception1" />
+                <term xsi:type="ExceptionValue" valueOf="exception2" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

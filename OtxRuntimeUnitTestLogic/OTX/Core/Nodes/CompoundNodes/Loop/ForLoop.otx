@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:util="http://iso.org/OTX/1.0.0/Util" name="ForLoop" id="id_8705499a5e1949d09f30ef68a8cc2b65" package="Core.Nodes.CompoundNodes.Loop" version="1.0.0.0" timestamp="2021-06-03T19:21:32.636+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42010</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ForLoop_01" id="TestProcedure_add9f496938f47a4af919d853abcb16b" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_91a10db0613349fe9c3194838a9f5ef7">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="Integer" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Counter1" id="VariableDeclaration_3f1985474da846399ad85e1bd33d0f6a">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <loop name="ForLoop1" id="Loop_e790b444f7ab4c4f9633c953798f0360">
+            <realisation>
+              <configuration id="LoopConfigurationHeader_0d2024126805418f96fdccec1b940b9e">
+                <realisation xsi:type="ForLoop">
+                  <counter name="Counter1" />
+                  <start xsi:type="IntegerLiteral" value="-5" />
+                  <end xsi:type="IntegerLiteral" value="5" />
+                </realisation>
+              </configuration>
+              <flow>
+                <action id="Action_264ede34682447108c51b375ea77a292">
+                  <realisation xsi:type="ListAppendItems">
+                    <list name="List1" />
+                    <item xsi:type="IntegerValue" valueOf="Counter1" />
+                  </realisation>
+                </action>
+              </flow>
+            </realisation>
+          </loop>
+          <action id="Action_950bf24893b24beba445a4df410a348f">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicAnd">
+                <term xsi:type="util:Compare">
+                  <util:term xsi:type="ListValue" valueOf="List1" />
+                  <util:term xsi:type="ListLiteral">
+                    <itemType xsi:type="Integer" />
+                    <items>
+                      <item xsi:type="IntegerLiteral" value="-5" />
+                      <item xsi:type="IntegerLiteral" value="-4" />
+                      <item xsi:type="IntegerLiteral" value="-3" />
+                      <item xsi:type="IntegerLiteral" value="-2" />
+                      <item xsi:type="IntegerLiteral" value="-1" />
+                      <item xsi:type="IntegerLiteral" value="0" />
+                      <item xsi:type="IntegerLiteral" value="1" />
+                      <item xsi:type="IntegerLiteral" value="2" />
+                      <item xsi:type="IntegerLiteral" value="3" />
+                      <item xsi:type="IntegerLiteral" value="4" />
+                      <item xsi:type="IntegerLiteral" value="5" />
+                    </items>
+                  </util:term>
+                </term>
+                <term xsi:type="IsEqual">
+                  <term xsi:type="IntegerValue" valueOf="Counter1" />
+                  <term xsi:type="IntegerLiteral" value="6" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ForLoop_02" id="TestProcedure_69e864991f874c6e8c6e07fa872c3c43" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Counter1" id="VariableDeclaration_9458eb53ce18415e9084d3beee0fadac">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <loop name="ForLoop1" id="Loop_c82351cd15674e9b8c51f94ddc9a485e">
+            <realisation>
+              <configuration id="LoopConfigurationHeader_3db74e9076fb4f0ca3f8a85e274e5d9f">
+                <realisation xsi:type="ForLoop">
+                  <counter name="Counter1" />
+                  <start xsi:type="IntegerLiteral" value="10" />
+                  <end xsi:type="IntegerLiteral" value="-10" />
+                </realisation>
+              </configuration>
+              <flow />
+            </realisation>
+          </loop>
+          <action id="Action_e8d99f7d778841bbadd3d66214e117fd">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="Counter1" />
+                <term xsi:type="IntegerLiteral" value="10" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

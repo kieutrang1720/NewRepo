@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="Group" id="id_cc3979c1b6534107be249c10c8c90068" package="Core.Nodes.CompoundNodes.Group" version="1.0.0.0" timestamp="2021-07-06T18:16:33.376+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42044</data>
+  </metaData>
+  <declarations>
+    <context name="ContextVariable_False" id="ContextVariableDeclaration_7365106ca6b04dfe80f62a4683d05e83">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="false" />
+        </dataType>
+      </realisation>
+    </context>
+    <context name="ContextVariable_True" id="ContextVariableDeclaration_fbb292a043de41b5aa88e41b3b324cf3">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="true" />
+        </dataType>
+      </realisation>
+    </context>
+    <constant name="GlobalConstant_False" id="GlobalConstantDeclaration_43d2e260918d432bbb725416da1b4bbb">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="false" />
+        </dataType>
+      </realisation>
+    </constant>
+    <constant name="GlobalConstant_True" id="GlobalConstantDeclaration_297a84c346434d2a8354fb423ec0f936">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="true" />
+        </dataType>
+      </realisation>
+    </constant>
+  </declarations>
+  <validities>
+    <validity name="Validity_False" id="Validity_ca2387111b6448e38997be3d9adbfdb0">
+      <realisation xsi:type="BooleanLiteral" value="false" />
+    </validity>
+  </validities>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="Group_01" id="TestProcedure_c77b6b075a5a41509aa30183004ddcb1" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="String1" id="VariableDeclaration_f9e39069e7d64c44803d08a515987dca">
+            <realisation>
+              <dataType xsi:type="String">
+                <init value="" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <group id="Group_0c454f9ce4c544088ef3027f0be3bf15">
+            <realisation validFor="Validity_False">
+              <action id="Action_7991359f13794843ae1b77629aa0a1ea">
+                <realisation xsi:type="Assignment">
+                  <result xsi:type="StringVariable" name="String1" />
+                  <term xsi:type="StringLiteral" value="1st realisation" />
+                </realisation>
+              </action>
+            </realisation>
+            <realisation>
+              <action id="Action_89e3f4e8b8794a3ba199f624af0677f5">
+                <realisation xsi:type="Assignment">
+                  <result xsi:type="StringVariable" name="String1" />
+                  <term xsi:type="StringLiteral" value="2nd realisation" />
+                </realisation>
+              </action>
+            </realisation>
+          </group>
+          <action id="Action_612f7803f04a409b978982bfd0352001">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="String1" />
+                <term xsi:type="StringLiteral" value="2nd realisation" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Group_02" id="TestProcedure_69eb3e2e00c44a4e94a96186cfb33afc" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="String1" id="VariableDeclaration_fd425ceeb8fb49d180766610a3f66eb5">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <group id="Group_170e5faabe914b698ae825f7d0deaf4c">
+            <realisation validFor="Validity_False">
+              <action id="Action_8a49ca81c1114fad8f769b13ba933b58">
+                <realisation xsi:type="Assignment">
+                  <result xsi:type="StringVariable" name="String1" />
+                  <term xsi:type="StringLiteral" value="1st realisation" />
+                </realisation>
+              </action>
+            </realisation>
+            <realisation validFor="GlobalConstant_True">
+              <action id="Action_b8cdada81e37447e8921941da63731a1">
+                <realisation xsi:type="Assignment">
+                  <result xsi:type="StringVariable" name="String1" />
+                  <term xsi:type="StringLiteral" value="2nd realisation" />
+                </realisation>
+              </action>
+            </realisation>
+            <realisation validFor="ContextVariable_True" />
+            <realisation />
+          </group>
+          <action id="Action_5bf2a195c3e944cb970c34de77cf4056">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="String1" />
+                <term xsi:type="StringLiteral" value="2nd realisation" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Group_03" id="TestProcedure_3635b7e98ac641538361c64d0ca9b0e8" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="String1" id="VariableDeclaration_070aa57c818e40f4b845c2be1f5411d3">
+            <realisation>
+              <dataType xsi:type="String">
+                <init value="No realisations are executed." />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <group id="Group_e02f125ffc2b4afc9019d903b4190e97">
+            <realisation validFor="Validity_False">
+              <action id="Action_621828ae697345b8975c39d4a63dd6e6">
+                <realisation xsi:type="Assignment">
+                  <result xsi:type="StringVariable" name="String1" />
+                  <term xsi:type="StringLiteral" value="1st realisation" />
+                </realisation>
+              </action>
+            </realisation>
+            <realisation validFor="GlobalConstant_False" />
+            <realisation validFor="ContextVariable_False">
+              <action id="Action_7eb04ae5918d4f00a27624a67fef604f">
+                <realisation xsi:type="Assignment">
+                  <result xsi:type="StringVariable" name="String1" />
+                  <term xsi:type="StringLiteral" value="3rd realisation" />
+                </realisation>
+              </action>
+            </realisation>
+          </group>
+          <action id="Action_cedce1f9b6fe4c4a8b7c806af9a6ffd3">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="String1" />
+                <term xsi:type="StringLiteral" value="No realisations are executed." />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

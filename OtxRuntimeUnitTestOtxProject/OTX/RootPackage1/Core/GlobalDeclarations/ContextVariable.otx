@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="ContextVariable" id="id_b1144c31a1f747bb967fc18716ee64d3" package="RootPackage1.Core.GlobalDeclarations" version="1.0.0.0" timestamp="2021-05-07T09:31:12.756+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.3.0.41142</data>
+  </metaData>
+  <imports>
+    <import package="RootPackage1.Core.GlobalDeclarations" document="ImportedContextVariable" prefix="Import1" />
+    <import package="RootPackage1.Core.GlobalDeclarations.AnotherPackage" document="ImportedContextVariable" prefix="Import2" />
+  </imports>
+  <declarations>
+    <context name="PrivateContextVariable1" id="GlobalConstantDeclaration_ea35dab8afb147e48c2cfe1ca0d9bcbe">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="true" />
+        </dataType>
+      </realisation>
+    </context>
+    <context name="PackageContextVariable1" id="GlobalConstantDeclaration_88d71e52d50445d6bc378a48783b5f01" visibility="PACKAGE">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="true" />
+        </dataType>
+      </realisation>
+    </context>
+    <context name="PublicContextVariable1" id="GlobalConstantDeclaration_b9868d7e49fb42d385a25daada85feab" visibility="PUBLIC">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="true" />
+        </dataType>
+      </realisation>
+    </context>
+    <context name="PI" id="ContextVariableDeclaration_e86e3fc6ee244707a34554926a73a26f">
+      <realisation>
+        <dataType xsi:type="Float" />
+      </realisation>
+    </context>
+  </declarations>
+  <validities>
+    <validity name="ValidityUsePackageContextVariable" id="Validity_b0dfe1b30dce43d78414b8707306f406" visibility="PUBLIC">
+      <realisation xsi:type="BooleanValue" valueOf="PackageContextVariable1" />
+    </validity>
+    <validity name="ValidityUsePrivateContextVariable" id="Validity_70dc3b152b664f6c8dc5dd676885f081" visibility="PUBLIC">
+      <realisation xsi:type="BooleanValue" valueOf="PrivateContextVariable1" />
+    </validity>
+    <validity name="ValidityUsePublicContextVariable" id="Validity_d6440407c60d4b40a93814db13bc8ab1" visibility="PUBLIC">
+      <realisation xsi:type="BooleanValue" valueOf="PublicContextVariable1" />
+    </validity>
+    <validity name="ValidityUseImportedPackageContextVariableInSamePackage" id="Validity_1953665a52a3488aa5ba120343236c59" visibility="PUBLIC">
+      <realisation xsi:type="BooleanValue" valueOf="Import1:PackageContextVariable1" />
+    </validity>
+    <validity name="ValidityUseImportedPublicContextVariableInSamePackage" id="Validity_cb64c5c681ce4121a93447ba161598bf" visibility="PUBLIC">
+      <realisation xsi:type="BooleanValue" valueOf="Import1:PublicContextVariable1" />
+    </validity>
+    <validity name="ValidityUseImportedPublicContextVariableInAnotherPackage" id="Validity_80851caa84334f758a856071d01cc8de" visibility="PUBLIC">
+      <realisation xsi:type="BooleanValue" valueOf="Import2:PublicContextVariable1" />
+    </validity>
+  </validities>
+  <procedures>
+    <procedure name="ProcedureUsePrivateContextVariable" id="Procedure_5a27d23ff79d424985230f94b4a3ff18" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_d79c0d60351f4fb99571eff2d6de28ba">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="BooleanValue" valueOf="PrivateContextVariable1" />
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureUsePackageContextVariable" id="Procedure_a9aa80b7fe75494a9d63645cebe75c86" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_87c687a3166e44caac797a432b117afe">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="BooleanValue" valueOf="PackageContextVariable1" />
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureUsePublicContextVariable" id="Procedure_824382573aa941a8902681b85b6ada01" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_fb7bd11d60624504b03602d6334fb18c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="BooleanValue" valueOf="PublicContextVariable1" />
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureUseImportedPackageContextVariableInSamePackage" id="Procedure_9b1e0f786f6847988242d8e233637277" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_f4c3954d2ad44b1a9fa6ebc61a4da1ca">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="BooleanValue" valueOf="Import1:PackageContextVariable1" />
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureUseImportedPublicContextVariableInSamePackage" id="Procedure_99424f12671946e4b1fd0b2751786627" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_8e3dc00165594f5c8243cda482959303">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="BooleanValue" valueOf="Import1:PublicContextVariable1" />
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcedureUseImportedPublicContextVariableInAnotherPackage" id="Procedure_c6318d7ef97646d98826f82efeef7126" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_c424b23c193a4e0c950748ca49653f39">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="BooleanValue" valueOf="Import2:PublicContextVariable1" />
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ValidityUsePrivateContextVariable" id="Procedure_9befd4a59be44813ba83f5f2242ca557" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_6e7211ca44bc4672962aaa0c01497a3c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsValid" validity="ValidityUsePrivateContextVariable" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ValidityUsePackageContextVariable" id="Procedure_6544cbaa79764bcdae4ed4ce76fcafbd" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_5269251491ca4ef1abce5d8e5c27a800">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsValid" validity="ValidityUsePackageContextVariable" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ValidityUsePublicContextVariable" id="Procedure_4fc5ee56321d4180a850482f433d80c5" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_f16df12c86c44903ba7bb67a6593173a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsValid" validity="ValidityUsePublicContextVariable" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ValidityUseImportedPackageContextVariableInSamePackage" id="Procedure_428de4f7242d43bbb3ab9824190611e0" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_5f5cf9f446a749b694a48384b5913cc3">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsValid" validity="ValidityUseImportedPackageContextVariableInSamePackage" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ValidityUseImportedPublicContextVariableInSamePackage" id="Procedure_892509ff9bd74637b12f1ddd830f32e1" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_9e2d888208df4b428b9677cf8de2ce8c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsValid" validity="ValidityUseImportedPublicContextVariableInSamePackage" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ValidityUseImportedPublicContextVariableInAnotherPackage" id="Procedure_6028961191ef46a39d0392fab52dd1a1" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_60e4f26a7e2d4e57a912617321aff469">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsValid" validity="ValidityUseImportedPublicContextVariableInAnotherPackage" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="MappedContextVariable" id="Procedure_d9d9aa3cb4924a20a2b0877fa9e825c6" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_8a4edbcda69f48f8a910071e71d03ab4">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="FloatValue" valueOf="PI" />
+                <term xsi:type="FloatLiteral" value="3.14159265" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+  </procedures>
+</otx>

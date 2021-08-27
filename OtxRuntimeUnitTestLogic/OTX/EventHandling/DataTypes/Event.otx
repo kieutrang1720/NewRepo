@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:string="http://iso.org/OTX/1.0.0/StringUtil" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:hmi="http://iso.org/OTX/1.0.0/HMI" xmlns:event="http://iso.org/OTX/1.0.0/Event" name="Event" id="id_416e4c92474f4dbc9e650fca8c0c2818" package="EventHandling.DataTypes" version="1.0.0.0" timestamp="2021-08-10T16:31:24.739+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42500</data>
+  </metaData>
+  <signatures>
+    <signature name="ScreenSignature1" id="Signature_e660e9ab003c432cbd325e7f318c433f">
+      <realisation xsi:type="hmi:ScreenSignature" />
+    </signature>
+  </signatures>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="Event_Base" id="TestProcedure_c01b3cdaeeda462aaed5a354a6010bc7" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Event1" id="VariableDeclaration_bbc2843198ff492abbd1cb274bf8f8ae">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_ef287aa3a4d24ad4b03d4079af7d08bc">
+            <realisation xsi:type="event:WaitForEvent">
+              <event:source xsi:type="event:TimerExpiredEventSource">
+                <event:timeout xsi:type="IntegerLiteral" value="100" />
+              </event:source>
+              <event:event name="Event1" />
+            </realisation>
+          </action>
+          <action id="Action_21b2ab63390f4dca8da79360a0d7bf68">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="event:EventValue" valueOf="Event1" />
+                </term>
+                <term xsi:type="StringLiteral" value="TimerExpiredEvent" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Event_InitialVarible" id="TestProcedure_116df592d8dd480b9aae196bed424ddd" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Event1" id="VariableDeclaration_810df1fa9253428fb484bc4e9ef2e6e0">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <compoundNode id="ExtensibleCompoundNode_8120b4fef285465e83ac0af51e355cd2">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="InvalidReferenceException" />
+              <unittest:flow>
+                <branch id="Branch_eb67245b1cc64880a2285bc49fbfcb36">
+                  <realisation>
+                    <if>
+                      <condition id="ConditionHeader_a0160182f069418d82899bffb1fa9b3b">
+                        <realisation xsi:type="IsEqual">
+                          <term xsi:type="ToString">
+                            <term xsi:type="event:EventValue" valueOf="Event1" />
+                          </term>
+                          <term xsi:type="StringLiteral" value="" />
+                        </realisation>
+                      </condition>
+                      <flow />
+                    </if>
+                  </realisation>
+                </branch>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Event_Important_ScreenClose" id="TestProcedure_9ff0bf87908f462d894240513f4090bb" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Screen1" id="VariableDeclaration_1a80bbc7ba7746a49203101d269efccd">
+            <realisation>
+              <dataType xsi:type="hmi:Screen" />
+            </realisation>
+          </variable>
+          <variable name="EventSource1" id="VariableDeclaration_0460344d16254429970961e665ca9102">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_21f02252c2b64f5286dea2978b8ce8d0">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+          <variable name="String1" id="VariableDeclaration_ce295cc0b4f6400ab79997b9bd56b3b6">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_12fb0176473c4d35a1ce34b7fa4a88c9">
+            <realisation xsi:type="hmi:OpenScreen" screen="ScreenSignature1">
+              <hmi:screenHandle name="Screen1" />
+            </realisation>
+          </action>
+          <parallel id="Parallel_ae0c9797303e415c8e08b0213c882eee">
+            <realisation>
+              <lane>
+                <action id="Action_25e08b7bee694d39890f334b2eac12e1">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="hmi:ScreenClosedEventSource">
+                      <hmi:screen xsi:type="hmi:ScreenValue" valueOf="Screen1" />
+                    </event:source>
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_b1122b8b0a764f3780f85b8ea7d1ed8f">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="200" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_389b3e22ad5f4ff6a0bdb542822f1987">
+                  <realisation xsi:type="hmi:CloseScreen">
+                    <hmi:screen name="Screen1" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_0a3d45c8178442609c2b5f4ae4f56550">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="event:EventValue" valueOf="Event1" />
+                </term>
+                <term xsi:type="StringLiteral" value="ScreenClosedEvent" />
+              </assert:condition>
+              <assert:errorMessage xsi:type="string:StringConcatenate">
+                <string:string xsi:type="StringLiteral" value="The actual value of Event1 is " />
+                <string:string xsi:type="ToString">
+                  <term xsi:type="event:EventValue" valueOf="Event1" />
+                </string:string>
+              </assert:errorMessage>
+            </realisation>
+          </action>
+          <action id="Action_1714a8bf2f5c411c9a01fed5338dc46b">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="hmi:IsScreenClosedEvent">
+                <hmi:event valueOf="Event1" />
+                <hmi:screen name="Screen1" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

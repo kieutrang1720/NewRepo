@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:flash="http://iso.org/OTX/1.0.0/Flash" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagConf="http://iso.org/OTX/1.0.0/DiagConfiguration" name="GetDownloadData" id="id_67b4c59a6d8a4817bca74f0ddedddab2" package="Flash.Actions" version="1.0.0.0" timestamp="2021-07-29T18:15:22.616+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42514</data>
+  </metaData>
+  <declarations>
+    <variable name="CurrentProjectName" id="DocumentVariableDeclaration_1ac2dbf31cd64cd39eb6bd8648f567ea">
+      <realisation>
+        <dataType xsi:type="String" />
+      </realisation>
+    </variable>
+    <variable name="CurrentVehicleName" id="DocumentVariableDeclaration_4373e4c3b8974af28de860da3d573501">
+      <realisation>
+        <dataType xsi:type="String" />
+      </realisation>
+    </variable>
+  </declarations>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ChangeOdxDb_p_918_v_918S" id="TestProcedure_4a2362d1e1eb4430a8f86ebbe0b0a737">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_23978007634b485398058712339b9ebc">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="CurrentProjectName" />
+              <term xsi:type="diagConf:GetActiveProject" />
+            </realisation>
+          </action>
+          <action id="Action_adf73a734366417ea2cccc2e7d8b2711">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="CurrentVehicleName" />
+              <term xsi:type="diagConf:GetActiveVehicleInformation" />
+            </realisation>
+          </action>
+          <branch id="Branch_f89e28a2a8f946e79b5ef3f7224c157f">
+            <realisation>
+              <if>
+                <condition id="ConditionHeader_61dc63157d204a168301b6c3f9ff5336">
+                  <realisation xsi:type="IsNotEqual">
+                    <term xsi:type="StringValue" valueOf="CurrentProjectName" />
+                    <term xsi:type="StringLiteral" value="918" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_d30b8f633d364cfaadcabbd38ccbead6">
+                    <realisation xsi:type="diagConf:SelectProject">
+                      <diagConf:projectName xsi:type="StringLiteral" value="918" />
+                    </realisation>
+                  </action>
+                  <action id="Action_72924e184467462a92590d4ceae46588">
+                    <realisation xsi:type="diagConf:SelectVehicleInformation">
+                      <diagConf:vehicleInformation xsi:type="StringLiteral" value="918S" />
+                    </realisation>
+                  </action>
+                </flow>
+              </if>
+            </realisation>
+          </branch>
+          <endNode id="ExtensibleEndNode_3ed9378e286a490a8dd424da972ed064">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="GetDownloadDataIntArgs" id="TestProcedure_b6219c7bc0db41ddb85ca720f31d563d" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_a60adafce06640a3ab159aa94a0f6b3a">
+            <unittest:arguments>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Position">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Size">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="1818" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutByteField">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="ByteFieldLiteral" value="80" />
+                    <unittest:element xsi:type="ByteFieldLiteral" value="8007C000800734000300078542B3FFFFDEB1FFFFD6B2FFFF2AB2FFFF66B1FFFF8007210024371D8B2637150080FF3A0480FFE60340063F00A9072300270DE10F4000070DE00F4000050DF10F4000030DF00F4000010D25152335213D1F451D4D1B55195D1765156D1375117D0F850D8D0B95099DBFFFACFF03F0089D0A950C8D0E85107D1275146D1665185D1A551C4D1E45000D203D22352415E1872000020DE18F2000E0076001040DE1072000060DE10F20003E0F4D0069062000E0074001910703000F0DE10F4000070DE00F4000050DF10F4000030DF00F4000010D0D150B95099D8505015A2457218B0012B50DEA31D90567170100005A950D2467218B4112CC512467258BEC11B1F50B508A007F00E007600124171D8B221729002056FF004257000024171D8B22172D00C2FF0000A2FDBF07ECFE8007210024171D8B22172D00C2FF0000A2FDBFFFD6FE24171D8B22572900821731004A170000E087600140063F008007610006E880FF740280FFA60264EF1D8B01127D17040000EAF51D1D108312DD560700015AEA5FC0000250C4510A672C8B0B504C518A00E051E20DC41122F6208B6C502B581D301D384B518C5380FF1C05E051EA0541EA2417258BE2E9F1DD2417258BE2E9DA0524171D8B6207040080FF5A0240067F008007610006E880FFFC0180FF2E0264EF1D8B1D300112661704000012850D0250C4518A572D8BE051AA0D4112245F258B0B56FFFF83524152EA11A1F5EB11BA056607040080FF0E0240067F008407610006E880FFB00180FFE20101121D3006F08214061564EF1D8BC2560300AA45E011C23D263709000338BFFF90FEE0519A3D235701002417298BE251B33524571D8B2A170D002A570900233E0400CA110236FFFFBFFF66FEE051CA2523570100F50DCA160700015AE25FC0000A108312C41122F6208B6C6041520B618C6323170500E251F3ED24F71D8B0645043D0835824280FF1E04E051DA0524171D8B6207040080FF620144067F008407610006E880FF040180FF360164EF1D8B1DF00435011282140338BFFFF4FDE0519A25235701002417298BE251B31D24571D8B2A170D002A570900233E0400CA110236FFFFBFFFCAFDE051CA0D03F0023D003580FF9A03E051DA0524171D8B6257040080FFF60044067F008007E11006E080FF980080FFCA0064E71D8B01127C17040000EA1D10C41142072C8B41EA1D0683FF96FD80FFA403023280FFF402D05290526457258B0A0617FCB12D00DA063280FFDE0241526457218B00EAD50D1D36060080FFCC022417218B41528A11E2D9FA050AD841EA2417258BE2E991F52417258BE2E9EA0D3C372500243E288B5F32BFFF1EFDE051DA0524171D8B6257040080FF58004006FF10031EFCFF639F0100409E0000339EB4BB73F70100409E0000339EACBB73270100409E0000339EB0BB732F0100239F0100031E04007F004026000024260030402E0000252E083040F600003EF61CBB7F00031EFCFF639F0100409E0000339EB4BB33F70100409E0000339EB0BB332F0100409E0000339EACBB33270100239F0100031E04007F00031EFCFF63FF0100BFFFC2FF23FF0100031E040066007F00FFFFE55740002036A000E62F20007F00E62F20007F00581A63A7010063AF050028A020AEA50047AF00004647000046A700004647000023A7010023AF0500481A7F00E6BF20007F00065700007F00065700007F00031EF0FF63170100632F050063F7090063FF0D0023F711002056C03F80FF04001FFE06006A0023170100232F050023F7090023FF0D00031E10007F0080076100BFFF6EFF0AE82036D4F8203ED0F80A42BFFF72FF1D30BFFF66FF2036FF00BFFF90FFBFFF04FC40067F0000424007D7F86007CEF84007DAF84007E8F84007DBF82036E6F8203ED0F8BF073AFF4037C2F84007C3F8201632004017DAF8808FDBF8918E7200408FDAF8807FDBF88F7EF200407FDAF8006FDAF8CD6620000C06E0FFA2FD201672004017DAF8201632004017DAF84007DAF87F0080076100BFFF64FBBFFFCEFE0AE82036D4F8203ED0F820468000BFFFD0FE201620004017DBF820368000BFFF8AFF4007DBF81D30BFFFB0FE0032BFFFDCFE40067F008007E13006E807E008D809D0BFFF16FF1D301C381B401A48BFFFCEFE0AE01D06DEFFB2056AEABA15E0E19A15008FE8F8D1868000100680FFA2FD006FE9F8CD661F00B20520E61A00BFFF08FFBFFF72FF1C504006FF30FFFF8007610040EE00003DEFF5B6E0E9CA05BFFF98FFD5053F0662B6FFFF7D0040067F00063809320042004ABF07D6FF0C32003A0042004ABF07CAFF8007E10006E807E020362200003A0042004ABFFFB4FFE051FA051D381C400A32004ABFFFA4FF4006FF00800721000E32003A0042004ABFFF90FF6152BA052056180040063F00074006380332014ABF0778FF074006380632014ABF076CFF084806400432BF0762FF074006380832014ABF0756FFFFFFFFFFFFFF805704002036FCB646360000A6517F002A06010201007F00400E00006107F5B67F00" />
+                    <unittest:element xsi:type="ByteFieldLiteral" value="8007C000800734000300078542B3FFFFDEB1FFFFD6B2FFFF2AB2FFFF66B1FFFF8007210024371D8B2637150080FF3A0480FFE60340063F00A9072300270DE10F4000070DE00F4000050DF10F4000030DF00F4000010D25152335213D1F451D4D1B55195D1765156D1375117D0F850D8D0B95099DBFFFACFF03F0089D0A950C8D0E85107D1275146D1665185D1A551C4D1E45000D203D22352415E1872000020DE18F2000E0076001040DE1072000060DE10F20003E0F4D0069062000E0074001910703000F0DE10F4000070DE00F4000050DF10F4000030DF00F4000010D0D150B95099D8505015A2457218B0012B50DEA31D90567170100005A950D2467218B4112CC512467258BEC11B1F50B508A007F00E007600124171D8B221729002056FF004257000024171D8B22172D00C2FF0000A2FDBF07ECFE8007210024171D8B22172D00C2FF0000A2FDBFFFD6FE24171D8B22572900821731004A170000E087600140063F008007610006E880FF740280FFA60264EF1D8B01127D17040000EAF51D1D108312DD560700015AEA5FC0000250C4510A672C8B0B504C518A00E051E20DC41122F6208B6C502B581D301D384B518C5380FF1C05E051EA0541EA2417258BE2E9F1DD2417258BE2E9DA0524171D8B6207040080FF5A0240067F008007610006E880FFFC0180FF2E0264EF1D8B1D300112661704000012850D0250C4518A572D8BE051AA0D4112245F258B0B56FFFF83524152EA11A1F5EB11BA056607040080FF0E0240067F008407610006E880FFB00180FFE20101121D3006F08214061564EF1D8BC2560300AA45E011C23D263709000338BFFF90FEE0519A3D235701002417298BE251B33524571D8B2A170D002A570900233E0400CA110236FFFFBFFF66FEE051CA2523570100F50DCA160700015AE25FC0000A108312C41122F6208B6C6041520B618C6323170500E251F3ED24F71D8B0645043D0835824280FF1E04E051DA0524171D8B6207040080FF620144067F008407610006E880FF040180FF360164EF1D8B1DF00435011282140338BFFFF4FDE0519A25235701002417298BE251B31D24571D8B2A170D002A570900233E0400CA110236FFFFBFFFCAFDE051CA0D03F0023D003580FF9A03E051DA0524171D8B6257040080FFF60044067F008007E11006E080FF980080FFCA0064E71D8B01127C17040000EA1D10C41142072C8B41EA1D0683FF96FD80FFA403023280FFF402D05290526457258B0A0617FCB12D00DA063280FFDE0241526457218B00EAD50D1D36060080FFCC022417218B41528A11E2D9FA050AD841EA2417258BE2E991F52417258BE2E9EA0D3C372500243E288B5F32BFFF1EFDE051DA0524171D8B6257040080FF58004006FF10031EFCFF639F0100409E0000339EB4BB73F70100409E0000339EACBB73270100409E0000339EB0BB732F0100239F0100031E04007F004026000024260030402E0000252E083040F600003EF61CBB7F00031EFCFF639F0100409E0000339EB4BB33F70100409E0000339EB0BB332F0100409E0000339EACBB33270100239F0100031E04007F00031EFCFF63FF0100BFFFC2FF23FF0100031E040066007F00FFFFE55740002036A000E62F20007F00E62F20007F00581A63A7010063AF050028A020AEA50047AF00004647000046A700004647000023A7010023AF0500481A7F00E6BF20007F00065700007F00065700007F00031EF0FF63170100632F050063F7090063FF0D0023F711002056C03F80FF04001FFE06006A0023170100232F050023F7090023FF0D00031E10007F0080076100BFFF6EFF0AE82036D4F8203ED0F80A42BFFF72FF1D30BFFF66FF2036FF00BFFF90FFBFFF04FC40067F0000424007D7F86007CEF84007DAF84007E8F84007DBF82036E6F8203ED0F8BF073AFF4037C2F84007C3F8201632004017DAF8808FDBF8918E7200408FDAF8807FDBF88F7EF200407FDAF8006FDAF8CD6620000C06E0FFA2FD201672004017DAF8201632004017DAF84007DAF87F0080076100BFFF64FBBFFFCEFE0AE82036D4F8203ED0F820468000BFFFD0FE201620004017DBF820368000BFFF8AFF4007DBF81D30BFFFB0FE0032BFFFDCFE40067F008007E13006E807E008D809D0BFFF16FF1D301C381B401A48BFFFCEFE0AE01D06DEFFB2056AEABA15E0E19A15008FE8F8D1868000100680FFA2FD006FE9F8CD661F00B20520E61A00BFFF08FFBFFF72FF1C504006FF30FFFF8007610040EE00003DEFF5B6E0E9CA05BFFF98FFD5053F0662B6FFFF7D0040067F00063809320042004ABF07D6FF0C32003A0042004ABF07CAFF8007E10006E807E020362200003A0042004ABFFFB4FFE051FA051D381C400A32004ABFFFA4FF4006FF00800721000E32003A0042004ABFFF90FF6152BA052056180040063F00074006380332014ABF0778FF074006380632014ABF076CFF084806400432BF0762FF074006380832014ABF0756FFFFFFFFFFFFFF805704002036FCB646360000A6517F002A06010201007F00400E00006107F5B67F00" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_0fb0e3fd84994c748a763fdb2ae5e35e">
+            <unittest:arguments>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Position">
+                <unittest:value xsi:type="IntegerLiteral" value="1000" />
+              </unittest:argument>
+              <unittest:argument param="Size">
+                <unittest:value xsi:type="IntegerLiteral" value="1000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" value="409E0000339EB4BB73F70100409E0000339EACBB73270100409E0000339EB0BB732F0100239F0100031E04007F004026000024260030402E0000252E083040F600003EF61CBB7F00031EFCFF639F0100409E0000339EB4BB33F70100409E0000339EB0BB332F0100409E0000339EACBB33270100239F0100031E04007F00031EFCFF63FF0100BFFFC2FF23FF0100031E040066007F00FFFFE55740002036A000E62F20007F00E62F20007F00581A63A7010063AF050028A020AEA50047AF00004647000046A700004647000023A7010023AF0500481A7F00E6BF20007F00065700007F00065700007F00031EF0FF63170100632F050063F7090063FF0D0023F711002056C03F80FF04001FFE06006A0023170100232F050023F7090023FF0D00031E10007F0080076100BFFF6EFF0AE82036D4F8203ED0F80A42BFFF72FF1D30BFFF66FF2036FF00BFFF90FFBFFF04FC40067F0000424007D7F86007CEF84007DAF84007E8F84007DBF82036E6F8203ED0F8BF073AFF4037C2F84007C3F8201632004017DAF8808FDBF8918E7200408FDAF8807FDBF88F7EF200407FDAF8006FDAF8CD6620000C06E0FFA2FD201672004017DAF8201632004017DAF84007DAF87F0080076100BFFF64FBBFFFCEFE0AE82036D4F8203ED0F820468000BFFFD0FE201620004017DBF820368000BFFF8AFF4007DBF81D30BFFFB0FE0032BFFFDCFE40067F008007E13006E807E008D809D0BFFF16FF1D301C381B401A48BFFFCEFE0AE01D06DEFFB2056AEABA15E0E19A15008FE8F8D1868000100680FFA2FD006FE9F8CD661F00B20520E61A00BFFF08FFBFFF72FF1C504006FF30FFFF8007610040EE00003DEFF5B6E0E9CA05BFFF98FFD5053F0662B6FFFF7D0040067F00063809320042004ABF07D6FF0C32003A0042004ABF07CAFF8007E10006E807E020362200003A0042004ABFFFB4FFE051FA051D381C400A32004ABFFFA4FF4006FF00800721000E32003A0042004ABFFF90FF6152BA052056180040063F00074006380332014ABF0778FF074006380632014ABF076CFF084806400432BF0762FF074006380832014ABF0756FFFFFFFFFFFFFF805704002036FCB646360000A6517F002A06010201007F00400E00006107F5B67F00" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4bd4741e22554d1fa9cfb9b0a6467143">
+            <unittest:arguments>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Position">
+                <unittest:value xsi:type="IntegerLiteral" value="1817" />
+              </unittest:argument>
+              <unittest:argument param="Size">
+                <unittest:value xsi:type="IntegerLiteral" value="1000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8cd32f1dccc4491c9e700a9e9e6bbfc8">
+            <unittest:arguments>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Position">
+                <unittest:value xsi:type="IntegerLiteral" value="1818" />
+              </unittest:argument>
+              <unittest:argument param="Size">
+                <unittest:value xsi:type="IntegerLiteral" value="1000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_991eeb30dd0144dba431dd6eea64a127">
+            <unittest:arguments>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Position">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+              <unittest:argument param="Size">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7b8e490107834edda7265c22d9da4599">
+            <unittest:arguments>
+              <unittest:argument param="Block">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775807" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="2" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775806" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Position">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Size">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c2df80aa799a4a8997eb67c4ae8916ba">
+            <unittest:arguments>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775807" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775806" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="Position">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Size">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f7ea8cedcb9a430e9163383d559ed148">
+            <unittest:arguments>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Position">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775807" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="Size">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f880afa6d41a47cab822db995a5fd429">
+            <unittest:arguments>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Position">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Size">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775807" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Block" id="InParameterDeclaration_d661770af6254a5ab1b0c12398480c58">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="Segment" id="InParameterDeclaration_25f0064831154a21af777bb9151e05c7">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="Position" id="InParameterDeclaration_59163c83e9494d2fa233f34cf5b58337">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="Size" id="InParameterDeclaration_85e2e5be0ab346cab9f1bf0aade1268c">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="OutByteField" id="OutParameterDeclaration_4667e8fb94be440fa3b14bdcdfbe37d4">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="FlashSession1" id="VariableDeclaration_da88457b715c48a1bb29bb5ac5c04d17">
+            <realisation>
+              <dataType xsi:type="flash:FlashSession" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_7c6d63be5e034a8489a30bf780b055fb">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashSessionVariable" name="FlashSession1" />
+              <term xsi:type="flash:GetFlashSession">
+                <flash:sessionID xsi:type="StringLiteral" value="_7PP907357F_7520" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_8827a6d5a46c49e2b6c29a80d67af0ba">
+            <realisation xsi:type="flash:GetDownloadData">
+              <flash:session xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+              <flash:block xsi:type="IntegerValue" valueOf="Block" />
+              <flash:segment xsi:type="IntegerValue" valueOf="Segment" />
+              <flash:position xsi:type="IntegerValue" valueOf="Position" />
+              <flash:size xsi:type="IntegerValue" valueOf="Size" />
+              <flash:data name="OutByteField" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="GetDownloadDataFloatArgs" id="TestProcedure_43f4b0a035714adfb86ba1d0ff0608d2" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_f62d81970dc94cb0a1d4d4550480ef43">
+            <unittest:arguments>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="FloatLiteral" value="-0.9999999999" />
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:value xsi:type="FloatLiteral" value="-0.9999999999" />
+              </unittest:argument>
+              <unittest:argument param="Position">
+                <unittest:value xsi:type="FloatLiteral" value="-0.9999999999" />
+              </unittest:argument>
+              <unittest:argument param="Size">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="1.9999999999" />
+                    <unittest:element xsi:type="FloatLiteral" value="1817.9999999999" />
+                    <unittest:element xsi:type="Add">
+                      <numeral xsi:type="IntegerLiteral" value="9223372036854775807" />
+                      <numeral xsi:type="FloatLiteral" value="1025" />
+                    </unittest:element>
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutByteField">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="ByteFieldLiteral" value="80" />
+                    <unittest:element xsi:type="ByteFieldLiteral" value="8007C000800734000300078542B3FFFFDEB1FFFFD6B2FFFF2AB2FFFF66B1FFFF8007210024371D8B2637150080FF3A0480FFE60340063F00A9072300270DE10F4000070DE00F4000050DF10F4000030DF00F4000010D25152335213D1F451D4D1B55195D1765156D1375117D0F850D8D0B95099DBFFFACFF03F0089D0A950C8D0E85107D1275146D1665185D1A551C4D1E45000D203D22352415E1872000020DE18F2000E0076001040DE1072000060DE10F20003E0F4D0069062000E0074001910703000F0DE10F4000070DE00F4000050DF10F4000030DF00F4000010D0D150B95099D8505015A2457218B0012B50DEA31D90567170100005A950D2467218B4112CC512467258BEC11B1F50B508A007F00E007600124171D8B221729002056FF004257000024171D8B22172D00C2FF0000A2FDBF07ECFE8007210024171D8B22172D00C2FF0000A2FDBFFFD6FE24171D8B22572900821731004A170000E087600140063F008007610006E880FF740280FFA60264EF1D8B01127D17040000EAF51D1D108312DD560700015AEA5FC0000250C4510A672C8B0B504C518A00E051E20DC41122F6208B6C502B581D301D384B518C5380FF1C05E051EA0541EA2417258BE2E9F1DD2417258BE2E9DA0524171D8B6207040080FF5A0240067F008007610006E880FFFC0180FF2E0264EF1D8B1D300112661704000012850D0250C4518A572D8BE051AA0D4112245F258B0B56FFFF83524152EA11A1F5EB11BA056607040080FF0E0240067F008407610006E880FFB00180FFE20101121D3006F08214061564EF1D8BC2560300AA45E011C23D263709000338BFFF90FEE0519A3D235701002417298BE251B33524571D8B2A170D002A570900233E0400CA110236FFFFBFFF66FEE051CA2523570100F50DCA160700015AE25FC0000A108312C41122F6208B6C6041520B618C6323170500E251F3ED24F71D8B0645043D0835824280FF1E04E051DA0524171D8B6207040080FF620144067F008407610006E880FF040180FF360164EF1D8B1DF00435011282140338BFFFF4FDE0519A25235701002417298BE251B31D24571D8B2A170D002A570900233E0400CA110236FFFFBFFFCAFDE051CA0D03F0023D003580FF9A03E051DA0524171D8B6257040080FFF60044067F008007E11006E080FF980080FFCA0064E71D8B01127C17040000EA1D10C41142072C8B41EA1D0683FF96FD80FFA403023280FFF402D05290526457258B0A0617FCB12D00DA063280FFDE0241526457218B00EAD50D1D36060080FFCC022417218B41528A11E2D9FA050AD841EA2417258BE2E991F52417258BE2E9EA0D3C372500243E288B5F32BFFF1EFDE051DA0524171D8B6257040080FF58004006FF10031EFCFF639F0100409E0000339EB4BB73F70100409E0000339EACBB73270100409E0000339EB0BB732F0100239F0100031E04007F004026000024260030402E0000252E083040F600003EF61CBB7F00031EFCFF639F0100409E0000339EB4BB33F70100409E0000339EB0BB332F0100409E0000339EACBB33270100239F0100031E04007F00031EFCFF63FF0100BFFFC2FF23FF0100031E040066007F00FFFFE55740002036A000E62F20007F00E62F20007F00581A63A7010063AF050028A020AEA50047AF00004647000046A700004647000023A7010023AF0500481A7F00E6BF20007F00065700007F00065700007F00031EF0FF63170100632F050063F7090063FF0D0023F711002056C03F80FF04001FFE06006A0023170100232F050023F7090023FF0D00031E10007F0080076100BFFF6EFF0AE82036D4F8203ED0F80A42BFFF72FF1D30BFFF66FF2036FF00BFFF90FFBFFF04FC40067F0000424007D7F86007CEF84007DAF84007E8F84007DBF82036E6F8203ED0F8BF073AFF4037C2F84007C3F8201632004017DAF8808FDBF8918E7200408FDAF8807FDBF88F7EF200407FDAF8006FDAF8CD6620000C06E0FFA2FD201672004017DAF8201632004017DAF84007DAF87F0080076100BFFF64FBBFFFCEFE0AE82036D4F8203ED0F820468000BFFFD0FE201620004017DBF820368000BFFF8AFF4007DBF81D30BFFFB0FE0032BFFFDCFE40067F008007E13006E807E008D809D0BFFF16FF1D301C381B401A48BFFFCEFE0AE01D06DEFFB2056AEABA15E0E19A15008FE8F8D1868000100680FFA2FD006FE9F8CD661F00B20520E61A00BFFF08FFBFFF72FF1C504006FF30FFFF8007610040EE00003DEFF5B6E0E9CA05BFFF98FFD5053F0662B6FFFF7D0040067F00063809320042004ABF07D6FF0C32003A0042004ABF07CAFF8007E10006E807E020362200003A0042004ABFFFB4FFE051FA051D381C400A32004ABFFFA4FF4006FF00800721000E32003A0042004ABFFF90FF6152BA052056180040063F00074006380332014ABF0778FF074006380632014ABF076CFF084806400432BF0762FF074006380832014ABF0756FFFFFFFFFFFFFF805704002036FCB646360000A6517F002A06010201007F00400E00006107F5B67F" />
+                    <unittest:element xsi:type="ByteFieldLiteral" value="8007C000800734000300078542B3FFFFDEB1FFFFD6B2FFFF2AB2FFFF66B1FFFF8007210024371D8B2637150080FF3A0480FFE60340063F00A9072300270DE10F4000070DE00F4000050DF10F4000030DF00F4000010D25152335213D1F451D4D1B55195D1765156D1375117D0F850D8D0B95099DBFFFACFF03F0089D0A950C8D0E85107D1275146D1665185D1A551C4D1E45000D203D22352415E1872000020DE18F2000E0076001040DE1072000060DE10F20003E0F4D0069062000E0074001910703000F0DE10F4000070DE00F4000050DF10F4000030DF00F4000010D0D150B95099D8505015A2457218B0012B50DEA31D90567170100005A950D2467218B4112CC512467258BEC11B1F50B508A007F00E007600124171D8B221729002056FF004257000024171D8B22172D00C2FF0000A2FDBF07ECFE8007210024171D8B22172D00C2FF0000A2FDBFFFD6FE24171D8B22572900821731004A170000E087600140063F008007610006E880FF740280FFA60264EF1D8B01127D17040000EAF51D1D108312DD560700015AEA5FC0000250C4510A672C8B0B504C518A00E051E20DC41122F6208B6C502B581D301D384B518C5380FF1C05E051EA0541EA2417258BE2E9F1DD2417258BE2E9DA0524171D8B6207040080FF5A0240067F008007610006E880FFFC0180FF2E0264EF1D8B1D300112661704000012850D0250C4518A572D8BE051AA0D4112245F258B0B56FFFF83524152EA11A1F5EB11BA056607040080FF0E0240067F008407610006E880FFB00180FFE20101121D3006F08214061564EF1D8BC2560300AA45E011C23D263709000338BFFF90FEE0519A3D235701002417298BE251B33524571D8B2A170D002A570900233E0400CA110236FFFFBFFF66FEE051CA2523570100F50DCA160700015AE25FC0000A108312C41122F6208B6C6041520B618C6323170500E251F3ED24F71D8B0645043D0835824280FF1E04E051DA0524171D8B6207040080FF620144067F008407610006E880FF040180FF360164EF1D8B1DF00435011282140338BFFFF4FDE0519A25235701002417298BE251B31D24571D8B2A170D002A570900233E0400CA110236FFFFBFFFCAFDE051CA0D03F0023D003580FF9A03E051DA0524171D8B6257040080FFF60044067F008007E11006E080FF980080FFCA0064E71D8B01127C17040000EA1D10C41142072C8B41EA1D0683FF96FD80FFA403023280FFF402D05290526457258B0A0617FCB12D00DA063280FFDE0241526457218B00EAD50D1D36060080FFCC022417218B41528A11E2D9FA050AD841EA2417258BE2E991F52417258BE2E9EA0D3C372500243E288B5F32BFFF1EFDE051DA0524171D8B6257040080FF58004006FF10031EFCFF639F0100409E0000339EB4BB73F70100409E0000339EACBB73270100409E0000339EB0BB732F0100239F0100031E04007F004026000024260030402E0000252E083040F600003EF61CBB7F00031EFCFF639F0100409E0000339EB4BB33F70100409E0000339EB0BB332F0100409E0000339EACBB33270100239F0100031E04007F00031EFCFF63FF0100BFFFC2FF23FF0100031E040066007F00FFFFE55740002036A000E62F20007F00E62F20007F00581A63A7010063AF050028A020AEA50047AF00004647000046A700004647000023A7010023AF0500481A7F00E6BF20007F00065700007F00065700007F00031EF0FF63170100632F050063F7090063FF0D0023F711002056C03F80FF04001FFE06006A0023170100232F050023F7090023FF0D00031E10007F0080076100BFFF6EFF0AE82036D4F8203ED0F80A42BFFF72FF1D30BFFF66FF2036FF00BFFF90FFBFFF04FC40067F0000424007D7F86007CEF84007DAF84007E8F84007DBF82036E6F8203ED0F8BF073AFF4037C2F84007C3F8201632004017DAF8808FDBF8918E7200408FDAF8807FDBF88F7EF200407FDAF8006FDAF8CD6620000C06E0FFA2FD201672004017DAF8201632004017DAF84007DAF87F0080076100BFFF64FBBFFFCEFE0AE82036D4F8203ED0F820468000BFFFD0FE201620004017DBF820368000BFFF8AFF4007DBF81D30BFFFB0FE0032BFFFDCFE40067F008007E13006E807E008D809D0BFFF16FF1D301C381B401A48BFFFCEFE0AE01D06DEFFB2056AEABA15E0E19A15008FE8F8D1868000100680FFA2FD006FE9F8CD661F00B20520E61A00BFFF08FFBFFF72FF1C504006FF30FFFF8007610040EE00003DEFF5B6E0E9CA05BFFF98FFD5053F0662B6FFFF7D0040067F00063809320042004ABF07D6FF0C32003A0042004ABF07CAFF8007E10006E807E020362200003A0042004ABFFFB4FFE051FA051D381C400A32004ABFFFA4FF4006FF00800721000E32003A0042004ABFFF90FF6152BA052056180040063F00074006380332014ABF0778FF074006380632014ABF076CFF084806400432BF0762FF074006380832014ABF0756FFFFFFFFFFFFFF805704002036FCB646360000A6517F002A06010201007F00400E00006107F5B67F00" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_466e93b399264933845b1bc9ec505c3d">
+            <unittest:arguments>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Position">
+                <unittest:value xsi:type="FloatLiteral" value="1000" />
+              </unittest:argument>
+              <unittest:argument param="Size">
+                <unittest:value xsi:type="FloatLiteral" value="1000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" value="409E0000339EB4BB73F70100409E0000339EACBB73270100409E0000339EB0BB732F0100239F0100031E04007F004026000024260030402E0000252E083040F600003EF61CBB7F00031EFCFF639F0100409E0000339EB4BB33F70100409E0000339EB0BB332F0100409E0000339EACBB33270100239F0100031E04007F00031EFCFF63FF0100BFFFC2FF23FF0100031E040066007F00FFFFE55740002036A000E62F20007F00E62F20007F00581A63A7010063AF050028A020AEA50047AF00004647000046A700004647000023A7010023AF0500481A7F00E6BF20007F00065700007F00065700007F00031EF0FF63170100632F050063F7090063FF0D0023F711002056C03F80FF04001FFE06006A0023170100232F050023F7090023FF0D00031E10007F0080076100BFFF6EFF0AE82036D4F8203ED0F80A42BFFF72FF1D30BFFF66FF2036FF00BFFF90FFBFFF04FC40067F0000424007D7F86007CEF84007DAF84007E8F84007DBF82036E6F8203ED0F8BF073AFF4037C2F84007C3F8201632004017DAF8808FDBF8918E7200408FDAF8807FDBF88F7EF200407FDAF8006FDAF8CD6620000C06E0FFA2FD201672004017DAF8201632004017DAF84007DAF87F0080076100BFFF64FBBFFFCEFE0AE82036D4F8203ED0F820468000BFFFD0FE201620004017DBF820368000BFFF8AFF4007DBF81D30BFFFB0FE0032BFFFDCFE40067F008007E13006E807E008D809D0BFFF16FF1D301C381B401A48BFFFCEFE0AE01D06DEFFB2056AEABA15E0E19A15008FE8F8D1868000100680FFA2FD006FE9F8CD661F00B20520E61A00BFFF08FFBFFF72FF1C504006FF30FFFF8007610040EE00003DEFF5B6E0E9CA05BFFF98FFD5053F0662B6FFFF7D0040067F00063809320042004ABF07D6FF0C32003A0042004ABF07CAFF8007E10006E807E020362200003A0042004ABFFFB4FFE051FA051D381C400A32004ABFFFA4FF4006FF00800721000E32003A0042004ABFFF90FF6152BA052056180040063F00074006380332014ABF0778FF074006380632014ABF076CFF084806400432BF0762FF074006380832014ABF0756FFFFFFFFFFFFFF805704002036FCB646360000A6517F002A06010201007F00400E00006107F5B67F00" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_04dcabc206204cc197bd95837720a99e">
+            <unittest:arguments>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Position">
+                <unittest:value xsi:type="FloatLiteral" value="1817" />
+              </unittest:argument>
+              <unittest:argument param="Size">
+                <unittest:value xsi:type="FloatLiteral" value="1000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6de01b056900440d9fad0c4456a46909">
+            <unittest:arguments>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Position">
+                <unittest:value xsi:type="FloatLiteral" value="1818" />
+              </unittest:argument>
+              <unittest:argument param="Size">
+                <unittest:value xsi:type="FloatLiteral" value="1000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_091c0884d31c4cc5a58bcd362100939b">
+            <unittest:arguments>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="Position">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+              <unittest:argument param="Size">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f9d563a2896d4e78947d49e2d90fda49">
+            <unittest:arguments>
+              <unittest:argument param="Block">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="NaN" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1" />
+                    <unittest:element xsi:type="FloatLiteral" value="2" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:value xsi:type="FloatLiteral" value="-0.9999999999" />
+              </unittest:argument>
+              <unittest:argument param="Position">
+                <unittest:value xsi:type="FloatLiteral" value="-0.9999999999" />
+              </unittest:argument>
+              <unittest:argument param="Size">
+                <unittest:value xsi:type="FloatLiteral" value="1.9999999999" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_faa22970dd324959b2a8735bf9e1cc24">
+            <unittest:arguments>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="FloatLiteral" value="-0.9999999999" />
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="NaN" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1" />
+                    <unittest:element xsi:type="FloatLiteral" value="2" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="Position">
+                <unittest:value xsi:type="FloatLiteral" value="-0.9999999999" />
+              </unittest:argument>
+              <unittest:argument param="Size">
+                <unittest:value xsi:type="FloatLiteral" value="1.9999999999" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_13e1facf40b74ff88e6ae8db4d81a87c">
+            <unittest:arguments>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="FloatLiteral" value="-0.9999999999" />
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:value xsi:type="FloatLiteral" value="-0.9999999999" />
+              </unittest:argument>
+              <unittest:argument param="Position">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="NaN" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1" />
+                    <unittest:element xsi:type="Add">
+                      <numeral xsi:type="IntegerLiteral" value="9223372036854775807" />
+                      <numeral xsi:type="FloatLiteral" value="1026" />
+                    </unittest:element>
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="Size">
+                <unittest:value xsi:type="FloatLiteral" value="1.9999999999" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_825f106347d642f5b9d02b0f3a301079">
+            <unittest:arguments>
+              <unittest:argument param="Block">
+                <unittest:value xsi:type="FloatLiteral" value="-0.9999999999" />
+              </unittest:argument>
+              <unittest:argument param="Segment">
+                <unittest:value xsi:type="FloatLiteral" value="-0.9999999999" />
+              </unittest:argument>
+              <unittest:argument param="Position">
+                <unittest:value xsi:type="FloatLiteral" value="-0.9999999999" />
+              </unittest:argument>
+              <unittest:argument param="Size">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="NaN" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.97626258336499E-323" />
+                    <unittest:element xsi:type="Add">
+                      <numeral xsi:type="IntegerLiteral" value="9223372036854775807" />
+                      <numeral xsi:type="FloatLiteral" value="1026" />
+                    </unittest:element>
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Block" id="InParameterDeclaration_083298aa74e04e8eab96550806720215">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="Segment" id="InParameterDeclaration_e7a87aa25fcb4683a8d528f9c5be2ce4">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="Position" id="InParameterDeclaration_8e646cb062614086b432592629e2061c">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="Size" id="InParameterDeclaration_2d0e629682cb44cf8819bf7348d039aa">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="OutByteField" id="OutParameterDeclaration_9603baa787f24174bef4c05119b0d17d">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="FlashSession1" id="VariableDeclaration_240f3ca4e6654620923720e0a0ab0222">
+            <realisation>
+              <dataType xsi:type="flash:FlashSession" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_9ad0e0cfb1f94a81a550d87d5d1b9609">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashSessionVariable" name="FlashSession1" />
+              <term xsi:type="flash:GetFlashSession">
+                <flash:sessionID xsi:type="StringLiteral" value="_7PP907357F_7520" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_d35126d615764a06bc3c9739e6746c19">
+            <realisation xsi:type="flash:GetDownloadData">
+              <flash:session xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+              <flash:block xsi:type="FloatValue" valueOf="Block" />
+              <flash:segment xsi:type="FloatValue" valueOf="Segment" />
+              <flash:position xsi:type="FloatValue" valueOf="Position" />
+              <flash:size xsi:type="FloatValue" valueOf="Size" />
+              <flash:data name="OutByteField" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ChangeOdxDb_LastDb" id="TestProcedure_c93b6bd7a0f74c529ba5d84d65567349">
+      <unittest:realisation>
+        <unittest:flow>
+          <branch id="Branch_4dfe8e27c3764d40a6d546ae6236f3c3">
+            <realisation>
+              <if>
+                <condition id="ConditionHeader_b5f80ef0554a4d50bd9d5bbcb4947e8e">
+                  <realisation xsi:type="IsEqual">
+                    <term xsi:type="StringValue" valueOf="CurrentProjectName" />
+                    <term xsi:type="StringLiteral" value="918" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_0ed6f086ac42420087e44f4e825797ea">
+                    <realisation xsi:type="diagConf:SelectProject">
+                      <diagConf:projectName xsi:type="StringValue" valueOf="CurrentProjectName" />
+                    </realisation>
+                  </action>
+                  <action id="Action_9a22392644c14316b31f93157a9a41ee">
+                    <realisation xsi:type="diagConf:SelectVehicleInformation">
+                      <diagConf:vehicleInformation xsi:type="StringValue" valueOf="CurrentVehicleName" />
+                    </realisation>
+                  </action>
+                </flow>
+              </if>
+            </realisation>
+          </branch>
+          <endNode id="ExtensibleEndNode_2b6831bed776404e99366ccc8b4bc70b">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

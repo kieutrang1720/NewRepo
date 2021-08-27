@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:event="http://iso.org/OTX/1.0.0/Event" xmlns:util="http://iso.org/OTX/1.0.0/Util" name="MonitorChangeEventSource" id="id_fe53315bc00642f4a90918a39e76760a" package="EventHandling.Terms" version="1.0.0.0" timestamp="2021-08-10T10:15:31.036+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42466</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="MonitorChangeEventSource_WithBoolean" id="id_e3c48f196d0e44ca8e22918ad7688310" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="EventSource1" id="VariableDeclaration_cce84384665749bbbbdb3f5f9e9a1010">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="Boolean1" id="VariableDeclaration_4fc494602052415dbc87a5ad230d2b9a">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_9f1cc2724d564355a1329ebd36eb4edd">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_379a0f82d412469da863b6e8e223f7d5">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="Boolean1" />
+              <term xsi:type="BooleanLiteral" value="true" />
+            </realisation>
+          </action>
+          <action id="Action_5ceb502b220f40b088a6566ee5397aa3">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:MonitorChangeEventSource">
+                <event:variable xsi:type="BooleanVariable" name="Boolean1" />
+              </term>
+            </realisation>
+          </action>
+          <parallel id="Parallel_63b9640dbdea46f791dac1228fd90840">
+            <realisation>
+              <lane>
+                <action id="Action_9143a952395e42179fd6fc48e07d6aa7">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_69dfac6c30cd4d0fb1badbdbc765f3cb">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="100" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_50e881580cb44474a2093a3e74e97b77">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="BooleanVariable" name="Boolean1" />
+                    <term xsi:type="BooleanLiteral" value="false" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_413c1dd2158349d9b8b8003d1fb7037c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="event:IsMonitorChangeEvent">
+                <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                <event:variable xsi:type="BooleanVariable" name="Boolean1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_1ffefe41f4bb4d4390833141c35309af">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToBoolean">
+                  <term xsi:type="event:GetNewValue">
+                    <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                  </term>
+                </term>
+                <term xsi:type="BooleanLiteral" value="false" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="MonitorChangeEventSource_WithFloat" id="TestProcedure_7972695cc8b54bb58672941dfbb70a8c" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="EventSource1" id="VariableDeclaration_07eb191e0f89466880a56b04b9f1fcce">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="Float1" id="VariableDeclaration_807614f48af94557804e54ffd00755f4">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_25b9e6bc89c14a2783abb1eb582635ff">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_94f377a20941458caa72137a86f341ed">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="Float1" />
+              <term xsi:type="FloatLiteral" value="-0.000998" />
+            </realisation>
+          </action>
+          <action id="Action_990b3e2c17f84b1485fe6ad59a460e53">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:MonitorChangeEventSource">
+                <event:variable xsi:type="FloatVariable" name="Float1" />
+              </term>
+            </realisation>
+          </action>
+          <parallel id="Parallel_73158df83b764878bee2155a515a7a7e">
+            <realisation>
+              <lane>
+                <action id="Action_21ab3d436f2241c8aeb563bfdbda53a9">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_e44f2af62c0e41d4a18d594ad6674b25">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="100" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_8cbbc906ee7b4d698a70af4a05a3b6d6">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="FloatVariable" name="Float1" />
+                    <term xsi:type="FloatLiteral" value="0.9090909" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_a5649dbde3f641d4a01390f4202cc672">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="event:IsMonitorChangeEvent">
+                <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                <event:variable xsi:type="FloatVariable" name="Float1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_65a70bb53cbd4f46a73b3caf1fde4895">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToFloat">
+                  <term xsi:type="event:GetNewValue">
+                    <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                  </term>
+                </term>
+                <term xsi:type="FloatLiteral" value="0.9090909" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="MonitorChangeEventSource_WithByteField" id="TestProcedure_b4358baeb7154983a28c4ce17851cd0f" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="EventSource1" id="VariableDeclaration_dbc63cf40eeb46e69890942d5b844d10">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="ByteField1" id="VariableDeclaration_79d497d246cc4b84a480dda1eaad6a84">
+            <realisation>
+              <dataType xsi:type="ByteField">
+                <init value="1234" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_9b9f9dcf427d4f1983fc0481800cd268">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_672a00be1151485b8b5cb28c58d5c0e5">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:MonitorChangeEventSource">
+                <event:variable xsi:type="ByteFieldVariable" name="ByteField1" />
+              </term>
+            </realisation>
+          </action>
+          <parallel id="Parallel_f0f3190d1aaf4e5cad3f10537bfeea71">
+            <realisation>
+              <lane>
+                <action id="Action_c2f890578a7c4c7a890f902d258e3e27">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_d20067ac60214852b0c79a5058a029c6">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="100" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_1d571628fefb4682844431e1a8ce5ae2">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="ByteFieldVariable" name="ByteField1" />
+                    <term xsi:type="ByteFieldLiteral" value="789A" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_c5fcc9b6bf66479d873c2b0abaf4dd72">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="event:IsMonitorChangeEvent">
+                <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                <event:variable xsi:type="ByteFieldVariable" name="ByteField1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_f4454ddd91cf4de69d5308bb9f679ac7">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="util:Compare">
+                <util:term xsi:type="ToByteField">
+                  <term xsi:type="event:GetNewValue">
+                    <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                  </term>
+                </util:term>
+                <util:term xsi:type="ByteFieldLiteral" value="789A" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="MonitorChangeEventSource_WithString" id="TestProcedure_dee0fb46152c49208f19792da4085d66" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="EventSource1" id="VariableDeclaration_f8f9b36c0f4a4357957e87cb74b534d5">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="String1" id="VariableDeclaration_76c84e272c434c66b835a97b60ff2377">
+            <realisation>
+              <dataType xsi:type="String">
+                <init value="New" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_da69d493f0764679b5018929e386407e">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_25982c8a0d404bd98c5745b21fc12904">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:MonitorChangeEventSource">
+                <event:variable xsi:type="StringVariable" name="String1" />
+              </term>
+            </realisation>
+          </action>
+          <parallel id="Parallel_10b4a9c411db48e59f99c150712637cf">
+            <realisation>
+              <lane>
+                <action id="Action_1fe70cbc1ea24b8585d6c3a564da6140">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_acce2d5c184646f7946bcff986c5fbef">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="100" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_991fa6948a0d4a8daffb55b0d9187dda">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="StringVariable" name="String1" />
+                    <term xsi:type="StringLiteral" value="Changed" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_5e5de39fa4474e23848063231016c2b7">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="event:IsMonitorChangeEvent">
+                <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                <event:variable xsi:type="StringVariable" name="String1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_febade9829ff45b286001bcd3e2fd6ab">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="event:GetNewValue">
+                    <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                  </term>
+                </term>
+                <term xsi:type="StringLiteral" value="Changed" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="MonitorChangeEventSource_TimerExpiredEvent" id="TestProcedure_54408921d4414a11a59d3adee82c78e3" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Event1" id="VariableDeclaration_83fce951d100472181a8cf21c653562e">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+          <variable name="ByteField1" id="VariableDeclaration_ab146e879966458e95e5c58bf27d4b4b">
+            <realisation>
+              <dataType xsi:type="ByteField">
+                <init value="0123" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List1" id="VariableDeclaration_cd3e8aaf902d408a920254cf74b3f574">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="Integer" />
+                <init>
+                  <itemType xsi:type="Integer" />
+                  <items>
+                    <item xsi:type="IntegerLiteral" value="0" />
+                    <item xsi:type="IntegerLiteral" value="1" />
+                    <item xsi:type="IntegerLiteral" value="2" />
+                    <item xsi:type="IntegerLiteral" value="3" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_0a9b54df6e314ab48bbe335040b9e57b">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Integer" />
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Integer" />
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="0" />
+                      <value xsi:type="IntegerLiteral" value="1" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="2" />
+                      <value xsi:type="IntegerLiteral" value="3" />
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="EventSource1" id="VariableDeclaration_eb4f4b6ae0a34b1b93cdb8d8b0f22abb">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="EventSource2" id="VariableDeclaration_685e561aa8dc461ea7d301973a8ca17f">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="EventSource3" id="VariableDeclaration_62047b303fdc4bb7b99abc2640a5e602">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_da722e77a201495bb9a87786860114ea">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:MonitorChangeEventSource">
+                <event:variable xsi:type="ByteFieldVariable" name="ByteField1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_8dae127b85304102912bced4d619d363">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource2" />
+              <term xsi:type="event:MonitorChangeEventSource">
+                <event:variable xsi:type="ListVariable" name="List1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_9c8dad25da874ef0a9251a507faee1c1">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource3" />
+              <term xsi:type="event:MonitorChangeEventSource">
+                <event:variable xsi:type="MapVariable" name="Map1" />
+              </term>
+            </realisation>
+          </action>
+          <parallel id="Parallel_6645f2a1954d43c5a8133f2ca17036fa">
+            <realisation>
+              <lane>
+                <action id="Action_815ded422f2448d4a030c580f29f0f66">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource2" />
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource3" />
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="3000" />
+                    </event:source>
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_5046d0414cee44cdb3792b92bb6527f4">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="3000" />
+                    </event:source>
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_7e5bb458fd68445881e96fd221ab04f2">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="3000" />
+                    </event:source>
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_3df40d405b4a4f0981a51bb4b536dc2c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="event:EventValue" valueOf="Event1" />
+                </term>
+                <term xsi:type="StringLiteral" value="TimerExpiredEvent" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

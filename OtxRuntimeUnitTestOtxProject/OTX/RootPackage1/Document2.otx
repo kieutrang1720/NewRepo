@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Document2" id="id_e0258c364e5448fab5e32b505a5d2f5c" package="RootPackage1" version="1.0.0.0" timestamp="2021-07-16T15:27:30.554+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42301</data>
+  </metaData>
+  <imports>
+    <import package="RootPackage1" document="Document1" prefix="Import1" />
+  </imports>
+  <declarations>
+    <context name="ContextVariable1_False" id="ContextVariableDeclaration_80dd265c73b647a9b04705a06907e59a">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="false" />
+        </dataType>
+      </realisation>
+    </context>
+  </declarations>
+  <validities>
+    <validity name="Validity1_False" id="Validity_eaf939b75e034f488d36f62b3dd29865">
+      <realisation xsi:type="BooleanLiteral" value="false" />
+    </validity>
+  </validities>
+  <procedures>
+    <procedure name="ProcTestAmbiguousCall_A1" id="Procedure_456db2f5133d4d10a75765feb0b166c6" visibility="PUBLIC" implements="Import1:ProcSigTestAmbiguousCall1" validFor="Validity1_False">
+      <realisation>
+        <parameters>
+          <inParam name="InParameter1" id="InParameterDeclaration_f2401e79e5854b61b85c11d0fa259e35">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </inParam>
+          <outParam name="OutParameter1" id="OutParameterDeclaration_32347d71d2c44cf2a60844dd375515e1">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </outParam>
+          <outParam name="OutParameter2" id="OutParameterDeclaration_dd979759a08f4e639204869ab8aedef1">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </outParam>
+        </parameters>
+        <flow>
+          <action name="Assignment1" id="Assignment_74d8235be2994387964234af43e91ce1">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="OutParameter1" />
+              <term xsi:type="IntegerValue" valueOf="InParameter1" />
+            </realisation>
+          </action>
+          <action id="Action_f43fae893f5149fb9be59ae0c2b62cfe">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="OutParameter2" />
+              <term xsi:type="StringLiteral" value="ProcTestAmbiguousCall_A1" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcTestAmbiguousCall_A2" id="Procedure_a931e8e4a70741e29229ec4ddd32d59c" visibility="PUBLIC" implements="Import1:ProcSigTestAmbiguousCall1">
+      <realisation>
+        <parameters>
+          <inParam name="InParameter1" id="InParameterDeclaration_a99b0921e97841479a8920712ab249a8">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </inParam>
+          <outParam name="OutParameter1" id="OutParameterDeclaration_2d9e9e037c90485888cf72a0f2eb2000">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </outParam>
+          <outParam name="OutParameter2" id="OutParameterDeclaration_eae5c136d4124b138f7260809a81afed">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </outParam>
+        </parameters>
+        <flow>
+          <action name="Assignment1" id="Action_6d7b49a57d504337a0c64f401e94e77a">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="OutParameter1" />
+              <term xsi:type="IntegerValue" valueOf="InParameter1" />
+            </realisation>
+          </action>
+          <action id="Action_e69e87c54ed04340b2fceaf3c105b7ef">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="OutParameter2" />
+              <term xsi:type="StringLiteral" value="ProcTestAmbiguousCall_A2" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcTestAmbiguousCall_A3" id="Procedure_88fed39cd7214ccaaa9b4d9882a412bd" visibility="PUBLIC" implements="Import1:ProcSigTestAmbiguousCall2">
+      <realisation>
+        <parameters>
+          <inParam name="InParameter1" id="InParameterDeclaration_342f5ccfe8a340b2a34a4e55fc1c6935">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </inParam>
+          <outParam name="OutParameter1" id="OutParameterDeclaration_52c5bdcb9a4b491bb5f18dcf396d70ac">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </outParam>
+          <outParam name="OutParameter2" id="OutParameterDeclaration_13b54d15aca442fd83ef5338c6b01d37">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </outParam>
+        </parameters>
+        <flow>
+          <action name="Assignment1" id="Action_3fa42fcb387048c2b9ce956e586240f8">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="OutParameter1" />
+              <term xsi:type="IntegerValue" valueOf="InParameter1" />
+            </realisation>
+          </action>
+          <action id="Action_01c38afe31f8463c83622ec5124eba78">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="OutParameter2" />
+              <term xsi:type="StringLiteral" value="ProcTestAmbiguousCall_A3" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="ProcTestAmbiguousCall_A4" id="Procedure_b10c7dd470464302969cf93b490ba646" visibility="PUBLIC" implements="Import1:ProcSigTestAmbiguousCall3" validFor="ContextVariable1_False">
+      <realisation>
+        <parameters>
+          <inParam name="InParameter1" id="InParameterDeclaration_580e95cff294433b9c852348b5c88e90">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </inParam>
+          <outParam name="OutParameter1" id="OutParameterDeclaration_039880c6cc55479ab0fd11ea07d76d7a">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </outParam>
+          <outParam name="OutParameter2" id="OutParameterDeclaration_3a86090e70c349d58a4652b83d0101f9">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </outParam>
+        </parameters>
+        <flow>
+          <action name="Assignment1" id="Action_3d968f5831704ffda6592850ced4dac5">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="OutParameter1" />
+              <term xsi:type="IntegerValue" valueOf="InParameter1" />
+            </realisation>
+          </action>
+          <action id="Action_b1b788bd39a84c44b2a88455d5a7eda9">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="OutParameter2" />
+              <term xsi:type="StringLiteral" value="ProcTestAmbiguousCall_A3" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+  </procedures>
+</otx>

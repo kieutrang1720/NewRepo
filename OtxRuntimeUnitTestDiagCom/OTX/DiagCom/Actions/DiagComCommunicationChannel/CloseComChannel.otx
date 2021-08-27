@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:diag="http://iso.org/OTX/1.0.0/DiagCom" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="CloseComChannel" id="id_938888f5dd2a46d5b533ed3d1a000bf2" package="DiagCom.Actions.DiagComCommunicationChannel" version="1.0.0.0" timestamp="2021-08-16T15:54:42.931+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42531</data>
+  </metaData>
+  <imports>
+    <import package="DiagCom" document="GlobalVariable" prefix="Import_Global" />
+  </imports>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="CloseComChannel_InvalidReferenceException" id="TestProcedure_8456c8b175ea453a84fa293719629901">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_7dfe9d46433b47cfbe20eabb6fd31f99">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_e1bfa80b22a245ea80bdef70c8e06ec0">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringValue" valueOf="Import_Global:Identifier" />
+                <diag:ecuVariantName xsi:type="StringValue" valueOf="Import_Global:EcuVariantName" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_4162b8eb891345d08b779d6465f18409">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+          <handler id="Handler_34a539c0c0af4bab8a025ac1953aeb2a">
+            <realisation>
+              <try>
+                <action id="Action_b514676cd9d94edfba5bf7e66c841e56">
+                  <realisation xsi:type="diag:IdentifyAndSelectVariant">
+                    <diag:comChannel valueOf="ComChannel1" />
+                  </realisation>
+                </action>
+                <endNode id="ExtensibleEndNode_e0c08f084d084d3297a773768f89d170">
+                  <realisation xsi:type="unittest:Fail" />
+                </endNode>
+              </try>
+              <catch>
+                <exception id="CatchHeader_c368d42378a14c3e87f4d64fb4bc0ec2">
+                  <realisation>
+                    <type xsi:type="InvalidReferenceException" />
+                  </realisation>
+                </exception>
+                <flow>
+                  <endNode id="ExtensibleEndNode_ce15e6425e0b488ebd67931e103af265">
+                    <realisation xsi:type="unittest:Pass" />
+                  </endNode>
+                </flow>
+              </catch>
+            </realisation>
+          </handler>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="CloseComChannel_WhenDeclared" id="TestProcedure_8d1a6fdeb2ce43c88403b2ddc5b6f567">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_897b076683e64c82a9e57c46fa585ebb">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_0d0c22ce65d84dd6bdf373eaa260d0e0">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+          <endNode id="ExtensibleEndNode_812499026f5c4d929aab00a3c18d1a5a">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

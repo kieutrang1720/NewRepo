@@ -1,0 +1,1197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:string="http://iso.org/OTX/1.0.0/StringUtil" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="EncodingValue" id="id_aca0ea7649c848d5898d8d12f18c985c" package="StringUtil.Terms" version="1.0.0.0" timestamp="2021-08-06T08:36:31.636+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42466</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="EncodingValue_Base" id="TestProcedure_77f9044825344a4799bd986034a378ff" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_56f0c88532d94e2994c34442c326de10">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="string:EncodingLiteral" value="BIN" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e5bd493cc1514696bd3df18b7e9e6743">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="string:EncodingLiteral" value="HEX" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_db352046e484465c8274c02758bfb1ac">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="string:EncodingLiteral" value="ISO-8859-1" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_37e4cca4d9c2426fbdba5d78d28c1fdc">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="string:EncodingLiteral" value="OCT" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5221ca09b32d47e2b1056d8e3e76ca50">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="string:EncodingLiteral" value="US-ASCII" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_058c8a8008e54f2e94ce08ae512773fa">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-16" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1d319c36be0247a191aaefb8329a52b0">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-16BE" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_60868456bd744bbca37cc6617d0420d7">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-16LE" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_94fe7730aa054c6ea44041de693cd797">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="string:EncodingLiteral" value="UTF-8" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="input" id="InParameterDeclaration_428fa7b1a2a54132a151b5cae05bf256">
+            <realisation>
+              <dataType xsi:type="string:Encoding" />
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="Encoding1" id="VariableDeclaration_c795e2ca18214c4bbbdc91ee9f93900d">
+            <realisation>
+              <dataType xsi:type="string:Encoding">
+                <string:init value="ISO-8859-1" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_5b7355d41cd94f0cbfdb2ea38ff4f24b">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="string:EncodingValue" valueOf="Encoding1" />
+                <term xsi:type="string:EncodingLiteral" value="ISO-8859-1" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodingValue_1Step" id="TestProcedure_1b38ff11a735471fbdecf7c74559ffc5" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_0d16bb47c20a4fcdb141f12163177b0a">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="string:Encoding" />
+                <init>
+                  <itemType xsi:type="string:Encoding" />
+                  <items>
+                    <item xsi:type="string:EncodingLiteral" value="BIN" />
+                    <item xsi:type="string:EncodingLiteral" value="HEX" />
+                    <item xsi:type="string:EncodingLiteral" value="ISO-8859-1" />
+                    <item xsi:type="string:EncodingLiteral" value="OCT" />
+                    <item xsi:type="string:EncodingLiteral" value="US-ASCII" />
+                    <item xsi:type="string:EncodingLiteral" value="UTF-16" />
+                    <item xsi:type="string:EncodingLiteral" value="UTF-16BE" />
+                    <item xsi:type="string:EncodingLiteral" value="UTF-16LE" />
+                    <item xsi:type="string:EncodingLiteral" value="UTF-8" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map0" id="VariableDeclaration_f27be0a098464abb9197c2ba74c95a96">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="string:Encoding" />
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="string:Encoding" />
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="11" />
+                      <value xsi:type="string:EncodingLiteral" value="BIN" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="22" />
+                      <value xsi:type="string:EncodingLiteral" value="HEX" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="33" />
+                      <value xsi:type="string:EncodingLiteral" value="ISO-8859-1" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="44" />
+                      <value xsi:type="string:EncodingLiteral" value="OCT" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="55" />
+                      <value xsi:type="string:EncodingLiteral" value="US-ASCII" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="66" />
+                      <value xsi:type="string:EncodingLiteral" value="UTF-16" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="77" />
+                      <value xsi:type="string:EncodingLiteral" value="UTF-16BE" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="88" />
+                      <value xsi:type="string:EncodingLiteral" value="UTF-16LE" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="99" />
+                      <value xsi:type="string:EncodingLiteral" value="UTF-8" />
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_0e36f0e98d224fd780d9d2dbf1c1da10">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="string:Encoding" />
+                <init>
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="string:Encoding" />
+                  <items>
+                    <item>
+                      <key xsi:type="StringLiteral" value="a" />
+                      <value xsi:type="string:EncodingLiteral" value="BIN" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="s" />
+                      <value xsi:type="string:EncodingLiteral" value="HEX" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="d" />
+                      <value xsi:type="string:EncodingLiteral" value="ISO-8859-1" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="f" />
+                      <value xsi:type="string:EncodingLiteral" value="OCT" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="g" />
+                      <value xsi:type="string:EncodingLiteral" value="US-ASCII" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="h" />
+                      <value xsi:type="string:EncodingLiteral" value="UTF-16" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="j" />
+                      <value xsi:type="string:EncodingLiteral" value="UTF-16BE" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="k" />
+                      <value xsi:type="string:EncodingLiteral" value="UTF-16LE" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="l" />
+                      <value xsi:type="string:EncodingLiteral" value="UTF-8" />
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Encoding1" id="VariableDeclaration_5d44bd32e3ab4330bcfd420c47c495b9">
+            <realisation>
+              <dataType xsi:type="string:Encoding" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_39615dd181bb4665a9167740a14a20bd">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="string:EncodingValue" valueOf="List1">
+                  <string:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="3" />
+                  </string:path>
+                </term>
+                <term xsi:type="string:EncodingLiteral" value="OCT" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_3c3e6c5c532a43fa8f594a59ec57bdd3">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="string:EncodingValue" valueOf="Map0">
+                  <string:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="55" />
+                  </string:path>
+                </term>
+                <term xsi:type="string:EncodingLiteral" value="US-ASCII" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_02d7eb6073d14b4a8f3c4b6900c8619c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="string:EncodingValue" valueOf="Map1">
+                  <string:path>
+                    <stepByName xsi:type="StringLiteral" value="g" />
+                  </string:path>
+                </term>
+                <term xsi:type="string:EncodingLiteral" value="US-ASCII" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_845787c2980540b9ae07a2abeb7ce2db">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_f71544df8a48462787956d763a3d679a">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="List1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_82264d7c2be04c10900093324e4d9c39">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_eba4d76ba3d0442fa2825e762d1fb529">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map0">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="10" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_bea7af2db9214e88a72abff268919329">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_c297c7fdc49040919baeb4dec69edae2">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map1">
+                      <string:path>
+                        <stepByName xsi:type="StringLiteral" value="w" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodingValue_2Steps" id="TestProcedure_ac5b056847bb407d88238b5e6ebe5333" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_6f06ec854a5c46e78d52834a628651cc">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="string:Encoding" />
+                </itemType>
+                <init>
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="string:Encoding" />
+                  </itemType>
+                  <items>
+                    <item xsi:type="ListLiteral">
+                      <itemType xsi:type="string:Encoding" />
+                      <items>
+                        <item xsi:type="string:EncodingLiteral" value="BIN" />
+                      </items>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_b814e63cc6da41d3b4e7d353238fd216">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="string:Encoding" />
+                </valueType>
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="string:Encoding" />
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="1" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="Integer" />
+                        <valueType xsi:type="string:Encoding" />
+                        <items>
+                          <item>
+                            <key xsi:type="IntegerLiteral" value="5" />
+                            <value xsi:type="string:EncodingLiteral" value="BIN" />
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_ce73966ec83d4332a414eea1157d39cd">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="string:Encoding" />
+                </valueType>
+                <init>
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="string:Encoding" />
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="StringLiteral" value="3" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="String" />
+                        <valueType xsi:type="string:Encoding" />
+                        <items>
+                          <item>
+                            <key xsi:type="StringLiteral" value="9" />
+                            <value xsi:type="string:EncodingLiteral" value="BIN" />
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Encoding1" id="VariableDeclaration_e09f3c8b5fae4ce3babef6fae39450b2">
+            <realisation>
+              <dataType xsi:type="string:Encoding" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_22181d748567495e8610f50b8e37a7a5">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="string:EncodingValue" valueOf="List1">
+                  <string:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </string:path>
+                </term>
+                <term xsi:type="string:EncodingLiteral" value="BIN" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_e8448b2b837f40f885899511733080a5">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="string:EncodingValue" valueOf="Map1">
+                  <string:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                  </string:path>
+                </term>
+                <term xsi:type="string:EncodingLiteral" value="BIN" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_f19db04a77594019b4eae7000435ebe4">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="string:EncodingValue" valueOf="Map2">
+                  <string:path>
+                    <stepByName xsi:type="StringLiteral" value="3" />
+                    <stepByName xsi:type="StringLiteral" value="9" />
+                  </string:path>
+                </term>
+                <term xsi:type="string:EncodingLiteral" value="BIN" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_5cecb4c9c7da4829953d80c46b019009">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_8892c416a3d74fe1b01a59b9334c24c5">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="List1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_d20836bf4bb149178fd6d63e3b188c6f">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_8b03849ed5c04507b72c338b1ffca5b3">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="List1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_31c9f2da1335442e9b19e3e4a45b63ec">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_e61579d6257b4fb99bcbbf49adbf18c5">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="List1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_9229fba988ed48bbbcf77a46e17d3acf">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_75ce1bbc95854de3b23f57f9061363f1">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_fb090459e1474f01b31a20495d0a76bc">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_7b11eabad02248bf9567bec64555604b">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_d2c97e91db574a73940abb8d314d4fc8">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_0d68bc0fb0ca45ef883dcad18f0d73c0">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_c44c2df65d1a4a129ceff346e5e07a74">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_45187f3d81d2405d94a6ac2ece49b08c">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map2">
+                      <string:path>
+                        <stepByName xsi:type="StringLiteral" value="3" />
+                        <stepByName xsi:type="StringLiteral" value="8" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_6917ddf5c15e473fbdb6f66491e41cee">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_82a6ccc3116e46db8c246bac785667ec">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map2">
+                      <string:path>
+                        <stepByName xsi:type="StringLiteral" value="4" />
+                        <stepByName xsi:type="StringLiteral" value="9" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_d54724481dce427dab92b5bec6805ac0">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_14da8eb32b7c41fb882d653976f5c191">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map2">
+                      <string:path>
+                        <stepByName xsi:type="StringLiteral" value="4" />
+                        <stepByName xsi:type="StringLiteral" value="8" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodingValue_3Steps" id="TestProcedure_dcb02339ccee46f79bf630494aa88657" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_51b4c2a7dd9e4278b38772ef41c9ca95">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="string:Encoding" />
+                  </itemType>
+                </itemType>
+                <init>
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="List">
+                      <itemType xsi:type="string:Encoding" />
+                    </itemType>
+                  </itemType>
+                  <items>
+                    <item xsi:type="ListLiteral">
+                      <itemType xsi:type="List">
+                        <itemType xsi:type="string:Encoding" />
+                      </itemType>
+                      <items>
+                        <item xsi:type="ListLiteral">
+                          <itemType xsi:type="string:Encoding" />
+                          <items>
+                            <item xsi:type="string:EncodingLiteral" value="BIN" />
+                          </items>
+                        </item>
+                      </items>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_24ea62138254422fa5619e3e8489bd14">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="string:Encoding" />
+                  </valueType>
+                </valueType>
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="Map">
+                      <keyType xsi:type="Integer" />
+                      <valueType xsi:type="string:Encoding" />
+                    </valueType>
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="1" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="Integer" />
+                        <valueType xsi:type="Map">
+                          <keyType xsi:type="Integer" />
+                          <valueType xsi:type="string:Encoding" />
+                        </valueType>
+                        <items>
+                          <item>
+                            <key xsi:type="IntegerLiteral" value="5" />
+                            <value xsi:type="MapLiteral">
+                              <keyType xsi:type="Integer" />
+                              <valueType xsi:type="string:Encoding" />
+                              <items>
+                                <item>
+                                  <key xsi:type="IntegerLiteral" value="9" />
+                                  <value xsi:type="string:EncodingLiteral" value="BIN" />
+                                </item>
+                              </items>
+                            </value>
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_97cbe7a9640c4df3b9090b9cb4dbb771">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="string:Encoding" />
+                  </valueType>
+                </valueType>
+                <init>
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="Map">
+                      <keyType xsi:type="String" />
+                      <valueType xsi:type="string:Encoding" />
+                    </valueType>
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="StringLiteral" value="3" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="String" />
+                        <valueType xsi:type="Map">
+                          <keyType xsi:type="String" />
+                          <valueType xsi:type="string:Encoding" />
+                        </valueType>
+                        <items>
+                          <item>
+                            <key xsi:type="StringLiteral" value="6" />
+                            <value xsi:type="MapLiteral">
+                              <keyType xsi:type="String" />
+                              <valueType xsi:type="string:Encoding" />
+                              <items>
+                                <item>
+                                  <key xsi:type="StringLiteral" value="9" />
+                                  <value xsi:type="string:EncodingLiteral" value="BIN" />
+                                </item>
+                              </items>
+                            </value>
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Encoding1" id="VariableDeclaration_b1f914ee21e2496591ade7be956e1f51">
+            <realisation>
+              <dataType xsi:type="string:Encoding" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_363a39b3e2234ecbb4658c8e886b5f9a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="string:EncodingValue" valueOf="List1">
+                  <string:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </string:path>
+                </term>
+                <term xsi:type="string:EncodingLiteral" value="BIN" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_584736946bbb4ec4b5aa0395b110b9f7">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="string:EncodingValue" valueOf="Map1">
+                  <string:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                  </string:path>
+                </term>
+                <term xsi:type="string:EncodingLiteral" value="BIN" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_366f864a438f46ce9a95453abd7a66a6">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="string:EncodingValue" valueOf="Map2">
+                  <string:path>
+                    <stepByName xsi:type="StringLiteral" value="3" />
+                    <stepByName xsi:type="StringLiteral" value="6" />
+                    <stepByName xsi:type="StringLiteral" value="9" />
+                  </string:path>
+                </term>
+                <term xsi:type="string:EncodingLiteral" value="BIN" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_16230a41738a4a04af61dd48e6ad789b">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_0215f346882c4d869ee99170f8ec2798">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="List1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_ff740e65e5bd4e6c83aa0ea49689c6a6">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_072524e85fc145a1a375388cb52978db">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="List1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_a457303a6a404a2ab90ace3870e9398d">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_f03456009dd0450ab9e93c10266134c2">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="List1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_6fa5b4fd11d8446a90b3423980e29832">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_f1cdbd61da244d18829e9617698a9e42">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="List1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_912b889359864197a8e1935e14beece8">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_ea0eb48eb5144916acedfc49ab630807">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="List1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_a25e418da7d3439289c11cf3bced6f2a">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_f87478b351ba41c899eaa32baabcb85f">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="List1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_30f816605bee46889f3f322cf7541f43">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_ed870745478b4001a6e03e33bafc1e1d">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="List1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_76b3912219a54fb1bdbd9029a9f4570c">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_675e067e86a34ca784f974b39b79f978">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_0185e044b7ad4af7bbe9352d45eb3ec3">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_73980917b78043b19d90981000e42b1e">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_a7096a51c15143abb673f7f261fc2666">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_5df285a7dd75463cbfe24ae71188e6a8">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_ba284ae0036c47f8bdd2e9b5a053afb8">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_c54eb86c96ca47d3a7cfba3d8478fbdb">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_3956639a3bf9485b8e7d1fc425998029">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_6f7c624fc4734951ba9e7d0ff642dce3">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_d402b28eab5a4f159522bb46203f2dab">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_65037fcf4dd04d028235900f482f63d1">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_9e799d7a9c474d60bd0d14b21685833c">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_3678ad4a97714f758b06ca4a7baa569e">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map1">
+                      <string:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_bdc86b9daf004de58a58cb50427079e9">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_f10e7a70054b470195c3bc7a25b37eb8">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map2">
+                      <string:path>
+                        <stepByName xsi:type="StringLiteral" value="3" />
+                        <stepByName xsi:type="StringLiteral" value="6" />
+                        <stepByName xsi:type="StringLiteral" value="0" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_a5bab334cdc742fc99238121762072b0">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_560870ca8db14e2c9c7f8583fe650ad8">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map2">
+                      <string:path>
+                        <stepByName xsi:type="StringLiteral" value="3" />
+                        <stepByName xsi:type="StringLiteral" value="5" />
+                        <stepByName xsi:type="StringLiteral" value="9" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_86f3f50d3712491d8125674bb62bfd06">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_1c66545ce7474f4ebbbe3ed231bde4b6">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map2">
+                      <string:path>
+                        <stepByName xsi:type="StringLiteral" value="3" />
+                        <stepByName xsi:type="StringLiteral" value="5" />
+                        <stepByName xsi:type="StringLiteral" value="8" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_4babf400b9304f4f941672f5ef155b79">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_fb8a8b277ff84e56b8e3d4f6cbb1e776">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map2">
+                      <string:path>
+                        <stepByName xsi:type="StringLiteral" value="2" />
+                        <stepByName xsi:type="StringLiteral" value="6" />
+                        <stepByName xsi:type="StringLiteral" value="9" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_f909fdd6f2b248a9a87504dccd907523">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_6d8a3d6ca5ff45688de0efea386d43cd">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map2">
+                      <string:path>
+                        <stepByName xsi:type="StringLiteral" value="2" />
+                        <stepByName xsi:type="StringLiteral" value="6" />
+                        <stepByName xsi:type="StringLiteral" value="8" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_13637288ea35453f85f2eb43c9dae5e9">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_68eff96498494e61ad0a302a5a4ef718">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="string:EncodingVariable" name="Encoding1" />
+                    <term xsi:type="string:EncodingValue" valueOf="Map2">
+                      <string:path>
+                        <stepByName xsi:type="StringLiteral" value="2" />
+                        <stepByName xsi:type="StringLiteral" value="5" />
+                        <stepByName xsi:type="StringLiteral" value="9" />
+                      </string:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

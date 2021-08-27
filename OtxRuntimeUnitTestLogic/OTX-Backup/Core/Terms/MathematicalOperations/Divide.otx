@@ -1,0 +1,1437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Divide" id="id_e60b620a7ffc4993922385bbd47b6fb0" package="Core.Terms.MathematicalOperations" version="1.0.0.0" timestamp="2021-03-12T00:21:27.121+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42141</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="Divide_IntegerInteger" id="TestProcedure_f29871f33aa74fe99f475d60ac05f724" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_0c0dc38ff69c46a2ae2a569bd7ac8092">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="IntegerLiteral" value="10" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="2" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="IntegerLiteral" value="5" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2ce58efa683a45a2a23f7224638eb245">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="IntegerLiteral" value="-10" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="2" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="IntegerLiteral" value="-5" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bdc8f06f88484b5a9da5e21f00cfabf8">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="IntegerLiteral" value="10" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="3" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="IntegerLiteral" value="3" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_98564b472dca400298d21dae9e5072ff">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775806" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="2" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="IntegerLiteral" value="4611686018427387903" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ff4d8ec3a6084d4d9bfe90c836fbdd89">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ec0e1f390f44441bb5ae3f201a0cab69">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="-1000" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_35de6e4acab849ff9f3e5b67bec8fdd8">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="10" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="ArithmeticException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="dividend" id="InParameterDeclaration_cc37fa3b62294012929a034a03267030">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="divisor" id="InParameterDeclaration_a011e47163ed44e5adaf78df44842a00">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="quotient" id="OutParameterDeclaration_d4daa7350d4b4ca79c3434fb3d6f0ee6">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_13e33da0c75f4e95b14e61d92159c99b">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="quotient" />
+              <term xsi:type="Divide">
+                <numeral xsi:type="IntegerValue" valueOf="dividend" />
+                <divisor xsi:type="IntegerValue" valueOf="divisor" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Divide_FloatFloat" id="TestProcedure_756f175fe2cd453da172519051ca22ed" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_b6464fb7944d46faaaab7d4309f41a8c">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="IntegerLiteral" value="10" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="2" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="IntegerLiteral" value="5" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_13da8b3aeef44e639c625e86ef7ccd47">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="IntegerLiteral" value="-10" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="2" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="IntegerLiteral" value="-5" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_41ef37d0424d42a392dcc323e033f58c">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="IntegerLiteral" value="10" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="3" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="3.33" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="0.01" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_def502efb36e4c44a14a196c680c982f">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="1.23456789" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="1.23456789" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_73b4cc39654143348818b9c73d175dac">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="1.23E-19" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="3" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="4.1E-20" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-22" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f6f25925efae41eea5570a2ee9c37c5e">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="1.23E+19" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="1.234E+20" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="0.0996758508914101" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-09" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3a5bb6b57d854620b45989f57eddf14e">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_11d03a07644e4cbbb3c6cf216dd58a00">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="10" />
+                    <unittest:element xsi:type="FloatLiteral" value="NaN" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_90cfbb39240046de90138f2f150f9f21">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="10" />
+                    <unittest:element xsi:type="FloatLiteral" value="NaN" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_47e6c35ba720490095f64a9185734b1d">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_24d74e26551647acb6e0c6d00fe7ed3c">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="1" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_acce92ec2ecf49b8992a836f5aea89a7">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c57c2af419b44dc28054b71111cbb8bf">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ef48f6c99a0a43deb8eeecd367840116">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="1" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9bdfb22927234e748e84139f7a738f35">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="1" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b030328378af4ca0a9a766079ea130f9">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_37eba984ad4444d8a304cf6ba1b01a32">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="1" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_acc706560cbe4bb0af0871c830da9308">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3e739022bd064abf95b264c5d63c705e">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2e0e49378c2f4b0ca44d190f3a29efd2">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="dividend" id="InParameterDeclaration_7e39c392e26947d296610c16daf6a978">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="divisor" id="InParameterDeclaration_d44143c9f07343e395504390293693bf">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="quotient" id="OutParameterDeclaration_0688a792786f42b0bc9e1df8ee25de7c">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_3088b502efc44bba9ee37136e77cdcb9">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="quotient" />
+              <term xsi:type="Divide">
+                <numeral xsi:type="FloatValue" valueOf="dividend" />
+                <divisor xsi:type="FloatValue" valueOf="divisor" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Divide_IntegerFloat" id="TestProcedure_aa0731520e83416a812a858ef5c2e83e" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_1c4fee36b4db49d4973f808c11a1dbba">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="IntegerLiteral" value="10" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="2" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="IntegerLiteral" value="5" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_23f63bdbf29948528b0920a292b4b97f">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="IntegerLiteral" value="-10" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="2" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="IntegerLiteral" value="-5" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d82b2204ad394b35a3a25f580fd19b33">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="IntegerLiteral" value="10" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="3" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="3.33" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="0.01" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_af39ba1e3e7d480ebeae0d2018bbc36a">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_79d3dbb000314571bae5edc8e8eb4a0c">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="100" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f80c562a41984a4099f76993bb1d4eab">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-100" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f96885fba8cd47a982712e42b2722962">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="100" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1baac67e654f4cb8b6830270d368f828">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="100" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1a6a1cb879fd486196bffbccc4861f7f">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="100" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_60e81558ab4449c083354205dcb24230">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-100" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_dc5a9e3733ca4a98a784f5d86f7e3c01">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-100" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2bc612d9cf834676a7a17958517054eb">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="100" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a7ca9b17ed654c85a8d6a9e30f3a22c6">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="100" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6f468fd9ad694e6bb36f95a316c4395f">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-100" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5965985233c240afa0a33facbe8f3204">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="100" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_058877e15d444460a66a045f0e3f33fb">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-100" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="dividend" id="InParameterDeclaration_8e9ee36e102542c0915c353de404a6b8">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="divisor" id="InParameterDeclaration_41fee95ec44340ceb6de5bfaee8a73d0">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="quotient" id="OutParameterDeclaration_d3638ab03bf440868047f28a8221e477">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_ba0b1a2d63fd48fea90814b66bb53b8f">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="quotient" />
+              <term xsi:type="Divide">
+                <numeral xsi:type="IntegerValue" valueOf="dividend" />
+                <divisor xsi:type="FloatValue" valueOf="divisor" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Divide_FloatInteger" id="TestProcedure_e4ad351d78d241809369649c53eb2520" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_1f35f79aaba541dbb403b8c18f42d461">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_797e7b092ee64f32b8ea48e78bba567d">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bec7306ec37c4fe196cc0c7a39192a99">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="49" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_32c2b484b9994cb1b0e19bef00f22a3b">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="1.9490628022799996E+289" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_10ba5ec1ac2644ef85a40a3bbd4376a9">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="1.1235582092889473E+307" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_47f7d61e1b364cd8871ec01d8bc040dd">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6ae2191fb3b3489e9d7309f6311a9492">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-3.6687614997190118E+306" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_49469f9c36bd4022a9a5f6a5c3655d5b">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-1.9490628022799996E+289" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_88b5d245704e4ff2a200d851f9d8731e">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="1.3379054808471125E-18" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_dc1679b668ce4e0fb5e7968878398801">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="0.77125" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_fef594b5699145a48a9f11928f749a98">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c3df30d88f5e4d40a5dcebff04e12471">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-0.25183673469387757" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6492b1ecd43c4f1c8924d6132c119a18">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="-12.34" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-1.3379054808471125E-18" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_93c77db1ccb84e8d871aeb7e065c7013">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-16" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a3a6138653c342f89024919427d0398a">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_dec630dfe58c43ccb565552b6c397333">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_952fea6e6b5f4a60984170387c25cafa">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b742622b83d440708690f61c26b17165">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_19a67183322a4451809750a53ec3f291">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9957ab6b4c7c434089ff3847d286b861">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-16" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="49" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_88b728e7bcf542a8a353c6bb16fad4f9">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-5.3960742124603559E-18" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_be4ae31c30304495b22af74a70f6088b">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-3.110625" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5dfa5adae15f4f3dae4b48c739b1710a">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_afdbb9af85f3496184f667386efe4b2e">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="1.0157142857142858" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6e6a0111dd0f4f6c91debebc4e2fa16c">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="5.3960742124603559E-18" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_01a43dffc7bb48e0a51ca376ae4941f3">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-1.9490628022799996E+289" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8897323ccf2449a98a08addcabe26af3">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="-16" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-1.1235582092889473E+307" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6755579786ed4be0ae2c143a0e481357">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_fffb1abd03914a67a6c1854dfe9e92ef">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="49" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="3.6687614997190118E+306" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2d2d983677eb4966845b08eb249cd746">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="1.9490628022799996E+289" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e4a4e81b5d224f25a72390e6a258e9e2">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-16" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c2d422b5ed344b959ad57bbb66c09827">
+            <unittest:arguments>
+              <unittest:argument param="dividend">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+              <unittest:argument param="divisor">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="49" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="quotient">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="dividend" id="InParameterDeclaration_b955ef03807847eda916406414b8a314">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="divisor" id="InParameterDeclaration_ca425ee307b64cd58d887c3be3035668">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="quotient" id="OutParameterDeclaration_933e26ec76bd44ac8cf6ca32c5aa4b2e">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_f17a7d56766f4b4cb8aa8919cc329b65">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="quotient" />
+              <term xsi:type="Divide">
+                <numeral xsi:type="FloatValue" valueOf="dividend" />
+                <divisor xsi:type="IntegerValue" valueOf="divisor" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

@@ -1,0 +1,1304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:flash="http://iso.org/OTX/1.0.0/Flash" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="FlashFileFormat" id="id_f55d1363c60a432b8d5216a8b4cbe140" package="Flash.VariableAccess" version="1.0.0.0" timestamp="2021-08-16T17:42:46.723+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42536</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="AudienceVariable_Base" id="TestProcedure_0027324a22f44a14aeffb557dd5f2aa4" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_f0b2c80b81ef4ddfba8512eeadfdef0c">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a771d74b1469433c9a2f06b2c668ec5e">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:FlashFileFormatLiteral" value="INTEL" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_281b14d9cd334c39b383d7b8a73cbeda">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:FlashFileFormatLiteral" value="SREC" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="input" id="InParameterDeclaration_ada72557d5bb46bea8d6fa3364356873">
+            <realisation>
+              <dataType xsi:type="flash:FlashFileFormat" />
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="FlashFileFormat1" id="VariableDeclaration_ec0798236bf242d99566fce9f7ef4964">
+            <realisation>
+              <dataType xsi:type="flash:FlashFileFormat" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_35d2ec56cee944b880eba311284537f3">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashFileFormatVariable" name="FlashFileFormat1" />
+              <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_b29396738aeb47b88b3b9fef6e544381">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="FlashFileFormat1" />
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="AudienceVariable_1Step" id="TestProcedure_288c35e50ada4d48aeae4c93577b7bea" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_5bcf0e9decb94d20afa85aec1b471b41">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_043dfcdc90a54b6096c6e4fee98a235a">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:FlashFileFormatLiteral" value="INTEL" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_92c42d5b7e8044feb9376054bb1572f8">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:FlashFileFormatLiteral" value="SREC" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="input" id="InParameterDeclaration_ed095a8b975040afaa903072e363dd84">
+            <realisation>
+              <dataType xsi:type="flash:FlashFileFormat" />
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="List0" id="VariableDeclaration_2ba9f783ec254acb8b0ced10d9ffae5b">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="flash:FlashFileFormat" />
+                <init>
+                  <itemType xsi:type="flash:FlashFileFormat" />
+                  <items>
+                    <item xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                    <item xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map0" id="VariableDeclaration_ad715973dc844430907cd2e42dfce5da">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="flash:FlashFileFormat" />
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="flash:FlashFileFormat" />
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="1" />
+                      <value xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="2" />
+                      <value xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_8d3df19f15bb4c34b44d42028117a6b2">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="flash:FlashFileFormat" />
+                <init>
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="flash:FlashFileFormat" />
+                  <items>
+                    <item>
+                      <key xsi:type="StringLiteral" value="q" />
+                      <value xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="w" />
+                      <value xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_69b863a9a20c4d57b2a919d82363449c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashFileFormatVariable" name="List0">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                </path>
+              </result>
+              <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_ba6f1bf34e424196bd18255a10a4ee4d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashFileFormatVariable" name="Map0">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="2" />
+                </path>
+              </result>
+              <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_a9c820c5f3d047d29ff984a7739ab5d5">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashFileFormatVariable" name="Map1">
+                <path>
+                  <stepByName xsi:type="StringLiteral" value="w" />
+                </path>
+              </result>
+              <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_4b318edc367c4e39b3d87c4612df02d3">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="List0">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_e2737101fdd84286948df58c8e852cbc">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="Map0">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="2" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_be0e8999deee489db2eb9065eb6f59cd">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="Map1">
+                  <flash:path>
+                    <stepByName xsi:type="StringLiteral" value="w" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_7a3d2e13788948f094ed4f720c2233d9">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_4c099fef4a9646f18e40a167a1571962">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="List0">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="2" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_ef20aaf8fc514f6a945a38a6ec04d699">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_ed8c13abb3ec4c6ebe084605e837876c">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map0">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_c3d08aea223641bba9e4875b3adbb054">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_6b29f2fab3b8429bb35eec19de0e72c0">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map1">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="e" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="AudienceVariable_2Steps" id="TestProcedure_db98e40b59ac4cddb249a732d7bb921d" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_b5ccceef9c4648999dbd767181805418">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a71da541866b4008a15ccf84c50db8f7">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:FlashFileFormatLiteral" value="INTEL" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6dfe0bd4d44f4ec29958399f65981c40">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:FlashFileFormatLiteral" value="SREC" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="input" id="InParameterDeclaration_02c3de35bd654802b414aa85a6c81094">
+            <realisation>
+              <dataType xsi:type="flash:FlashFileFormat" />
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="List0" id="VariableDeclaration_68b170ed1bea46b9a16df8e3d028bcb5">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="flash:FlashFileFormat" />
+                </itemType>
+                <init>
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="flash:FlashFileFormat" />
+                  </itemType>
+                  <items>
+                    <item xsi:type="ListLiteral">
+                      <itemType xsi:type="flash:FlashFileFormat" />
+                      <items>
+                        <item xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                      </items>
+                    </item>
+                    <item xsi:type="ListLiteral">
+                      <itemType xsi:type="flash:FlashFileFormat" />
+                      <items>
+                        <item xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                      </items>
+                    </item>
+                    <item xsi:type="ListLiteral">
+                      <itemType xsi:type="flash:FlashFileFormat" />
+                      <items>
+                        <item xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                        <item xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                      </items>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map0" id="VariableDeclaration_87c274790fe84140a25ef70b34825ca2">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="flash:FlashFileFormat" />
+                </valueType>
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="flash:FlashFileFormat" />
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="5" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="Integer" />
+                        <valueType xsi:type="flash:FlashFileFormat" />
+                        <items>
+                          <item>
+                            <key xsi:type="IntegerLiteral" value="1" />
+                            <value xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_a691d33a4f0845e8aa5d25017e04bafc">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="flash:FlashFileFormat" />
+                </valueType>
+                <init>
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="flash:FlashFileFormat" />
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="StringLiteral" value="q" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="String" />
+                        <valueType xsi:type="flash:FlashFileFormat" />
+                        <items>
+                          <item>
+                            <key xsi:type="StringLiteral" value="a" />
+                            <value xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                          </item>
+                          <item>
+                            <key xsi:type="StringLiteral" value="z" />
+                            <value xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="w" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="String" />
+                        <valueType xsi:type="flash:FlashFileFormat" />
+                        <items>
+                          <item>
+                            <key xsi:type="StringLiteral" value="s" />
+                            <value xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                          </item>
+                          <item>
+                            <key xsi:type="StringLiteral" value="x" />
+                            <value xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_e9726662ed2141a1b19c237b26624a59">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashFileFormatVariable" name="List0">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="2" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                </path>
+              </result>
+              <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_4fd5b9c23a554cf78f7f5710a9fd8ca9">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashFileFormatVariable" name="Map0">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                </path>
+              </result>
+              <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_7202afc1a7a04a82a866de5d489f283b">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashFileFormatVariable" name="Map1">
+                <path>
+                  <stepByName xsi:type="StringLiteral" value="q" />
+                  <stepByName xsi:type="StringLiteral" value="a" />
+                </path>
+              </result>
+              <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_1cc9c71a77734eee953944663500130e">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="List0">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="2" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_76507526f090430aab129562d1eb02bb">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="Map0">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_194bcb790eb5402eb69e2e57bd4a85ee">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="Map1">
+                  <flash:path>
+                    <stepByName xsi:type="StringLiteral" value="q" />
+                    <stepByName xsi:type="StringLiteral" value="a" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_7979e127c85240339ff0831d543ac945">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_90c7e1305baa4c75a278c46cf21ecc21">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="List0">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_98df887f858e4f5294b2ce4ae0871f0a">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_53948102ec614d16a96dcba1c3ba1054">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="List0">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_8827ce42b52946fc93ed967126f44a5a">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_f86f9c9437f74c8ba1c9c882adf3275c">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="List0">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="2" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_2bd3435bb871402796400bd1a2639f17">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_899ced3452ee41bb817d92345712f7ef">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map0">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_29761f77d4da4f7ca43931bb212d46b4">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_69442f71284a4519bc592d30c010276e">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map0">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_3eb9f3c4307a4c2d9439cf7e9dcded1d">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_b4100e182461421db61bc8dc21bc3d51">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map0">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_5a2c2cc9a5b1471cadecf7c80b8c38da">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_e6375440aa8e4e04890a043ba7494734">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map1">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="q" />
+                        <stepByName xsi:type="StringLiteral" value="w" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_6171267e95584741b701f7eb39795bf2">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_fd6200ca89034203aa3796d944406fa3">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map1">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_25d591536e9444f9b2869fd0b375620f">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_738b64e4be7541a88585b23e54b162c1">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map1">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="w" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="AudienceVariable_3Steps" id="TestProcedure_7e2c277744454beeb5fece988eb639f2" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_a2dcc477c6564ae4a14e786f622d7ac8">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4dc8fe86215e49e7b05bb220dbc3b0e2">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:FlashFileFormatLiteral" value="INTEL" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_faa7edda8f7549daa3ce2f4fc6680e21">
+            <unittest:arguments>
+              <unittest:argument param="input">
+                <unittest:value xsi:type="flash:FlashFileFormatLiteral" value="SREC" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="input" id="InParameterDeclaration_a69fe2c3db64470797b3b311448796a7">
+            <realisation>
+              <dataType xsi:type="flash:FlashFileFormat" />
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="List2" id="VariableDeclaration_66b2b482985a46bf82ca0b2bdb66eb62">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="flash:FlashFileFormat" />
+                  </itemType>
+                </itemType>
+                <init>
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="List">
+                      <itemType xsi:type="flash:FlashFileFormat" />
+                    </itemType>
+                  </itemType>
+                  <items>
+                    <item xsi:type="ListLiteral">
+                      <itemType xsi:type="List">
+                        <itemType xsi:type="flash:FlashFileFormat" />
+                      </itemType>
+                      <items>
+                        <item xsi:type="ListLiteral">
+                          <itemType xsi:type="flash:FlashFileFormat" />
+                          <items>
+                            <item xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                          </items>
+                        </item>
+                      </items>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_a8bc79e96994493782e04045fd22d665">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="flash:FlashFileFormat" />
+                  </valueType>
+                </valueType>
+                <init>
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="Map">
+                      <keyType xsi:type="Integer" />
+                      <valueType xsi:type="flash:FlashFileFormat" />
+                    </valueType>
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="3" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="Integer" />
+                        <valueType xsi:type="Map">
+                          <keyType xsi:type="Integer" />
+                          <valueType xsi:type="flash:FlashFileFormat" />
+                        </valueType>
+                        <items>
+                          <item>
+                            <key xsi:type="IntegerLiteral" value="6" />
+                            <value xsi:type="MapLiteral">
+                              <keyType xsi:type="Integer" />
+                              <valueType xsi:type="flash:FlashFileFormat" />
+                              <items>
+                                <item>
+                                  <key xsi:type="IntegerLiteral" value="9" />
+                                  <value xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                                </item>
+                              </items>
+                            </value>
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map3" id="VariableDeclaration_5c9863bf270b48cd9748779ae83207ca">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="flash:FlashFileFormat" />
+                  </valueType>
+                </valueType>
+                <init>
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="Map">
+                      <keyType xsi:type="String" />
+                      <valueType xsi:type="flash:FlashFileFormat" />
+                    </valueType>
+                  </valueType>
+                  <items>
+                    <item>
+                      <key xsi:type="StringLiteral" value="1" />
+                      <value xsi:type="MapLiteral">
+                        <keyType xsi:type="String" />
+                        <valueType xsi:type="Map">
+                          <keyType xsi:type="String" />
+                          <valueType xsi:type="flash:FlashFileFormat" />
+                        </valueType>
+                        <items>
+                          <item>
+                            <key xsi:type="StringLiteral" value="5" />
+                            <value xsi:type="MapLiteral">
+                              <keyType xsi:type="String" />
+                              <valueType xsi:type="flash:FlashFileFormat" />
+                              <items>
+                                <item>
+                                  <key xsi:type="StringLiteral" value="9" />
+                                  <value xsi:type="flash:FlashFileFormatLiteral" value="BINARY" />
+                                </item>
+                              </items>
+                            </value>
+                          </item>
+                        </items>
+                      </value>
+                    </item>
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_2342d0ff2c8e466e9fe0971ba1f70b39">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashFileFormatVariable" name="List2">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                </path>
+              </result>
+              <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_c5ffb516f5494402a5a77276b477f322">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashFileFormatVariable" name="Map2">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="3" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="6" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                </path>
+              </result>
+              <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_9a303b687028478389ccfb02dac088cf">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashFileFormatVariable" name="Map3">
+                <path>
+                  <stepByName xsi:type="StringLiteral" value="1" />
+                  <stepByName xsi:type="StringLiteral" value="5" />
+                  <stepByName xsi:type="StringLiteral" value="9" />
+                </path>
+              </result>
+              <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+            </realisation>
+          </action>
+          <action id="Action_938a260755da444497918ee8dd4b4f8c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="List2">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_f79e64edf7114ea3aabc15be2768bae6">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="Map2">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="3" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="6" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_bff28db3fc77400fab4e5220f3921248">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="Map3">
+                  <flash:path>
+                    <stepByName xsi:type="StringLiteral" value="1" />
+                    <stepByName xsi:type="StringLiteral" value="5" />
+                    <stepByName xsi:type="StringLiteral" value="9" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_514b445d3d82442db25128ffa55b5c18">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_aa21e3cecb7c4c6b8dcf57719358f2d1">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_07a6187f467b4a34866bb4ecba3aeae2">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_cf6f7b1be1924f5c8f87e085329c87b3">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_5c7bbfe3477a4f4388f905d98842fa8e">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_321d0770711b4396be600f07eb35d1a8">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_612cf2e5fad6402e84a3d9ecfbb2303d">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_eb6c0bfb33094d60b7d5cdfa8cf7501b">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_766b2436d174442aa2c39d011970656c">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_237b566be217465a809a7a43737f9bbc">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_a56ab15ede7a446098aeee694f9aac29">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_f21679ca61144ff3b5b75e284b197c78">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_8872c95db93945849bb3ca7b9626ecbc">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_a3170d6026bc4117b39dafa780e625cc">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="List2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_1fd45be30aef43beac9631bd078142e5">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_3ebd52120f4e420f8bcbbfb17b844512">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_2ba644159a1349ae87aee2aaa6dc6fb9">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_fde8a80ca97a41509e336c99645b9190">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_c81bb6d0492847b2a363fe08ead5a594">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_8309203c83c243f9b4e56c41f61da7e9">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_b6e03f7367844bd8a60ca9bbec4479f8">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_73b58d457d46494884bd20c4c4c6a632">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_aa847c5fbe654dcf9dc7c13c14ac0505">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_3456ecf4ecbd49c0bc4207e23046e618">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_ec590a3fed544178ac4e385659de247e">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_b9508504a74e4b24bd7bd0f0b06b21fe">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_ddb797e508054c58b59c32e25eb8f556">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_529990109bbd4a3c9ffafedbf89de0b7">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map2">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_2e20b079b74a4bdf986463ebac271386">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_57989b08cd1a4e0c9adeaedf4120589d">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map3">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="3" />
+                        <stepByName xsi:type="StringLiteral" value="6" />
+                        <stepByName xsi:type="StringLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_13e56748f2db466ba9c2051572bb80c6">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_0a18eca811404af69a48b4bd2317759f">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map3">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="3" />
+                        <stepByName xsi:type="StringLiteral" value="5" />
+                        <stepByName xsi:type="StringLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_46c21f5c7ef94d7cb26ddde6f27d39a4">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_da470cfae2034ce0b287852b8f240070">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map3">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="3" />
+                        <stepByName xsi:type="StringLiteral" value="5" />
+                        <stepByName xsi:type="StringLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_b514bf1c3c9a46cbac8f7008b94c2e26">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_303501762532462d91acc4a5f1b5cd1d">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map3">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="2" />
+                        <stepByName xsi:type="StringLiteral" value="6" />
+                        <stepByName xsi:type="StringLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_802b290f78f54734847a859549754de7">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_5ae56fd7fa2c440b82906a509eb69f9c">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map3">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="2" />
+                        <stepByName xsi:type="StringLiteral" value="6" />
+                        <stepByName xsi:type="StringLiteral" value="8" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_66ec6f34197f4cc88180eb5e82dd55cf">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_b08f348fce714de19583455847192a9e">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashFileFormatVariable" name="Map3">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="2" />
+                        <stepByName xsi:type="StringLiteral" value="5" />
+                        <stepByName xsi:type="StringLiteral" value="9" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashFileFormatValue" valueOf="input" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

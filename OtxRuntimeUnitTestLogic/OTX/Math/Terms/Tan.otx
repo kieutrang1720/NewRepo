@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:math="http://iso.org/OTX/1.0.0/Math" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Tan" id="id_00d235f7b52c4f0e949f6b4a57fd03be" package="Math.Terms" version="1.0.0.0" timestamp="2021-07-29T11:16:48.146+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42370</data>
+  </metaData>
+  <declarations>
+    <variable name="Pi" id="DocumentVariableDeclaration_99b06deb36194e32ae8647d6fdab4dd2">
+      <specification>1 Pi = 180</specification>
+      <realisation>
+        <dataType xsi:type="Float">
+          <init value="3.1415926535897931" />
+        </dataType>
+      </realisation>
+    </variable>
+  </declarations>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="Tan_Float" id="TestProcedure_d6a32f7282f0408b82513d8cf0ff2d55" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_995fe65c73e64ec39fef776fe2254217">
+            <specification>Tan(-Infinity)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c6e583afecf14710b0ef194e8ac17d26">
+            <specification>Tan(-60)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="-60" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="180" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-1.73205080756888" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-14" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ea85dc0008fe4a058db06732d7ee1147">
+            <specification>Tan(Negate(0.0)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Negate">
+                  <numeral xsi:type="IntegerLiteral" value="0" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5b0d73043d314662a206826bb9df92bb">
+            <specification>Tan(NaN)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_693ac154691942e39acb6d69e4e35e4f">
+            <specification>Tan(0)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ac316081df9f4be6bf3629c5de272465">
+            <specification>Tan(10)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="10" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="180" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="0.17632698070846498" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f8353f474e7a4e2d99910fc73787d115">
+            <specification>Tan(30)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="30" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="180" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="0.577350269189626" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b51c413683eb4ac0ba8aec2fdc257963">
+            <specification>Tan(35)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="35" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="180" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="0.70020753820970982" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f1a834a31f344c039a5e2f78e5f56e43">
+            <specification>Tan(45)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="45" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="180" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_232a393dbd1a462d8439938d0e2d9287">
+            <specification>Tan(55)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="55" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="180" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="1.4281480067421144" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d4cce9ca16ec4de7bed6b01d45b3cb63">
+            <specification>Tan(60)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="60" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="180" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="1.73205080756888" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-14" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_06fbd9968cf14cdd91c7fc9d14e00147">
+            <specification>Tan(90)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="90" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="180" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="1.63312393531954E+16" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="100" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_82d5d79cea4d43358a74c54d9cb95bf4">
+            <specification>Tan(100)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="100" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="180" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-5.6712818196177093" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-14" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d6874d0680fd40f2a05cc0374fbafb55">
+            <specification>Tan(120)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="120" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="180" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7320508075688772" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-14" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_92f5972190b7482c876b83f24a5b0aa2">
+            <specification>Tan(125)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="125" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="180" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-1.42814800674212" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-14" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_54c2aa9c3f1d4df0b207dcde2548732e">
+            <specification>Tan(180)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="FloatValue" valueOf="Pi" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e84891adac774370904e4d2693486f5e">
+            <specification>Tan(235)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="Divide">
+                  <numeral xsi:type="Multiply">
+                    <numeral xsi:type="FloatValue" valueOf="Pi" />
+                    <numeral xsi:type="IntegerLiteral" value="235" />
+                  </numeral>
+                  <divisor xsi:type="IntegerLiteral" value="180" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="1.4281480067421144" />
+                <unittest:tolerance xsi:type="FloatLiteral" value="1E-15" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_09401ac2615445379a25a8e4126caeef">
+            <specification>Tan(Infinity)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="rad" id="InParameterDeclaration_90f69996da004c1ea36d334eafcf74e9">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_907a1ae644f14bd48630e825a5df6fb6">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_5954810f306f4d7d8e3f717bc8580d66">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="result" />
+              <term xsi:type="math:Tan">
+                <math:rad xsi:type="FloatValue" valueOf="rad" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="Tan_Integer" id="TestProcedure_4584034819e2480c8186ed147cbe7232" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_7c24e758e19241148081e573e047a862">
+            <specification>Tan(0)</specification>
+            <unittest:arguments>
+              <unittest:argument param="rad">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="rad" id="InParameterDeclaration_55cb0fd0d28043e29f2527b25ca4a03d">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_66ea7752189d4ea4889e4d24a69f6ff2">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_a7692bd53b964497b7bbae23cda6db71">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="result" />
+              <term xsi:type="math:Tan">
+                <math:rad xsi:type="IntegerValue" valueOf="rad" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

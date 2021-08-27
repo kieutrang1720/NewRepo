@@ -1,0 +1,3907 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="EncodeInteger" id="id_5225fad67e494bd4bf75cbdc6cd21d7a" package="Core.Terms.IntegerConversion" version="1.0.0.41805" timestamp="2021-06-01T13:59:46.604+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.41142</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="EncodeInteger_BigEndian_Unsigned_EncodingSize8Bit" id="TestProcedure_95b9cc4c5e7f44fcabf2e54d2d33962e" parallelizable="true">
+      <specification>Range: -255 to 255</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_36013028520a458d803c16d927d2a4a9">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_62407528d0f94641a59c5c71ac0d271a">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="129" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-129" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="81" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_cb03d112f71e4ce8bddf1c2f622da7b9">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="255" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-255" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1b566f51e0a74e369624f23a03be231b">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="256" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-256" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_738d6014991449f5ab033a4211b0a8fd">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_214f363608e647b6ac36fd1151280923">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_eec2b89bf29e4d85b5ed7f6f3c476bcb">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingType="UNSIGNED" encodingSize="8-BIT" byteOrder="BIG-ENDIAN">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_BigEndian_Unsigned_EncodingSize16Bit" id="TestProcedure_fb1b524b12da40c2baa2c3003b8139bd" parallelizable="true">
+      <specification>Range: -65535 to 65535</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_5bd68b6b11d74041bbd640678d74a230">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e0ada4f07a7943f5acf65f94d9a9289f">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="129" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-129" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0081" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_35b1af81f12b42c0a8e56815eaf59678">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="255" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-255" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00FF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b20ed3b3ff584d1eb317fe0d577ccd50">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="43981" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-43981" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="ABCD" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7bb2cdb2b3af4df684d4befc80359916">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="65535" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-65535" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a3951749a0b7462fa942b9f554574911">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="65536" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-65536" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_9e21449088434d96a5a59db04c106e04">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_ae73f37230c24ebda4f6dfaeff880e53">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_636270dcd11343e9ba17b000cb3d1a71">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingType="UNSIGNED" encodingSize="16-BIT" byteOrder="BIG-ENDIAN">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_BigEndian_Unsigned_EncodingSize32Bit" id="TestProcedure_0805b68a9ece4deb8eba4576b453ff13" parallelizable="true">
+      <specification>Range: -4294967295 to 4294967295</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_705cf2f5b98b491e87f395891b3eabeb">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b76d33d09ec846159d0f8bf53bf43d12">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="129" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-129" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000081" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f68f9aac23ec4dba971ee06ea1cf6045">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="255" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-255" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000FF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ed2a86aaa7fa45428ffb64f2b4bfda77">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="43981" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-43981" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000ABCD" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6343db463e194a42adb3259dae1372c3">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="65535" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-65535" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000FFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1c61735f0ed0470192791c8dbd162f78">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="2864434397" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-2864434397" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="AABBCCDD" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5eeb40186a554c85a9f8eb7bc862c82f">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="4294967295" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-4294967295" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_80646749c54f4b3086a3d7dd9932274e">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="4294967296" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-4294967296" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_b6125d13d4024ba1a3ac94411c8e2b89">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_63ed3bfe1f8b45fc9ea5416598e9abc7">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_55439de6e410417c9c21a0107f858256">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingType="UNSIGNED" encodingSize="32-BIT" byteOrder="BIG-ENDIAN">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_BigEndian_Unsigned_EncodingSize64Bit" id="TestProcedure_df31870eb45045b4a17aa5102f5d0809" parallelizable="true">
+      <specification>Range: -9223372036854775807 to 9223372036854775807</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_1b3194f3ab814d21bec3d2579171e03b">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_758ac0295da14220a08a71cd7324bafc">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="129" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-129" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000000081" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_48fc4b5f0fc349e3b500dabf4d404abe">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="255" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-255" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000000000FF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_fd277138622e42ecb027b680557789bf">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="43981" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-43981" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000ABCD" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e4b9ba693c104710807f78098abbdf32">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="65535" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-65535" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000FFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_af8ce0800cab4d3ea64b2dafe71c94d8">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="2864434397" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-2864434397" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000AABBCCDD" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ba0ea381f15d4fc5aaefef8d347455b8">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="4294967295" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-4294967295" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000FFFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e1f16b278d5648aab491d9668f3dcf89">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="1234605617868164317" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1234605617868164317" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="11223344AABBCCDD" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_06a0a026f8304264b6ee10d9586fd082">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7FFFFFFFFFFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_02e21e5079244ac4b7002526699428f0">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_f174f55f9d0f493c91367bbe8167f68f">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_77f183cb6fe64644ac30090c087a12ba">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_8d359e3ce81d48a69696a4bf91f4d746">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingType="UNSIGNED" byteOrder="BIG-ENDIAN">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_BigEndian_SignedBinary_EncodingSize8Bit" id="TestProcedure_87f63c14bb5e488393164fc0d1b6a2fe" parallelizable="true">
+      <specification>Range: -127 to 127</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_107303e7872c4db49441850d89e52a39">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_da018225345b41e6852137a5036a2fee">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="19" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_94b5e74770ee4f9fa396e00376fd39a1">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="99" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_696b0ac90a6643ce8767bbb74517aa0a">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6e4619190d474f3f9c985085924db0fa">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8e165929649d4a30bb64c0d3fb164d8e">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-128" />
+                    <unittest:element xsi:type="IntegerLiteral" value="128" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_1736265ede7340b5ad77d4282c47bdb6">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_b067de6d6407477a946c5b87f924795b">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_e0df4a8b68d34e97958de160575f422d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingType="SIGNED-BINARY" encodingSize="8-BIT" byteOrder="BIG-ENDIAN">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_BigEndian_SignedBinary_EncodingSize16Bit" id="TestProcedure_ad5fa93cb92049b5a7524c65db1e17a3" parallelizable="true">
+      <specification>Range: -32767 to 32767</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_d2de1c8dad75446ea733465bbd45083b">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_361822b2a8374b928162725eaff1675d">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0019" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d2ca8354990d457fbd04f756ca327a76">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="8019" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4174d380286446cfa0942c3ce2d4c0a4">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="007F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_eb540c585b074abcaade930cb2b913f3">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="807F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_233a3569a9fd47f4a1575fe8cd73f8ed">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="6ABB" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_eb691a86312541c0b6ed3e2002a897da">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="EABB" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e8e7073580164f7482a85d933fd797e4">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7FFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d55ac6eb356a4a16856df2620d9b43ef">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f069ccc81f514315ac2045a8e0ab9fde">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-32768" />
+                    <unittest:element xsi:type="IntegerLiteral" value="32768" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_f6bb35b90a974baa83b04cb6b662cc06">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_b2e173155cf840778ac8bc7c4ac27a02">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_f73d067b374241a0a3e7229e1826b988">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingType="SIGNED-BINARY" encodingSize="16-BIT" byteOrder="BIG-ENDIAN">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_BigEndian_SignedBinary_EncodingSize32Bit" id="TestProcedure_d7c1c37f515049d4903f0f227d2cee16" parallelizable="true">
+      <specification>Range: -2147483647 to 2147483647</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_fb40003286b048d6842285a0ca90a9d8">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_36aab23d73c7475288647589684b5e86">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000019" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a84f74804dc94a3e8a8293e8980f8416">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="80000019" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8129f4029f2d46ed8e9474c2e567f962">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000007F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e129eeb5a14f4445bc55004a07a98cc6">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="8000007F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_421dca57be4a4c9193fe57e75d5488ed">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00006ABB" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e2d2926197754dba919d4f8500c4a44f">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="80006ABB" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b7d537ab560945b68a896d0c3ce98a12">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00007FFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6943770533564b06ab932dc9e292113b">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="80007FFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9f5303b8e546456c9558a005affada37">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="2147483647" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7FFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c7490212bf714238a1dac745bbc15bf9">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-2147483647" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9e66d3e0708644809b768caf84069107">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-2147483648" />
+                    <unittest:element xsi:type="IntegerLiteral" value="2147483648" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_e4d3161a0883495ab0c02ff7e79ac12d">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_2f896230ee19479685422f998139b5e3">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_f92506bf8c234153889b02a507b2aefa">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingType="SIGNED-BINARY" encodingSize="32-BIT" byteOrder="BIG-ENDIAN">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_BigEndian_SignedBinary_EncodingSize64Bit" id="TestProcedure_7af1d1d908dd4a1989abcdc392d7431e" parallelizable="true">
+      <specification>Range: -9223372036854775807 to 9223372036854775807</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_b7bb17f1e7124ac8985498489daa2c6d">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ba42ac02ed6d404fb6ad6bcdf99610a4">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000000019" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8978a20258fd43509268e511bd718994">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="8000000000000019" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1c98f46491c0483eb7687a7c8d870f13">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000007F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f68f9eb56bcd4caf93be172eb12d23ef">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="800000000000007F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_24575b5fad2d4dbc9774c9be8d25bc35">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000006ABB" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f9662fe3d0df4b54abe8736979712d00">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="8000000000006ABB" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_334bcf0382c6469d833fc46f983e8457">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000007FFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_995d6e90be7d4f0ead2aa5632575d044">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="8000000000007FFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b0462b7af7a3421fad049f1a6efadcb9">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="2147483647" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000007FFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_232ab702b9f740a9974f3bc141a84bf8">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-2147483647" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="800000007FFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_612ad5c12d504fd18c4b9386f98ba117">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7FFFFFFFFFFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a67122e5d4874130b536c23624671878">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFFFFFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_52553be9e8f647fa84bb3a03d5470b8c">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_0400ce839be04233a6910583a488b054">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_fcb167dbb1684595943d5425265be244">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_8f2fc8a3bf3849b291a2355efaf551ce">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingType="SIGNED-BINARY" byteOrder="BIG-ENDIAN">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_BigEndian_TwosComplement_EncodingSize8Bit" id="TestProcedure_2b3d62cde6944ff7b0f3d3e7432e9035" parallelizable="true">
+      <specification>Range: -128 to 127</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_e6e4323da471415b910cc065d18feeca">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2cf99081a52a47c3830c539502c32449">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="19" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7ca2ec4584394758a6a24854c7afa806">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="E7" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7c0d8e576dc84c9ba9fc85cc0b22b86d">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c20dfc4597e44a978484b4f8ce901a21">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="81" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_19c21aabf4c045dea92c27e940a0da2a">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="81" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8fafa4d68e7a4ad28719705f2fcfd338">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-128" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="80" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8b172d8ae1654f109dbfa55630c251c0">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-129" />
+                    <unittest:element xsi:type="IntegerLiteral" value="128" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_d6eaa5c7762e4bf796b7b28b5f98e242">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_f27226f28fc14191aa942174563aae22">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_c95de01dbecb492887b58830f9226219">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingSize="8-BIT" byteOrder="BIG-ENDIAN">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_BigEndian_TwosComplement_EncodingSize16Bit" id="TestProcedure_412f606e021f4de1b894aeb7d9cd4b14" parallelizable="true">
+      <specification>Range: -32768 to 32767</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_be6ed337c1ae4421ab087f05467bf42d">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c201e1c9f9d74e27b863a0d51800e306">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0019" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1d470cab75d148a7bde5995729505fbc">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFE7" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5a962ca59f8e492eb0e2f96b28267fea">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="007F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a1f23ed275cc4665ba6cb7701bced322">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF81" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_612a732f92c0445a91ec0604ff55d4bd">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="6ABB" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7f8ed171ea8843b1975bd283141c9b5c">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="9545" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8dc23e56766141648ceff26a71cce99f">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7FFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_857f028ca0e740a89989fae1b0d9d0ad">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="8001" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_96dcbc1d2cd04bdcbaa60df7a545a67f">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-32768" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="8000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d25691e7fb514d1c9cee6e98a513a74a">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-32769" />
+                    <unittest:element xsi:type="IntegerLiteral" value="32768" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_6dd8ee1a3dea4ceeabff5e704d6bed0f">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_994be1ca0cfd4e688d468978ee7139f7">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_97076544d4814026852ea920436bab75">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingSize="16-BIT" byteOrder="BIG-ENDIAN">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_BigEndian_TwosComplement_EncodingSize32Bit" id="TestProcedure_0d4e134d3a9d409cabe4d96e4c856d89" parallelizable="true">
+      <specification>Range: -2147483648 to 2147483647</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_5743b9847b3c4b8aadf4791a9b9b8c3c">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_0136dde8d61d4b06ae9e38866752d933">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000019" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c6bc4bc6b8e9433dbbf59fd7a6af2ad7">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFE7" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ec83ce6cf0b04726bb2cb14a5951a14b">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000007F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_880818b364074f7db658d472a6e04e1c">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFF81" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ae8079e1fdac4dd0a7a02d3ed9c4a514">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00006ABB" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_52d2f9d324d540c8ba5a0dc9f761ddd6">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFF9545" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ef3badd03ee54a6ebbc000a33cfa1a96">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00007FFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_942c864a0e1c4d05afca6ba07c6d4c43">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFF8001" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_cc8682ad54ae41339942e566f0f0b515">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="2147483647" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7FFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9b3afd20fe184fbb889ae1bd479992de">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-2147483647" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="80000001" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1e0a1d2cb0044c308fd4360ca61edcce">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-2147483648" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="80000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_deac7c8dc0a44a13b771f3da47467f97">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-2147483649" />
+                    <unittest:element xsi:type="IntegerLiteral" value="2147483648" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_cf127b2c60b743c8a434b698bce43271">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_9a11a871ad834c8091077ff6d52fa60b">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_6e7de4bd0cc94d95ae60764307277bdc">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingSize="32-BIT" byteOrder="BIG-ENDIAN">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_BigEndian_TwosComplement_EncodingSize64Bit" id="TestProcedure_805a6184d0e9433d9a3acdc80b1aa650" parallelizable="true">
+      <specification>Range: -9223372036854775808 to 9223372036854775807</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_473d0fc487be49d19755b8ba22038539">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4fb8876beb8e4441b3cdd91aaab86f85">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000000019" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ca103f387c8d4c84a94d315d8bb886c3">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFFFFFFFFE7" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2b7928f2895e44b1bdb099ceaa8cee20">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000007F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c14e0619a53a4ea8a69bf5a1ef3f4a77">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFFFFFFFF81" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7316aa7a251041eaad00db73ca6fb3ed">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000006ABB" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5aa045fcbed74753bedac2223eb75bd4">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFFFFFF9545" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7647a976731c42cab73fdbb259e0fcf8">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000007FFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f8ab60a73d804d49b3441e8248cfc04b">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFFFFFF8001" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d5b2e1cba2f34b9abf34714b66fd1c75">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="2147483647" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000007FFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9b5fec2123ac4174a9e5100233aeaf9b">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-2147483647" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFF80000001" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7c10670f104c4b24994a0bec27561aa7">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7FFFFFFFFFFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8950f15cb8304096bd01f51c3fab1085">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="8000000000000001" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_0a1bf1182f434a398f668332116b554b">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="8000000000000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_7e5bbec49113478c80bb6269b091e49b">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_81f9ceba42b6433b96188802d52ee700">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_dba75f98560040668d7e3bf7595d03db">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" byteOrder="BIG-ENDIAN">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_LittleEndian_Unsigned_EncodingSize8Bit" id="TestProcedure_5433a8387955445b822b4bb6f056d6bb" parallelizable="true">
+      <specification>Range: -255 to 255</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_fb923587bfed43aa8215d96dac160469">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_84d83bd140d44b949e4cd28db5df086d">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="129" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-129" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="81" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2c8cd7aadd734cc4bfa4ad664461be32">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="255" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-255" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ffc2990e6e5a44f4980620d80e9954ad">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="256" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-256" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_21b358e9cef841f88ae099507e881671">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_0710967f203b4b1bbf96a93c0512b84a">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_65f9eab0c5d54c5b97617d21e60814ba">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingType="UNSIGNED" encodingSize="8-BIT">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_LittleEndian_Unsigned_EncodingSize16Bit" id="TestProcedure_f18219d9b9b24784967a2ff87c539e09" parallelizable="true">
+      <specification>Range: -65535 to 65535</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_71cdba9a90b94fae90165409f1138350">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6bcbffd86239496d9af833d7e407cf36">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="129" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-129" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="8100" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ed5d8b3fdd4e4da9a2c9895c8eaa057e">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="255" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-255" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF00" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a12c1c6ff8374cf1af02990ad91869c1">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="43981" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-43981" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="CDAB" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_239465c352a64b7aa468e492a23cfeb4">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="65535" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-65535" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_63016adb599b4f6d8b344c867736b5aa">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="65536" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-65536" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_c8634755a63a4a239066505dbadaac43">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_d617bed91b19472eb90cf3033821154e">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_b121cf6bef724ce7b4c967c797e1eef7">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingType="UNSIGNED" encodingSize="16-BIT">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_LittleEndian_Unsigned_EncodingSize32Bit" id="TestProcedure_22b33c8fd8844a2c9c66b319fe831d98" parallelizable="true">
+      <specification>Range: -4294967295 to 4294967295</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_2237e6d6b5db4121af03ce2c4b723fbd">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d1bf36bbc3de4c7cbc7334903b8fc1b8">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="129" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-129" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="81000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_28628a90d5ad4e21bcf353d5e2a04c43">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="255" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-255" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6cdced1eec674fd49c8817763674ac9f">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="43981" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-43981" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="CDAB0000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ccd296040a854f77911525dea9688f8a">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="65535" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-65535" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFF0000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_49d6927df125443f8e9f0716fc257513">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="2864434397" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-2864434397" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="DDCCBBAA" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b8178fcd8b5e4242a80149d5e0d078bc">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="4294967295" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-4294967295" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b72dc90272e64fb8ad8009b8aeb5c2d7">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="4294967296" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-4294967296" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_71604d3811d847c99cf7aee96d46086b">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_8d5de5571e8f41c4afd890718e54c551">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_10dc59ac300246a387422e362af5e500">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingType="UNSIGNED" encodingSize="32-BIT">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_LittleEndian_Unsigned_EncodingSize64Bit" id="TestProcedure_b07c6e45f2e04c23b91744bbce84ab64" parallelizable="true">
+      <specification>Range: -9223372036854775807 to 9223372036854775807</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_6b6afdc333c945f2883c774c0c1a3f37">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_36a50c3f0578401d83dfa44d50e4f4e6">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="129" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-129" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="8100000000000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_fd424ad59dbc49f69760e27a3bea7092">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="255" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-255" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF00000000000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4780c1e3914042b7a5785a35d8c8f384">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="43981" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-43981" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="CDAB000000000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_83014d1152ff4c11a46bf4b756c28d1a">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="65535" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-65535" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFF000000000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a8882b3bff784d6eaf5c6e9f71734187">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="2864434397" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-2864434397" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="DDCCBBAA00000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_187f9a4f84af402887a5b7e981d0ce3e">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="4294967295" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-4294967295" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFF00000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_02ab1b51aed449679af2589197a5acd4">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="1234605617868164317" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1234605617868164317" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="DDCCBBAA44332211" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_35a3ccff0cde4f9ca897e9f7a03909d4">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFFFFFFFF7F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_53af01677745481d9f916f1d44525833">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_475299d123be48928dc51719acfa084b">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_606f51e29f5347d782b12cf41975bbd5">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_946a84dc843345ee97f63f97ea4faa7b">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingType="UNSIGNED">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_LittleEndian_SignedBinary_EncodingSize8Bit" id="TestProcedure_a7ddf154a0d44744851f4d3a9dafccda" parallelizable="true">
+      <specification>Range: -127 to 127</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_5022c888f54549b49c4af1f8414a693e">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1f2e9135f6cc4305ad9e74946ad58602">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="19" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9e57d36c889d4bab97d27b4425e10229">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="99" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5fb97c2cf9704ad18415026d1060c310">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_db680fe1292342faa30068c30e4589db">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_52b4fbb579014da382007fc044d031c1">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-128" />
+                    <unittest:element xsi:type="IntegerLiteral" value="128" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_311028b6892e41018d390bad8e82825e">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_f39bdd6d0ab54d2b99409730b1d79250">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_a0199826534c4b83a475c69f78e72811">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingType="SIGNED-BINARY" encodingSize="8-BIT">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_LittleEndian_SignedBinary_EncodingSize16Bit" id="TestProcedure_397b574f766c45dab6c1142eebf6ffeb" parallelizable="true">
+      <specification>Range: -32767 to 32767</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_5f80d6ec609042e387bcfc0079cdac9b">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d971c263876a401b879669603eb415fc">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="1900" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_fa57cd2939b649f7bc4cf3b2ddc40899">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="1980" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b7f828c4e96f4b9b83f47dcb6a0687e3">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7F00" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e6bcef654d0743bdb0583ba3e36bff08">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7F80" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4d14d586dd9642138194686b30d99b0a">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="BB6A" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d390e7074f4144cfbecdf1cfbc73f036">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="BBEA" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_81bcde0854014785a5a2e0793b5a8d5f">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF7F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e607867bd8a84cb8b1868357cde281b7">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_76403f6a87f445c3aa17644582e02bfb">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-32768" />
+                    <unittest:element xsi:type="IntegerLiteral" value="32768" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_91ad4d1ef7f1445793944525c44bdd28">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_ba05016a04bb49a3a3cebaea039653d8">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_c655637ebf234802b7c766fdda702563">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingType="SIGNED-BINARY" encodingSize="16-BIT">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_LittleEndian_SignedBinary_EncodingSize32Bit" id="TestProcedure_ba2ec6aba92f4a8dbe786a3b4cb49e52" parallelizable="true">
+      <specification>Range: -2147483647 to 2147483647</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_12c4fe95389d491bab3221f804031dd6">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_065f1c30c0e84961a0e847a723ae0f94">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="19000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_0079cfe706884a0497bc0bc31ae2ecca">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="19000080" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f4321caddfcb475f9fec6cbdea60afa5">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7F000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f0848f82b6214ab394425449ae0e1ae6">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7F000080" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1a79f6a68ca243a287a622ccbf73d8d8">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="BB6A0000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_04b0d368604349ff903bd966d1ea2ed6">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="BB6A0080" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bbe9373de46840bb87f460045b2f9ad7">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF7F0000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_af939ce5671647d492423a8989138cd0">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF7F0080" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4cc85d3854494516a5b40d7aac59f451">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="2147483647" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFF7F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b7525f625f8641d29fd60b179028685e">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-2147483647" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2e2445de210a4b1fb96a8bb2a1d02c99">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-2147483648" />
+                    <unittest:element xsi:type="IntegerLiteral" value="2147483648" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_e5a0b96b0bae4014b87d5c4b2c2548d4">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_caea737c393444c6bd5caa6d378ca7ff">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_1439023fd239431bb0874f0d6e724b51">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingType="SIGNED-BINARY" encodingSize="32-BIT">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_LittleEndian_SignedBinary_EncodingSize64Bit" id="TestProcedure_7e475aa62e284fae8d95e704e9546f51" parallelizable="true">
+      <specification>Range: -9223372036854775807 to 9223372036854775807</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_7675acd1324b4c7a803097d116f4693f">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8c2412cffe9c400aade3f5e0cd5b0412">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="1900000000000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_30b896adf88c4f2e9e6ea8fb21b7c751">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="1900000000000080" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_67bb3d3f24d840d2b0927f97eb41a5a4">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7F00000000000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_254e53a97be149bdace571535e92ae36">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7F00000000000080" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ec7b4551557744c0ad18f552d3b049d6">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="BB6A000000000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bd64a804c4b041e494ea665d52503d0b">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="BB6A000000000080" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_cda7ba7139dd4d79a0a5e84477cd57f7">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF7F000000000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d81e3c60857a430090ffdd9cfe973cc7">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF7F000000000080" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_0ac9508f048c4885b84c819e5a3df3e1">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="2147483647" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFF7F00000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_54e19a1f04504da2a82e0b1fb446a312">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-2147483647" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFF7F00000080" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_83d39a0ca2584d6b9ea55dd34061c979">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFFFFFFFF7F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a19ba2ac9e744abeb1972c1d9ef031a1">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFFFFFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b575eedb24cb4446b19a39141d6431f6">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_97734d9bf3284e16a4833482e235ff9f">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_24cc6da6262f4b458c785d90175c95d7">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_bc206eeca0944d74b9885e8785a70da9">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingType="SIGNED-BINARY">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_LittleEndian_TwosComplement_EncodingSize8Bit" id="TestProcedure_5d7541ce47084a6f8f9af8f455c0a0ba" parallelizable="true">
+      <specification>Range: -128 to 127</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_ab1e7182a90a4c9dbd55713579c34568">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8bf75d382bc94a8b8dd01a782a62ff31">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="19" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4e8878b30a74464b804437c86a9d8d88">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="E7" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5be6b47da5844ec3b4c23b147d5d36a1">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ad8b729a407d4129b3b4b47a45195f5d">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="81" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a800ed1f13de413ab250a8555a8526cc">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="81" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_318db754b2b2465b8ba5468e57f06f0b">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-128" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="80" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bc162b9cd6e34def82583ef575ce8f83">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-129" />
+                    <unittest:element xsi:type="IntegerLiteral" value="128" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_02334e9d49e5456ea351a230cbc55048">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_66c696ddf105406c97fec5dbcd0dd113">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_c1b9e47fbc04472394669ce855e2b076">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingSize="8-BIT">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_LittleEndian_TwosComplement_EncodingSize16Bit" id="TestProcedure_80281cf2cf4349148e640e2f53fb7399" parallelizable="true">
+      <specification>Range: -32768 to 32767</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_c94c88b6bdc8436c8043132861e0c0ec">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a69806ed812145a7afe2e606b43543b8">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="1900" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7990edd60d61450598d518c850b47122">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="E7FF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c5ba5d60d70c488a9921be015c3edabf">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7F00" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d0aa3cd06d4744fcb56557fd84a9c171">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="81FF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5d1eae902096419781fe75b9a100b729">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="BB6A" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5c4011cffacb4e9f90144ee4da7db669">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="4595" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_364d2aa09f1d471c8ab9552199f19560">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF7F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_59c2b463bcf44202a0dbdcc1a3ce5c32">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0180" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_be7f0988b1c74baab847e0fd9b9e77a5">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-32768" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0080" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_037d91412ce544d8894cbfb9b3c22252">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-32769" />
+                    <unittest:element xsi:type="IntegerLiteral" value="32768" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_f7d0c3e62f764e03ade1677ff1205f55">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_9733827af0b046849207b1b2a657c2f3">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_254e2e746c25461c9ef2d17505b40050">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingSize="16-BIT">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_LittleEndian_TwosComplement_EncodingSize32Bit" id="TestProcedure_dad47f4b4a0f4642af6dbbd64f0ea8b1" parallelizable="true">
+      <specification>Range: -2147483648 to 2147483647</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_31860fd41a1f4b0eb3c09aded618b67c">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f436cf48dac24a9f80449ba695934399">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="19000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_0caf00b6e83f432a83ed83e896a997b7">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="E7FFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_331a52d8eeeb41f0b85756e631cb4665">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7F000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c37c58fc07244987a46ca19f6619e516">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="81FFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9a70b0f37b814d9ebb2b44fc087e79d5">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="BB6A0000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bf93209b0e494b7ba3903beca583612f">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="4595FFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bab20617f1384697910d0183999e832c">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF7F0000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_94518dfb4eff4c9593613595e4f2ac81">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0180FFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_00e109956fd44276abac9803c730e15a">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="2147483647" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFF7F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2f029aa199c547999d96318a10b1d0f5">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-2147483647" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="01000080" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6b9d318cb0804c34b982f210af1cbd2c">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-2147483648" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000080" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c2f18118a3ba4a169633c9979f749794">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-2147483649" />
+                    <unittest:element xsi:type="IntegerLiteral" value="2147483648" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_c22e4aec62ac4731a36c12351b08c0c4">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_89874ab692a94ecfb4a2f474d1d3c985">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_f45a872e1d1a4e419fa7ddce71e4766c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger" encodingSize="32-BIT">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_LittleEndian_TwosComplement_EncodingSize64Bit" id="TestProcedure_39e14f828ed042498cbf78dba32fae70" parallelizable="true">
+      <specification>Range: -9223372036854775808 to 9223372036854775807</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_6450f3f545a44e039ef97dc494abc736">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e9157697126c411c99b298411c4b5deb">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="1900000000000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f53e0c6671724a8aa841250492f421fe">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-25" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="E7FFFFFFFFFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_daaa5812995f4089b734182bea6d7f97">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="7F00000000000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e6073cb373ff412985676807f614262e">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-127" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="81FFFFFFFFFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_83cb9c1566d34c4a8e5706d464b35aff">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="BB6A000000000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ef647dbfb4504af289e9a3a4c205fadf">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-27323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="4595FFFFFFFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_66475d93e30944648c70d3d6fccaf262">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF7F000000000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e77c5c2560ef4a0180d99ffd139b4e38">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-32767" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0180FFFFFFFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f30ee0752bab45109f87c5f721f5e5a8">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="2147483647" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFF7F00000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f8ebc1a1b44b4054a4ba41975c10dee5">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-2147483647" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="01000080FFFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_7aff04b0d35a4047aa2e75cfb3078773">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFFFFFFFF7F" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9d5352ce3a89478bb8df41baa04a40e0">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0100000000000080" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b38a03d368a04627b8f6965ddbb368a6">
+            <unittest:arguments>
+              <unittest:argument param="Integer1">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0000000000000080" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_a720785984ac4245993daf1dbaa8ec00">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_8e7b5adb96ed4e8f8f2f65a3d501fe37">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_28f645f91fcc4d988d03555047f70ea3">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="Result" />
+              <term xsi:type="EncodeInteger">
+                <integer xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_MixedEndian_Unsigned_EncodingSize8Bit" id="TestProcedure_c8e66db6c1d34046ab6c59fb54616279" disabled="true" parallelizable="true">
+      <specification>Mixed Endian is not tested, because the runtime behavior is unclear</specification>
+      <unittest:realisation>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_4b7e8705cabf4b1496bd5259cd90220e">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_e392fce71e13496da468adcb71ceb7fa">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow />
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_MixedEndian_Unsigned_EncodingSize16Bit" id="TestProcedure_6ad1751eff534e60948afb8b2140a8cf" disabled="true" parallelizable="true">
+      <specification>Mixed Endian is not tested, because the runtime behavior is unclear</specification>
+      <unittest:realisation>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_60b0bbb12b284012a2cc43a98461a2b9">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_76fc609ec026496db3d21f752eff8547">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow />
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_MixedEndian_Unsigned_EncodingSize32Bit" id="TestProcedure_4ca2e5d25ebe4820b1196a8b5714038b" disabled="true" parallelizable="true">
+      <specification>Mixed Endian is not tested, because the runtime behavior is unclear</specification>
+      <unittest:realisation>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_241ab12683a9472c985ba44b40d8052a">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_d50156a399e34e0f9ffd2081da3f4d31">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow />
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_MixedEndian_Unsigned_EncodingSize64Bit" id="TestProcedure_283c054ec308472e8a39e49bbea4b42a" disabled="true" parallelizable="true">
+      <specification>Mixed Endian is not tested, because the runtime behavior is unclear</specification>
+      <unittest:realisation>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_b8c45f10bce441c18ac13158f13d23c6">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_ecd156cc67ea413983cab2fd19d98ae3">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow />
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_MixedEndian_SignedBinary_EncodingSize8Bit" id="TestProcedure_b1f7695a72ba4ba889250bbac3cfbbe0" disabled="true" parallelizable="true">
+      <specification>Mixed Endian is not tested, because the runtime behavior is unclear</specification>
+      <unittest:realisation>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_72686e47970c4af78dc044f568138eab">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_7d67c8859a754b4fb028e73a59c00aab">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow />
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_MixedEndian_SignedBinary_EncodingSize16Bit" id="TestProcedure_d75d91ff800c40afaf1d424d951983b0" disabled="true" parallelizable="true">
+      <specification>Mixed Endian is not tested, because the runtime behavior is unclear</specification>
+      <unittest:realisation>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_fa9e0658b2f54067acfc20bbe7e286e8">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_adff6102451c4c6f8fea40a986e6fdf8">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow />
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_MixedEndian_SignedBinary_EncodingSize32Bit" id="TestProcedure_ff4a33e415b841e2bd57c520637d1fd1" disabled="true" parallelizable="true">
+      <specification>Mixed Endian is not tested, because the runtime behavior is unclear</specification>
+      <unittest:realisation>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_d416f462285b46058250edf87222052e">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_ec1e7461a81941148ddb52d32e105974">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow />
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_MixedEndian_SignedBinary_EncodingSize64Bit" id="TestProcedure_14943903afd74795acdcf925218386e9" disabled="true" parallelizable="true">
+      <specification>Mixed Endian is not tested, because the runtime behavior is unclear</specification>
+      <unittest:realisation>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_db83f1b77b354d5d88be61a883bd2908">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_7c440bc5b6454953900f63df40dd58db">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow />
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_MixedEndian_TwosComplement_EncodingSize8Bit" id="TestProcedure_27a3c14a5ace492f9e0cfcad2c0bc21c" disabled="true" parallelizable="true">
+      <specification>Mixed Endian is not tested, because the runtime behavior is unclear</specification>
+      <unittest:realisation>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_e88be1ce42634166bba437724e00f47f">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_aa18bd2f1bb44f0aa9991ec68d7d0d8d">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow />
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_MixedEndian_TwosComplement_EncodingSize16Bit" id="TestProcedure_c6f47e56a7264b0d87cdfc70c2e1d0e6" disabled="true" parallelizable="true">
+      <specification>Mixed Endian is not tested, because the runtime behavior is unclear</specification>
+      <unittest:realisation>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_232d5d435aad4f5eb4c856d537e92525">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_7a478a481d8c4376a3dc62faaed07d26">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow />
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_MixedEndian_TwosComplement_EncodingSize32Bit" id="TestProcedure_4f28c5d69ea1440ca19db727ff476b3b" disabled="true" parallelizable="true">
+      <specification>Mixed Endian is not tested, because the runtime behavior is unclear</specification>
+      <unittest:realisation>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_806dfdccc13b43cda988854b8b93b170">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_0ce6a23ae6474d1bbb5252ec2784b340">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow />
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EncodeInteger_MixedEndian_TwosComplement_EncodingSize64Bit" id="TestProcedure_247650ce0d3f497b81cde1b560378be9" disabled="true" parallelizable="true">
+      <specification>Mixed Endian is not tested, because the runtime behavior is unclear</specification>
+      <unittest:realisation>
+        <unittest:parameters>
+          <unittest:inParam name="Integer1" id="InParameterDeclaration_40acf9d6634a4b3290bb2c123d4073ed">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_5ffde5f0fef44a239995aefc9bbb328b">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow />
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

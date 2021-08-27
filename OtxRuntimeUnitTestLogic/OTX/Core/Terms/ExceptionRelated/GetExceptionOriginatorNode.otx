@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="GetExceptionOriginatorNode" id="id_b67842c65a2a45b9966c878e31368dea" package="Core.Terms.ExceptionRelated" version="1.0.0.42272" timestamp="2021-05-10T10:55:08.109+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42244</data>
+  </metaData>
+  <imports>
+    <import package="RootPackage1" document="Document1" prefix="Document11" />
+  </imports>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="GetExceptionOriginatorNode_UserException" id="TestProcedure_0c631eac36f24b29af557da01f8191d7" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Exception1" id="VariableDeclaration_8bc6e1efd9df4141934b40ffa15f7e43">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+          <variable name="nodeId" id="VariableDeclaration_0a9175e58e9e487387f0f83f21b99655">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <handler id="Handler_83c3484145ba445fad3cb3f105e3c651">
+            <realisation>
+              <try>
+                <throw id="Throw_cac7ef500fd04ecbb1ed11165e21c875">
+                  <realisation xsi:type="UserExceptionCreate">
+                    <qualifier xsi:type="StringLiteral" value="ExceptionQualifier1" />
+                    <text xsi:type="StringLiteral" value="Exception description text" />
+                  </realisation>
+                </throw>
+              </try>
+              <catch>
+                <exception id="CatchHeader_3934c302a01343129724f3bd4474c5c4">
+                  <realisation>
+                    <type />
+                    <handle name="Exception1" />
+                  </realisation>
+                </exception>
+                <flow>
+                  <action id="Action_b458b7111f134659b678d4abf9ec5482">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="nodeId" />
+                      <term xsi:type="GetExceptionOriginatorNode">
+                        <exception xsi:type="ExceptionValue" valueOf="Exception1" />
+                      </term>
+                    </realisation>
+                  </action>
+                </flow>
+              </catch>
+            </realisation>
+          </handler>
+          <action id="Action_68f303904e51445dba752f574b8ba111">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="nodeId" />
+                <term xsi:type="StringLiteral" value="Throw_cac7ef500fd04ecbb1ed11165e21c875" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="GetExceptionOriginatorNode_ImplicitException" id="TestProcedure_81a05595bac440978f4b1f122158af09" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Exception1" id="VariableDeclaration_e9bd02e11fbd4244a4fc085a68a4a37b">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+          <variable name="Integer1" id="VariableDeclaration_5da883fbfc7c4c5eb1d59cfa7fedd54d">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="nodeId" id="VariableDeclaration_2ac4c7bc33bf468c96c9a90201ace413">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <handler id="Handler_c46a1d2e02e04336b733f44fdaaf341d">
+            <realisation>
+              <try>
+                <action id="Action_b3bc7cda96604a6d8edd206cae3cd52c">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="IntegerVariable" name="Integer1" />
+                    <term xsi:type="Divide">
+                      <numeral xsi:type="IntegerLiteral" value="9" />
+                      <divisor xsi:type="IntegerLiteral" value="0" />
+                    </term>
+                  </realisation>
+                </action>
+              </try>
+              <catch>
+                <exception id="CatchHeader_d0cae5de26c241fa9d40e7d369c7dbea">
+                  <realisation>
+                    <type />
+                    <handle name="Exception1" />
+                  </realisation>
+                </exception>
+                <flow>
+                  <action id="Action_1d216280b80a48dea29edb71b0a4499a">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="nodeId" />
+                      <term xsi:type="GetExceptionOriginatorNode">
+                        <exception xsi:type="ExceptionValue" valueOf="Exception1" />
+                      </term>
+                    </realisation>
+                  </action>
+                </flow>
+              </catch>
+            </realisation>
+          </handler>
+          <action id="Action_be8eb0ad99bf4e27b343f13fb247039b">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="nodeId" />
+                <term xsi:type="StringLiteral" value="Action_b3bc7cda96604a6d8edd206cae3cd52c" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="GetExceptionOriginatorNode_ProcedureCall" id="TestProcedure_a57fa551a7204df1ace651a9ee6d4387" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Exception1" id="VariableDeclaration_70039061073c4b17b23e3b26c36b879b">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+          <variable name="nodeId" id="VariableDeclaration_5c68890efdae4747aefe35f444f23ae7">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <handler id="Handler_a4a4fcdbae6542f98c90fe36783ea5f4">
+            <realisation>
+              <try>
+                <action name="ProcedureSignature1" id="ProcedureCall_cee323b4829d4bada67cf56751b5b87b">
+                  <realisation xsi:type="ProcedureCall" procedure="Document11:ProcedureWithUserException" />
+                </action>
+              </try>
+              <catch>
+                <exception id="CatchHeader_bb351e913d614ab19d672223cc3ec741">
+                  <realisation>
+                    <type />
+                    <handle name="Exception1" />
+                  </realisation>
+                </exception>
+                <flow>
+                  <action id="Action_4035420612444c0eb3935b8ef8ebfcc6">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="nodeId" />
+                      <term xsi:type="GetExceptionOriginatorNode">
+                        <exception xsi:type="ExceptionValue" valueOf="Exception1" />
+                      </term>
+                    </realisation>
+                  </action>
+                </flow>
+              </catch>
+            </realisation>
+          </handler>
+          <action id="Action_89f4c358a6154dda862fba2d4dc04ab2">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="nodeId" />
+                <term xsi:type="StringLiteral" value="Throw_a90e6eed4d754809b69d67676c9cd3dc" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

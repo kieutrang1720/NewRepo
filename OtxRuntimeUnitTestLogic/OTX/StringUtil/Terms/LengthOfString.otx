@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:string="http://iso.org/OTX/1.0.0/StringUtil" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="LengthOfString" id="id_d4d2766ff3b54ea2abd845d13470e7ae" package="StringUtil.Terms" version="1.0.0.0" timestamp="2021-08-09T12:09:07.455+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42466</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="LengthOfString_Base" id="id_c0a866b4138a4e7690377cae031d5448" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_cda654823e484df4938b969a24a29760">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2c8a9a0c9a9c48d9b03375fb1c0241dc">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="~!@#$%^&amp;*()_+QWERTYUIOP{}|ASDFGHJKL:\&quot;ZXCVBNM&lt;&gt;?`1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./ ~!@#$%^&amp;*()_+QWERTYUIOP{}|ASDFGHJKL:\&quot;ZXCVBNM&lt;&gt;?`1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./ " />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="190" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="string" id="InParameterDeclaration_00153eb9cb464e2e9bced810093b04eb">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_14768c417cfc4584aa494750d588d439">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_1466166d870646aba14b2de92e701a06">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="result" />
+              <term xsi:type="string:LengthOfString">
+                <string:string xsi:type="StringValue" valueOf="string" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

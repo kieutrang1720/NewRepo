@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:string="http://iso.org/OTX/1.0.0/StringUtil" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="SubString" id="id_517e9ba0bf064f5bbf2e6a882cbbbc05" package="StringUtil.Terms" version="1.0.0.0" timestamp="2021-08-09T11:53:05.669+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42466</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="SubString_Float" id="id_659df3ed92a4482b93347e6121de9bc0" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_2d95ab1dfb4d4578add8d5098d872580">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="qwertyu" />
+              </unittest:argument>
+              <unittest:argument param="index">
+                <unittest:value xsi:type="FloatLiteral" value="0.999" />
+              </unittest:argument>
+              <unittest:argument param="count">
+                <unittest:value xsi:type="FloatLiteral" value="4.999" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="qwer" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6da7adcf9b7040fa828b4cbf677c6c3b">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="qwertyu" />
+              </unittest:argument>
+              <unittest:argument param="index">
+                <unittest:value xsi:type="IntegerLiteral" value="4" />
+              </unittest:argument>
+              <unittest:argument param="count">
+                <unittest:value xsi:type="FloatLiteral" value="-7.999" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6a388dd160f34a2a90886c4796f2ebba">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="qwertyu" />
+              </unittest:argument>
+              <unittest:argument param="index">
+                <unittest:value xsi:type="FloatLiteral" value="0.999" />
+              </unittest:argument>
+              <unittest:argument param="count">
+                <unittest:value xsi:type="FloatLiteral" value="7.999" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="qwertyu" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_431d50240db542e79879b23533debe3f">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="qwertyu" />
+              </unittest:argument>
+              <unittest:argument param="index">
+                <unittest:value xsi:type="FloatLiteral" value="-0.01" />
+              </unittest:argument>
+              <unittest:argument param="count">
+                <unittest:value xsi:type="FloatLiteral" value="5.999" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="qwert" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_cc19290202e942609c1d4156b8fbdc52">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="qwertyu" />
+              </unittest:argument>
+              <unittest:argument param="index">
+                <unittest:value xsi:type="FloatLiteral" value="-0.999" />
+              </unittest:argument>
+              <unittest:argument param="count">
+                <unittest:value xsi:type="FloatLiteral" value="3.999" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="qwe" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="string" id="InParameterDeclaration_b17bc12d4ba44329931f4ac0b3ad1c90">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="index" id="InParameterDeclaration_0840c3b3abf54cbf9003adf8ee7db00b">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="count" id="InParameterDeclaration_4ac43ba4575b44e99dfdb3d10b98e931">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_b5be4ff4293b493da31f09b28b66983c">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_62961bfa3de14dcdb703fbd036f700f2">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="result" />
+              <term xsi:type="string:SubString">
+                <string:string xsi:type="StringValue" valueOf="string" />
+                <string:index xsi:type="FloatValue" valueOf="index" />
+                <string:count xsi:type="FloatValue" valueOf="count" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SubString_Integer" id="TestProcedure_624a7c42759d4d8d80687b8f0823801a" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_ebabadf1237847a4a75599ad8d38dea4">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="qwertyu" />
+              </unittest:argument>
+              <unittest:argument param="index">
+                <unittest:value xsi:type="IntegerLiteral" value="2" />
+              </unittest:argument>
+              <unittest:argument param="count">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_783d8db8ae474f2698f1986b6e2cefb8">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="qwertyu" />
+              </unittest:argument>
+              <unittest:argument param="index">
+                <unittest:value xsi:type="IntegerLiteral" value="2" />
+              </unittest:argument>
+              <unittest:argument param="count">
+                <unittest:value xsi:type="IntegerLiteral" value="4" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="erty" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_32c16a145d5c4284acd401c69f285885">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="qwertyu" />
+              </unittest:argument>
+              <unittest:argument param="index">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="count">
+                <unittest:value xsi:type="IntegerLiteral" value="7" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="qwertyu" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_654f1bfe71e94e4e84a052093b4116ab">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="qwertyu" />
+              </unittest:argument>
+              <unittest:argument param="index">
+                <unittest:value xsi:type="IntegerLiteral" value="4" />
+              </unittest:argument>
+              <unittest:argument param="count">
+                <unittest:value xsi:type="IntegerLiteral" value="-3" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8ad4358ee6e04c2fac48fab244c5a723">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="qwertyu" />
+              </unittest:argument>
+              <unittest:argument param="index">
+                <unittest:value xsi:type="IntegerLiteral" value="-3" />
+              </unittest:argument>
+              <unittest:argument param="count">
+                <unittest:value xsi:type="IntegerLiteral" value="3" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4426713342da46be9534e50d1354d006">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="qwertyu" />
+              </unittest:argument>
+              <unittest:argument param="index">
+                <unittest:value xsi:type="IntegerLiteral" value="20" />
+              </unittest:argument>
+              <unittest:argument param="count">
+                <unittest:value xsi:type="IntegerLiteral" value="3" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bc11953a6a064e88ab2af608e5ed5fb1">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="qwertyu" />
+              </unittest:argument>
+              <unittest:argument param="index">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="count">
+                <unittest:value xsi:type="IntegerLiteral" value="50" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="qwertyu" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="string" id="InParameterDeclaration_4926b883a2a449f1bb35171fb4be19ec">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="index" id="InParameterDeclaration_9d104354422a4befb8fabc3355ea0575">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="count" id="InParameterDeclaration_997724ef149b4c73995d8f7bcc9d0f99">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_436d880d455e4feabe15f0b6b4db51a9">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_fc3c01b2e5f54957939e6c9246b97545">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="result" />
+              <term xsi:type="string:SubString">
+                <string:string xsi:type="StringValue" valueOf="string" />
+                <string:index xsi:type="IntegerValue" valueOf="index" />
+                <string:count xsi:type="IntegerValue" valueOf="count" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

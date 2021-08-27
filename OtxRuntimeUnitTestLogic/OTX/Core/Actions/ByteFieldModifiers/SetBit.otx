@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="SetBit" id="id_6122dd890ad4480c813d87377fad9e84" package="Core.Actions.ByteFieldModifiers" version="1.0.0.41453" timestamp="2021-05-12T14:04:27.745+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42119</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="SetBitInteger" id="id_8aec9af929ba48c0b9ad92bd125bd673" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_88291459e7ac42589f955c9723161828">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="outByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0003" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a76eb1d644cb43909d3ecd4d19ba80fc">
+            <unittest:arguments>
+              <unittest:argument param="booleanValue">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="outByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0001" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_0faff0efabc64908b7a95953de65c361">
+            <unittest:arguments>
+              <unittest:argument param="position">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="outByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0001" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c44d9529f6c847419ec521bbf71dd4dd">
+            <unittest:arguments>
+              <unittest:argument param="inByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" value="80000000" />
+              </unittest:argument>
+              <unittest:argument param="index">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="position">
+                <unittest:value xsi:type="IntegerLiteral" value="7" />
+              </unittest:argument>
+              <unittest:argument param="booleanValue">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="outByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00000000" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8e7b4fd0014541799bc131924e7fca9f">
+            <unittest:arguments>
+              <unittest:argument param="inByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFE" />
+              </unittest:argument>
+              <unittest:argument param="index">
+                <unittest:value xsi:type="IntegerLiteral" value="3" />
+              </unittest:argument>
+              <unittest:argument param="position">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+              <unittest:argument param="booleanValue">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="outByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b904745a5d954abaa1e9e0fcb2dde0d9" sequential="true">
+            <unittest:arguments>
+              <unittest:argument param="index">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="3" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="3" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="position">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="8" />
+                    <unittest:element xsi:type="IntegerLiteral" value="8" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f838d3cff08141b684c682b3e7d007ad" sequential="true">
+            <unittest:arguments>
+              <unittest:argument param="inByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:argument>
+              <unittest:argument param="index">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="3" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="3" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="position">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="8" />
+                    <unittest:element xsi:type="IntegerLiteral" value="8" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="inByteField" id="InParameterDeclaration_c6a8d4e4e6ee4133956fa6ced319684d">
+            <realisation>
+              <dataType xsi:type="ByteField">
+                <init value="0001" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="index" id="InParameterDeclaration_b32e2f3747fa4b2d917b17a9710c449e">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="1" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="position" id="InParameterDeclaration_e90b197d8c17496cb2363a758fb90a91">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="1" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="booleanValue" id="InParameterDeclaration_836f66b697614fa89610fe247044a35b">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="true" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="outByteField" id="OutParameterDeclaration_e927c1e011b64fd09bd2b6e510270383">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_391d93df29894b27b54442e227087df9">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="outByteField" />
+              <term xsi:type="ByteFieldValue" valueOf="inByteField" />
+            </realisation>
+          </action>
+          <action id="Action_8ab722a4353042269c43b9eaf7c639b1">
+            <realisation xsi:type="SetBit">
+              <byteField name="outByteField" />
+              <index xsi:type="IntegerValue" valueOf="index" />
+              <position xsi:type="IntegerValue" valueOf="position" />
+              <value xsi:type="BooleanValue" valueOf="booleanValue" />
+            </realisation>
+          </action>
+          <action id="Action_d90fdafaac79434e85d985c3c5e74de6">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ByteFieldValue" valueOf="outByteField" />
+                <term xsi:type="ByteFieldValue" valueOf="inByteField" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SetBitFloat" id="TestProcedure_9f91658f04a343c685c09fb21668bcb3" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_96224ee6bfe845fbba718bf8a3b015a5" sequential="true">
+            <unittest:arguments>
+              <unittest:argument param="index">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="-0.9999999999" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.97626258336499E-323" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="position">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="-0.9999999999" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.97626258336499E-323" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="outByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0101" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_61c2a9f4d45a4366abf724c372980203">
+            <unittest:arguments>
+              <unittest:argument param="inByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FEFFFFFF" />
+              </unittest:argument>
+              <unittest:argument param="position">
+                <unittest:value xsi:type="FloatLiteral" value="-1.97626258336499E-323" />
+              </unittest:argument>
+              <unittest:argument param="booleanValue">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="outByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_53821053c20d4cba86015e94abb6d986">
+            <unittest:arguments>
+              <unittest:argument param="inByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFF7F" />
+              </unittest:argument>
+              <unittest:argument param="index">
+                <unittest:value xsi:type="FloatLiteral" value="3.9999999999" />
+              </unittest:argument>
+              <unittest:argument param="position">
+                <unittest:value xsi:type="FloatLiteral" value="7.9999999999" />
+              </unittest:argument>
+              <unittest:argument param="booleanValue">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="outByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_29dd524fd5f7420fbc45e4ffd50a778f" sequential="true">
+            <unittest:arguments>
+              <unittest:argument param="index">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="NaN" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="NaN" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1" />
+                    <unittest:element xsi:type="FloatLiteral" value="3" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="3" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="position">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="NaN" />
+                    <unittest:element xsi:type="FloatLiteral" value="NaN" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="8" />
+                    <unittest:element xsi:type="FloatLiteral" value="8" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_0bbbb7e2b2ad4674b416c5a395ab7f34" sequential="true">
+            <unittest:arguments>
+              <unittest:argument param="inByteField">
+                <unittest:value xsi:type="ByteFieldLiteral" />
+              </unittest:argument>
+              <unittest:argument param="index">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="NaN" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="NaN" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1" />
+                    <unittest:element xsi:type="FloatLiteral" value="3" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="3" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="position">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="NaN" />
+                    <unittest:element xsi:type="FloatLiteral" value="NaN" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1" />
+                    <unittest:element xsi:type="FloatLiteral" value="-1" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="8" />
+                    <unittest:element xsi:type="FloatLiteral" value="8" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    <unittest:element xsi:type="FloatLiteral" value="-0" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                    <unittest:element xsi:type="FloatLiteral" value="INF" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="inByteField" id="InParameterDeclaration_b0786250ec3045a5b4c3a5d84ee8b33b">
+            <realisation>
+              <dataType xsi:type="ByteField">
+                <init value="0001" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="index" id="InParameterDeclaration_e75b5fa39ea5462e9668eb6444f69a68">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="-0" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="position" id="InParameterDeclaration_47a95d65bfea45ee846d4ad6319b398d">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="-0" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="booleanValue" id="InParameterDeclaration_775f7ea0752e4eeea5e0fcd466483dda">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="true" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="outByteField" id="OutParameterDeclaration_c1da423ed4ba496fa539a8c5f60ebf2c">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_e97229846f4f41bba571be747df09a5a">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="outByteField" />
+              <term xsi:type="ByteFieldValue" valueOf="inByteField" />
+            </realisation>
+          </action>
+          <action id="Action_1b5bf82b80744cf796f1dd69c8585179">
+            <realisation xsi:type="SetBit">
+              <byteField name="outByteField" />
+              <index xsi:type="FloatValue" valueOf="index" />
+              <position xsi:type="FloatValue" valueOf="position" />
+              <value xsi:type="BooleanValue" valueOf="booleanValue" />
+            </realisation>
+          </action>
+          <action id="Action_847abc8886d54ba4b2be9c9875f661e4">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ByteFieldValue" valueOf="outByteField" />
+                <term xsi:type="ByteFieldValue" valueOf="inByteField" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:diag="http://iso.org/OTX/1.0.0/DiagCom" xmlns:string="http://iso.org/OTX/1.0.0/StringUtil" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:event="http://iso.org/OTX/1.0.0/Event" name="SetRepetitionTime" id="id_5131c3100f5f4e1fa7ee9d1ab52cf3d3" package="DiagCom.Actions.DiagComDiagnosticService" version="1.0.0.0" timestamp="2021-08-19T17:59:14.921+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42592</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="SetRepetitionTime_Base" id="id_ccf0b17056464f55976947c63409109c">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_9aeef8e1245744078a7fa101ed792248">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="DiagService1" id="VariableDeclaration_9ca357aec10e4428a6015daedcbd0518">
+            <realisation>
+              <dataType xsi:type="diag:DiagService" />
+            </realisation>
+          </variable>
+          <variable name="List1" id="VariableDeclaration_2637569b653f4e1490da554e084d2c20">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="diag:Result" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Integer1" id="VariableDeclaration_62e8271549734d97be4abd733adfeb88">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="Integer2" id="VariableDeclaration_c81a2df811b8444e8e7b9926050ac7da">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_5910653bebf340aa87f87ea4ad495eea">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringLiteral" value="LL_GatewUDS" />
+              </term>
+            </realisation>
+          </action>
+          <action name="CreateDiagServiceByName1" id="Action_5d77137e253a481fb1076e1a8fd889d9">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:DiagServiceVariable" name="DiagService1" />
+              <term xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:name xsi:type="StringLiteral" value="DiagnServi_DiagnSessiContrDefaultSessi" />
+              </term>
+            </realisation>
+          </action>
+          <action name="SetRepetitionTime1" id="SetRepetitionTime_b459df5acb764224ac056e15f5615fa4">
+            <realisation xsi:type="diag:SetRepetitionTime">
+              <diag:diagService valueOf="DiagService1" />
+              <diag:repetitionTime xsi:type="IntegerLiteral" value="1000" />
+            </realisation>
+          </action>
+          <action name="StartRepeatedExecution1" id="StartRepeatedExecution_71c2db0f71e343669f6c60885b88a863">
+            <realisation xsi:type="diag:StartRepeatedExecution">
+              <diag:diagService valueOf="DiagService1" />
+            </realisation>
+          </action>
+          <action name="Sleep1" id="WaitForEvent_33a39cf1e0a84dd3a9b3968271520f22">
+            <metaData>
+              <data key="EmotiveActivity">SleepActivity</data>
+            </metaData>
+            <realisation xsi:type="event:WaitForEvent">
+              <event:source xsi:type="event:TimerExpiredEventSource">
+                <event:timeout xsi:type="IntegerLiteral" value="2000" />
+              </event:source>
+            </realisation>
+          </action>
+          <action name="StopRepeatedExecution1" id="StopRepeatedExecution_8a11f97459364681856de8c97545f71b">
+            <realisation xsi:type="diag:StopRepeatedExecution">
+              <diag:diagService valueOf="DiagService1" />
+            </realisation>
+          </action>
+          <action name="GetAllResults1" id="Action_bb251b36ca83479a9efa6ea1a6f98629">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="diag:GetAllResults">
+                <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+              </term>
+            </realisation>
+          </action>
+          <action name="ListGetLength1" id="Action_120f1bba432c47e6baefa359de78ccc2">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Integer1" />
+              <term xsi:type="ListGetLength">
+                <list xsi:type="ListValue" valueOf="List1" />
+              </term>
+            </realisation>
+          </action>
+          <action name="GetRepetitionTime1" id="Action_2f2e42acf2a74560b943cbad7d7a8b77">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Integer2" />
+              <term xsi:type="diag:GetRepetitionTime">
+                <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_1fcd65e111ba4f31a546d4e49bc675e1">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+          <action id="Action_edb434cd1e0845a3bc51f4b4894f9902">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicAnd">
+                <term xsi:type="IsEqual">
+                  <term xsi:type="IntegerValue" valueOf="Integer1" />
+                  <term xsi:type="IntegerLiteral" value="2" />
+                </term>
+                <term xsi:type="IsEqual">
+                  <term xsi:type="IntegerValue" valueOf="Integer2" />
+                  <term xsi:type="IntegerLiteral" value="1000" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SetRepetitionTime_RepetitionTimeTruncated" id="TestProcedure_c32d0769a2fa4667b25c8bc1b25c98d2">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_acd09236bbee4425bbfd256f6c690e81">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="DiagService1" id="VariableDeclaration_5f71bd12cb144a048957fe118a1a2e16">
+            <realisation>
+              <dataType xsi:type="diag:DiagService" />
+            </realisation>
+          </variable>
+          <variable name="List1" id="VariableDeclaration_7ddf027d3c424edc90e3691750666be9">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="diag:Result" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Integer1" id="VariableDeclaration_e6f4ed6590014361a4cb65b124d88361">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action name="GetComChannel1" id="Action_4a5e9ee281594506be5767239fb445ac">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringLiteral" value="LL_GatewUDS" />
+                <diag:ecuVariantName xsi:type="StringLiteral" value="EV_Gatew31xAU65x_003" />
+              </term>
+            </realisation>
+          </action>
+          <action name="CreateDiagServiceByName1" id="Action_d712cc7809c74f8499199c12613f5c08">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:DiagServiceVariable" name="DiagService1" />
+              <term xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:name xsi:type="StringLiteral" value="System_Identification_Read" />
+              </term>
+            </realisation>
+          </action>
+          <action name="SetRepetitionTime1" id="SetRepetitionTime_91ef09a0a0254a99824654eb5c459ba4">
+            <realisation xsi:type="diag:SetRepetitionTime">
+              <diag:diagService valueOf="DiagService1" />
+              <diag:repetitionTime xsi:type="FloatLiteral" value="1000.9999" />
+            </realisation>
+          </action>
+          <action name="StartRepeatedExecution1" id="StartRepeatedExecution_af4a52130f3e4d9785b72eb4a4198ed4">
+            <realisation xsi:type="diag:StartRepeatedExecution">
+              <diag:diagService valueOf="DiagService1" />
+            </realisation>
+          </action>
+          <action name="Sleep1" id="WaitForEvent_41d214d54c6d4720b1de083d3a9983c7">
+            <metaData>
+              <data key="EmotiveActivity">SleepActivity</data>
+            </metaData>
+            <realisation xsi:type="event:WaitForEvent">
+              <event:source xsi:type="event:TimerExpiredEventSource">
+                <event:timeout xsi:type="IntegerLiteral" value="2000" />
+              </event:source>
+            </realisation>
+          </action>
+          <action name="StopRepeatedExecution1" id="StopRepeatedExecution_d29421956b7a43acb1ff12010c7cc96c">
+            <realisation xsi:type="diag:StopRepeatedExecution">
+              <diag:diagService valueOf="DiagService1" />
+            </realisation>
+          </action>
+          <action name="GetAllResults1" id="Action_70207e4cb23342d6ae4fe9dc0dd4f0a3">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="diag:GetAllResults">
+                <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+              </term>
+            </realisation>
+          </action>
+          <action name="GetRepetitionTime1" id="Action_c406653cf5a94183b5f061843a8e90e7">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Integer1" />
+              <term xsi:type="diag:GetRepetitionTime">
+                <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+              </term>
+            </realisation>
+          </action>
+          <action name="CloseComChannel1" id="CloseComChannel_018466357f204b32ba3bf6ae8318c675">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+          <action id="Action_2f97ff7c7d234c21bf333ca4dd5a33c2">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicAnd">
+                <term xsi:type="IsGreaterOrEqual">
+                  <left xsi:type="ListGetLength">
+                    <list xsi:type="ListValue" valueOf="List1" />
+                  </left>
+                  <right xsi:type="IntegerLiteral" value="2" />
+                </term>
+                <term xsi:type="IsEqual">
+                  <term xsi:type="IntegerValue" valueOf="Integer1" />
+                  <term xsi:type="IntegerLiteral" value="1000" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SetRepetitionTime_OutOfBoundsException" id="TestProcedure_cc807d07c5b14e8e8a78c299ab4e2fe8">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_e6c45c5fdb9b4c409ab0d366694477f3">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="DiagService1" id="VariableDeclaration_2ebcf0314a07490f8883ab7d9098dbcb">
+            <realisation>
+              <dataType xsi:type="diag:DiagService" />
+            </realisation>
+          </variable>
+          <variable name="Result" id="VariableDeclaration_1678553512994910978c87d72662fab4">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Exception1" id="VariableDeclaration_1ebe4dbb2933453aa72175da23f7544f">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+          <variable name="ErrorMessage" id="VariableDeclaration_0eb062139d3349e687e629cfcca47af9">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action name="GetComChannel1" id="Action_f61ea76a81a846c98e2fd9781b2107be">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringLiteral" value="LL_GatewUDS" />
+                <diag:ecuVariantName xsi:type="StringLiteral" value="EV_Gatew31xAU65x_003" />
+              </term>
+            </realisation>
+          </action>
+          <action name="CreateDiagServiceByName1" id="Action_1fb13d4991de4ebc9fb334009e1de023">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:DiagServiceVariable" name="DiagService1" />
+              <term xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:name xsi:type="StringLiteral" value="DiagnServi_DiagnSessiContrDefaultSessi" />
+              </term>
+            </realisation>
+          </action>
+          <handler name="Handler1" id="Handler_f7b7526a17c44ba58c58661cee04beb2">
+            <realisation>
+              <try>
+                <action name="SetRepetitionTime1" id="SetRepetitionTime_706febc63382441eb2ecc51b6c564126">
+                  <realisation xsi:type="diag:SetRepetitionTime">
+                    <diag:diagService valueOf="DiagService1" />
+                    <diag:repetitionTime xsi:type="IntegerLiteral" value="-100" />
+                  </realisation>
+                </action>
+                <action name="Assignment2" id="Assignment_dd6acb36900b4338a4b21365e420738a">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="StringVariable" name="ErrorMessage" />
+                    <term xsi:type="StringLiteral" value="OutOfBoundsException does not occur" />
+                  </realisation>
+                </action>
+              </try>
+              <catch>
+                <exception id="CatchHeader_64eee28965dc4653b48a9c487d9ead81">
+                  <realisation>
+                    <type xsi:type="OutOfBoundsException" />
+                  </realisation>
+                </exception>
+                <flow>
+                  <action name="Assignment1" id="Assignment_0b098ca08beb4b06a9cd3683b202a9b7">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="BooleanVariable" name="Result" />
+                      <term xsi:type="BooleanLiteral" value="false" />
+                    </realisation>
+                  </action>
+                </flow>
+              </catch>
+              <catch>
+                <exception id="CatchHeader_86c7dd725a8145b5b7ea1b190029743d">
+                  <realisation>
+                    <type />
+                    <handle name="Exception1" />
+                  </realisation>
+                </exception>
+                <flow>
+                  <action name="StringConcatenate1" id="Action_8dd9bb198de7439082938732f2125088">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="ErrorMessage" />
+                      <term xsi:type="string:StringConcatenate">
+                        <string:string xsi:type="StringLiteral" value="Wrong Exception: " />
+                        <string:string xsi:type="ToString">
+                          <term xsi:type="ExceptionValue" valueOf="Exception1" />
+                        </string:string>
+                        <string:string xsi:type="StringLiteral" value=" was thrown. OutOfBoundsException was expected" />
+                      </term>
+                    </realisation>
+                  </action>
+                </flow>
+              </catch>
+              <finally>
+                <action name="CloseComChannel1" id="CloseComChannel_04665c28366d4f4289d0a362a503cb54">
+                  <realisation xsi:type="diag:CloseComChannel">
+                    <diag:comChannel name="ComChannel1" />
+                  </realisation>
+                </action>
+              </finally>
+            </realisation>
+          </handler>
+          <action name="Assert1" id="Assert_a086fa313ef64a03b89f5efb379be66c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="BooleanValue" valueOf="Result" />
+              <assert:errorMessage xsi:type="StringValue" valueOf="ErrorMessage" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SetRepetitionTime_InvalidStateException" id="TestProcedure_2fea9893ad4741cb94b4ece5b412e0ed">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_8a290fc19d0c4a609e2e67c8c17d6147">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="DiagService1" id="VariableDeclaration_1818228c18844a0c83e68949e55f5f2c">
+            <realisation>
+              <dataType xsi:type="diag:DiagService" />
+            </realisation>
+          </variable>
+          <variable name="Result" id="VariableDeclaration_03076040fc17454e80f16035a044e46f">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="ErrorMessage" id="VariableDeclaration_daf7ad348d6341bea9d4c23e76f3765c">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+          <variable name="Exception1" id="VariableDeclaration_2979e4109de54c75b9c6243da6cd4b2d">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action name="GetComChannel1" id="Action_925a0cc9b508440ead4d2de9e049ccac">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringLiteral" value="LL_GatewUDS" />
+              </term>
+            </realisation>
+          </action>
+          <action name="CreateDiagServiceByName1" id="Action_81dbacdd1f36410b88fc7de4d6bab6b5">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:DiagServiceVariable" name="DiagService1" />
+              <term xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:name xsi:type="StringLiteral" value="DiagnServi_DiagnSessiContrDefaultSessi" />
+              </term>
+            </realisation>
+          </action>
+          <action name="StartRepeatedExecution1" id="StartRepeatedExecution_997a3411d9ed4ce8a75906e0adea42ea">
+            <realisation xsi:type="diag:StartRepeatedExecution">
+              <diag:diagService valueOf="DiagService1" />
+            </realisation>
+          </action>
+          <handler name="Handler1" id="Handler_74bb835eca9e48a881100d196d67eddc">
+            <realisation>
+              <try>
+                <action name="SetRepetitionTime1" id="SetRepetitionTime_0aef45d2c9b54fa0bfbab5ff08f53c2e">
+                  <realisation xsi:type="diag:SetRepetitionTime">
+                    <diag:diagService valueOf="DiagService1" />
+                    <diag:repetitionTime xsi:type="IntegerLiteral" value="1000" />
+                  </realisation>
+                </action>
+              </try>
+              <catch>
+                <exception id="CatchHeader_34c8035290f148be83c8e15dcb42a6ce">
+                  <realisation>
+                    <type xsi:type="diag:InvalidStateException" />
+                  </realisation>
+                </exception>
+                <flow>
+                  <action name="Assignment1" id="Assignment_6fa62a6539c14bdaa12a655f82b01785">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="BooleanVariable" name="Result" />
+                      <term xsi:type="BooleanLiteral" value="true" />
+                    </realisation>
+                  </action>
+                </flow>
+              </catch>
+              <catch>
+                <exception id="CatchHeader_28c6913c0e0b45cabc19ad857e5afda8">
+                  <realisation>
+                    <type />
+                    <handle name="Exception1" />
+                  </realisation>
+                </exception>
+                <flow>
+                  <action id="Action_0a8005e6ba2c442886213fae7aa5a049">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="ErrorMessage" />
+                      <term xsi:type="string:StringConcatenate">
+                        <string:string xsi:type="StringLiteral" value="Wrong Exception: " />
+                        <string:string xsi:type="ToString">
+                          <term xsi:type="ExceptionValue" valueOf="Exception1" />
+                        </string:string>
+                        <string:string xsi:type="StringLiteral" value=" was thrown. DiagCom.InvalidStateException was expected" />
+                      </term>
+                    </realisation>
+                  </action>
+                </flow>
+              </catch>
+              <finally>
+                <action id="Action_17a73edb1f4943a9aad02d95b6e3ae1b">
+                  <realisation xsi:type="diag:CloseComChannel">
+                    <diag:comChannel name="ComChannel1" />
+                  </realisation>
+                </action>
+              </finally>
+            </realisation>
+          </handler>
+          <action id="Action_c7a001f74afc4d9f9ceb2cfaaa3aa3d9">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="BooleanValue" valueOf="Result" />
+              <assert:errorMessage xsi:type="StringValue" valueOf="ErrorMessage" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

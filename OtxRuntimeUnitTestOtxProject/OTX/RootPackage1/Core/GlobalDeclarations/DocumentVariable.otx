@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="DocumentVariable" id="id_614b4d463dff43c88b172f869fcb3502" package="RootPackage1.Core.GlobalDeclarations" version="1.0.0.0" timestamp="2021-05-06T17:23:28.256+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.3.0.41142</data>
+  </metaData>
+  <declarations>
+    <variable name="BooleanDocumentVariable1" id="DocumentVariableDeclaration_79ba561114e046ef97c8ee6b632e4da5">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="true" />
+        </dataType>
+      </realisation>
+    </variable>
+  </declarations>
+  <procedures>
+    <procedure name="ProcedureUseDocumentVariable" id="id_d55f107694a640f2ba1051dca73e3faf" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_125d71f0e9914e87a3b0175a014bfc9a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="BooleanValue" valueOf="BooleanDocumentVariable1" />
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+  </procedures>
+</otx>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="LocalDeclaration" id="id_abf2a9630adb4daba9d8952b0584b9e4" package="Core.LocalDeclarations" version="1.0.0.41502" timestamp="2021-05-26T10:36:35.257+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.41142</data>
+  </metaData>
+  <imports>
+    <import package="RootPackage1.Core.LocalDeclarations" document="LocalDeclaration" prefix="LocalDeclaration1" />
+  </imports>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="LocalVariable" id="TestProcedure_0b75f8ac7b5749c19e1c51d7acf5747f" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_03b075926d19489a9911c7b9e45c6466">
+            <realisation xsi:type="ProcedureCall" procedure="LocalDeclaration1:LocalVariable" />
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="LocalVariablesShadowGlobalDeclarations" id="TestProcedure_bb410c2dc7dd4cf1a0b3f82aea208b8a" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_8de18e3d057d47f89e0af62250ef1377">
+            <realisation xsi:type="ProcedureCall" procedure="LocalDeclaration1:LocalVariablesShadowGlobalDeclarations" />
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="LocalConstant" id="TestProcedure_45b03fb6efa54212ae3c858ce6858536" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_0862db7688ea46e78c28a2f4785c8d6c">
+            <realisation xsi:type="ProcedureCall" procedure="LocalDeclaration1:LocalConstant" />
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="LocalConstantsShadowGlobalDeclarations" id="TestProcedure_84e1cd44eefd49a8bd972e842c4989ed" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_f0224d9a04eb4fc4ae7d80195a93fba7">
+            <realisation xsi:type="ProcedureCall" procedure="LocalDeclaration1:LocalConstantsShadowGlobalDeclarations" />
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ManyLocalDeclarations" id="TestProcedure_31264a4c51ca4b8c805ad3128da733c8" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_5d6da584dfaf420fac73511f3fd4c806">
+            <realisation xsi:type="ProcedureCall" procedure="LocalDeclaration1:LocalConstantsShadowGlobalDeclarations" />
+          </action>
+          <endNode id="ExtensibleEndNode_911bb4ead4d54aa492424ad05f73e6b3">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

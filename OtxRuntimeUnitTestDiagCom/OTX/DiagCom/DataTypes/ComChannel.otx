@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:diag="http://iso.org/OTX/1.0.0/DiagCom" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="ComChannel" id="id_1cfec881adae46e79e3a085bd44947fd" package="DiagCom.DataTypes" version="1.0.0.0" timestamp="2021-08-12T10:37:01.537+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42531</data>
+  </metaData>
+  <imports>
+    <import package="DiagCom" document="GlobalVariable" prefix="Import_Global" />
+  </imports>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ComChannel_EcuVariant" id="id_9b52fe2e1ec44c91bd856b4d2043d457">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_a2e8054d3b614042b8c2dc124c447ec1">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_151ffedafcbe4865bf6f8caaae8d5030">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringValue" valueOf="Import_Global:Identifier" />
+                <diag:ecuVariantName xsi:type="StringValue" valueOf="Import_Global:EcuVariantName" />
+                <diag:performVariantSelection xsi:type="BooleanLiteral" value="true" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_78fcd882442b4dd9be14666a7698e09c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                </term>
+                <term xsi:type="StringLiteral" value="Gateway" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_567a31131e18474db8930c8d9ca28fa4">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ComChannel_BaseVariant" id="TestProcedure_3c1f505adfd5485e8327201a69b02628">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_bcc776e0db58499ba54462ae21572249">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="String1" id="VariableDeclaration_50d69d83c29c44afa3db087533663f8f">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_dbf529c5219549478bb54be90aebbd7a">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringValue" valueOf="Import_Global:Identifier" />
+                <diag:ecuVariantName xsi:type="StringValue" valueOf="String1" />
+                <diag:performVariantSelection xsi:type="BooleanLiteral" value="true" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_1f20a566d9fc4f1bb219af1e6e265947">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="diag:IsVariant">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:ecuVariantName xsi:type="StringValue" valueOf="String1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_ca62942c637d487886c7f34f10fac746">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

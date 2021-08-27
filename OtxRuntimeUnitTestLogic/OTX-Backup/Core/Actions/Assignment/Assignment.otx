@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Assignment" id="id_49520d062ee44c659699be1a29122cd6" package="Core.Actions.Assignment" version="1.0.0.41370" timestamp="2021-05-04T13:41:09.616+07:00">
+  <specification>xxx</specification>
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42514</data>
+    <data key="VersionBoundToSvnRevision">True</data>
+  </metaData>
+  <declarations>
+    <variable name="ByteFieldDocVarNoInit" id="DocumentVariableDeclaration_2ef69e9ce44c44ceb10e72f664d2047b">
+      <realisation>
+        <dataType xsi:type="ByteField" />
+      </realisation>
+    </variable>
+    <variable name="ListBooleanDocVarNoInit" id="DocumentVariableDeclaration_66c6e3f8a8b24214a3af589c0ab08203">
+      <realisation>
+        <dataType xsi:type="List">
+          <itemType xsi:type="Boolean" />
+        </dataType>
+      </realisation>
+    </variable>
+    <variable name="ListIntegerDocVarNoInit1" id="DocumentVariableDeclaration_6755757c3751478aae06788e73459d6c">
+      <realisation>
+        <dataType xsi:type="List">
+          <itemType xsi:type="Integer" />
+        </dataType>
+      </realisation>
+    </variable>
+  </declarations>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="AssignBoolean" id="TestProcedure_bfb36fcf54bf4bc595cc3a698e610ecd" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_b611a81026704d94a52022b55556076b">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e538754391c547c9b74256ccc0c4c708">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_cfaafd5b5976484d853a40b105d0b6b2">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="termValue" id="InParameterDeclaration_560e564ccee34502917d89d4dedd7d4e">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="true" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_e7fae267b77c430dac3fc750128498cc">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_a577a11bbc284db5853ac4b6944df34c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="result" />
+              <term xsi:type="BooleanValue" valueOf="termValue" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="AssignInteger" id="TestProcedure_ef7e3c761ad24b7bba0f6c918e5ab354" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_e9523eb19aa04a00820e3993854d19bc">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="12" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6611ffdd299c49b29661fa8112f85056">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a545b7f1843f47c9bbb5a267db6891ef">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3e9d34f547f0459caa053e9728638dcc">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="termValue" id="InParameterDeclaration_0a57f2df3d644a14917306ebca8babcf">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="12" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_d4c8883a6fd645c3b7ddcc2c0ac2dbe1">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_eec9eda82e2c47c580561161db71fd44">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="result" />
+              <term xsi:type="IntegerValue" valueOf="termValue" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="AssignFloat" id="TestProcedure_ca1650f46dcd4bcc88092754c08135f7" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_3a684ec257914bf5a2144046771dac7a">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="12.3" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2b95c92e37d849d7a6b9d2030df1cc1a">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_a956096dadff4339af43e67ab2757cb3">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="FloatLiteral" value="1.97626258336499E-323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="1.97626258336499E-323" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8ebf42c9727c4d2d82fb85eb4f6b8525">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_17719d414ed74dfe81f7a8cef1d5a692">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="FloatLiteral" value="-1.97626258336499E-323" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-1.97626258336499E-323" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_9adcf0d3b6e04263b6552190584ae62c">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d2c20520c40341fdb124c1567248dc82">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623155E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="1.7976931348623155E+308" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_55f51f8663d34802bd3ec862f66500e5">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_12623bd689b94ea895122298570fd346">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623155E+308" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-1.7976931348623155E+308" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_14c7aedcb8e340af835860d4b3c0b9b6">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1fc59acafdc04bfc988bebe44e1aa3b9">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1dc3e59a2362433c80d3c9d74106b2cd">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="NaN" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="termValue" id="InParameterDeclaration_b81f59339f974e6bb366aa6f9f136a31">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="12.3" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_192efd5bb95f447bb042061dac5243a2">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_032cc7ea0fe44b0c8fe4d140260dbe82">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="result" />
+              <term xsi:type="FloatValue" valueOf="termValue" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="AssignIntegerToFloat" id="TestProcedure_b5bf7bf424e44ef5a228ca0785140267" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_abfdab7f4a1c469f86fd932493e360f9">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="12" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bba78b4a0bef4c21a15c488cfa416b7a">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d0f91c042b274c5bab627477a3b00442">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="9.2233720368547758E+18" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4476a08bb58347f2b5c92b798046ee3f">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="FloatLiteral" value="-9.2233720368547758E+18" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="termValue" id="InParameterDeclaration_58e95d1e30014090aebd424ddfbff376">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="12" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_c641636cfc38462ea0131a31962ad0e9">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_949d937e6c1a477b8d46df3147b0a975">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="result" />
+              <term xsi:type="IntegerValue" valueOf="termValue" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="AssignString" id="TestProcedure_07bb557f21e24ace9d0773d98a33ff4b" parallelizable="true">
+      <specification>[TestCase(termValue = "\'\"\\\a\b\f\n\r\t\v", expected result = "\'\"\\\a\b\f\n\r\t\v")]</specification>
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_02b2b4965f3a443c8b870c613f6a676c">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="abc" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3579dc60daab41ffa2922600a15aaaba">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_dc6fb9fb3b1d44a38b815f2f1bcdc8f3">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="StringLiteral" value="Hello - 你好 - Xin chào - สวัสดี" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="Hello - 你好 - Xin chào - สวัสดี" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bc9c9191b0374c198e5d70a488cb875e">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="StringLiteral" value="file:///C:/Users/Public/Volkswagen/result.xml" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="file:///C:/Users/Public/Volkswagen/result.xml" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_51d973123e414bcebe1bcfe31b140bf1">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="StringLiteral" value="C:/Users/Public/Volkswagen/result.xml" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="C:/Users/Public/Volkswagen/result.xml" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c95e27717a854aa48ab19c8e98e91f58">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="StringLiteral" value="aaaaaaaaa1aaaaaaaaa2aaaaaaaaa3aaaaaaaaa4aaaaaaaaa5aaaaaaaaa6aaaaaaaaa7aaaaaaaaa8aaaaaaaaa9aaaaaaaa10aaaaaaaa11aaaaaaaa12aaaaaaaa13aaaaaaaa14aaaaaaaa15aaaaaaaa16aaaaaaaa17aaaaaaaa18aaaaaaaa19aaaaaaaa20aaaaaaaa21aaaaaaaa22aaaaaaaa23aaaaaaaa24aaaaaaaa25aaaaaaaa26aaaaaaaa27aaaaaaaa28aaaaaaaa29aaaaaaaa30aaaaaaaa31aaaaaaaa32aaaaaaaa33aaaaaaaa34aaaaaaaa35aaaaaaaa36aaaaaaaa37aaaaaaaa38aaaaaaaa39aaaaaaaa40aaaaaaaa41aaaaaaaa42aaaaaaaa43aaaaaaaa44aaaaaaaa45aaaaaaaa46aaaaaaaa47aaaaaaaa48aaaaaaaa49aaaaaaaa50aaaaaaaa51aaaaaaaa52aaaaaaaa53aaaaaaaa54aaaaaaaa55aaaaaaaa56aaaaaaaa57aaaaaaaa58aaaaaaaa59aaaaaaaa60aaaaaaaa61aaaaaaaa62aaaaaaaa63aaaaaaaa64aaaaaaaa65aaaaaaaa66aaaaaaaa67aaaaaaaa68aaaaaaaa69aaaaaaaa70aaaaaaaa71aaaaaaaa72aaaaaaaa73aaaaaaaa74aaaaaaaa75aaaaaaaa76aaaaaaaa77aaaaaaaa78aaaaaaaa79aaaaaaaa80aaaaaaaa81aaaaaaaa82aaaaaaaa83aaaaaaaa84aaaaaaaa85aaaaaaaa86aaaaaaaa87aaaaaaaa88aaaaaaaa89aaaaaaaa90aaaaaaaa91aaaaaaaa92aaaaaaaa93aaaaaaaa94aaaaaaaa95aaaaaaaa96aaaaaaaa97aaaaaaaa98aaaaaaaa99aaaaaaaa100aaaaaaa101aaaaaaa102aaaaaaa103aaaaaaa104aaaaaaa105aaaaaaa106aaaaaaa107aaaaaaa108aaaaaaa109aaaaaaa110aaaaaaa111aaaaaaa112aaaaaaa113aaaaaaa114aaaaaaa115aaaaaaa116aaaaaaa117aaaaaaa118aaaaaaa119aaaaaaa120aaaaaaa121aaaaaaa122aaaaaaa123aaaaaaa124aaaaaaa125aaaaaaa126aaaaaaa127aaaaaaa128aaaaaaa129aaaaaaa130aaaaaaa131aaaaaaa132aaaaaaa133aaaaaaa134aaaaaaa135aaaaaaa136aaaaaaa137aaaaaaa138aaaaaaa139aaaaaaa140aaaaaaa141aaaaaaa142aaaaaaa143aaaaaaa144aaaaaaa145aaaaaaa146aaaaaaa147aaaaaaa148aaaaaaa149aaaaaaa150aaaaaaa151aaaaaaa152aaaaaaa153aaaaaaa154aaaaaaa155aaaaaaa156aaaaaaa157aaaaaaa158aaaaaaa159aaaaaaa160aaaaaaa161aaaaaaa162aaaaaaa163aaaaaaa164aaaaaaa165aaaaaaa166aaaaaaa167aaaaaaa168aaaaaaa169aaaaaaa170aaaaaaa171aaaaaaa172aaaaaaa173aaaaaaa174aaaaaaa175aaaaaaa176aaaaaaa177aaaaaaa178aaaaaaa179aaaaaaa180aaaaaaa181aaaaaaa182aaaaaaa183aaaaaaa184aaaaaaa185aaaaaaa186aaaaaaa187aaaaaaa188aaaaaaa189aaaaaaa190aaaaaaa191aaaaaaa192aaaaaaa193aaaaaaa194aaaaaaa195aaaaaaa196aaaaaaa197aaaaaaa198aaaaaaa199aaaaaaaa200" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="aaaaaaaaa1aaaaaaaaa2aaaaaaaaa3aaaaaaaaa4aaaaaaaaa5aaaaaaaaa6aaaaaaaaa7aaaaaaaaa8aaaaaaaaa9aaaaaaaa10aaaaaaaa11aaaaaaaa12aaaaaaaa13aaaaaaaa14aaaaaaaa15aaaaaaaa16aaaaaaaa17aaaaaaaa18aaaaaaaa19aaaaaaaa20aaaaaaaa21aaaaaaaa22aaaaaaaa23aaaaaaaa24aaaaaaaa25aaaaaaaa26aaaaaaaa27aaaaaaaa28aaaaaaaa29aaaaaaaa30aaaaaaaa31aaaaaaaa32aaaaaaaa33aaaaaaaa34aaaaaaaa35aaaaaaaa36aaaaaaaa37aaaaaaaa38aaaaaaaa39aaaaaaaa40aaaaaaaa41aaaaaaaa42aaaaaaaa43aaaaaaaa44aaaaaaaa45aaaaaaaa46aaaaaaaa47aaaaaaaa48aaaaaaaa49aaaaaaaa50aaaaaaaa51aaaaaaaa52aaaaaaaa53aaaaaaaa54aaaaaaaa55aaaaaaaa56aaaaaaaa57aaaaaaaa58aaaaaaaa59aaaaaaaa60aaaaaaaa61aaaaaaaa62aaaaaaaa63aaaaaaaa64aaaaaaaa65aaaaaaaa66aaaaaaaa67aaaaaaaa68aaaaaaaa69aaaaaaaa70aaaaaaaa71aaaaaaaa72aaaaaaaa73aaaaaaaa74aaaaaaaa75aaaaaaaa76aaaaaaaa77aaaaaaaa78aaaaaaaa79aaaaaaaa80aaaaaaaa81aaaaaaaa82aaaaaaaa83aaaaaaaa84aaaaaaaa85aaaaaaaa86aaaaaaaa87aaaaaaaa88aaaaaaaa89aaaaaaaa90aaaaaaaa91aaaaaaaa92aaaaaaaa93aaaaaaaa94aaaaaaaa95aaaaaaaa96aaaaaaaa97aaaaaaaa98aaaaaaaa99aaaaaaaa100aaaaaaa101aaaaaaa102aaaaaaa103aaaaaaa104aaaaaaa105aaaaaaa106aaaaaaa107aaaaaaa108aaaaaaa109aaaaaaa110aaaaaaa111aaaaaaa112aaaaaaa113aaaaaaa114aaaaaaa115aaaaaaa116aaaaaaa117aaaaaaa118aaaaaaa119aaaaaaa120aaaaaaa121aaaaaaa122aaaaaaa123aaaaaaa124aaaaaaa125aaaaaaa126aaaaaaa127aaaaaaa128aaaaaaa129aaaaaaa130aaaaaaa131aaaaaaa132aaaaaaa133aaaaaaa134aaaaaaa135aaaaaaa136aaaaaaa137aaaaaaa138aaaaaaa139aaaaaaa140aaaaaaa141aaaaaaa142aaaaaaa143aaaaaaa144aaaaaaa145aaaaaaa146aaaaaaa147aaaaaaa148aaaaaaa149aaaaaaa150aaaaaaa151aaaaaaa152aaaaaaa153aaaaaaa154aaaaaaa155aaaaaaa156aaaaaaa157aaaaaaa158aaaaaaa159aaaaaaa160aaaaaaa161aaaaaaa162aaaaaaa163aaaaaaa164aaaaaaa165aaaaaaa166aaaaaaa167aaaaaaa168aaaaaaa169aaaaaaa170aaaaaaa171aaaaaaa172aaaaaaa173aaaaaaa174aaaaaaa175aaaaaaa176aaaaaaa177aaaaaaa178aaaaaaa179aaaaaaa180aaaaaaa181aaaaaaa182aaaaaaa183aaaaaaa184aaaaaaa185aaaaaaa186aaaaaaa187aaaaaaa188aaaaaaa189aaaaaaa190aaaaaaa191aaaaaaa192aaaaaaa193aaaaaaa194aaaaaaa195aaaaaaa196aaaaaaa197aaaaaaa198aaaaaaa199aaaaaaaa200" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="termValue" id="InParameterDeclaration_5ae83d6d0e9a4921b6d1d3afda6c348f">
+            <realisation>
+              <dataType xsi:type="String">
+                <init value="abc" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_464699092ebb47fa9e4b0a2d813d6620">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_348310a7fb4248abb5d990ede4f2315d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="result" />
+              <term xsi:type="StringValue" valueOf="termValue" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="AssignByteField" id="TestProcedure_9cd78b5d447a49b2b1533d5d99d4b7c2" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_bcecda3fb9604e6f85bfab6488cf3140">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e606abcd236f4f1b815a59211e6e09fb">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="ByteFieldValue" valueOf="ByteFieldDocVarNoInit" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldValue" valueOf="ByteFieldDocVarNoInit" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_0b018dfda7eb42a09ffc1abd93180312">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="00" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b1f0770adff14d8780fe4bbc0c672569">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000000001" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="000000000000000001" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_8c53a423e69b4318b6cac048d894dfba">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0123456789ABCDEF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="0123456789ABCDEF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_48c22b8b03744edb92a08e3bda228b30">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="ByteFieldLiteral" value="AAAAAAAAA1AAAAAAAAA2AAAAAAAAA3AAAAAAAAA4AAAAAAAAA5AAAAAAAAA6AAAAAAAAA7AAAAAAAAA8AAAAAAAAA9AAAAAAAA10AAAAAAAA11AAAAAAAA12AAAAAAAA13AAAAAAAA14AAAAAAAA15AAAAAAAA16AAAAAAAA17AAAAAAAA18AAAAAAAA19AAAAAAAA20AAAAAAAA21AAAAAAAA22AAAAAAAA23AAAAAAAA24AAAAAAAA25AAAAAAAA26AAAAAAAA27AAAAAAAA28AAAAAAAA29AAAAAAAA30AAAAAAAA31AAAAAAAA32AAAAAAAA33AAAAAAAA34AAAAAAAA35AAAAAAAA36AAAAAAAA37AAAAAAAA38AAAAAAAA39AAAAAAAA40AAAAAAAA41AAAAAAAA42AAAAAAAA43AAAAAAAA44AAAAAAAA45AAAAAAAA46AAAAAAAA47AAAAAAAA48AAAAAAAA49AAAAAAAA50AAAAAAAA51AAAAAAAA52AAAAAAAA53AAAAAAAA54AAAAAAAA55AAAAAAAA56AAAAAAAA57AAAAAAAA58AAAAAAAA59AAAAAAAA60AAAAAAAA61AAAAAAAA62AAAAAAAA63AAAAAAAA64AAAAAAAA65AAAAAAAA66AAAAAAAA67AAAAAAAA68AAAAAAAA69AAAAAAAA70AAAAAAAA71AAAAAAAA72AAAAAAAA73AAAAAAAA74AAAAAAAA75AAAAAAAA76AAAAAAAA77AAAAAAAA78AAAAAAAA79AAAAAAAA80AAAAAAAA81AAAAAAAA82AAAAAAAA83AAAAAAAA84AAAAAAAA85AAAAAAAA86AAAAAAAA87AAAAAAAA88AAAAAAAA89AAAAAAAA90AAAAAAAA91AAAAAAAA92AAAAAAAA93AAAAAAAA94AAAAAAAA95AAAAAAAA96AAAAAAAA97AAAAAAAA98AAAAAAAA99AAAAAAAA100AAAAAAA101AAAAAAA102AAAAAAA103AAAAAAA104AAAAAAA105AAAAAAA106AAAAAAA107AAAAAAA108AAAAAAA109AAAAAAA110AAAAAAA111AAAAAAA112AAAAAAA113AAAAAAA114AAAAAAA115AAAAAAA116AAAAAAA117AAAAAAA118AAAAAAA119AAAAAAA120AAAAAAA121AAAAAAA122AAAAAAA123AAAAAAA124AAAAAAA125AAAAAAA126AAAAAAA127AAAAAAA128AAAAAAA129AAAAAAA130AAAAAAA131AAAAAAA132AAAAAAA133AAAAAAA134AAAAAAA135AAAAAAA136AAAAAAA137AAAAAAA138AAAAAAA139AAAAAAA140AAAAAAA141AAAAAAA142AAAAAAA143AAAAAAA144AAAAAAA145AAAAAAA146AAAAAAA147AAAAAAA148AAAAAAA149AAAAAAA150AAAAAAA151AAAAAAA152AAAAAAA153AAAAAAA154AAAAAAA155AAAAAAA156AAAAAAA157AAAAAAA158AAAAAAA159AAAAAAA160AAAAAAA161AAAAAAA162AAAAAAA163AAAAAAA164AAAAAAA165AAAAAAA166AAAAAAA167AAAAAAA168AAAAAAA169AAAAAAA170AAAAAAA171AAAAAAA172AAAAAAA173AAAAAAA174AAAAAAA175AAAAAAA176AAAAAAA177AAAAAAA178AAAAAAA179AAAAAAA180AAAAAAA181AAAAAAA182AAAAAAA183AAAAAAA184AAAAAAA185AAAAAAA186AAAAAAA187AAAAAAA188AAAAAAA189AAAAAAA190AAAAAAA191AAAAAAA192AAAAAAA193AAAAAAA194AAAAAAA195AAAAAAA196AAAAAAA197AAAAAAA198AAAAAAA199AAAAAAAA200" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="AAAAAAAAA1AAAAAAAAA2AAAAAAAAA3AAAAAAAAA4AAAAAAAAA5AAAAAAAAA6AAAAAAAAA7AAAAAAAAA8AAAAAAAAA9AAAAAAAA10AAAAAAAA11AAAAAAAA12AAAAAAAA13AAAAAAAA14AAAAAAAA15AAAAAAAA16AAAAAAAA17AAAAAAAA18AAAAAAAA19AAAAAAAA20AAAAAAAA21AAAAAAAA22AAAAAAAA23AAAAAAAA24AAAAAAAA25AAAAAAAA26AAAAAAAA27AAAAAAAA28AAAAAAAA29AAAAAAAA30AAAAAAAA31AAAAAAAA32AAAAAAAA33AAAAAAAA34AAAAAAAA35AAAAAAAA36AAAAAAAA37AAAAAAAA38AAAAAAAA39AAAAAAAA40AAAAAAAA41AAAAAAAA42AAAAAAAA43AAAAAAAA44AAAAAAAA45AAAAAAAA46AAAAAAAA47AAAAAAAA48AAAAAAAA49AAAAAAAA50AAAAAAAA51AAAAAAAA52AAAAAAAA53AAAAAAAA54AAAAAAAA55AAAAAAAA56AAAAAAAA57AAAAAAAA58AAAAAAAA59AAAAAAAA60AAAAAAAA61AAAAAAAA62AAAAAAAA63AAAAAAAA64AAAAAAAA65AAAAAAAA66AAAAAAAA67AAAAAAAA68AAAAAAAA69AAAAAAAA70AAAAAAAA71AAAAAAAA72AAAAAAAA73AAAAAAAA74AAAAAAAA75AAAAAAAA76AAAAAAAA77AAAAAAAA78AAAAAAAA79AAAAAAAA80AAAAAAAA81AAAAAAAA82AAAAAAAA83AAAAAAAA84AAAAAAAA85AAAAAAAA86AAAAAAAA87AAAAAAAA88AAAAAAAA89AAAAAAAA90AAAAAAAA91AAAAAAAA92AAAAAAAA93AAAAAAAA94AAAAAAAA95AAAAAAAA96AAAAAAAA97AAAAAAAA98AAAAAAAA99AAAAAAAA100AAAAAAA101AAAAAAA102AAAAAAA103AAAAAAA104AAAAAAA105AAAAAAA106AAAAAAA107AAAAAAA108AAAAAAA109AAAAAAA110AAAAAAA111AAAAAAA112AAAAAAA113AAAAAAA114AAAAAAA115AAAAAAA116AAAAAAA117AAAAAAA118AAAAAAA119AAAAAAA120AAAAAAA121AAAAAAA122AAAAAAA123AAAAAAA124AAAAAAA125AAAAAAA126AAAAAAA127AAAAAAA128AAAAAAA129AAAAAAA130AAAAAAA131AAAAAAA132AAAAAAA133AAAAAAA134AAAAAAA135AAAAAAA136AAAAAAA137AAAAAAA138AAAAAAA139AAAAAAA140AAAAAAA141AAAAAAA142AAAAAAA143AAAAAAA144AAAAAAA145AAAAAAA146AAAAAAA147AAAAAAA148AAAAAAA149AAAAAAA150AAAAAAA151AAAAAAA152AAAAAAA153AAAAAAA154AAAAAAA155AAAAAAA156AAAAAAA157AAAAAAA158AAAAAAA159AAAAAAA160AAAAAAA161AAAAAAA162AAAAAAA163AAAAAAA164AAAAAAA165AAAAAAA166AAAAAAA167AAAAAAA168AAAAAAA169AAAAAAA170AAAAAAA171AAAAAAA172AAAAAAA173AAAAAAA174AAAAAAA175AAAAAAA176AAAAAAA177AAAAAAA178AAAAAAA179AAAAAAA180AAAAAAA181AAAAAAA182AAAAAAA183AAAAAAA184AAAAAAA185AAAAAAA186AAAAAAA187AAAAAAA188AAAAAAA189AAAAAAA190AAAAAAA191AAAAAAA192AAAAAAA193AAAAAAA194AAAAAAA195AAAAAAA196AAAAAAA197AAAAAAA198AAAAAAA199AAAAAAAA200" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_df644064da9b4309b5c1bdb9f2867597">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ByteFieldLiteral" value="FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="termValue" id="InParameterDeclaration_75ee7ad2a4b74182a1237de6b0d2eced">
+            <realisation>
+              <dataType xsi:type="ByteField">
+                <init value="FF" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_a5bb39c13ecb4b769c250c6303520bae">
+            <realisation>
+              <dataType xsi:type="ByteField" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_cf792b28f4cd464f99dc9242651d9e04">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="ByteFieldDocVarNoInit" />
+              <term xsi:type="ByteFieldLiteral" value="AA" />
+            </realisation>
+          </action>
+          <action id="Action_f22bb47f23cd4b31957800aba96d7800">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ByteFieldVariable" name="result" />
+              <term xsi:type="ByteFieldValue" valueOf="termValue" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="AssignListBoolean" id="TestProcedure_f54e13b6f2804a15ac03819ac0e9dab7" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_33624f9bae00428f81acf23c9834547f">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="Boolean" />
+                  <items>
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                  </items>
+                </unittest:value>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1519585b07b94044991199aeff4fc4df">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="ListValue" valueOf="ListBooleanDocVarNoInit" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ListValue" valueOf="ListBooleanDocVarNoInit" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_777c7872a5d74786996c400960bf9043">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="Boolean" />
+                  <items>
+                    <item xsi:type="BooleanLiteral" value="true" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="Boolean" />
+                  <items>
+                    <item xsi:type="BooleanLiteral" value="true" />
+                  </items>
+                </unittest:value>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2830d79970b74e939592a9c43a5c4794">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="Boolean" />
+                  <items>
+                    <item xsi:type="BooleanLiteral" value="false" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="Boolean" />
+                  <items>
+                    <item xsi:type="BooleanLiteral" value="false" />
+                  </items>
+                </unittest:value>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_560e331251f447b1a0686a73270b58ec">
+            <unittest:arguments>
+              <unittest:argument param="termValue">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="Boolean" />
+                  <items>
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="Boolean" />
+                  <items>
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                  </items>
+                </unittest:value>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="termValue" id="InParameterDeclaration_04fc7ab3a1b549b6a11d756a448b6cab">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="Boolean" />
+                <init>
+                  <itemType xsi:type="Boolean" />
+                  <items>
+                    <item xsi:type="BooleanLiteral" value="false" />
+                    <item xsi:type="BooleanLiteral" value="true" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_12d60a92b26949b4a36e327629087ab3">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="Boolean" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_79fdba731425441399001e4fc2d05f02">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="result" />
+              <term xsi:type="ListValue" valueOf="termValue" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

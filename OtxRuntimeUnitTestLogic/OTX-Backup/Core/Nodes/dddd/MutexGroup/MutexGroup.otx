@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:string="http://iso.org/OTX/1.0.0/StringUtil" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:event="http://iso.org/OTX/1.0.0/Event" name="MutexGroup" id="id_3309399b44f446c28409fbc9cd499924" package="Core.Nodes.CompoundNodes.MutexGroup" version="1.0.0.0" timestamp="2021-07-07T15:40:19.292+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42010</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="MutexGroup_01" id="id_4012ef3a2c2f418b82670a3bc13bc8ac" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="String1" id="VariableDeclaration_6c8cb66d86494bd28294326790421d6b">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <parallel id="Parallel_da58c8fc236b496f8e56fd419c857a6f">
+            <realisation>
+              <lane>
+                <mutex id="MutexGroup_908f2aca761648cd8aabb60453b0f941">
+                  <realisation>
+                    <action id="Action_9f731ab41aa8436a894589b02da6fb44">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="StringVariable" name="String1" />
+                        <term xsi:type="string:StringConcatenate">
+                          <string:string xsi:type="StringValue" valueOf="String1" />
+                          <string:string xsi:type="StringLiteral" value="1_" />
+                        </term>
+                      </realisation>
+                    </action>
+                    <action id="Action_ac7293d896a34ffcbfd03aff299807d3">
+                      <metaData>
+                        <data key="EmotiveActivity">SleepActivity</data>
+                      </metaData>
+                      <realisation xsi:type="event:WaitForEvent">
+                        <event:source xsi:type="event:TimerExpiredEventSource">
+                          <event:timeout xsi:type="IntegerLiteral" value="1000" />
+                        </event:source>
+                      </realisation>
+                    </action>
+                    <action id="Action_92d8bf72ce9d443e81888a296845f71b">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="StringVariable" name="String1" />
+                        <term xsi:type="string:StringConcatenate">
+                          <string:string xsi:type="StringValue" valueOf="String1" />
+                          <string:string xsi:type="StringLiteral" value="3_" />
+                        </term>
+                      </realisation>
+                    </action>
+                  </realisation>
+                </mutex>
+              </lane>
+              <lane>
+                <mutex id="MutexGroup_785834548aa34136813942ac1f84044f">
+                  <realisation>
+                    <action id="Action_a1683c7e777f43caa792b608e4746e5c">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="StringVariable" name="String1" />
+                        <term xsi:type="string:StringConcatenate">
+                          <string:string xsi:type="StringValue" valueOf="String1" />
+                          <string:string xsi:type="StringLiteral" value="2_" />
+                        </term>
+                      </realisation>
+                    </action>
+                    <action id="Action_efbae3212261427d8f427fa994e49155">
+                      <metaData>
+                        <data key="EmotiveActivity">SleepActivity</data>
+                      </metaData>
+                      <realisation xsi:type="event:WaitForEvent">
+                        <event:source xsi:type="event:TimerExpiredEventSource">
+                          <event:timeout xsi:type="IntegerLiteral" value="1000" />
+                        </event:source>
+                      </realisation>
+                    </action>
+                    <action id="Action_a404d3e019204275870cc1934642980f">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="StringVariable" name="String1" />
+                        <term xsi:type="string:StringConcatenate">
+                          <string:string xsi:type="StringValue" valueOf="String1" />
+                          <string:string xsi:type="StringLiteral" value="4_" />
+                        </term>
+                      </realisation>
+                    </action>
+                  </realisation>
+                </mutex>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_144395f6891f466688c26afdbb31864f">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicOr">
+                <term xsi:type="IsEqual">
+                  <term xsi:type="StringValue" valueOf="String1" />
+                  <term xsi:type="StringLiteral" value="1_3_2_4_" />
+                </term>
+                <term xsi:type="IsEqual">
+                  <term xsi:type="StringValue" valueOf="String1" />
+                  <term xsi:type="StringLiteral" value="2_4_1_3_" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="MutexGroup_02" id="TestProcedure_d3916656061746bc85f179ec4f24751e" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="String1" id="VariableDeclaration_0b072b1fc3bf4564bab3ef698c0cd06f">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <parallel id="Parallel_3398cadf96b744cda7a8695bff9a3c94">
+            <realisation>
+              <lane>
+                <mutex id="MutexGroup_594fa0092ab945ea85112189ca26e458">
+                  <realisation>
+                    <action id="Action_b2d71e46264a4b2babbb5832f8402c97">
+                      <metaData>
+                        <data key="EmotiveActivity">SleepActivity</data>
+                      </metaData>
+                      <realisation xsi:type="event:WaitForEvent">
+                        <event:source xsi:type="event:TimerExpiredEventSource">
+                          <event:timeout xsi:type="IntegerLiteral" value="1000" />
+                        </event:source>
+                      </realisation>
+                    </action>
+                    <action id="Action_3d4450dfb9174c72997d654deca6e7a1">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="StringVariable" name="String1" />
+                        <term xsi:type="string:StringConcatenate">
+                          <string:string xsi:type="StringValue" valueOf="String1" />
+                          <string:string xsi:type="StringLiteral" value="1_" />
+                        </term>
+                      </realisation>
+                    </action>
+                  </realisation>
+                </mutex>
+              </lane>
+              <lane>
+                <action id="Action_6776690296114934921041b5af07fc4c">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="StringVariable" name="String1" />
+                    <term xsi:type="string:StringConcatenate">
+                      <string:string xsi:type="StringValue" valueOf="String1" />
+                      <string:string xsi:type="StringLiteral" value="2_" />
+                    </term>
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_c2a8eb851e394e0f952978de0c67adbe">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicOr">
+                <term xsi:type="IsEqual">
+                  <term xsi:type="StringValue" valueOf="String1" />
+                  <term xsi:type="StringLiteral" value="1_2_" />
+                </term>
+                <term xsi:type="IsEqual">
+                  <term xsi:type="StringValue" valueOf="String1" />
+                  <term xsi:type="StringLiteral" value="2_1_" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="MutexGroup_03" id="TestProcedure_7f94d7d894b84b7fb8c625c8c2c51815" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="String1" id="VariableDeclaration_ebb9bb3f508e4340b5800481dd388755">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <parallel id="Parallel_cad01b20751b4463a552717dbc139ddd">
+            <realisation>
+              <lane>
+                <action id="Action_b633793c59c7428788af2740e74a8a7a">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="StringVariable" name="String1" />
+                    <term xsi:type="string:StringConcatenate">
+                      <string:string xsi:type="StringValue" valueOf="String1" />
+                      <string:string xsi:type="StringLiteral" value="1_" />
+                    </term>
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <mutex id="MutexGroup_2c917d515f0d4df0b8b79931b0d20cdb">
+                  <realisation>
+                    <action id="Action_5379688d3c7d41c5bb43eb585ab29de3">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="StringVariable" name="String1" />
+                        <term xsi:type="string:StringConcatenate">
+                          <string:string xsi:type="StringValue" valueOf="String1" />
+                          <string:string xsi:type="StringLiteral" value="2_" />
+                        </term>
+                      </realisation>
+                    </action>
+                  </realisation>
+                </mutex>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_887ebb2d02af4dee91fc4219050713c0">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicOr">
+                <term xsi:type="IsEqual">
+                  <term xsi:type="StringValue" valueOf="String1" />
+                  <term xsi:type="StringLiteral" value="1_2_" />
+                </term>
+                <term xsi:type="IsEqual">
+                  <term xsi:type="StringValue" valueOf="String1" />
+                  <term xsi:type="StringLiteral" value="2_1_" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

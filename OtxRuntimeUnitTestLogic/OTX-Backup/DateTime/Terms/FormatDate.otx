@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:dt="http://iso.org/OTX/1.0.0/DateTime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="FormatDate" id="id_cd4a138448d44f24a6a40f544bc7dada" package="DateTime.Terms" version="1.0.0.0" timestamp="2021-07-29T17:31:23.074+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42370</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="FormatDate_Base" id="TestProcedure_dc06689474364db78a2f55c6a52f3c99" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_f5d69d01b9464b2ba8e1f40e9657b5dd">
+            <unittest:arguments>
+              <unittest:argument param="timestamp">
+                <unittest:value xsi:type="FloatLiteral" value="-0" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+              <unittest:argument param="result">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="1970-01-01T07:00:00.000+0700" />
+                    <item xsi:type="StringLiteral" value="1970-01-01T01:00:00.000+0100" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_08ea940b76ec4dd49a319b73a51551bc">
+            <unittest:arguments>
+              <unittest:argument param="timestamp">
+                <unittest:value xsi:type="FloatLiteral" value="49.77" />
+              </unittest:argument>
+              <unittest:argument param="format">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+              <unittest:argument param="result">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="1970-01-01T07:00:00.049+0700" />
+                    <item xsi:type="StringLiteral" value="1970-01-01T01:00:00.049+0100" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="timestamp" id="InParameterDeclaration_d67b867810554124bf52bc594d200b5f">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="1628258707009" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="format" id="InParameterDeclaration_8ed6c76f12604e54bf4f126646b49e98">
+            <realisation>
+              <dataType xsi:type="String">
+                <init value="" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="result" id="InParameterDeclaration_4e317091ca2f494299b7d8e431b89c52">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+                <init>
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="" />
+                  </items>
+                </init>
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="String1" id="VariableDeclaration_ba45a4de7a474c798f6a0b2eb7811a38">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_9972342e602d47ccb5199cd0e0536cbe">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="String1" />
+              <term xsi:type="dt:FormatDate">
+                <dt:timestamp xsi:type="FloatValue" valueOf="timestamp" />
+                <dt:format xsi:type="StringValue" valueOf="format" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_01c25fa6546740fdaa11bb344bb24216">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="ListContainsValue">
+                <list xsi:type="ListValue" valueOf="result" />
+                <value xsi:type="StringValue" valueOf="String1" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

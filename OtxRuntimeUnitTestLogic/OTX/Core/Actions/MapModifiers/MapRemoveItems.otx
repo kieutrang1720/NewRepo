@@ -1,0 +1,1361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="MapRemoveItems" id="id_ed9b27e36a674cf5a42b4c0de6d1be21" package="Core.Actions.MapModifiers" version="1.0.0.0" timestamp="2021-07-14T17:08:06.446+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42141</data>
+  </metaData>
+  <declarations>
+    <variable name="MapStrFloatNoInit1" id="DocumentVariableDeclaration_0528056127094caf97ab96ddb3f6948e">
+      <realisation>
+        <dataType xsi:type="Map">
+          <keyType xsi:type="String" />
+          <valueType xsi:type="Float" />
+        </dataType>
+      </realisation>
+    </variable>
+    <variable name="MapIntByteNoInit1" id="DocumentVariableDeclaration_06b33f4646ab459d8669bc252895d480">
+      <realisation>
+        <dataType xsi:type="Map">
+          <keyType xsi:type="Integer" />
+          <valueType xsi:type="ByteField" />
+        </dataType>
+      </realisation>
+    </variable>
+  </declarations>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="MapRemove1SimpleItem" id="TestProcedure_27330072e8eb42b590315450a9b14176">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_9ca8b22e9569484da7b5760a41c8d6a9" sequential="true">
+            <unittest:arguments>
+              <unittest:argument param="inMap1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="String" />
+                      <valueType xsi:type="Float" />
+                      <items>
+                        <item>
+                          <key xsi:type="StringLiteral" value="羴" />
+                          <value xsi:type="FloatLiteral" value="NaN" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="String" />
+                      <valueType xsi:type="Float" />
+                      <items>
+                        <item>
+                          <key xsi:type="StringLiteral" value="`1234567890-=[]\\;',./ ~!@#$%^&amp;*()_+{}|:\&quot;&lt;&gt;?" />
+                          <value xsi:type="FloatLiteral" value="-INF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="String" />
+                      <valueType xsi:type="Float" />
+                      <items>
+                        <item>
+                          <key xsi:type="StringLiteral" value="§®µ¾¿ÆΘΨξЖ‱↭∰≩" />
+                          <value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="key">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="StringLiteral" value="羴" />
+                    <unittest:element xsi:type="StringLiteral" value="`1234567890-=[]\\;',./ ~!@#$%^&amp;*()_+{}|:\&quot;&lt;&gt;?" />
+                    <unittest:element xsi:type="StringLiteral" value="§®µ¾¿ÆΘΨξЖ‱↭∰≩" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="outMap1">
+                <unittest:value xsi:type="MapValue" valueOf="MapStrFloatNoInit1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5e0db77650ad4a3791398522c7e8c6d5">
+            <unittest:arguments>
+              <unittest:argument param="inMap1">
+                <unittest:value xsi:type="MapLiteral">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Float" />
+                  <items>
+                    <item>
+                      <key xsi:type="StringLiteral" value="b" />
+                      <value xsi:type="FloatLiteral" value="-INF" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="c" />
+                      <value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="d" />
+                      <value xsi:type="FloatLiteral" value="-9.2233720368547758E+18" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="e" />
+                      <value xsi:type="FloatLiteral" value="-1.97626258336499E-323" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="f" />
+                      <value xsi:type="FloatLiteral" value="-0" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="g" />
+                      <value xsi:type="FloatLiteral" value="1.97626258336499E-323" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="h" />
+                      <value xsi:type="FloatLiteral" value="9.2233720368547758E+18" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="i" />
+                      <value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="j" />
+                      <value xsi:type="FloatLiteral" value="INF" />
+                    </item>
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+              <unittest:argument param="key">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="StringLiteral" value="b" />
+                    <unittest:element xsi:type="StringLiteral" value="c" />
+                    <unittest:element xsi:type="StringLiteral" value="d" />
+                    <unittest:element xsi:type="StringLiteral" value="e" />
+                    <unittest:element xsi:type="StringLiteral" value="f" />
+                    <unittest:element xsi:type="StringLiteral" value="g" />
+                    <unittest:element xsi:type="StringLiteral" value="h" />
+                    <unittest:element xsi:type="StringLiteral" value="i" />
+                    <unittest:element xsi:type="StringLiteral" value="j" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="outMap1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="String" />
+                      <valueType xsi:type="Float" />
+                      <items>
+                        <item>
+                          <key xsi:type="StringLiteral" value="c" />
+                          <value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="d" />
+                          <value xsi:type="FloatLiteral" value="-9.2233720368547758E+18" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="e" />
+                          <value xsi:type="FloatLiteral" value="-1.97626258336499E-323" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="f" />
+                          <value xsi:type="FloatLiteral" value="-0" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="g" />
+                          <value xsi:type="FloatLiteral" value="1.97626258336499E-323" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="h" />
+                          <value xsi:type="FloatLiteral" value="9.2233720368547758E+18" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="i" />
+                          <value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="j" />
+                          <value xsi:type="FloatLiteral" value="INF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="String" />
+                      <valueType xsi:type="Float" />
+                      <items>
+                        <item>
+                          <key xsi:type="StringLiteral" value="b" />
+                          <value xsi:type="FloatLiteral" value="-INF" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="d" />
+                          <value xsi:type="FloatLiteral" value="-9.2233720368547758E+18" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="e" />
+                          <value xsi:type="FloatLiteral" value="-1.97626258336499E-323" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="f" />
+                          <value xsi:type="FloatLiteral" value="-0" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="g" />
+                          <value xsi:type="FloatLiteral" value="1.97626258336499E-323" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="h" />
+                          <value xsi:type="FloatLiteral" value="9.2233720368547758E+18" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="i" />
+                          <value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="j" />
+                          <value xsi:type="FloatLiteral" value="INF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="String" />
+                      <valueType xsi:type="Float" />
+                      <items>
+                        <item>
+                          <key xsi:type="StringLiteral" value="b" />
+                          <value xsi:type="FloatLiteral" value="-INF" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="c" />
+                          <value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="e" />
+                          <value xsi:type="FloatLiteral" value="-1.97626258336499E-323" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="f" />
+                          <value xsi:type="FloatLiteral" value="-0" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="g" />
+                          <value xsi:type="FloatLiteral" value="1.97626258336499E-323" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="h" />
+                          <value xsi:type="FloatLiteral" value="9.2233720368547758E+18" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="i" />
+                          <value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="j" />
+                          <value xsi:type="FloatLiteral" value="INF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="String" />
+                      <valueType xsi:type="Float" />
+                      <items>
+                        <item>
+                          <key xsi:type="StringLiteral" value="b" />
+                          <value xsi:type="FloatLiteral" value="-INF" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="c" />
+                          <value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="d" />
+                          <value xsi:type="FloatLiteral" value="-9.2233720368547758E+18" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="f" />
+                          <value xsi:type="FloatLiteral" value="-0" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="g" />
+                          <value xsi:type="FloatLiteral" value="1.97626258336499E-323" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="h" />
+                          <value xsi:type="FloatLiteral" value="9.2233720368547758E+18" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="i" />
+                          <value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="j" />
+                          <value xsi:type="FloatLiteral" value="INF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="String" />
+                      <valueType xsi:type="Float" />
+                      <items>
+                        <item>
+                          <key xsi:type="StringLiteral" value="b" />
+                          <value xsi:type="FloatLiteral" value="-INF" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="c" />
+                          <value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="d" />
+                          <value xsi:type="FloatLiteral" value="-9.2233720368547758E+18" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="e" />
+                          <value xsi:type="FloatLiteral" value="-1.97626258336499E-323" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="g" />
+                          <value xsi:type="FloatLiteral" value="1.97626258336499E-323" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="h" />
+                          <value xsi:type="FloatLiteral" value="9.2233720368547758E+18" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="i" />
+                          <value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="j" />
+                          <value xsi:type="FloatLiteral" value="INF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="String" />
+                      <valueType xsi:type="Float" />
+                      <items>
+                        <item>
+                          <key xsi:type="StringLiteral" value="b" />
+                          <value xsi:type="FloatLiteral" value="-INF" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="c" />
+                          <value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="d" />
+                          <value xsi:type="FloatLiteral" value="-9.2233720368547758E+18" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="e" />
+                          <value xsi:type="FloatLiteral" value="-1.97626258336499E-323" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="f" />
+                          <value xsi:type="FloatLiteral" value="-0" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="h" />
+                          <value xsi:type="FloatLiteral" value="9.2233720368547758E+18" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="i" />
+                          <value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="j" />
+                          <value xsi:type="FloatLiteral" value="INF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="String" />
+                      <valueType xsi:type="Float" />
+                      <items>
+                        <item>
+                          <key xsi:type="StringLiteral" value="b" />
+                          <value xsi:type="FloatLiteral" value="-INF" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="c" />
+                          <value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="d" />
+                          <value xsi:type="FloatLiteral" value="-9.2233720368547758E+18" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="e" />
+                          <value xsi:type="FloatLiteral" value="-1.97626258336499E-323" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="f" />
+                          <value xsi:type="FloatLiteral" value="-0" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="g" />
+                          <value xsi:type="FloatLiteral" value="1.97626258336499E-323" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="i" />
+                          <value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="j" />
+                          <value xsi:type="FloatLiteral" value="INF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="String" />
+                      <valueType xsi:type="Float" />
+                      <items>
+                        <item>
+                          <key xsi:type="StringLiteral" value="b" />
+                          <value xsi:type="FloatLiteral" value="-INF" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="c" />
+                          <value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="d" />
+                          <value xsi:type="FloatLiteral" value="-9.2233720368547758E+18" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="e" />
+                          <value xsi:type="FloatLiteral" value="-1.97626258336499E-323" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="f" />
+                          <value xsi:type="FloatLiteral" value="-0" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="g" />
+                          <value xsi:type="FloatLiteral" value="1.97626258336499E-323" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="h" />
+                          <value xsi:type="FloatLiteral" value="9.2233720368547758E+18" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="j" />
+                          <value xsi:type="FloatLiteral" value="INF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="String" />
+                      <valueType xsi:type="Float" />
+                      <items>
+                        <item>
+                          <key xsi:type="StringLiteral" value="b" />
+                          <value xsi:type="FloatLiteral" value="-INF" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="c" />
+                          <value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="d" />
+                          <value xsi:type="FloatLiteral" value="-9.2233720368547758E+18" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="e" />
+                          <value xsi:type="FloatLiteral" value="-1.97626258336499E-323" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="f" />
+                          <value xsi:type="FloatLiteral" value="-0" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="g" />
+                          <value xsi:type="FloatLiteral" value="1.97626258336499E-323" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="h" />
+                          <value xsi:type="FloatLiteral" value="9.2233720368547758E+18" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="i" />
+                          <value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_146cfef715994e409a60c60ca12218f6">
+            <unittest:arguments>
+              <unittest:argument param="inMap1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="MapValue" valueOf="MapStrFloatNoInit1" />
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="String" />
+                      <valueType xsi:type="Float" />
+                      <items>
+                        <item>
+                          <key xsi:type="StringLiteral" value="a" />
+                          <value xsi:type="FloatLiteral" value="1" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="Z" />
+                          <value xsi:type="FloatLiteral" value="2" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="1" />
+                          <value xsi:type="FloatLiteral" value="3" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="-0.0" />
+                          <value xsi:type="FloatLiteral" value="4" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="key">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="StringLiteral" value="A" />
+                    <unittest:element xsi:type="StringLiteral" value="z" />
+                    <unittest:element xsi:type="StringLiteral" value="-1" />
+                    <unittest:element xsi:type="StringLiteral" value="0.0" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="inMap1" id="InParameterDeclaration_29875b4b957b43d9bda50db319714d5c">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Float" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="key" id="InParameterDeclaration_f5081e0325144fbda99b1542262feb59">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="outMap1" id="OutParameterDeclaration_17a36804165d4bcca51170ad56c7982d">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Float" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_890d600e9503476393ebc50f79d0845d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="outMap1" />
+              <term xsi:type="MapValue" valueOf="inMap1" />
+            </realisation>
+          </action>
+          <action id="Action_6f39fbf8e50f4b9eb97a59a652f6ab65">
+            <realisation xsi:type="MapRemoveItems">
+              <map name="outMap1" />
+              <key xsi:type="StringValue" valueOf="key" />
+            </realisation>
+          </action>
+          <action id="Action_611d301ddb194282a84e279dfdd6477a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="MapValue" valueOf="outMap1" />
+                <term xsi:type="MapValue" valueOf="inMap1" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="MapRemoveSimpleItems" id="TestProcedure_f286c52d18254e9e8bbda2bfb04d92da">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_f1a2296060f64534b1bf06921c5f8882">
+            <unittest:arguments>
+              <unittest:argument param="inMap1">
+                <unittest:value xsi:type="MapLiteral">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Float" />
+                  <items>
+                    <item>
+                      <key xsi:type="StringLiteral" value="a" />
+                      <value xsi:type="FloatLiteral" value="NaN" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="b" />
+                      <value xsi:type="FloatLiteral" value="-INF" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="c" />
+                      <value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="d" />
+                      <value xsi:type="FloatLiteral" value="-9.2233720368547758E+18" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="e" />
+                      <value xsi:type="FloatLiteral" value="-1.97626258336499E-323" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="f" />
+                      <value xsi:type="FloatLiteral" value="-0" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="g" />
+                      <value xsi:type="FloatLiteral" value="1.97626258336499E-323" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="h" />
+                      <value xsi:type="FloatLiteral" value="9.2233720368547758E+18" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="i" />
+                      <value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                    </item>
+                    <item>
+                      <key xsi:type="StringLiteral" value="j" />
+                      <value xsi:type="FloatLiteral" value="INF" />
+                    </item>
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+              <unittest:argument param="key">
+                <unittest:value xsi:type="StringLiteral" value="j" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="outMap1">
+                <unittest:value xsi:type="MapValue" valueOf="MapStrFloatNoInit1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d55b2885890a46c2b458283439990e77">
+            <unittest:arguments>
+              <unittest:argument param="inMap1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="MapValue" valueOf="MapStrFloatNoInit1" />
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="String" />
+                      <valueType xsi:type="Float" />
+                      <items>
+                        <item>
+                          <key xsi:type="StringLiteral" value="a" />
+                          <value xsi:type="FloatLiteral" value="NaN" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="b" />
+                          <value xsi:type="FloatLiteral" value="-INF" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="c" />
+                          <value xsi:type="FloatLiteral" value="-1.7976931348623157E+308" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="d" />
+                          <value xsi:type="FloatLiteral" value="-9.2233720368547758E+18" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="e" />
+                          <value xsi:type="FloatLiteral" value="-1.97626258336499E-323" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="f" />
+                          <value xsi:type="FloatLiteral" value="-0" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="g" />
+                          <value xsi:type="FloatLiteral" value="1.97626258336499E-323" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="h" />
+                          <value xsi:type="FloatLiteral" value="9.2233720368547758E+18" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="i" />
+                          <value xsi:type="FloatLiteral" value="1.7976931348623157E+308" />
+                        </item>
+                        <item>
+                          <key xsi:type="StringLiteral" value="j" />
+                          <value xsi:type="FloatLiteral" value="INF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="key">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="StringLiteral" value="A" />
+                    <unittest:element xsi:type="StringLiteral" value="b" />
+                    <unittest:element xsi:type="StringLiteral" value="f" />
+                    <unittest:element xsi:type="StringLiteral" value="J" />
+                    <unittest:element xsi:type="StringLiteral" value="Infinity" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="inMap1" id="InParameterDeclaration_5d380b03b7ff4648881f8cb028515b34">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Float" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="key" id="InParameterDeclaration_4d9f43e4c8fc4c40bb0f697083708d7b">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="outMap1" id="OutParameterDeclaration_11142b9247bf40889ad438898c155e6d">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Float" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_f1f69f40702f488d98f0009abfe596ac">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="outMap1" />
+              <term xsi:type="MapValue" valueOf="inMap1" />
+            </realisation>
+          </action>
+          <action id="Action_30f3b20f311b4759b3e9e260130b9952">
+            <realisation xsi:type="MapRemoveItems">
+              <map name="outMap1" />
+              <key xsi:type="StringLiteral" value="a" />
+              <key xsi:type="StringLiteral" value="b" />
+              <key xsi:type="StringLiteral" value="c" />
+              <key xsi:type="StringLiteral" value="d" />
+              <key xsi:type="StringLiteral" value="e" />
+              <key xsi:type="StringLiteral" value="f" />
+              <key xsi:type="StringLiteral" value="g" />
+              <key xsi:type="StringLiteral" value="h" />
+              <key xsi:type="StringLiteral" value="i" />
+              <key xsi:type="StringValue" valueOf="key" />
+            </realisation>
+          </action>
+          <action id="Action_71534f310a9e42108735ff09c5f0eb6e">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="MapValue" valueOf="outMap1" />
+                <term xsi:type="MapValue" valueOf="inMap1" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="MapRemove1ComplexItem" id="TestProcedure_71e66394ff034a7985fc66518ad1f2b6">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_6da7aa881301457198f164e7a525555d" sequential="true">
+            <unittest:arguments>
+              <unittest:argument param="inMap1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="Integer" />
+                      <valueType xsi:type="ByteField" />
+                      <items>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="Integer" />
+                      <valueType xsi:type="ByteField" />
+                      <items>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="9223372036854775807" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="key">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="outMap1">
+                <unittest:value xsi:type="MapValue" valueOf="MapIntByteNoInit1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3adc591dd1334f25bc398a12fe81adc0">
+            <unittest:arguments>
+              <unittest:argument param="inMap1">
+                <unittest:value xsi:type="MapLiteral">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="ByteField" />
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                      <value xsi:type="ByteFieldLiteral" value="FF" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="-9223372036854775807" />
+                      <value xsi:type="ByteFieldLiteral" value="FF" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="-1" />
+                      <value xsi:type="ByteFieldLiteral" value="FF" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="0" />
+                      <value xsi:type="ByteFieldLiteral" value="FF" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="1" />
+                      <value xsi:type="ByteFieldLiteral" value="FF" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="9223372036854775806" />
+                      <value xsi:type="ByteFieldLiteral" value="FF" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="9223372036854775807" />
+                      <value xsi:type="ByteFieldLiteral" value="FF" />
+                    </item>
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+              <unittest:argument param="key">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775807" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="1" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775806" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775807" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="outMap1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="Integer" />
+                      <valueType xsi:type="ByteField" />
+                      <items>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-9223372036854775807" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-1" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="0" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="1" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="9223372036854775806" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="9223372036854775807" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="Integer" />
+                      <valueType xsi:type="ByteField" />
+                      <items>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-1" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="0" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="1" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="9223372036854775806" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="9223372036854775807" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="Integer" />
+                      <valueType xsi:type="ByteField" />
+                      <items>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-9223372036854775807" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="0" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="1" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="9223372036854775806" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="9223372036854775807" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="Integer" />
+                      <valueType xsi:type="ByteField" />
+                      <items>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-9223372036854775807" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-1" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="1" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="9223372036854775806" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="9223372036854775807" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="Integer" />
+                      <valueType xsi:type="ByteField" />
+                      <items>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-9223372036854775807" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-1" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="0" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="9223372036854775806" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="9223372036854775807" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="Integer" />
+                      <valueType xsi:type="ByteField" />
+                      <items>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-9223372036854775807" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-1" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="0" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="1" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="9223372036854775807" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="Integer" />
+                      <valueType xsi:type="ByteField" />
+                      <items>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-9223372036854775807" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-1" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="0" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="1" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="9223372036854775806" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6e848f7101b343cc94781eb6258baa02">
+            <unittest:arguments>
+              <unittest:argument param="inMap1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="MapValue" valueOf="MapIntByteNoInit1" />
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="Integer" />
+                      <valueType xsi:type="ByteField" />
+                      <items>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-9223372036854775807" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-1" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="0" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="1" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="9223372036854775806" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="9223372036854775807" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="key">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775806" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-2" />
+                    <unittest:element xsi:type="IntegerLiteral" value="2" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775805" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="inMap1" id="InParameterDeclaration_713be6b6a9e243d7bf16d5fa2d52c19d">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="ByteField" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="key" id="InParameterDeclaration_6d7d3d396fbe4012a96c25644d16e549">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="outMap1" id="OutParameterDeclaration_171838cffa5c49f7b40d30157d0871b0">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="ByteField" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_1dffac191d7947639f5f3ff8bfc0e2ae">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="outMap1" />
+              <term xsi:type="MapValue" valueOf="inMap1" />
+            </realisation>
+          </action>
+          <action id="Action_31cdff95c68245858585da76b4616866">
+            <realisation xsi:type="MapRemoveItems">
+              <map name="outMap1" />
+              <key xsi:type="IntegerValue" valueOf="key" />
+            </realisation>
+          </action>
+          <action id="Action_1f4208899ee347c1aec3a85649d030a5">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="MapValue" valueOf="outMap1" />
+                <term xsi:type="MapValue" valueOf="inMap1" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="MapRemoveComplexItems" id="TestProcedure_64da1891a6e349aabebb5b9ea0dc0b93">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_7b5b209281264b0cb9669640bfe7aa9c">
+            <unittest:arguments>
+              <unittest:argument param="inMap1">
+                <unittest:value xsi:type="MapLiteral">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="ByteField" />
+                  <items>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                      <value xsi:type="ByteFieldLiteral" value="FF" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="-9223372036854775807" />
+                      <value xsi:type="ByteFieldLiteral" value="FF" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="-1" />
+                      <value xsi:type="ByteFieldLiteral" value="FF" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="0" />
+                      <value xsi:type="ByteFieldLiteral" value="FF" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="1" />
+                      <value xsi:type="ByteFieldLiteral" value="FF" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="9223372036854775806" />
+                      <value xsi:type="ByteFieldLiteral" value="FF" />
+                    </item>
+                    <item>
+                      <key xsi:type="IntegerLiteral" value="9223372036854775807" />
+                      <value xsi:type="ByteFieldLiteral" value="FF" />
+                    </item>
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+              <unittest:argument param="key">
+                <unittest:value xsi:type="IntegerLiteral" value="9223372036854775807" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="outMap1">
+                <unittest:value xsi:type="MapValue" valueOf="MapIntByteNoInit1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_97fec21d0c164d6fb44149383e15b41d">
+            <unittest:arguments>
+              <unittest:argument param="inMap1">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="MapValue" valueOf="MapIntByteNoInit1" />
+                    <unittest:element xsi:type="MapLiteral">
+                      <keyType xsi:type="Integer" />
+                      <valueType xsi:type="ByteField" />
+                      <items>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-9223372036854775808" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-9223372036854775807" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="-1" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="0" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="1" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="9223372036854775806" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                        <item>
+                          <key xsi:type="IntegerLiteral" value="9223372036854775807" />
+                          <value xsi:type="ByteFieldLiteral" value="FF" />
+                        </item>
+                      </items>
+                    </unittest:element>
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+              <unittest:argument param="key">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775807" />
+                    <unittest:element xsi:type="IntegerLiteral" value="-9223372036854775806" />
+                    <unittest:element xsi:type="IntegerLiteral" value="0" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775805" />
+                    <unittest:element xsi:type="IntegerLiteral" value="9223372036854775806" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:exception xsi:type="OutOfBoundsException" />
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="inMap1" id="InParameterDeclaration_2c2a1ea30b17418e82e4899f29e758f4">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="ByteField" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="key" id="InParameterDeclaration_82521f578c084b2fa5418f6c2fbceda8">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="outMap1" id="OutParameterDeclaration_687c2be683064905ada67225e71e45b1">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="ByteField" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_22d77f9ce5ed4b1e983712d90e70814c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="outMap1" />
+              <term xsi:type="MapValue" valueOf="inMap1" />
+            </realisation>
+          </action>
+          <action id="Action_85c788822e3646748c15bf1c171b8558">
+            <realisation xsi:type="MapRemoveItems">
+              <map name="outMap1" />
+              <key xsi:type="IntegerLiteral" value="-9223372036854775808" />
+              <key xsi:type="IntegerLiteral" value="-9223372036854775807" />
+              <key xsi:type="IntegerLiteral" value="-1" />
+              <key xsi:type="IntegerLiteral" value="0" />
+              <key xsi:type="IntegerLiteral" value="1" />
+              <key xsi:type="IntegerLiteral" value="9223372036854775806" />
+              <key xsi:type="IntegerValue" valueOf="key" />
+            </realisation>
+          </action>
+          <action id="Action_e5716af9ca1b430790413ea43f8928de">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="MapValue" valueOf="outMap1" />
+                <term xsi:type="MapValue" valueOf="inMap1" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

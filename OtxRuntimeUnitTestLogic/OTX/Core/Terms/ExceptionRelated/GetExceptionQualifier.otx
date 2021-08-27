@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="GetExceptionQualifier" id="id_9a31a40ce06641ca84ee01581d9423dc" package="Core.Terms.ExceptionRelated" version="1.0.0.42272" timestamp="2021-05-10T16:05:31.414+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42244</data>
+  </metaData>
+  <imports>
+    <import package="RootPackage1" document="Document1" prefix="Document11" />
+  </imports>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="GetExceptionQualifier_UserException" id="TestProcedure_00b2f0e522834f44993932ed5fbb79e2" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_a3fd4377c76c47649ab2b5bf66a3a8b7">
+            <unittest:arguments>
+              <unittest:argument param="myException">
+                <unittest:value xsi:type="UserExceptionCreate">
+                  <qualifier xsi:type="StringLiteral" value="" />
+                  <text xsi:type="StringLiteral" value="" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="exceptionText">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_0a937d8f9f4a4f359a7c0ef47faaf0ef">
+            <unittest:arguments>
+              <unittest:argument param="myException">
+                <unittest:value xsi:type="UserExceptionCreate">
+                  <qualifier xsi:type="StringLiteral" value="ABCDE" />
+                  <text xsi:type="StringLiteral" value="" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="exceptionText">
+                <unittest:value xsi:type="StringLiteral" value="ABCDE" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_af20e5a1e76a44c9a33893b4aee561dd">
+            <unittest:arguments>
+              <unittest:argument param="myException">
+                <unittest:value xsi:type="UserExceptionCreate">
+                  <qualifier xsi:type="StringLiteral" value="abcde" />
+                  <text xsi:type="StringLiteral" value="" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="exceptionText">
+                <unittest:value xsi:type="StringLiteral" value="abcde" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1412510034214c41a8e9305508712d5f">
+            <unittest:arguments>
+              <unittest:argument param="myException">
+                <unittest:value xsi:type="UserExceptionCreate">
+                  <qualifier xsi:type="StringLiteral" value="15689" />
+                  <text xsi:type="StringLiteral" value="" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="exceptionText">
+                <unittest:value xsi:type="StringLiteral" value="15689" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_1653441c82384417ac73402f64b6c868">
+            <unittest:arguments>
+              <unittest:argument param="myException">
+                <unittest:value xsi:type="UserExceptionCreate">
+                  <qualifier xsi:type="StringLiteral" value="!@#$%" />
+                  <text xsi:type="StringLiteral" value="" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="exceptionText">
+                <unittest:value xsi:type="StringLiteral" value="!@#$%" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_6ec36b4421ae4b7fa231cb2c5940895f">
+            <unittest:arguments>
+              <unittest:argument param="myException">
+                <unittest:value xsi:type="UserExceptionCreate">
+                  <qualifier xsi:type="StringLiteral" value="ExceptionQualifier1" />
+                  <text xsi:type="StringLiteral" value="Exception description text" />
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="exceptionText">
+                <unittest:value xsi:type="StringLiteral" value="ExceptionQualifier1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="myException" id="InParameterDeclaration_a6771be6179646438d4a3f6754aaf953">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="exceptionText" id="OutParameterDeclaration_36a208f60ad74d32974fffe9f12b1c2c">
+            <realisation>
+              <dataType xsi:type="String">
+                <init value="" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="Exception1" id="VariableDeclaration_675f6b64430b46d781e835b5182ecf54">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <handler id="Handler_aead973879b6436dbc38b4218297d6ab">
+            <realisation>
+              <try>
+                <throw id="Throw_c7c4f6ddd5ab404d9256545f9d7e9167">
+                  <realisation xsi:type="ExceptionValue" valueOf="myException" />
+                </throw>
+              </try>
+              <catch>
+                <exception id="CatchHeader_b1ad7ebb3f984c49abaf90df14e9db5a">
+                  <realisation>
+                    <type />
+                    <handle name="Exception1" />
+                  </realisation>
+                </exception>
+                <flow>
+                  <action id="Action_8ef34b7fd84d4e75af8b8664566e087b">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="exceptionText" />
+                      <term xsi:type="GetExceptionQualifier">
+                        <exception xsi:type="ExceptionValue" valueOf="Exception1" />
+                      </term>
+                    </realisation>
+                  </action>
+                </flow>
+              </catch>
+            </realisation>
+          </handler>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="GetExceptionQualifier_ImplicitException" id="TestProcedure_ee2ccb11d68c400ebcfccce2290dc24e" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Integer1" id="VariableDeclaration_1031c61cd223471c8cee04f9c0893a70">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="Exception1" id="VariableDeclaration_3c22e62f0f8a40f0bbb2eaf146a27a5d">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+          <variable name="exceptionText" id="VariableDeclaration_76a38a08ad564ca28c5cb740d0f9d835">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <handler id="Handler_a4520bbd30234ab689f18b69d353fb24">
+            <realisation>
+              <try>
+                <action id="Action_a6313aae036b43b79bc3653a40b963db">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="IntegerVariable" name="Integer1" />
+                    <term xsi:type="Divide">
+                      <numeral xsi:type="IntegerLiteral" value="5" />
+                      <divisor xsi:type="IntegerLiteral" value="0" />
+                    </term>
+                  </realisation>
+                </action>
+              </try>
+              <catch>
+                <exception id="CatchHeader_aa0fb8eaaa1749579a0ab067d42f02d0">
+                  <realisation>
+                    <type />
+                    <handle name="Exception1" />
+                  </realisation>
+                </exception>
+                <flow>
+                  <action id="Action_b8947e7202ab448a91fde161a1313241">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="exceptionText" />
+                      <term xsi:type="GetExceptionQualifier">
+                        <exception xsi:type="ExceptionValue" valueOf="Exception1" />
+                      </term>
+                    </realisation>
+                  </action>
+                </flow>
+              </catch>
+            </realisation>
+          </handler>
+          <action id="Action_2903f005275d41759370eb4a2f87e729">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="StringValue" valueOf="exceptionText" />
+                <term xsi:type="StringLiteral" value="" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="GetExceptionQualifier_ProcedureCall" id="TestProcedure_736e703c260a4abf8f87b905c59af04e" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Exception1" id="VariableDeclaration_dc67295b825d4196a54f98225974bb68">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+          <variable name="exceptionText" id="VariableDeclaration_28b87d4035fd4cd792dbae0ee4a87ec6">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <handler id="Handler_5a57022c92ea45ff9a14a6848f48d92e">
+            <realisation>
+              <try>
+                <action id="Action_ddc25ff8876d4f9c9244c58b7c47bcb4">
+                  <realisation xsi:type="ProcedureCall" procedure="Document11:ProcedureWithUserException" />
+                </action>
+              </try>
+              <catch>
+                <exception id="CatchHeader_3b3a1245c06f499fb52c8f391e6c8d2e">
+                  <realisation>
+                    <type />
+                    <handle name="Exception1" />
+                  </realisation>
+                </exception>
+                <flow>
+                  <action id="Action_d3200dc5016146cd836afcab74929903">
+                    <realisation xsi:type="Assignment">
+                      <result xsi:type="StringVariable" name="exceptionText" />
+                      <term xsi:type="GetExceptionQualifier">
+                        <exception xsi:type="ExceptionValue" valueOf="Exception1" />
+                      </term>
+                    </realisation>
+                  </action>
+                </flow>
+              </catch>
+            </realisation>
+          </handler>
+          <action id="Action_aa5c64f1a9484ad2868afb37c240d591">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="exceptionText" />
+                <term xsi:type="StringLiteral" value="ProcedureThrowException_Qualifier" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

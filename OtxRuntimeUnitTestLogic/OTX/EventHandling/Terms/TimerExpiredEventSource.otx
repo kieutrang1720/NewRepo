@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:dt="http://iso.org/OTX/1.0.0/DateTime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:event="http://iso.org/OTX/1.0.0/Event" name="TimerExpiredEventSource" id="id_fc48d6036b87414dbeac6ed5c54d9e2b" package="EventHandling.Terms" version="1.0.0.0" timestamp="2021-08-10T13:48:29.99+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42500</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="TimerExpiredEventSource_Base" id="id_f5c4ce20fa6943dd9766ccd0c8c9f019" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="EventSource1" id="VariableDeclaration_defcbe5a06084d0cab8e6b85c6855e42">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_3f59a950e76148c58d3e65f0f0f47a61">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_29d1b61e6dd749adb72d6869cac70e65">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:TimerExpiredEventSource">
+                <event:timeout xsi:type="FloatLiteral" value="1000.9999" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_c0a1394214344c339cc9d27e868246ee">
+            <realisation xsi:type="event:WaitForEvent">
+              <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+              <event:event name="Event1" />
+            </realisation>
+          </action>
+          <action id="Action_1ed375dcaff1412ca580a85f94571c33">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="event:IsTimerExpiredEvent">
+                <event:event xsi:type="event:EventValue" valueOf="Event1" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="TimerExpiredEventSource_MeasureExpirationTime" id="TestProcedure_2150d80804fe4006b04131948c32c21a" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="EventSource1" id="VariableDeclaration_7c1b86b0b6a74bb2aa6ea66e919b72ea">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="EventSource2" id="VariableDeclaration_7248e527730e415880a5f19c261c58f3">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="EventSource3" id="VariableDeclaration_eeddbec6fdd440f9ba2f0cc341c97408">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_0c38e12e1487401790519ebb50ee7115">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+          <variable name="Integer1" id="VariableDeclaration_805a7ed4cf6340adbb2e4040a8142407">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="Duration" id="VariableDeclaration_40c48c2bebc748b5947b11b96edf7c2e">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_7a17879faead4a8faf967c0e4159a8a6">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Integer1" />
+              <term xsi:type="dt:GetTimestamp" />
+            </realisation>
+          </action>
+          <action id="Action_e6cfb0a631b342219fb990559e41cada">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:TimerExpiredEventSource">
+                <event:timeout xsi:type="FloatLiteral" value="3000.9999" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_6702f3be0a6b4103bd7bb7701bb7680c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource2" />
+              <term xsi:type="event:TimerExpiredEventSource">
+                <event:timeout xsi:type="FloatLiteral" value="2000.9999" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_4d5c82a889044816ac67be9448bc5632">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource3" />
+              <term xsi:type="event:TimerExpiredEventSource">
+                <event:timeout xsi:type="FloatLiteral" value="1000.9999" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_29ed3799635149ccbd8d3814a58721bc">
+            <realisation xsi:type="event:WaitForEvent">
+              <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+              <event:source xsi:type="event:EventSourceValue" valueOf="EventSource2" />
+              <event:source xsi:type="event:EventSourceValue" valueOf="EventSource3" />
+              <event:event name="Event1" />
+            </realisation>
+          </action>
+          <action id="Action_82467b6098514481a2e58c4a359e0f93">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="Duration" />
+              <term xsi:type="Subtract">
+                <numeral xsi:type="dt:GetTimestamp" />
+                <subtrahend xsi:type="IntegerValue" valueOf="Integer1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_ec6b1208d92a4fe2b64349fd88251249">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="event:IsTimerExpiredEvent">
+                <event:event xsi:type="event:EventValue" valueOf="Event1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_939983361127470bb8807ae0f0c35189">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicAnd">
+                <term xsi:type="IsLessOrEqual">
+                  <left xsi:type="IntegerLiteral" value="1000" />
+                  <right xsi:type="IntegerValue" valueOf="Duration" />
+                </term>
+                <term xsi:type="IsLess">
+                  <left xsi:type="IntegerValue" valueOf="Duration" />
+                  <right xsi:type="IntegerLiteral" value="1100" />
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="TimerExpiredEventSource_OutOfBoundException" id="TestProcedure_9a687e9e561d4d4ebf2660c88504c176" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_004f807499be4e359f0eaa0aebf2d3e3">
+            <unittest:arguments>
+              <unittest:argument param="timeout">
+                <unittest:value xsi:type="FloatLiteral" value="-INF" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_300a3271b6b145428a1b24008a854ac9">
+            <unittest:arguments>
+              <unittest:argument param="timeout">
+                <unittest:value xsi:type="FloatLiteral" value="-1E-06" />
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="timeout" id="InParameterDeclaration_a25d97617bfa4aafa2d691ad56644335">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="-0" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="EventSource1" id="VariableDeclaration_11e2e48c0fe542f3a45f62768b70b13f">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <handler id="Handler_38cd8e0c1371480d9c6bf75cd4be2866">
+            <realisation>
+              <try>
+                <action id="Action_01a5bb6de6a54fe9b3839e3500326479">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+                    <term xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="FloatValue" valueOf="timeout" />
+                    </term>
+                  </realisation>
+                </action>
+                <action id="Action_d322da86ea5249b4940b554a736f3678">
+                  <realisation xsi:type="assert:Assert">
+                    <assert:condition xsi:type="BooleanLiteral" value="false" />
+                    <assert:errorMessage xsi:type="StringLiteral" value="No exception occur" />
+                  </realisation>
+                </action>
+              </try>
+              <catch>
+                <exception id="CatchHeader_1f68ecbd7673445a9f6d0fcf1d8f48ed">
+                  <realisation>
+                    <type xsi:type="OutOfBoundsException" />
+                  </realisation>
+                </exception>
+                <flow>
+                  <action id="Action_e626c05af1074e1b898b62b8e1f4aae3">
+                    <realisation xsi:type="assert:Assert">
+                      <assert:condition xsi:type="BooleanLiteral" value="true" />
+                    </realisation>
+                  </action>
+                </flow>
+              </catch>
+            </realisation>
+          </handler>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

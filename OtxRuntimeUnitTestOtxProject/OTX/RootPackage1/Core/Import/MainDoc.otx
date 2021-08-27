@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="MainDoc" id="id_a016a3713cab423b87ff61af238a6d12" package="RootPackage1.Core.Import" version="1.0.0.0" timestamp="2021-06-07T15:06:36.804+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42093</data>
+  </metaData>
+  <imports>
+    <import package="RootPackage1.Core.Import" document="MainDoc" prefix="ThisDoc" />
+    <import package="RootPackage1.Core.Import" document="SamePackageDocument1" prefix="SamePackage" />
+    <import package="RootPackage1.Core.Import.ChildOfImportPackage" document="ChildPackage_Document" prefix="ChildPackage1_Document_Import" />
+    <import package="RootPackage1.Core.ImportDifferencePackage" document="DifferencePackage2Document1" prefix="DifferencePackage2_Document1_Import" />
+  </imports>
+  <declarations>
+    <constant name="GlobalConstant_String" id="GlobalConstantDeclaration_831fe0430a19431486989b9668657835">
+      <realisation>
+        <dataType xsi:type="String">
+          <init value="MainDoc_GlobalConstant_String" />
+        </dataType>
+      </realisation>
+    </constant>
+    <context name="ContextVariable_String" id="ContextVariableDeclaration_864a22142bd14e7882a6ac4e28c8cbea">
+      <realisation>
+        <dataType xsi:type="String">
+          <init value="MainDoc_ContextVariable_String" />
+        </dataType>
+      </realisation>
+    </context>
+    <variable name="DocumentVariable_String" id="DocumentVariableDeclaration_a743dc56aa1243939db0ce85c0342808">
+      <realisation>
+        <dataType xsi:type="String">
+          <init value="MainDoc_DocumentVariable_String" />
+        </dataType>
+      </realisation>
+    </variable>
+  </declarations>
+  <validities>
+    <validity name="Validity_True" id="Validity_90ec5b6413994a43b184652a621c9531">
+      <realisation xsi:type="BooleanLiteral" value="true" />
+    </validity>
+  </validities>
+  <signatures>
+    <signature name="MainDocumentSignature1" id="Signature_063a073631e7465a964b86fdf99edc82" visibility="PRIVATE">
+      <realisation xsi:type="ProcedureSignature">
+        <parameters>
+          <outParam name="OutParam_ProcedureFullName" id="OutParameterDeclaration_2432d0ba4c7b4fa895a3129e2611211b">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </outParam>
+        </parameters>
+      </realisation>
+    </signature>
+  </signatures>
+  <procedures>
+    <procedure name="TestImport" id="Procedure_8f02410e7e62492381dc7c5954ffcc74" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_290bb06676a74bc19aed6fb208086d00">
+            <realisation xsi:type="ProcedureCall" procedure="TestProcedure" />
+          </action>
+          <action id="Action_6611c55775ad4be28077503ee228a1ec">
+            <realisation xsi:type="ProcedureCall" procedure="TestSignature" />
+          </action>
+          <action id="Action_22abb37076bf441ea9712284cc370c41">
+            <realisation xsi:type="ProcedureCall" procedure="TestValidity" />
+          </action>
+          <action id="Action_b384fab2d58f49818633a9a1edfd0d68">
+            <realisation xsi:type="ProcedureCall" procedure="TestContextVariable" />
+          </action>
+          <action id="Action_c64f7a04daad463a8af9dcc3d695b7c1">
+            <realisation xsi:type="ProcedureCall" procedure="TestGlobalConstant" />
+          </action>
+          <action id="Action_38e67ada1e4348eaae7bf925f77babf3">
+            <realisation xsi:type="ProcedureCall" procedure="TestDocumentVariable" />
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="TestProcedure" id="Procedure_d4f11268a50847ca9dbe9ce8d5c12fd5">
+      <realisation>
+        <declarations>
+          <variable name="String1" id="VariableDeclaration_efbdf3a5744941098e0b98cd0b7c9f57">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </declarations>
+        <flow>
+          <action id="Action_52c323fc5396402bbc28d4dc9cbbb23d">
+            <realisation xsi:type="ProcedureCall" procedure="ThisDoc:Procedure2">
+              <arguments>
+                <outArg param="OutParam_ProcedureFullName">
+                  <variable xsi:type="StringVariable" name="String1" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_5218cbf9b7d24be7b6ac89563ab87e20">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="String1" />
+                <term xsi:type="StringLiteral" value="OtxRuntimeUnitTestOtxProject.RootPackage1.Import.MainDoc.Procedure2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_4111da3a4cfe4d02860c9b43807f9d06">
+            <realisation xsi:type="ProcedureCall" procedure="SamePackage:Procedure1">
+              <arguments>
+                <outArg param="OutParam_ProcedureFullName">
+                  <variable xsi:type="StringVariable" name="String1" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_ad70dd1c8ae348a99002b08a983ef355">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="String1" />
+                <term xsi:type="StringLiteral" value="OtxRuntimeUnitTestOtxProject.RootPackage1.Import.SamePackageDocument1.Procedure1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_dd8aea906dc2467597bc136c22d758f8">
+            <realisation xsi:type="ProcedureCall" procedure="ChildPackage1_Document_Import:Procedure1">
+              <arguments>
+                <outArg param="OutParam_ProcedureFullName">
+                  <variable xsi:type="StringVariable" name="String1" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_c81a74bfbc2b49beb442ffaf8ecea9f8">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="String1" />
+                <term xsi:type="StringLiteral" value="OtxRuntimeUnitTestOtxProject.RootPackage1.Import.ChildOfImportPackage.ChildPackage_Document.Procedure1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action name="main5" id="ProcedureCall_a353e198473b43909afd6a089fb1250a">
+            <realisation xsi:type="ProcedureCall" procedure="DifferencePackage2_Document1_Import:Procedure1">
+              <arguments>
+                <outArg param="OutParam_ProcedureFullName">
+                  <variable xsi:type="StringVariable" name="String1" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_02fbc3fbcfe64609826f6e36595114d4">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="String1" />
+                <term xsi:type="StringLiteral" value="OtxRuntimeUnitTestOtxProject.RootPackage1.ImportDifferencePackage.DifferencePackage2Document1.Procedure1" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="TestSignature" id="Procedure_266663491b224f8d8ec2c322bd3568bb">
+      <realisation>
+        <declarations>
+          <variable name="String1" id="VariableDeclaration_16a60daaa4014bb3a57e1c8568724c8c">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </declarations>
+        <flow>
+          <action id="Action_fd54122995de4dea85dace54dde53177">
+            <realisation xsi:type="ProcedureCall" procedure="ThisDoc:MainDocumentSignature1">
+              <arguments>
+                <outArg param="OutParam_ProcedureFullName">
+                  <variable xsi:type="StringVariable" name="String1" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_4347b6fb118f491db8523ea2aafa4dce">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="String1" />
+                <term xsi:type="StringLiteral" value="OtxRuntimeUnitTestOtxProject.RootPackage1.Import.MainDoc.Procedure3_Impl" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_1ad8e3bbf9a140c7a43f34541b2962f3">
+            <realisation xsi:type="ProcedureCall" procedure="SamePackage:SamePackageDifferenceDocumentProcedureSignature1">
+              <arguments>
+                <outArg param="OutParam_ProcedureFullName">
+                  <variable xsi:type="StringVariable" name="String1" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_0f78df3fb1724939976919b57f38f515">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="String1" />
+                <term xsi:type="StringLiteral" value="OtxRuntimeUnitTestOtxProject.RootPackage1.Import.MainDoc.Procedure4_Impl" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action name="main" id="ProcedureCall_3159c635aa2c44208aab3acd2b7665c9">
+            <realisation xsi:type="ProcedureCall" procedure="ChildPackage1_Document_Import:DifferencePackage1Document1ProedureSignature1">
+              <arguments>
+                <outArg param="OutParam_ProcedureFullName">
+                  <variable xsi:type="StringVariable" name="String1" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_c054b66a68b24c4b9618c4159c3c81e1">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="String1" />
+                <term xsi:type="StringLiteral" value="OtxRuntimeUnitTestOtxProject.RootPackage1.Import.MainDoc.Procedure5_Impl" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action name="main1" id="ProcedureCall_da01b4564bfc4f758440c8428407c552">
+            <realisation xsi:type="ProcedureCall" procedure="DifferencePackage2_Document1_Import:DifferencePackage2Document1ProcedureSignature">
+              <arguments>
+                <outArg param="OutParam_ProcedureFullName">
+                  <variable xsi:type="StringVariable" name="String1" />
+                </outArg>
+              </arguments>
+            </realisation>
+          </action>
+          <action id="Action_50d852a1b01849a19cc9c27e5f7a0342">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="String1" />
+                <term xsi:type="StringLiteral" value="OtxRuntimeUnitTestOtxProject.RootPackage1.Import.MainDoc.Procedure6_Impl" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="Procedure2" id="Procedure_b482f1c20b004b4ea55a39c854b6fbd0">
+      <realisation>
+        <parameters>
+          <outParam name="OutParam_ProcedureFullName" id="OutParameterDeclaration_0d7a8e796d7d48b98f62a3cf3616c02b">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </outParam>
+        </parameters>
+        <flow>
+          <action id="Action_f76c0f887f7f4af5b968726708ea4481">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="OutParam_ProcedureFullName" />
+              <term xsi:type="StringLiteral" value="OtxRuntimeUnitTestOtxProject.RootPackage1.Import.MainDoc.Procedure2" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="Procedure3_Impl" id="Procedure_e5ab9124debd4a9d8b32ccd064dbdd7d" implements="ThisDoc:MainDocumentSignature1">
+      <realisation>
+        <parameters>
+          <outParam name="OutParam_ProcedureFullName" id="OutParameterDeclaration_da1c45934a934631bb0bc1fb85d1472f">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </outParam>
+        </parameters>
+        <flow>
+          <action id="Action_4a26b4f6360245c1b5caf7fe60d39275">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="OutParam_ProcedureFullName" />
+              <term xsi:type="StringLiteral" value="OtxRuntimeUnitTestOtxProject.RootPackage1.Import.MainDoc.Procedure3_Impl" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="Procedure4_Impl" id="Procedure_2a2b6b5d232a4bf29cc38adacadb00b7" visibility="PUBLIC" implements="SamePackage:SamePackageDifferenceDocumentProcedureSignature1">
+      <realisation>
+        <parameters>
+          <outParam name="OutParam_ProcedureFullName" id="OutParameterDeclaration_46f2e82319094509a5cf1563fe4198c1">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </outParam>
+        </parameters>
+        <flow>
+          <action id="Action_9627ca7e473c47f4a7a03c2f95f524b6">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="OutParam_ProcedureFullName" />
+              <term xsi:type="StringLiteral" value="OtxRuntimeUnitTestOtxProject.RootPackage1.Import.MainDoc.Procedure4_Impl" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="Procedure5_Impl" id="Procedure_afcafb5504f0430dbfe80cdc44dd69c8" visibility="PUBLIC" implements="ChildPackage1_Document_Import:DifferencePackage1Document1ProedureSignature1">
+      <realisation>
+        <parameters>
+          <outParam name="OutParam_ProcedureFullName" id="OutParameterDeclaration_d0d9a14621b14a87b373868c58f52099">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </outParam>
+        </parameters>
+        <flow>
+          <action id="Action_a850d6243ce44a44b66ae05e07c874e8">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="OutParam_ProcedureFullName" />
+              <term xsi:type="StringLiteral" value="OtxRuntimeUnitTestOtxProject.RootPackage1.Import.MainDoc.Procedure5_Impl" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="Procedure6_Impl" id="Procedure_7e8cb5f6e1674bbfb14de21b70a73062" visibility="PUBLIC" implements="DifferencePackage2_Document1_Import:DifferencePackage2Document1ProcedureSignature">
+      <realisation>
+        <parameters>
+          <outParam name="OutParam_ProcedureFullName" id="OutParameterDeclaration_784d03b9b3b144b9aca2bb92ae0e5c5b">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </outParam>
+        </parameters>
+        <flow>
+          <action id="Action_c4a3f7ef2c9c48a5a4beacd006f5d031">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="OutParam_ProcedureFullName" />
+              <term xsi:type="StringLiteral" value="OtxRuntimeUnitTestOtxProject.RootPackage1.Import.MainDoc.Procedure6_Impl" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="TestValidity" id="Procedure_e3f32af990f2401d8c0675ad0b8c4eb8">
+      <realisation>
+        <flow>
+          <action id="Action_89003355ad9d43d7a162af030c77a6d0">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsValid" validity="ThisDoc:Validity_True" />
+            </realisation>
+          </action>
+          <action id="Action_0662fa7dc0ff42b09c1c6e0ca425a67e">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="IsValid" validity="SamePackage:SamePackageDifferenceDocument_Validity_False" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_86d7e9ab702542f4900d964ba13e92ff">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsValid" validity="ChildPackage1_Document_Import:ChildPackage_Validity_True" />
+            </realisation>
+          </action>
+          <action id="Action_437d7baad51c4089ab4d40d9cd580da0">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="LogicNot">
+                <term xsi:type="IsValid" validity="DifferencePackage2_Document1_Import:DifferencePackage_Validity_False" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="TestContextVariable" id="Procedure_833b53cc923e4abaa48362b50ce5b29d">
+      <realisation>
+        <flow>
+          <action id="Action_7c2ddae7196445468e58cfbbd50f6e1b">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="ThisDoc:ContextVariable_String" />
+                <term xsi:type="StringLiteral" value="MainDoc_ContextVariable_String" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_ffebdff875e64585b30544ef05065b83">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="SamePackage:SamePackageDifferenceDocument_ContextVariable_String" />
+                <term xsi:type="StringLiteral" value="SamePackageDifferenceDocument_ContextVariable_String" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_9ff34c4cdbc44e4986260f117cd20226">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="ChildPackage1_Document_Import:ChildPackage_ContextVariable_String" />
+                <term xsi:type="StringLiteral" value="ChildPackage_ContextVariable_String" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_85f6903808c349b199d6058210df0060">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="DifferencePackage2_Document1_Import:DifferencePackage_ContextVariable_String" />
+                <term xsi:type="StringLiteral" value="DifferencePackage_ContextVariable_String" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="TestGlobalConstant" id="Procedure_e0338d9263f9447a9d30cba8802bfbbb">
+      <realisation>
+        <flow>
+          <action id="Action_6586a5f8336f4b7dbe6676ce4db40a64">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="ThisDoc:GlobalConstant_String" />
+                <term xsi:type="StringLiteral" value="MainDoc_GlobalConstant_String" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_c68602ddc49343d6ab04fd8dcb7a3e85">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="SamePackage:SamePackageDifferenceDocument_GlobalConstant_String" />
+                <term xsi:type="StringLiteral" value="SamePackageDifferenceDocument_GlobalConstant_String" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_5c982e95e7714624acc7a857013c1a96">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="ChildPackage1_Document_Import:ChildPackage_GlobalConstant_String" />
+                <term xsi:type="StringLiteral" value="ChildPackage_GlobalConstant_String" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_4cca2599cb2d4d25992299759df50e28">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="DifferencePackage2_Document1_Import:DifferencePackage_GlobalConstant_String" />
+                <term xsi:type="StringLiteral" value="DifferencePackage_GlobalConstant_String" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="TestDocumentVariable" id="Procedure_5c11ed8e32a14498a2090142d12c638d">
+      <realisation>
+        <flow>
+          <action id="Action_71636e28ac7442beab0fba233660df7f">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="ThisDoc:DocumentVariable_String" />
+                <term xsi:type="StringLiteral" value="MainDoc_DocumentVariable_String" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+  </procedures>
+</otx>

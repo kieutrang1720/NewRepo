@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:log="http://iso.org/OTX/1.0.0/Logging" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="SeverityLevel" id="id_af287f598edc44a995b64cf54a96f7e1" package="Logging.DataTypes" version="1.0.0.0" timestamp="2021-08-11T14:58:13.498+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42500</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="SeverityLevel_Base" id="TestProcedure_8d2dee7904c5438caa6062b176e6d4d5" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="SeverityLevel1" id="VariableDeclaration_ee06ba1ce516402cb7c2b79de468f339">
+            <realisation>
+              <dataType xsi:type="log:SeverityLevel">
+                <log:init value="DEBUG" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="SeverityLevel2" id="VariableDeclaration_388823bf00534d28bdefc0db245f1c01">
+            <realisation>
+              <dataType xsi:type="log:SeverityLevel">
+                <log:init value="ERROR" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="SeverityLevel3" id="VariableDeclaration_e9c68c82072148daa599c9475f09cd5a">
+            <realisation>
+              <dataType xsi:type="log:SeverityLevel">
+                <log:init value="FATAL" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="SeverityLevel4" id="VariableDeclaration_b9e951a4466449579c3775afafa6da7b">
+            <realisation>
+              <dataType xsi:type="log:SeverityLevel">
+                <log:init value="INFO" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="SeverityLevel5" id="VariableDeclaration_a5248d6bcec04eceae0f72a229cc088d">
+            <realisation>
+              <dataType xsi:type="log:SeverityLevel">
+                <log:init value="TRACE" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="SeverityLevel6" id="VariableDeclaration_3fc13166574d4dbd8a971d450eaf72f1">
+            <realisation>
+              <dataType xsi:type="log:SeverityLevel">
+                <log:init value="WARN" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_6d7b3fe33b504eab87708853870d6ba9">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="SeverityLevel1" />
+                <term xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_cf5667df6ded4458b050b0f5d7ca9a04">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="SeverityLevel2" />
+                <term xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_d8e12a3be2394df5a8bce3edbc62fe39">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="SeverityLevel3" />
+                <term xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_f148c66514c2457f8cfd37f728505402">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="SeverityLevel4" />
+                <term xsi:type="log:SeverityLevelLiteral" value="INFO" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_6a12d0de59334612ba733f1b819d0fd1">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="SeverityLevel5" />
+                <term xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_8fc6e032c98442debc5310103e7418d0">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="SeverityLevel6" />
+                <term xsi:type="log:SeverityLevelLiteral" value="WARN" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SeverityLevel_Comparsion" id="TestProcedure_fa2214ee8ada4cc7b4128fb166cf2168" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_8d171d17faf34a098babff428ab7d6fc">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLess">
+                <left xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+                <right xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_ef93cc6efbd84d7a94e3c42675166c6e">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLess">
+                <left xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+                <right xsi:type="log:SeverityLevelLiteral" value="INFO" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_953f93f46b744bdc80c190870e8a1317">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLess">
+                <left xsi:type="log:SeverityLevelLiteral" value="INFO" />
+                <right xsi:type="log:SeverityLevelLiteral" value="WARN" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_a8e8e626b13143b19ad9a531ad9fcba7">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLess">
+                <left xsi:type="log:SeverityLevelLiteral" value="WARN" />
+                <right xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_3765918e11494fd49bf66bd86780a3b9">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLess">
+                <left xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+                <right xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_d864ce069356408c88036139386337fc">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+                <right xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_d6242027262e413080641d96255c481a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+                <right xsi:type="log:SeverityLevelLiteral" value="INFO" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_3f6099b5d3324de0bb9152005e4d16a2">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="log:SeverityLevelLiteral" value="INFO" />
+                <right xsi:type="log:SeverityLevelLiteral" value="WARN" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_e67e3bed11e742e1a980b07c0309f20a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="log:SeverityLevelLiteral" value="WARN" />
+                <right xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_327a4da16c9d418eba648a9a6b988bf2">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+                <right xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_e0e8b2bb4749441f90bc9394a5062783">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreater">
+                <left xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+                <right xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_da57cd1322074bd990ed51097a61a45c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreater">
+                <left xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+                <right xsi:type="log:SeverityLevelLiteral" value="WARN" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_1362bf2fe05642a7b610ee8d2c603c37">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreater">
+                <left xsi:type="log:SeverityLevelLiteral" value="WARN" />
+                <right xsi:type="log:SeverityLevelLiteral" value="INFO" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_8e4e5e82604e44fcaff68a282e3d216b">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreater">
+                <left xsi:type="log:SeverityLevelLiteral" value="INFO" />
+                <right xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_6e47e54da9f947f1891cd380fa780528">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreater">
+                <left xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+                <right xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_406685a2cda34d1e901f0073e32a5bff">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+                <right xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_4d843138eb2f4e4ea01a178758864d37">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+                <right xsi:type="log:SeverityLevelLiteral" value="WARN" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_31460b4bba134742a02ce17d4e054401">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="log:SeverityLevelLiteral" value="WARN" />
+                <right xsi:type="log:SeverityLevelLiteral" value="INFO" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_cdeb9760d4ed4c4284bddec9c3ed8d50">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="log:SeverityLevelLiteral" value="INFO" />
+                <right xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_dd6e7ee2416347329d7a1e9409951b65">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+                <right xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_fca564751296414d95904d3d74fcb7bb">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+                <term xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_60fb9fdd41df4fc68c0a130e7f40bd76">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+                <term xsi:type="log:SeverityLevelLiteral" value="INFO" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_c88e53a22dd94039a17455c32f7b6d2c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+                <term xsi:type="log:SeverityLevelLiteral" value="WARN" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_f4a0b173886146e4978415650e4c6cc6">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+                <term xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_399d94fbe8884e6a895f4b3600d54424">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+                <term xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_8d163f9b3c0f41109f66af6dff6ac3f4">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+                <term xsi:type="log:SeverityLevelLiteral" value="INFO" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_e5a77d72d077475591cc635f4e829bb2">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+                <term xsi:type="log:SeverityLevelLiteral" value="WARN" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_b9bfa666772348a080f316c90cbb8106">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+                <term xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_8a69483d02f14c5a95f6da5b09b4b7eb">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+                <term xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_5783e63c36bd4a678627de5d50d17d7b">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="log:SeverityLevelLiteral" value="INFO" />
+                <term xsi:type="log:SeverityLevelLiteral" value="WARN" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_1807f4a0e25a4bb6855ca8a4b150ca91">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="log:SeverityLevelLiteral" value="INFO" />
+                <term xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_25dce3f281e447e5babaae7ce975b1e2">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="log:SeverityLevelLiteral" value="INFO" />
+                <term xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_6bbe73bc4f724d44a262019885fc63b2">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="log:SeverityLevelLiteral" value="WARN" />
+                <term xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_881ef8e847a846feb21f6a00ff5c5ae9">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="log:SeverityLevelLiteral" value="WARN" />
+                <term xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_4d1a19c1ff6d4f9193f7e8be92cea9ae">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+                <term xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SeverityLevel_ToInteger" id="TestProcedure_44d4937e95964c209d3345eac94159e5" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_0b74344800eb49d8b4e7b24c807bf007">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToInteger">
+                  <term xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+                </term>
+                <term xsi:type="IntegerLiteral" value="0" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_68d8e38bc7614638b95c4b75b4741333">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToInteger">
+                  <term xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+                </term>
+                <term xsi:type="IntegerLiteral" value="1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_b77f5988b14148c69f59cc8bbe5de76a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToInteger">
+                  <term xsi:type="log:SeverityLevelLiteral" value="INFO" />
+                </term>
+                <term xsi:type="IntegerLiteral" value="2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_90dc24fb47004f88bc58d95785fb9505">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToInteger">
+                  <term xsi:type="log:SeverityLevelLiteral" value="WARN" />
+                </term>
+                <term xsi:type="IntegerLiteral" value="3" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_ab51573b287340b7af7c671058154ba4">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToInteger">
+                  <term xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+                </term>
+                <term xsi:type="IntegerLiteral" value="4" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_11a4f0e07d7444e08466fff3cb5c9d24">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToInteger">
+                  <term xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+                </term>
+                <term xsi:type="IntegerLiteral" value="5" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SeverityLevel_ToString" id="TestProcedure_d7a7bda77a224ba6bc889546bc4a721f" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_c53ddb1ba3c340b1a681f2ef1e471af1">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+                </term>
+                <term xsi:type="StringLiteral" value="TRACE" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_e930d9d611f04dd8b7ae4ebf051587a9">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+                </term>
+                <term xsi:type="StringLiteral" value="DEBUG" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_437c5baf8cd24785b8d8920401d37ca1">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="log:SeverityLevelLiteral" value="INFO" />
+                </term>
+                <term xsi:type="StringLiteral" value="INFO" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_efb46f43937a4d4c86a12652c5d51fc9">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="log:SeverityLevelLiteral" value="WARN" />
+                </term>
+                <term xsi:type="StringLiteral" value="WARN" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_11a033c712f145d08406d528cb19e81a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+                </term>
+                <term xsi:type="StringLiteral" value="ERROR" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_bfbbd20396a547439715d88c58f72fd5">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+                </term>
+                <term xsi:type="StringLiteral" value="FATAL" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="SeverityLevel_DefaultValue" id="TestProcedure_d2e42e21b0ff493bb9e652653bc8944c" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="SeverityLevel1" id="VariableDeclaration_2d59f6684958406a952517b39ecaf9ad">
+            <realisation>
+              <dataType xsi:type="log:SeverityLevel" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_d3fff625bad94e8eb9c239e4aab541fa">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="SeverityLevel1" />
+                <term xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

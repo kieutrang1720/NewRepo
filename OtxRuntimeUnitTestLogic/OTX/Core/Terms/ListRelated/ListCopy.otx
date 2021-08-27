@@ -1,0 +1,1184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="ListCopy" id="id_7fc70306768e4a8d83145f4e1fadbd66" package="Core.Terms.ListRelated" version="1.0.0.41667" timestamp="2021-05-14T17:53:03.216+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.41501</data>
+  </metaData>
+  <declarations>
+    <variable name="EmptyListOfString" id="DocumentVariableDeclaration_20db8eb1dc454369a0c96a23ba6250c3">
+      <realisation>
+        <dataType xsi:type="List">
+          <itemType xsi:type="String" />
+        </dataType>
+      </realisation>
+    </variable>
+    <variable name="EmptyListOfInteger" id="DocumentVariableDeclaration_1f0c1707a2fe485d9045b32ce2f76b41">
+      <realisation>
+        <dataType xsi:type="List">
+          <itemType xsi:type="Integer" />
+        </dataType>
+      </realisation>
+    </variable>
+    <variable name="EmptyListOfByteField" id="DocumentVariableDeclaration_0495dacdadd64a6db1fcdc0838337912">
+      <realisation>
+        <dataType xsi:type="List">
+          <itemType xsi:type="ByteField" />
+        </dataType>
+      </realisation>
+    </variable>
+  </declarations>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ListCopySimple" id="id_1a9d861a7e64409c8ceb81e05cc00c4c" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_1605f66ee2a64fd7984426b686a1ab11">
+            <unittest:arguments>
+              <unittest:argument param="OtherList">
+                <unittest:value xsi:type="ListValue" valueOf="EmptyListOfString" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ListValue" valueOf="EmptyListOfString" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b998bb48d59e43fd9ab818c6d27588cf">
+            <unittest:arguments>
+              <unittest:argument param="OtherList">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="a" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="a" />
+                  </items>
+                </unittest:value>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f54b928e45df4c68bf483e087a9f5b45">
+            <unittest:arguments>
+              <unittest:argument param="OtherList">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                  </items>
+                </unittest:value>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d145373eeef14e15825bea7065a817d2">
+            <unittest:arguments>
+              <unittest:argument param="OtherList">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="h" />
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value="c" />
+                    <item xsi:type="StringLiteral" value="d" />
+                    <item xsi:type="StringLiteral" value="e" />
+                    <item xsi:type="StringLiteral" value="f" />
+                    <item xsi:type="StringLiteral" value="g" />
+                    <item xsi:type="StringLiteral" value="h" />
+                  </items>
+                </unittest:value>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="OtherList" id="InParameterDeclaration_b626d3c423754fe390b2db065f4aa700">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_d742e4fddf5d4b829d5b222bc34f095e">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action name="ListCopy1" id="Action_ab75eaed8e6f42ef8491e8ad60c3b10b">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="Result" />
+              <term xsi:type="ListCopy">
+                <otherList xsi:type="ListValue" valueOf="OtherList" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ListCopyComplex" id="TestProcedure_cce894ccee2c48e79bfdd64987dd2e2f" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_52e2d452d32a4b4aa52eab5fc025a503">
+            <unittest:arguments>
+              <unittest:argument param="OtherList">
+                <unittest:value xsi:type="ListValue" valueOf="EmptyListOfByteField" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ListValue" valueOf="EmptyListOfByteField" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2e172b9cf2b543108bb45829dda571c6">
+            <unittest:arguments>
+              <unittest:argument param="OtherList">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="ByteField" />
+                  <items>
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="ByteField" />
+                  <items>
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                  </items>
+                </unittest:value>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3b5fc029d2c64f05af5151e489da571e">
+            <unittest:arguments>
+              <unittest:argument param="OtherList">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="ByteField" />
+                  <items>
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="Result">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="ByteField" />
+                  <items>
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                  </items>
+                </unittest:value>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="OtherList" id="InParameterDeclaration_cea0d238679841b7a9e9b385f7f78a2b">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="ByteField" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="Result" id="OutParameterDeclaration_4e2333123a6043e2974f22a9170ad41d">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="ByteField" />
+              </dataType>
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_05752a90d4b14f02ba2ecebc898d758b">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="Result" />
+              <term xsi:type="ListCopy">
+                <otherList xsi:type="ListValue" valueOf="OtherList" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ListCopyComplexShallowCopies" id="TestProcedure_acb92966299944f39c936ad6f5d7f4fb" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_b8148c8790d24af5beafd93e157d5476">
+            <unittest:arguments>
+              <unittest:argument param="List1">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="ByteField" />
+                  <items>
+                    <item xsi:type="ByteFieldLiteral" value="AA" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="CC" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_29d5e242c1f745468fc5e5cf146e0d4f">
+            <unittest:arguments>
+              <unittest:argument param="List1">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="ByteField" />
+                  <items>
+                    <item xsi:type="ByteFieldLiteral" />
+                    <item xsi:type="ByteFieldLiteral" value="BB" />
+                    <item xsi:type="ByteFieldLiteral" value="ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="List1" id="InParameterDeclaration_e9bb96c9ca0d4a4cb0db0417eca7bceb">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="ByteField" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="List2" id="VariableDeclaration_1330d3b7559d4345b7ddb4d3118c1aba">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="ByteField" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_67385a1ec93f48a68a410ca7e35d8524">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List2" />
+              <term xsi:type="ListCopy">
+                <otherList xsi:type="ListValue" valueOf="List1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_4639f1c0535a4093b8ca70ce921161d5">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ByteFieldValue" valueOf="List1">
+                  <path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </path>
+                </term>
+                <term xsi:type="ByteFieldValue" valueOf="List2">
+                  <path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </path>
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_ef3a3e80781649e08780aa1b67a51ad4">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ByteFieldValue" valueOf="List1">
+                  <path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="2" />
+                  </path>
+                </term>
+                <term xsi:type="ByteFieldValue" valueOf="List2">
+                  <path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="2" />
+                  </path>
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

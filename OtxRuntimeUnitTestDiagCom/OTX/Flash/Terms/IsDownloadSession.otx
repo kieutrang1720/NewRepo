@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:diag="http://iso.org/OTX/1.0.0/DiagCom" xmlns:flash="http://iso.org/OTX/1.0.0/Flash" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagConf="http://iso.org/OTX/1.0.0/DiagConfiguration" name="IsDownloadSession" id="id_1c1d4cc010564b9a9d14501f8a63bda5" package="Flash.Terms" version="1.0.0.0" timestamp="2021-08-24T14:55:01.439+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42617</data>
+  </metaData>
+  <declarations>
+    <variable name="CurrentProjectName" id="DocumentVariableDeclaration_39e70aba716748d48be5e68f8dd54a38">
+      <realisation>
+        <dataType xsi:type="String" />
+      </realisation>
+    </variable>
+    <variable name="CurrentVehicleName" id="DocumentVariableDeclaration_fe42496d6ca94c20a54fcf72534296bd">
+      <realisation>
+        <dataType xsi:type="String" />
+      </realisation>
+    </variable>
+    <variable name="ComChannel1" id="DocumentVariableDeclaration_1a9e110630894586a7ec238362b8bc65">
+      <realisation>
+        <dataType xsi:type="diag:ComChannel" />
+      </realisation>
+    </variable>
+  </declarations>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:setupProcedure name="SetupProcedure1" id="SetupProcedure_0d070213643941cfa921087e47fa822b">
+      <unittest:realisation>
+        <unittest:flow>
+          <handler id="Handler_73d161e5dbe84da69a61b16883309623">
+            <realisation>
+              <try>
+                <action id="Action_de560f7c8ea641bca670f5e92c4a15d3">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:GetComChannel">
+                      <diag:identifier xsi:type="StringLiteral" value="HEADUNIT" />
+                      <diag:performVariantSelection xsi:type="BooleanLiteral" value="false" />
+                    </term>
+                  </realisation>
+                </action>
+              </try>
+              <catch>
+                <exception id="CatchHeader_2928f3b5d48f4d399cb03f1bc6815568">
+                  <realisation>
+                    <type />
+                  </realisation>
+                </exception>
+                <flow />
+              </catch>
+            </realisation>
+          </handler>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:setupProcedure>
+    <unittest:testProcedure name="ChangeOdxDb_p_9X1_20_01_72_v_981" id="TestProcedure_67ff98de94f7401b81eef7d1982cd8b5">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_d5ceeb9b39cc472cbc0b5334a893dd18">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="CurrentProjectName" />
+              <term xsi:type="diagConf:GetActiveProject" />
+            </realisation>
+          </action>
+          <action id="Action_9f28639b6feb40458519fd62d11c3a45">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="CurrentVehicleName" />
+              <term xsi:type="diagConf:GetActiveVehicleInformation" />
+            </realisation>
+          </action>
+          <branch id="Branch_2be604771a1d439889bce7cc7bf75637">
+            <realisation>
+              <if>
+                <condition id="ConditionHeader_7bfa15071d7f49cba656a020ee6966dc">
+                  <realisation xsi:type="IsNotEqual">
+                    <term xsi:type="StringValue" valueOf="CurrentProjectName" />
+                    <term xsi:type="StringLiteral" value="9X1_20_01_72" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_b5eebf81356048968402542921de889c">
+                    <realisation xsi:type="diagConf:SelectProject">
+                      <diagConf:projectName xsi:type="StringLiteral" value="9X1_20_01_72" />
+                    </realisation>
+                  </action>
+                  <action id="Action_944cd1f0b00940c3a8290305a8560704">
+                    <realisation xsi:type="diagConf:SelectVehicleInformation">
+                      <diagConf:vehicleInformation xsi:type="StringLiteral" value="981" />
+                    </realisation>
+                  </action>
+                </flow>
+              </if>
+            </realisation>
+          </branch>
+          <endNode id="ExtensibleEndNode_412d477cf69d461489514b03d79f9d99">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="IsDownloadSession" id="TestProcedure_3663a37112f348ef8bb689c5ee558e1c">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_d2dafebc185e492c9275bfc0c0b2cd48">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="StringLiteral" value="Fahrtenbuch_Download" />
+                    <unittest:element xsi:type="StringLiteral" value="Letzte_Ziele_Download" />
+                    <unittest:element xsi:type="StringLiteral" value="Persoenliche_Ziele_Download" />
+                    <unittest:element xsi:type="StringLiteral" value="Benutzerdaten_Download" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutBoolean">
+                <unittest:value xsi:type="BooleanLiteral" value="true" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c29dce3d52ed4d28a116e5314159ed4d">
+            <unittest:arguments>
+              <unittest:argument param="SessionID">
+                <unittest:valueSource>
+                  <unittest:valueList>
+                    <unittest:element xsi:type="StringLiteral" value="Fahrtenbuch_Upload" />
+                    <unittest:element xsi:type="StringLiteral" value="Letzte_Ziele_Upload" />
+                    <unittest:element xsi:type="StringLiteral" value="Persoenliche_Ziele_Upload" />
+                    <unittest:element xsi:type="StringLiteral" value="Benutzerdaten_Upload" />
+                  </unittest:valueList>
+                </unittest:valueSource>
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutBoolean">
+                <unittest:value xsi:type="BooleanLiteral" value="false" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="SessionID" id="InParameterDeclaration_a7418e5d0ebf49048973551084d6ad01">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="OutBoolean" id="OutParameterDeclaration_d429b6e31e864df6ab3e9ea16a69e628">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="FlashSession1" id="VariableDeclaration_8e72959a03a24993a1629e33bf99b91a">
+            <realisation>
+              <dataType xsi:type="flash:FlashSession" />
+            </realisation>
+          </variable>
+          <variable name="Integer1" id="VariableDeclaration_33676b7cd9fa4a6088411b9ac6b17212">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_67b0c447e9d448ed943655ed47734a39">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashSessionVariable" name="FlashSession1" />
+              <term xsi:type="flash:GetFlashSession">
+                <flash:sessionID xsi:type="StringValue" valueOf="SessionID" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_51cd40740785428aaf66522eeb0118d0">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="BooleanVariable" name="OutBoolean" />
+              <term xsi:type="flash:IsDownloadSession">
+                <flash:session xsi:type="flash:FlashSessionValue" valueOf="FlashSession1" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ChangeOdxDb_LastDb" id="TestProcedure_db23ced6b08949959fed6511bcfdb3f1">
+      <unittest:realisation>
+        <unittest:flow>
+          <branch id="Branch_324a2c36005e4dbc97b47bb51f45ccab">
+            <realisation>
+              <if>
+                <condition id="ConditionHeader_7b9da3ed22564d1bbf971de06a515f96">
+                  <realisation xsi:type="IsEqual">
+                    <term xsi:type="StringValue" valueOf="CurrentProjectName" />
+                    <term xsi:type="StringLiteral" value="9X1_20_01_72" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_1f8f36f31636430a94e110ab040ef2e6">
+                    <realisation xsi:type="diagConf:SelectProject">
+                      <diagConf:projectName xsi:type="StringValue" valueOf="CurrentProjectName" />
+                    </realisation>
+                  </action>
+                  <action id="Action_af5b3616ddba4952b496bfda80691c4e">
+                    <realisation xsi:type="diagConf:SelectVehicleInformation">
+                      <diagConf:vehicleInformation xsi:type="StringValue" valueOf="CurrentVehicleName" />
+                    </realisation>
+                  </action>
+                </flow>
+              </if>
+            </realisation>
+          </branch>
+          <endNode id="ExtensibleEndNode_0cb2c6d7fcdf4a3289ff179730ca61e0">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:tearDownProcedure name="TearDownProcedure1" id="SetupProcedure_3cfa6836f1f945a8becf13f085b4af6c">
+      <unittest:realisation>
+        <unittest:flow>
+          <handler id="Handler_f1a84119759540b1aca1d77b7c80ac62">
+            <realisation>
+              <try>
+                <action id="Action_2aef86e3805846e78c7277f12c2d23e5">
+                  <realisation xsi:type="diag:CloseComChannel">
+                    <diag:comChannel name="ComChannel1" />
+                  </realisation>
+                </action>
+              </try>
+              <catch>
+                <exception id="CatchHeader_a0c1200d2835476bba39ffc33b43cb25">
+                  <realisation>
+                    <type />
+                  </realisation>
+                </exception>
+                <flow />
+              </catch>
+            </realisation>
+          </handler>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:tearDownProcedure>
+  </extendedElement>
+</otx>

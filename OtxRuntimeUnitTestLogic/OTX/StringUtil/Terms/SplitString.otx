@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:string="http://iso.org/OTX/1.0.0/StringUtil" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:util="http://iso.org/OTX/1.0.0/Util" name="SplitString" id="id_bcdc349c0a354235be71ac711eb93d54" package="StringUtil.Terms" version="1.0.0.0" timestamp="2021-08-09T12:28:44.161+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42466</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="SplitString_Base" id="id_e01b9be06ae24c348f9b21efd440439b" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_b1fbfabdf09647dd99b89d9fdf54d18b">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="a b c" />
+              </unittest:argument>
+              <unittest:argument param="delimiter">
+                <unittest:value xsi:type="StringLiteral" value="" />
+              </unittest:argument>
+              <unittest:argument param="resultExpect">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="a" />
+                    <item xsi:type="StringLiteral" value=" " />
+                    <item xsi:type="StringLiteral" value="b" />
+                    <item xsi:type="StringLiteral" value=" " />
+                    <item xsi:type="StringLiteral" value="c" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d7457c3743224d66b827c33a7d931a2e">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="emotive.de" />
+              </unittest:argument>
+              <unittest:argument param="delimiter">
+                <unittest:value xsi:type="StringLiteral" value="1" />
+              </unittest:argument>
+              <unittest:argument param="resultExpect">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="emotive.de" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_c526339ca9c346ffa51f2a577cd863b0">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="emotive.de" />
+              </unittest:argument>
+              <unittest:argument param="delimiter">
+                <unittest:value xsi:type="StringLiteral" value="." />
+              </unittest:argument>
+              <unittest:argument param="resultExpect">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="emotive" />
+                    <item xsi:type="StringLiteral" value="de" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_d4a9647552fd42269fce701ff20353cf">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="emotive.de" />
+              </unittest:argument>
+              <unittest:argument param="delimiter">
+                <unittest:value xsi:type="StringLiteral" value="emotive.de" />
+              </unittest:argument>
+              <unittest:argument param="resultExpect">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="" />
+                    <item xsi:type="StringLiteral" value="" />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_dca6fd0e200341d49b31ab1bc06fd810">
+            <unittest:arguments>
+              <unittest:argument param="string">
+                <unittest:value xsi:type="StringLiteral" value="What's your name? My name is InputName. Nice to meet you, InputName. Nice to meet you too." />
+              </unittest:argument>
+              <unittest:argument param="delimiter">
+                <unittest:value xsi:type="StringLiteral" value="InputName" />
+              </unittest:argument>
+              <unittest:argument param="resultExpect">
+                <unittest:value xsi:type="ListLiteral">
+                  <itemType xsi:type="String" />
+                  <items>
+                    <item xsi:type="StringLiteral" value="What's your name? My name is " />
+                    <item xsi:type="StringLiteral" value=". Nice to meet you, " />
+                    <item xsi:type="StringLiteral" value=". Nice to meet you too." />
+                  </items>
+                </unittest:value>
+              </unittest:argument>
+            </unittest:arguments>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="string" id="InParameterDeclaration_8001991389674edfb47991be6fbe2861">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="delimiter" id="InParameterDeclaration_6fba026a68064ac29b82b7ebe51386b3">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:inParam name="resultExpect" id="InParameterDeclaration_9676a6108e594fd7b467e2f3ceb8761e">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+              </dataType>
+            </realisation>
+          </unittest:inParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_f4d06264ef47469cae5b48f200a473b1">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_6d4fe8a90dfd481890efd6deabf740dd">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="string:SplitString">
+                <string:string xsi:type="StringValue" valueOf="string" />
+                <string:delimiter xsi:type="StringValue" valueOf="delimiter" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_42f347c3ed4a4fba8e386f4afd9a92b4">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="util:Compare">
+                <util:term xsi:type="ListValue" valueOf="resultExpect" />
+                <util:term xsi:type="ListValue" valueOf="List1" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

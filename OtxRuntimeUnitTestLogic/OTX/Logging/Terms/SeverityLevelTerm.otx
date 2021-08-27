@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:log="http://iso.org/OTX/1.0.0/Logging" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="SeverityLevelTerm" id="id_c7c59883c84d44afb45dfd754b701b42" package="Logging.Terms" version="1.0.0.0" timestamp="2021-08-11T18:59:00.378+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42500</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="SeverityLevelTerm" id="id_c5925bea851b44da9ec050a6603a491e" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="SeverityLevel1" id="VariableDeclaration_8a177c7bbe374307b4bff4542f8f793d">
+            <realisation>
+              <dataType xsi:type="log:SeverityLevel">
+                <log:init value="DEBUG" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="SeverityLevel2" id="VariableDeclaration_238e2a19dde54e538efcad5fba3b5571">
+            <realisation>
+              <dataType xsi:type="log:SeverityLevel">
+                <log:init value="ERROR" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="SeverityLevel3" id="VariableDeclaration_dcb6849c05a24449b67e46e380fdfd93">
+            <realisation>
+              <dataType xsi:type="log:SeverityLevel">
+                <log:init value="FATAL" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="SeverityLevel4" id="VariableDeclaration_daa7e2f8137747c09ec04bcc97a41a86">
+            <realisation>
+              <dataType xsi:type="log:SeverityLevel">
+                <log:init value="INFO" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="SeverityLevel5" id="VariableDeclaration_19f4f59fc04a4983bed96f95bbf7aece">
+            <realisation>
+              <dataType xsi:type="log:SeverityLevel">
+                <log:init value="TRACE" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="SeverityLevel6" id="VariableDeclaration_d34bded3678c4814ad3282d503f24340">
+            <realisation>
+              <dataType xsi:type="log:SeverityLevel">
+                <log:init value="WARN" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_7e8082c08bde439f9d825a5873ffae80">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="SeverityLevel1" />
+                <term xsi:type="log:SeverityLevelLiteral" value="DEBUG" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_fb158cb38f5045dab64cb0081285b824">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="SeverityLevel2" />
+                <term xsi:type="log:SeverityLevelLiteral" value="ERROR" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_7035ac25a0014d26bb82462ae6727c91">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="SeverityLevel3" />
+                <term xsi:type="log:SeverityLevelLiteral" value="FATAL" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_99e5bb45f24a4c1aaf170b4bd761598d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="SeverityLevel4" />
+                <term xsi:type="log:SeverityLevelLiteral" value="INFO" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_09766993e9be432d88e0a6a4e0d73442">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="SeverityLevel5" />
+                <term xsi:type="log:SeverityLevelLiteral" value="TRACE" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_e9bbb75249954b088e03ab5ada1a534c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="log:SeverityLevelValue" valueOf="SeverityLevel6" />
+                <term xsi:type="log:SeverityLevelLiteral" value="WARN" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

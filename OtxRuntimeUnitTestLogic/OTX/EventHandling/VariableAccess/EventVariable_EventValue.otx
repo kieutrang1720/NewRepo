@@ -1,0 +1,1289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:event="http://iso.org/OTX/1.0.0/Event" name="EventVariable_EventValue" id="id_425e0d51d5a0474c8219ce9c2f505cf5" package="EventHandling.VariableAccess" version="1.0.0.0" timestamp="2021-08-11T08:11:20.31+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42500</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="EventVariable_EventValue_Base" id="id_6e553c5fe8ec47bca620d8cb77485b4d" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Event1" id="VariableDeclaration_f587cc1f235746b7928f1ae14c562f05">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+          <variable name="Event2" id="VariableDeclaration_d6d15619e5784bcd98196c4533880550">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_d624efe28a184aeebd2af88a10890f97">
+            <realisation xsi:type="event:WaitForEvent">
+              <event:source xsi:type="event:TimerExpiredEventSource">
+                <event:timeout xsi:type="IntegerLiteral" value="100" />
+              </event:source>
+              <event:event name="Event1" />
+            </realisation>
+          </action>
+          <action id="Action_b2e01f7bd2ff45c1a927b84207be90e1">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventVariable" name="Event2" />
+              <term xsi:type="event:EventValue" valueOf="Event1" />
+            </realisation>
+          </action>
+          <action id="Action_41cbbbf8301049e299f56fb7034fef40">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="event:EventValue" valueOf="Event1" />
+                <term xsi:type="event:EventValue" valueOf="Event2" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EventVariable_EventValue_1Step" id="TestProcedure_32e282b69843406589637b94bf120a54" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_afa6e79e1d3d474598ff108e379a91a3">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="event:Event" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_a2d14bca4c9041cb9f637d00f6c88a76">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="event:Event" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_a3e138ab0ed149e68fd46b5371a0f04c">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="event:Event" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_acb94a49eb7e4366ba57b6edee908d7f">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_f9d794f4513442e4949559414cce6227">
+            <realisation xsi:type="event:WaitForEvent">
+              <event:source xsi:type="event:TimerExpiredEventSource">
+                <event:timeout xsi:type="IntegerLiteral" value="100" />
+              </event:source>
+              <event:event name="Event1" />
+            </realisation>
+          </action>
+          <action id="Action_bdcc119f45664d7b8afcc8c2e01ab75e">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="event:Event" />
+                <items>
+                  <item xsi:type="event:EventValue" valueOf="Event1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_46ee1f21bbb94f6eaf8f97ab0732a899">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="event:Event" />
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="5" />
+                    <value xsi:type="event:EventValue" valueOf="Event1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_a7d3700503cd456cbbf0ea6fc5f683df">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="event:Event" />
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="a" />
+                    <value xsi:type="event:EventValue" valueOf="Event1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_a493d1bd0ba740fa9a5a417f05e1b47f">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="event:EventValue" valueOf="Event1" />
+                <term xsi:type="event:EventValue" valueOf="List1">
+                  <event:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </event:path>
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_f21b722bd8464b93b7a94ba3f10ca746">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="event:EventValue" valueOf="Event1" />
+                <term xsi:type="event:EventValue" valueOf="Map1">
+                  <event:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                  </event:path>
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_6887c4a01a98430498e565957f8df681">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="event:EventValue" valueOf="Event1" />
+                <term xsi:type="event:EventValue" valueOf="Map2">
+                  <event:path>
+                    <stepByName xsi:type="StringLiteral" value="a" />
+                  </event:path>
+                </term>
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_74dd84f96cdd4ef0969c7716dcb5ba79">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_d4af0d19d14a40f693fa0a730bdae9c6">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="List1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_6994e814d83449599c14f632d12cc4c8">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_8e922107f5c74b998cd1a2d05f0e0cec">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_ef21ac7c4662403ba7f3c501a4c0619b">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_03e26a34e8394e36a641b332e140c511">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map2">
+                      <event:path>
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EventVariable_EventValue_2Steps" id="TestProcedure_c707ef8c96dd49068aa4344693201b8a" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1_Step1" id="VariableDeclaration_b7668b3e6d1b45c3b1bb53c7ce5a8651">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="event:Event" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List1" id="VariableDeclaration_8fb5af5219a74a56b951d68960ffd7a8">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="event:Event" />
+                </itemType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1_Step1" id="VariableDeclaration_e1ff7d9340fb4a5d88525bc028eb8905">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="event:Event" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_e53c3adfd1bd4d0cb229a3495f3b3d1e">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="event:Event" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2_Step1" id="VariableDeclaration_fcbceaa6b68b48f6a699366586fb47e4">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="event:Event" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_2190d1e0a75c43cb8e8fc5e040cf04cf">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="event:Event" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_faa99818fdaf445ea0ba9ed14dd99094">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_104d8fd2f39c47be9e71ec2a3a6fb7b1">
+            <realisation xsi:type="event:WaitForEvent">
+              <event:source xsi:type="event:TimerExpiredEventSource">
+                <event:timeout xsi:type="IntegerLiteral" value="200" />
+              </event:source>
+              <event:event name="Event1" />
+            </realisation>
+          </action>
+          <action id="Action_229a19e8c83742169a436a861a986d14">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1_Step1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="event:Event" />
+                <items>
+                  <item xsi:type="event:EventValue" valueOf="Event1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_5827bbaa87a54c699b8ec951ddd1220e">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="event:Event" />
+                </itemType>
+                <items>
+                  <item xsi:type="ListValue" valueOf="List1_Step1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_18a50effa0864fe182fbf3f06394bce4">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1_Step1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="event:Event" />
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="5" />
+                    <value xsi:type="event:EventValue" valueOf="Event1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_be9f2bdd2493467481a448034ca097c4">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="event:Event" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="1" />
+                    <value xsi:type="MapValue" valueOf="Map1_Step1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_6a1985b8a07441a5b86a29beb75683e5">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2_Step1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="event:Event" />
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="w" />
+                    <value xsi:type="event:EventValue" valueOf="Event1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_a8de67a1d99f451790ca4256e1b74caf">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="event:Event" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="q" />
+                    <value xsi:type="MapValue" valueOf="Map2_Step1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_a1b2214ccb354022afbc90dc36b55e33">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="event:EventValue" valueOf="List1">
+                  <event:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </event:path>
+                </term>
+                <term xsi:type="event:EventValue" valueOf="Event1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_f22832a359c14bd1962f7e25cd72c8d3">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="event:EventValue" valueOf="Map1">
+                  <event:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                  </event:path>
+                </term>
+                <term xsi:type="event:EventValue" valueOf="Event1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_48807b9467804c22a54d665003e8c4f7">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="event:EventValue" valueOf="Map2">
+                  <event:path>
+                    <stepByName xsi:type="StringLiteral" value="q" />
+                    <stepByName xsi:type="StringLiteral" value="w" />
+                  </event:path>
+                </term>
+                <term xsi:type="event:EventValue" valueOf="Event1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_21fc72ef4d6245c7bb12a24351650a93">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_48af9014d0b145b2922f9285c1f9f2fc">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="List1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_2b05316782e24bffaaf553779abeed34">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_da68dd27c56e440caf9ee5d007853d20">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="List1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_2fc0f0b0c86c48e8998911826239e527">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_1c2d356db0064a37ba217417419c82fc">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="List1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_7a838c1a4ec54010aa91623dfcade953">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_b0e6baa07923420db6aec5e084992e88">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_561634ee6fdf4676a12b212547fbd3f4">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_abdcea4ba440486aa977f9700f95fae8">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_cd103810ffac4f48aee30f43ccccdb75">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_e88599f366d642a3b738d2c405a8e78c">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_0d188927baf644a1b23450293e63094c">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_e5ccb91fa55343fc83a10ec8afc96436">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map2">
+                      <event:path>
+                        <stepByName xsi:type="StringLiteral" value="q" />
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_809972ec31ff48448afb99844fbdf204">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_fa28d810ad964e2e959533718a0011a1">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map2">
+                      <event:path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="w" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_bcc0463b94e943b298cd0f2afe7aafa9">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_5f7ca7e4f7b549b2a51270d2879f504d">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map2">
+                      <event:path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="EventVariable_EventValue_3Steps" id="TestProcedure_d84edb30be0846ef859c52089d6e5eab" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1_Step1" id="VariableDeclaration_21a4cecd89db408b9cbc617ef51ea394">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="event:Event" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List1_Step2" id="VariableDeclaration_04f44937704449ba9b99d5b2b546f59b">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="event:Event" />
+                </itemType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List1" id="VariableDeclaration_f77d2fda754a40bba870ce2bd5846efb">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="event:Event" />
+                  </itemType>
+                </itemType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1_Step1" id="VariableDeclaration_c78bc470ead04b2eb76458760f247ae8">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="event:Event" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1_Step2" id="VariableDeclaration_959da49553f04d418f3ea56d86e55879">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="event:Event" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_205f40c83991465e8d8e6cf8334599b2">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="event:Event" />
+                  </valueType>
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2_Step1" id="VariableDeclaration_c400a1f96d5b4448960296149d159152">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="event:Event" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2_Step2" id="VariableDeclaration_7ab46f98dab64f3dbf17490ef2dca557">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="event:Event" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_41922ddef34945db92e658905b283d85">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="event:Event" />
+                  </valueType>
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_c4d65c2fdc4d4f869b896c7e6a661d4b">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_1842a1aba4e94a0aa183cc2b651a2263">
+            <realisation xsi:type="event:WaitForEvent">
+              <event:source xsi:type="event:TimerExpiredEventSource">
+                <event:timeout xsi:type="IntegerLiteral" value="50" />
+              </event:source>
+              <event:event name="Event1" />
+            </realisation>
+          </action>
+          <action id="Action_1a7878ef61c44e20bd337f9ce3272666">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1_Step1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="event:Event" />
+                <items>
+                  <item xsi:type="event:EventValue" valueOf="Event1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_254c79e0353c457f927f9a0c405e1be2">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1_Step2" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="event:Event" />
+                </itemType>
+                <items>
+                  <item xsi:type="ListValue" valueOf="List1_Step1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_0d47b403f044442faa5ed9641924213b">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="event:Event" />
+                  </itemType>
+                </itemType>
+                <items>
+                  <item xsi:type="ListValue" valueOf="List1_Step2" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_ccbad4ade01a4f3e8624478a828243d1">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1_Step1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="event:Event" />
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="9" />
+                    <value xsi:type="event:EventValue" valueOf="Event1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_0dad3e92e1e8463f802531bcd26a4520">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1_Step2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="event:Event" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="5" />
+                    <value xsi:type="MapValue" valueOf="Map1_Step1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_c88ce2928253430eb22f0085786af081">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="event:Event" />
+                  </valueType>
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="1" />
+                    <value xsi:type="MapValue" valueOf="Map1_Step2" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_b038c8132eb0486089bd248cab86fd96">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2_Step1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="event:Event" />
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="e" />
+                    <value xsi:type="event:EventValue" valueOf="Event1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_3b32290534844fb5ad6631961c27cca7">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2_Step2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="event:Event" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="w" />
+                    <value xsi:type="MapValue" valueOf="Map2_Step1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_5107c1f7e53d4f2a8059a30eee3c7de8">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="event:Event" />
+                  </valueType>
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="q" />
+                    <value xsi:type="MapValue" valueOf="Map2_Step2" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_596bee0cf839461280512bb573cf9194">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="event:EventValue" valueOf="List1">
+                  <event:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </event:path>
+                </term>
+                <term xsi:type="event:EventValue" valueOf="Event1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_d77f178e1b21472392ee5b6eb4baf6e4">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="event:EventValue" valueOf="Map1">
+                  <event:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                  </event:path>
+                </term>
+                <term xsi:type="event:EventValue" valueOf="Event1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_ee4b31894322425d9ca0db676d72827e">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="event:EventValue" valueOf="Map2">
+                  <event:path>
+                    <stepByName xsi:type="StringLiteral" value="q" />
+                    <stepByName xsi:type="StringLiteral" value="w" />
+                    <stepByName xsi:type="StringLiteral" value="e" />
+                  </event:path>
+                </term>
+                <term xsi:type="event:EventValue" valueOf="Event1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_3a5c8a884c2d4b829c1d87e3573b8867">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_06aeafad60c4436fbcafb2bddc546842">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="List1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_d71ea6134be84bbeb9bedfb3daeae9bd">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_d3c43283d0d048e9bdc539220f7a15ce">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="List1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_20cb7cda8c2642fe967875ef9e7e787b">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_b42ff1b3d5be481c8470cfe882fb5f9e">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="List1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_ee87f1fde1684730bdb49e1361ace94f">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_9a6118e6899a46eaa0fe0ee93bf3e67f">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="List1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_7cbc81ec44964541ace28fa9a4e4fd74">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_9f8ec6c732fe42a5a792b97974c977f9">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="List1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_af5763209f4f478cafbf107a86de4242">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_2e83cddf1aae4b839010c0280e678421">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="List1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_50434f3729634423abab922b71a4017c">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_fbfa6a3a2d3f461dab98de11bad9687d">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="List1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_4e5c0674bac1453baa740befb513e0de">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_5033a3d171de4598b95918203738766f">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_4825f7b288934c7e9693a331ec15e6c2">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_7cb5bd57d5234f6082249e42f7caee2a">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_d11ca19b8abe41128094af105c8a4640">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_52bfc4dc96f244398166d9fac69f2e7c">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_3718d7877d4946f3bfc16cc7cfaa5e6a">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_b5881d872d734b4eb01b1cb7262c8aa2">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_651ee0de116a4e61bfa35365d3320c79">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_c6f3fb55b94f4ca190a42aa57f4016c9">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_825735b431ad426d97e1899729c06388">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_2d25ba55d1714b21a5b479911057e535">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_62d9418ac1e0443eb0a49adc4087348a">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_15a8a7e2382046cd91ba9d0cceedf681">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map1">
+                      <event:path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="4" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="8" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_2618e805b73f4c83a8c6564e6f10e243">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_ad4183de789f4f26b80cb45a29ed9374">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map2">
+                      <event:path>
+                        <stepByName xsi:type="StringLiteral" value="q" />
+                        <stepByName xsi:type="StringLiteral" value="w" />
+                        <stepByName xsi:type="StringLiteral" value="d" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_dda5ddf286b245bb94053edb2fff50eb">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_c0c8a2485be6447cbda8466d4e808ad1">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map2">
+                      <event:path>
+                        <stepByName xsi:type="StringLiteral" value="q" />
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                        <stepByName xsi:type="StringLiteral" value="e" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_49b1f4f748354ce084ea14fb5f6d45d7">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_80635c9b531d465eaa7b8e672b454a86">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map2">
+                      <event:path>
+                        <stepByName xsi:type="StringLiteral" value="q" />
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                        <stepByName xsi:type="StringLiteral" value="d" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_6bc38328363a43cba12e775b79d5b7a7">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_e1e2681c269f4197ad5d3f8e3f40da20">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map2">
+                      <event:path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="w" />
+                        <stepByName xsi:type="StringLiteral" value="e" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_1ac5ce04845a448d8e45690b8a95d539">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_3ac301f870c84e109a76bf0a0b2c4c26">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map2">
+                      <event:path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="w" />
+                        <stepByName xsi:type="StringLiteral" value="d" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_cca77c03c68f4c2ab9069b34a080f221">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_c4dc6c27995f4f9d83b5b996f7964aed">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map2">
+                      <event:path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                        <stepByName xsi:type="StringLiteral" value="e" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_dffeb83786d446ae98ceebb1bcbab2c1">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_73b123fce210420e8fdda58f58ef6092">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="event:EventVariable" name="Event1" />
+                    <term xsi:type="event:EventValue" valueOf="Map2">
+                      <event:path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                        <stepByName xsi:type="StringLiteral" value="d" />
+                      </event:path>
+                    </term>
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

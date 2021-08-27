@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:string="http://iso.org/OTX/1.0.0/StringUtil" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="WhileLoop" id="id_0aa613f44ddc4192b773b5f0f095045f" package="Core.Nodes.CompoundNodes.Loop" version="1.0.0.0" timestamp="2021-06-03T19:21:02.26+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42010</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="WhileLoop_01" id="id_09c8451164ff470e9cac89d703b77b6d" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="String1" id="VariableDeclaration_f4cd380b51294ce4ad01aee9d79a344a">
+            <realisation>
+              <dataType xsi:type="String">
+                <init value="" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <loop name="WhileLoop1" id="Loop_0d9123efb21c4ede8da7fa8f3e7d3df3">
+            <realisation>
+              <configuration id="LoopConfigurationHeader_40dab33e8a114db2886db0a7a83ab96e">
+                <realisation xsi:type="WhileLoop">
+                  <test xsi:type="IsNotEqual">
+                    <term xsi:type="StringValue" valueOf="String1" />
+                    <term xsi:type="StringLiteral" value="aaaaaaaaaaaa" />
+                  </test>
+                </realisation>
+              </configuration>
+              <flow>
+                <action id="Action_2b3ec83a53a44b888c6e0a159b0175b5">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="StringVariable" name="String1" />
+                    <term xsi:type="string:StringConcatenate">
+                      <string:string xsi:type="StringValue" valueOf="String1" />
+                      <string:string xsi:type="StringLiteral" value="a" />
+                    </term>
+                  </realisation>
+                </action>
+              </flow>
+            </realisation>
+          </loop>
+          <action id="Action_d40fb312cb894b1086d4fe67423f67b0">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="StringValue" valueOf="String1" />
+                <term xsi:type="StringLiteral" value="aaaaaaaaaaaa" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="WhileLoop_02" id="TestProcedure_aca98b02677648f6831e1116dd92414f" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Float1" id="VariableDeclaration_f0187656f6704b48a7c36b0a9083d9df">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="0.1" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <loop name="WhileLoop1" id="Loop_32c438b3b62e441fbd5ea4c93e1fe712">
+            <realisation>
+              <configuration id="LoopConfigurationHeader_ca7cb9cb028c450fb0e7220e0fbd3bd9">
+                <realisation xsi:type="WhileLoop">
+                  <test xsi:type="IsGreater">
+                    <left xsi:type="FloatValue" valueOf="Float1" />
+                    <right xsi:type="IntegerLiteral" value="-100" />
+                  </test>
+                </realisation>
+              </configuration>
+              <flow>
+                <action id="Action_8cda65e056594cb1b75c9391c6f7ae80">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="FloatVariable" name="Float1" />
+                    <term xsi:type="Multiply">
+                      <numeral xsi:type="Add">
+                        <numeral xsi:type="AbsoluteValue">
+                          <numeral xsi:type="FloatValue" valueOf="Float1" />
+                        </numeral>
+                        <numeral xsi:type="FloatLiteral" value="0.1" />
+                      </numeral>
+                      <numeral xsi:type="IntegerLiteral" value="-1" />
+                    </term>
+                  </realisation>
+                </action>
+              </flow>
+            </realisation>
+          </loop>
+          <action id="Action_31a2132296c44d53aa03ca2eafa12f89">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="FloatValue" valueOf="Float1" />
+                <right xsi:type="FloatLiteral" value="-100.1" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="WhileLoop_03_Ignore" id="TestProcedure_d2220d92e6a64500b1a97bc8a879d657" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Integer1" id="VariableDeclaration_639568b24fc24e5497b61a1b3c2a7050">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="3" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <loop name="WhileLoop1" id="Loop_6554312c91b64b798c81df7b62e938dd">
+            <realisation>
+              <configuration id="LoopConfigurationHeader_8e646aa1942a4d76a5819ca6d4cc5308">
+                <realisation xsi:type="WhileLoop">
+                  <test xsi:type="IsGreaterOrEqual">
+                    <left xsi:type="IntegerValue" valueOf="Integer1" />
+                    <right xsi:type="IntegerLiteral" value="10" />
+                  </test>
+                </realisation>
+              </configuration>
+              <flow>
+                <action id="Action_82626e29cb6f494e8dfda2d2540ad251">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="IntegerVariable" name="Integer1" />
+                    <term xsi:type="Add">
+                      <numeral xsi:type="IntegerValue" valueOf="Integer1" />
+                      <numeral xsi:type="IntegerLiteral" value="4" />
+                    </term>
+                  </realisation>
+                </action>
+              </flow>
+            </realisation>
+          </loop>
+          <action id="Action_b0062119a76649efa45beabc7cf2abcc">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="Integer1" />
+                <term xsi:type="IntegerLiteral" value="3" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="WhileLoop_04_DoWhile" id="TestProcedure_69489f3edbd64ef392b76bd75702b38b" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Integer1" id="VariableDeclaration_41dfa9213fb44c07a998acda4a3bad8a">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="3" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <loop name="WhileLoop1" id="Loop_683aa4b85fed43dfac5b0304513d3525">
+            <realisation>
+              <configuration id="LoopConfigurationHeader_378844083fa2404f804aabfa5b2da747">
+                <realisation xsi:type="WhileLoop" isPostTested="true">
+                  <test xsi:type="IsGreaterOrEqual">
+                    <left xsi:type="IntegerValue" valueOf="Integer1" />
+                    <right xsi:type="IntegerLiteral" value="10" />
+                  </test>
+                </realisation>
+              </configuration>
+              <flow>
+                <action id="Action_f993ad70b0a34e19854a62f31841dc05">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="IntegerVariable" name="Integer1" />
+                    <term xsi:type="Add">
+                      <numeral xsi:type="IntegerValue" valueOf="Integer1" />
+                      <numeral xsi:type="IntegerLiteral" value="4" />
+                    </term>
+                  </realisation>
+                </action>
+              </flow>
+            </realisation>
+          </loop>
+          <action id="Action_f54f6369323848a7b317d1cd4542d8a3">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="Integer1" />
+                <term xsi:type="IntegerLiteral" value="7" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="WhileLoop_05_DoWhile" id="TestProcedure_4d14339fa2c94e9ba5a64607dc23df1f" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="Integer1" id="VariableDeclaration_fd95c7a23c7043beb151ac7e5e83f8f9">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <loop name="WhileLoop1" id="Loop_72addbdebb8f48dc901061c396477d18">
+            <realisation>
+              <configuration id="LoopConfigurationHeader_4059b23688e64c79be9e7dac4a7798c5">
+                <realisation xsi:type="WhileLoop" isPostTested="true">
+                  <test xsi:type="LogicAnd">
+                    <term xsi:type="IsLessOrEqual">
+                      <left xsi:type="IntegerLiteral" value="1" />
+                      <right xsi:type="IntegerValue" valueOf="Integer1" />
+                    </term>
+                    <term xsi:type="IsLessOrEqual">
+                      <left xsi:type="IntegerValue" valueOf="Integer1" />
+                      <right xsi:type="IntegerLiteral" value="1000" />
+                    </term>
+                  </test>
+                </realisation>
+              </configuration>
+              <flow>
+                <action id="Action_8648693e5acf425885bd32c73bc2741d">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="IntegerVariable" name="Integer1" />
+                    <term xsi:type="Add">
+                      <numeral xsi:type="IntegerValue" valueOf="Integer1" />
+                      <numeral xsi:type="IntegerLiteral" value="1" />
+                    </term>
+                  </realisation>
+                </action>
+              </flow>
+            </realisation>
+          </loop>
+          <action id="Action_1c94851451e44763bd54372291c5858c">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IntegerValue" valueOf="Integer1" />
+                <term xsi:type="IntegerLiteral" value="1001" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

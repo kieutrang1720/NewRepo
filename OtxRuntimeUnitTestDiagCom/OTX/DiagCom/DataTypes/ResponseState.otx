@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:diag="http://iso.org/OTX/1.0.0/DiagCom" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="ResponseState" id="id_cf7f3de421ea44f89a7f65e29dabb49b" package="DiagCom.DataTypes" version="1.0.0.0" timestamp="2021-08-12T14:28:56.331+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42500</data>
+  </metaData>
+  <imports>
+    <import package="DiagCom" document="GlobalVariable" prefix="Import1" />
+  </imports>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ResponseState_Base" id="TestProcedure_d3c7810cacce490c8307f095093776f9" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ResponseState1" id="VariableDeclaration_dc200018513949f1b111a4b7afcb134f">
+            <realisation>
+              <dataType xsi:type="diag:ResponseState">
+                <diag:init value="FAILED" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="ResponseState2" id="VariableDeclaration_9d6e7c2784b34d0e90ff8c192500bff8">
+            <realisation>
+              <dataType xsi:type="diag:ResponseState">
+                <diag:init value="INVALID" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="ResponseState3" id="VariableDeclaration_705bba2300e24bbe8d3a64143e54e916">
+            <realisation>
+              <dataType xsi:type="diag:ResponseState">
+                <diag:init value="NEGATIVE" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="ResponseState4" id="VariableDeclaration_e89a42fd6da044dc8b573ba9a574b878">
+            <realisation>
+              <dataType xsi:type="diag:ResponseState">
+                <diag:init value="POSITIVE" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_8ad834ed82ff457f88672b17dc225dc3">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ResponseStateValue" valueOf="ResponseState1" />
+                <term xsi:type="diag:ResponseStateLiteral" value="FAILED" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_8195683eb0da4b75a104e64659eb7df0">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ResponseStateValue" valueOf="ResponseState2" />
+                <term xsi:type="diag:ResponseStateLiteral" value="INVALID" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_1ab08050e736435f9d703266d9d1f35a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ResponseStateValue" valueOf="ResponseState3" />
+                <term xsi:type="diag:ResponseStateLiteral" value="NEGATIVE" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_b7fb7a5961d2476383479cb79b9412ca">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ResponseStateValue" valueOf="ResponseState4" />
+                <term xsi:type="diag:ResponseStateLiteral" value="POSITIVE" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ResponseState_Comparsion" id="TestProcedure_7273c4bb55f540c1aa5498be6f206da1" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_7d8ed87ad15a40de8dba2cba186ccf72">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLess">
+                <left xsi:type="diag:ResponseStateLiteral" value="FAILED" />
+                <right xsi:type="diag:ResponseStateLiteral" value="INVALID" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_859187f353e14325822f52d3c52aa0b8">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLess">
+                <left xsi:type="diag:ResponseStateLiteral" value="INVALID" />
+                <right xsi:type="diag:ResponseStateLiteral" value="NEGATIVE" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_46ece2867b244e54b244ef2724ea5ccd">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLess">
+                <left xsi:type="diag:ResponseStateLiteral" value="NEGATIVE" />
+                <right xsi:type="diag:ResponseStateLiteral" value="POSITIVE" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_f80cb5588342422f950fbce305cc8489">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="diag:ResponseStateLiteral" value="FAILED" />
+                <right xsi:type="diag:ResponseStateLiteral" value="INVALID" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_22b3e745cf8342e6b4dc3a79dcae039d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="diag:ResponseStateLiteral" value="INVALID" />
+                <right xsi:type="diag:ResponseStateLiteral" value="NEGATIVE" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_dbe1c3dfdd354837b51085bf45371735">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="diag:ResponseStateLiteral" value="NEGATIVE" />
+                <right xsi:type="diag:ResponseStateLiteral" value="POSITIVE" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_7b17ec1454894207ae953710698e3286">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreater">
+                <left xsi:type="diag:ResponseStateLiteral" value="POSITIVE" />
+                <right xsi:type="diag:ResponseStateLiteral" value="NEGATIVE" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_d2d62c3f11cd4410a3b33be4888f2976">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreater">
+                <left xsi:type="diag:ResponseStateLiteral" value="NEGATIVE" />
+                <right xsi:type="diag:ResponseStateLiteral" value="INVALID" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_9e4eb8d32d1c418fbb75c12a28a50065">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreater">
+                <left xsi:type="diag:ResponseStateLiteral" value="INVALID" />
+                <right xsi:type="diag:ResponseStateLiteral" value="FAILED" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_771a2596abb54701beb62685d00da67f">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="diag:ResponseStateLiteral" value="POSITIVE" />
+                <right xsi:type="diag:ResponseStateLiteral" value="NEGATIVE" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_57da8141b2094fc29e619f9d9a5fe419">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="diag:ResponseStateLiteral" value="NEGATIVE" />
+                <right xsi:type="diag:ResponseStateLiteral" value="INVALID" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_df84e3dc969e4cf9a17a00130ed4ed1b">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="diag:ResponseStateLiteral" value="INVALID" />
+                <right xsi:type="diag:ResponseStateLiteral" value="FAILED" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_dc626724cb9a45a580fa4b3a68bdafcd">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="diag:ResponseStateLiteral" value="FAILED" />
+                <term xsi:type="diag:ResponseStateLiteral" value="INVALID" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_922e691c99794ec3b7a2fc4bfdac68fd">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="diag:ResponseStateLiteral" value="INVALID" />
+                <term xsi:type="diag:ResponseStateLiteral" value="NEGATIVE" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_e2beb70726ae4e359013c10d16cf3857">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="diag:ResponseStateLiteral" value="NEGATIVE" />
+                <term xsi:type="diag:ResponseStateLiteral" value="POSITIVE" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_0cd6a23851cc47dcaf4c342d3e999cbb">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="diag:ResponseStateLiteral" value="INVALID" />
+                <term xsi:type="diag:ResponseStateLiteral" value="NEGATIVE" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_a80de79021c640c1b638b2a36b658408">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="diag:ResponseStateLiteral" value="INVALID" />
+                <term xsi:type="diag:ResponseStateLiteral" value="POSITIVE" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_45754b3332dc491291e834511a48d442">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="diag:ResponseStateLiteral" value="NEGATIVE" />
+                <term xsi:type="diag:ResponseStateLiteral" value="POSITIVE" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ResponseState_ToInteger" id="TestProcedure_98356a237c4d443b9d6b109761bfb643" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_2faa68347b7b44769cfb6e92f952b51d">
+            <unittest:arguments>
+              <unittest:argument param="_term">
+                <unittest:value xsi:type="diag:ResponseStateLiteral" value="FAILED" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="0" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_916446c0aa724ddf808e9af6b4e44907">
+            <unittest:arguments>
+              <unittest:argument param="_term">
+                <unittest:value xsi:type="diag:ResponseStateLiteral" value="INVALID" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="1" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_b213095dbbe74a93a8c3dabca569f267">
+            <unittest:arguments>
+              <unittest:argument param="_term">
+                <unittest:value xsi:type="diag:ResponseStateLiteral" value="NEGATIVE" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="2" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_bb97fc83d51b49a8841d00ce47c2d007">
+            <unittest:arguments>
+              <unittest:argument param="_term">
+                <unittest:value xsi:type="diag:ResponseStateLiteral" value="POSITIVE" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="IntegerLiteral" value="3" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="_term" id="InParameterDeclaration_632bf2b81a0f4932946713df0f3581e6">
+            <realisation>
+              <dataType xsi:type="diag:ResponseState" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_954919bf30d84e5eb8de8c46b29e2a22">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_8d8175ab14c1444f858f6b4ea1e1ab2c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="result" />
+              <term xsi:type="ToInteger">
+                <term xsi:type="diag:ResponseStateValue" valueOf="_term" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ResponseState_ToString" id="TestProcedure_7974c6007b2d4655aacdda7d6245a825" parallelizable="true">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_804aa6531e9f4b82984b42d4b1d75488">
+            <unittest:arguments>
+              <unittest:argument param="_term">
+                <unittest:value xsi:type="diag:ResponseStateLiteral" value="FAILED" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="FAILED" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_dbe054f9bc23499b958d9c68ac7ccdf0">
+            <unittest:arguments>
+              <unittest:argument param="_term">
+                <unittest:value xsi:type="diag:ResponseStateLiteral" value="INVALID" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="INVALID" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_e7f0185aed2546e1ac360d2318a6d22d">
+            <unittest:arguments>
+              <unittest:argument param="_term">
+                <unittest:value xsi:type="diag:ResponseStateLiteral" value="NEGATIVE" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="NEGATIVE" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_05c103d4dd6044cb9d5d62556127b871">
+            <unittest:arguments>
+              <unittest:argument param="_term">
+                <unittest:value xsi:type="diag:ResponseStateLiteral" value="POSITIVE" />
+              </unittest:argument>
+            </unittest:arguments>
+            <unittest:expectedResults>
+              <unittest:expectedResult param="result">
+                <unittest:value xsi:type="StringLiteral" value="POSITIVE" />
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:inParam name="_term" id="InParameterDeclaration_f8cd0bcc11c444fc9345873ccc1c5b93">
+            <realisation>
+              <dataType xsi:type="diag:ResponseState" />
+            </realisation>
+          </unittest:inParam>
+          <unittest:outParam name="result" id="OutParameterDeclaration_a89e947d0cbd4c3089a4f78e3480f7de">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:flow>
+          <action id="Action_eebb035adbc14855a66cc2f98c9a57e2">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="result" />
+              <term xsi:type="ToString">
+                <term xsi:type="diag:ResponseStateValue" valueOf="_term" />
+              </term>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ResponseState_DefaultValue" id="TestProcedure_54e81f182ad646728179f2502452f1d5" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="ResponseState1" id="VariableDeclaration_718a727b72994b1b8591a59d9d1b9378">
+            <realisation>
+              <dataType xsi:type="diag:ResponseState" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_b6144f90ac3b433186285dfec9ccfa35">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="diag:ResponseStateValue" valueOf="ResponseState1" />
+                <term xsi:type="diag:ResponseStateLiteral" value="FAILED" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

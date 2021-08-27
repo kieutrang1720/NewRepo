@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="Boolean1" id="id_9872592ac24748fea50634f33ea5a347" package="Core.DataTypes.Simple.Boolean1" version="1.0.0.41843" timestamp="2021-05-10T10:47:40.747+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.41810</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="BooleanBase" id="TestProcedure_a167ce9bb3894f85b3805662363f5404" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="boolean0" id="VariableDeclaration_6f7c9955930c460081f62ff97636cd4c">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+          <variable name="boolean1" id="VariableDeclaration_862806f1323f4f0da46c7bf57d337dd1">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="boolean2" id="VariableDeclaration_97caf539dfc846dca882e4e2ba7bccdb">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="true" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_8ce405d32c684b5089d15487ba2a66e5">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="BooleanValue" valueOf="boolean0" />
+                <term xsi:type="BooleanLiteral" value="false" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_314e7012c4e044fc90a85ab0c3f414c7">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="BooleanValue" valueOf="boolean1" />
+                <term xsi:type="BooleanLiteral" value="false" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_ef818d7d456e4b54ae290ff7aea2f841">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="BooleanValue" valueOf="boolean2" />
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="BooleanComparison" id="TestProcedure_de795e73f6644a079f1d97c7d6af2e31" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="boolean1" id="VariableDeclaration_1a6818b98989472bac8496f863e672bb">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="false" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="boolean2" id="VariableDeclaration_6616a982cc45460f89d8073281474156">
+            <realisation>
+              <dataType xsi:type="Boolean">
+                <init value="true" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_f1bd2a93daa74e548ec938410c9ecd9e">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="BooleanValue" valueOf="boolean1" />
+                <term xsi:type="BooleanLiteral" value="false" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_d26c6fcf4b4d433f87934c05f7430537">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="BooleanValue" valueOf="boolean2" />
+                <term xsi:type="BooleanLiteral" value="true" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_2ad4f328f3e04429b36e123e9aed0f71">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsNotEqual">
+                <term xsi:type="BooleanValue" valueOf="boolean1" />
+                <term xsi:type="BooleanValue" valueOf="boolean2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_50891bc4982a4a1c8213fa80c57e2fa5">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="BooleanValue" valueOf="boolean1" />
+                <right xsi:type="BooleanValue" valueOf="boolean1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_e597154882e4405ca7fe71d43ff10c24">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="BooleanValue" valueOf="boolean2" />
+                <right xsi:type="BooleanValue" valueOf="boolean2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_52d51f3d4a8f4d9baf966d0f5ad3b4ad">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="BooleanValue" valueOf="boolean1" />
+                <right xsi:type="BooleanValue" valueOf="boolean1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_22417870faf6420787d4816a7792c384">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="BooleanValue" valueOf="boolean2" />
+                <right xsi:type="BooleanValue" valueOf="boolean2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_0be9629d6b3d458ea1b1b6a7c7d8c0e3">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLess">
+                <left xsi:type="BooleanValue" valueOf="boolean1" />
+                <right xsi:type="BooleanValue" valueOf="boolean2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_129c0f626ffd45448a84867985870a30">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsLessOrEqual">
+                <left xsi:type="BooleanValue" valueOf="boolean1" />
+                <right xsi:type="BooleanValue" valueOf="boolean2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_07cacea96c814a05ad8e0743768b18d4">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreater">
+                <left xsi:type="BooleanValue" valueOf="boolean2" />
+                <right xsi:type="BooleanValue" valueOf="boolean1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_04286412b57d4dc6a6f1c16cbdfdc791">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsGreaterOrEqual">
+                <left xsi:type="BooleanValue" valueOf="boolean2" />
+                <right xsi:type="BooleanValue" valueOf="boolean1" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

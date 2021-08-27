@@ -1,0 +1,1147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:diag="http://iso.org/OTX/1.0.0/DiagCom" xmlns:flash="http://iso.org/OTX/1.0.0/Flash" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:diagConf="http://iso.org/OTX/1.0.0/DiagConfiguration" name="FlashJob" id="id_8234cc0750844bc0b2ee9c70f04d5de5" package="Flash.VariableAccess" version="1.0.0.42595" timestamp="2021-08-20T09:59:14.34+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42602</data>
+  </metaData>
+  <declarations>
+    <variable name="CurrentProjectName" id="DocumentVariableDeclaration_98eb2ad99f5a4d12874eb5a0470c6977">
+      <realisation>
+        <dataType xsi:type="String" />
+      </realisation>
+    </variable>
+    <variable name="CurrentVehicleName" id="DocumentVariableDeclaration_2cf7c9fa89cd4256b680beb8376d328f">
+      <realisation>
+        <dataType xsi:type="String" />
+      </realisation>
+    </variable>
+    <variable name="ComChannel1" id="DocumentVariableDeclaration_18145206017f4a7683feb13118f38ef5">
+      <realisation>
+        <dataType xsi:type="diag:ComChannel" />
+      </realisation>
+    </variable>
+  </declarations>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:setupProcedure name="SetupProcedure1" id="SetupProcedure_ec6b5cfa6bbf4e88a763be7c721ff6ec">
+      <unittest:realisation>
+        <unittest:flow>
+          <handler id="Handler_fe04fbe1355d416894dbe3c997eb2976">
+            <realisation>
+              <try>
+                <action id="Action_f82fc2b496f0432c895a02e5d90bb22f">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:GetComChannel">
+                      <diag:identifier xsi:type="StringLiteral" value="SCHEINWERFER" />
+                      <diag:performVariantSelection xsi:type="BooleanLiteral" value="false" />
+                    </term>
+                  </realisation>
+                </action>
+              </try>
+              <catch>
+                <exception id="CatchHeader_abdfeeb0cb584431b84da75914546610">
+                  <realisation>
+                    <type />
+                  </realisation>
+                </exception>
+                <flow />
+              </catch>
+            </realisation>
+          </handler>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:setupProcedure>
+    <unittest:testProcedure name="ChangeOdxDb_p_918_v_918S" id="TestProcedure_a123bb7736994915b441a037db1cbc4b">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_240ce3688fa247e6b63a028f6ef0e54f">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="CurrentProjectName" />
+              <term xsi:type="diagConf:GetActiveProject" />
+            </realisation>
+          </action>
+          <action id="Action_679c71cbdb2a45a1b87797e158e4ad9f">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="CurrentVehicleName" />
+              <term xsi:type="diagConf:GetActiveVehicleInformation" />
+            </realisation>
+          </action>
+          <branch id="Branch_d84e928ecaba42a4a3debca5784f1750">
+            <realisation>
+              <if>
+                <condition id="ConditionHeader_2a772611868e413ca5c0c2b8ef83c649">
+                  <realisation xsi:type="IsNotEqual">
+                    <term xsi:type="StringValue" valueOf="CurrentProjectName" />
+                    <term xsi:type="StringLiteral" value="918" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_0e03cd5ba06e446ba6650590b92874fe">
+                    <realisation xsi:type="diagConf:SelectProject">
+                      <diagConf:projectName xsi:type="StringLiteral" value="918" />
+                    </realisation>
+                  </action>
+                  <action id="Action_6644271fa5ad41fda12eba6f2a05f26c">
+                    <realisation xsi:type="diagConf:SelectVehicleInformation">
+                      <diagConf:vehicleInformation xsi:type="StringLiteral" value="918S" />
+                    </realisation>
+                  </action>
+                </flow>
+              </if>
+            </realisation>
+          </branch>
+          <endNode id="ExtensibleEndNode_22106d18adf74069b2703303924580eb">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="FlashSessionBase" id="TestProcedure_0cecdbb44573460dbf4740defe1c4c8e">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="FlashJob1" id="VariableDeclaration_c330d7e78e72412199f8c2f21972f9d6">
+            <realisation>
+              <dataType xsi:type="flash:FlashJob" />
+            </realisation>
+          </variable>
+          <variable name="FlashJob2" id="VariableDeclaration_251b9c5d259e4b4e85cba6065bbf1a6d">
+            <realisation>
+              <dataType xsi:type="flash:FlashJob" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_d2df78049b92425d963acc9e4ff4eeb9">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashJobVariable" name="FlashJob1" />
+              <term xsi:type="flash:CreateFlashJob">
+                <flash:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <flash:session xsi:type="flash:GetFlashSession">
+                  <flash:sessionID xsi:type="StringLiteral" value="_7PP907357F_7520" />
+                </flash:session>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_0bac5de0728348d49622e737badd4417">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashJobVariable" name="FlashJob2" />
+              <term xsi:type="flash:FlashJobValue" valueOf="FlashJob1" />
+            </realisation>
+          </action>
+          <action id="Action_e97a19852647431785f5a75e1dff7010">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashJobValue" valueOf="FlashJob1" />
+                <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="FlashSession_1Step" id="TestProcedure_3ba946c6fe6047b1b96f9d9b6aa1820e">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_e1f2331928384c7c9b0d1d418bd3adfb">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="flash:FlashJob" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_4a7f4fbf7481499fb1a00977775f322e">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="flash:FlashJob" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_be30f460671c4886a71f76cf0e0260c2">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="flash:FlashJob" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="FlashJob1" id="VariableDeclaration_3d76fd1c87da486aaaff10b979791cbf">
+            <realisation>
+              <dataType xsi:type="flash:FlashJob" />
+            </realisation>
+          </variable>
+          <variable name="FlashJob2" id="VariableDeclaration_8a50c9fa06994ee3906cdc68bd9315f8">
+            <realisation>
+              <dataType xsi:type="flash:FlashJob" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_7449404384664a8c9b2196593587bc5f">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashJobVariable" name="FlashJob1" />
+              <term xsi:type="flash:CreateFlashJob">
+                <flash:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <flash:session xsi:type="flash:GetFlashSession">
+                  <flash:sessionID xsi:type="StringLiteral" value="_7PP907357F_7520" />
+                </flash:session>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_869fbe82a3bd4e308d7f9efcdb795193">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="flash:FlashJob" />
+                <items>
+                  <item xsi:type="flash:FlashJobValue" valueOf="FlashJob1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_28f4416bee6d463093e7ec2f4dbe7cca">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="flash:FlashJob" />
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="5" />
+                    <value xsi:type="flash:FlashJobValue" valueOf="FlashJob1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_17be41a7da70475189a86c5c3f6a2bc5">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="flash:FlashJob" />
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="g" />
+                    <value xsi:type="flash:FlashJobValue" valueOf="FlashJob1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_2b164c980bb14ebbbb172968fa08857d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashJobVariable" name="FlashJob2" />
+              <term xsi:type="flash:CreateFlashJob">
+                <flash:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <flash:session xsi:type="flash:GetFlashSession">
+                  <flash:sessionID xsi:type="StringLiteral" value="_7PP907357H_7540" />
+                </flash:session>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_fd8b7e44ec8a4258817d22864f559c09">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashJobVariable" name="List1">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                </path>
+              </result>
+              <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+            </realisation>
+          </action>
+          <action id="Action_b625a2c3383040f9bbcd4f06f5c7ed88">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashJobVariable" name="Map1">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                </path>
+              </result>
+              <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+            </realisation>
+          </action>
+          <action id="Action_c0812c8c4ff4491ab985d3e854754455">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashJobVariable" name="Map2">
+                <path>
+                  <stepByName xsi:type="StringLiteral" value="g" />
+                </path>
+              </result>
+              <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+            </realisation>
+          </action>
+          <action id="Action_cb81cf512e07491696ee7f7a913dece3">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashJobValue" valueOf="List1">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_d022fd70819e4299b4d8504e8c6a8e9f">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashJobValue" valueOf="Map1">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_19cd133ccc5f42ddad2503624213d8f1">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashJobValue" valueOf="Map2">
+                  <flash:path>
+                    <stepByName xsi:type="StringLiteral" value="g" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_21665aef4abb41b2ac8dcb29427c1147">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_096b960b8c20430d92158df179d00237">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashJobVariable" name="List1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_766eb59d6e5c499a8a1689accc3a1722">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_80385c7032c249da87c6edc839de5cb3">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashJobVariable" name="Map1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_c1ef066d1fa5489098938603869a1596">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_864030d297854d6da86a35674e60452d">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashJobVariable" name="Map2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="a" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="FlashSession_2Steps" id="TestProcedure_0712dc6bf1ac49b9953908c7d623cb4c">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_3087420bdef74afaabdba1359394b5ca">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="flash:FlashJob" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List2Levels1" id="VariableDeclaration_3f104ee8211d4391bd82550489486dc1">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="flash:FlashJob" />
+                </itemType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_abff76f42bad4805b5e44ca331d9f63b">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="flash:FlashJob" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2Levels1" id="VariableDeclaration_0af8bff55ea54c1987e58feb1ef097f1">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="flash:FlashJob" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_14087ebea6d04ff2ac78340c231a0e6c">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="flash:FlashJob" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2Levels2" id="VariableDeclaration_ab644b504b8b404bb170b44141382c16">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="flash:FlashJob" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="FlashJob1" id="VariableDeclaration_3006534ffddf4f2fa6f4d89b996824ee">
+            <realisation>
+              <dataType xsi:type="flash:FlashJob" />
+            </realisation>
+          </variable>
+          <variable name="FlashJob2" id="VariableDeclaration_ce27128fb6064e68bd7bace2e6aa3fbe">
+            <realisation>
+              <dataType xsi:type="flash:FlashJob" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_4a7e1c31bd9e459288483df012dfd69a">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashJobVariable" name="FlashJob1" />
+              <term xsi:type="flash:CreateFlashJob">
+                <flash:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <flash:session xsi:type="flash:GetFlashSession">
+                  <flash:sessionID xsi:type="StringLiteral" value="_7PP907357F_7520" />
+                </flash:session>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_6b0f83ed260f491095f05dddaf32edbe">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="flash:FlashJob" />
+                <items>
+                  <item xsi:type="flash:FlashJobValue" valueOf="FlashJob1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_1567d93622c440bb9fb75b05deda3db6">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List2Levels1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="flash:FlashJob" />
+                </itemType>
+                <items>
+                  <item xsi:type="ListValue" valueOf="List1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_4922f1e239c34bd68fd009ca996446d5">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="flash:FlashJob" />
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="5" />
+                    <value xsi:type="flash:FlashJobValue" valueOf="FlashJob1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_0020facde50049b4a4655237fc560356">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2Levels1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="flash:FlashJob" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="1" />
+                    <value xsi:type="MapValue" valueOf="Map1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_65e0e95e964d4614822898f1817ecbfa">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="flash:FlashJob" />
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="g" />
+                    <value xsi:type="flash:FlashJobValue" valueOf="FlashJob1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_5201380d3dc046b8afe25241d69d57d7">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2Levels2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="flash:FlashJob" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="s" />
+                    <value xsi:type="MapValue" valueOf="Map2" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_aec8af1b19974ede9a08aa7a7b15400f">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashJobVariable" name="FlashJob2" />
+              <term xsi:type="flash:CreateFlashJob">
+                <flash:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <flash:session xsi:type="flash:GetFlashSession">
+                  <flash:sessionID xsi:type="StringLiteral" value="_7PP907357H_7540" />
+                </flash:session>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_279bce6f06ee4f608e98c2fa77f85f25">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashJobVariable" name="List2Levels1">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                </path>
+              </result>
+              <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+            </realisation>
+          </action>
+          <action id="Action_92833e6c98cb4705a67e64976887a043">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashJobVariable" name="Map2Levels1">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                </path>
+              </result>
+              <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+            </realisation>
+          </action>
+          <action id="Action_b0243e20b0c044bba441b0955e63077d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashJobVariable" name="Map2Levels2">
+                <path>
+                  <stepByName xsi:type="StringLiteral" value="s" />
+                  <stepByName xsi:type="StringLiteral" value="g" />
+                </path>
+              </result>
+              <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+            </realisation>
+          </action>
+          <action id="Action_f66f4ce1b03a453ba329cfff0d853961">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashJobValue" valueOf="List2Levels1">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_7b122571c49949dd81382c80a669279d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashJobValue" valueOf="Map2Levels1">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_497930a2a5cc4f8ab7b59869f18c6db8">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashJobValue" valueOf="Map2Levels2">
+                  <flash:path>
+                    <stepByName xsi:type="StringLiteral" value="s" />
+                    <stepByName xsi:type="StringLiteral" value="g" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_ab1a0eb575c2420f9846c7063229ed9d">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_6c6b2f2c510b4202b0532d92d1cf1869">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashJobVariable" name="List2Levels1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_1ff332f1f51349b0af1e3220082e6a36">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_be64c3ccb6e14c26ad7acfc192dd36f6">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashJobVariable" name="Map2Levels1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="6" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_75eaa3891cc14ccdad4f80113a30caf7">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_72c97312f2404d4994848fe4fa50f0fb">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashJobVariable" name="Map2Levels2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="s" />
+                        <stepByName xsi:type="StringLiteral" value="h" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="FlashSession_3Steps" id="TestProcedure_e7e0bcee053d4d34af76230071755649">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="List1" id="VariableDeclaration_a072193b8c024af7a065880737d2969f">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="flash:FlashJob" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List2Levels1" id="VariableDeclaration_08eb0886af2d417eb823085ec1a12bd5">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="flash:FlashJob" />
+                </itemType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="List3Levels1" id="VariableDeclaration_e5199fa95c1248ee8cf6a8f8be4921f5">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="flash:FlashJob" />
+                  </itemType>
+                </itemType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map1" id="VariableDeclaration_c9e90ac21f5c4fa49fa677dddb26fd23">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="flash:FlashJob" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2Levels1" id="VariableDeclaration_edd58e28fb474468afe113cec8fbacd6">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="flash:FlashJob" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map3Levels1" id="VariableDeclaration_7e3acac04b2240b788ffad8970c088ea">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="flash:FlashJob" />
+                  </valueType>
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2" id="VariableDeclaration_36d02b5050f4401082eabd0a26ba6162">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="flash:FlashJob" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map2Levels2" id="VariableDeclaration_10a8d1e150c84f6f8b8b5b40db01240f">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="flash:FlashJob" />
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map3Levels2" id="VariableDeclaration_8664cbdeeedd4b40aeaad1ca22157163">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="flash:FlashJob" />
+                  </valueType>
+                </valueType>
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="FlashJob1" id="VariableDeclaration_4949b348909844cd8a9ddd55b56cf4d3">
+            <realisation>
+              <dataType xsi:type="flash:FlashJob" />
+            </realisation>
+          </variable>
+          <variable name="FlashJob2" id="VariableDeclaration_379401be4b554ad4b6539ac1756732e8">
+            <realisation>
+              <dataType xsi:type="flash:FlashJob" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_3e5f2862f7d44747b7d355662e6b83f3">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashJobVariable" name="FlashJob1" />
+              <term xsi:type="flash:CreateFlashJob">
+                <flash:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <flash:session xsi:type="flash:GetFlashSession">
+                  <flash:sessionID xsi:type="StringLiteral" value="_7PP907357F_7520" />
+                </flash:session>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_f22ca96b9ae34d4db57e6678c8811af8">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="flash:FlashJob" />
+                <items>
+                  <item xsi:type="flash:FlashJobValue" valueOf="FlashJob1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_9358a1baf47f412b971b5574d4888939">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List2Levels1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="flash:FlashJob" />
+                </itemType>
+                <items>
+                  <item xsi:type="ListValue" valueOf="List1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_ab2d80f6ede94e1ab66348e00146dd7d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List3Levels1" />
+              <term xsi:type="ListCreate">
+                <itemType xsi:type="List">
+                  <itemType xsi:type="List">
+                    <itemType xsi:type="flash:FlashJob" />
+                  </itemType>
+                </itemType>
+                <items>
+                  <item xsi:type="ListValue" valueOf="List2Levels1" />
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_a0d2194128ef4c7993e3f313b7deb075">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="flash:FlashJob" />
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="9" />
+                    <value xsi:type="flash:FlashJobValue" valueOf="FlashJob1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_8014e7b966cb4d89a75822862f7610f5">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2Levels1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="flash:FlashJob" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="5" />
+                    <value xsi:type="MapValue" valueOf="Map1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_3c8dc84ede404781934ed16c8293d49c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map3Levels1" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="Integer" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="Integer" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="Integer" />
+                    <valueType xsi:type="flash:FlashJob" />
+                  </valueType>
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="IntegerLiteral" value="1" />
+                    <value xsi:type="MapValue" valueOf="Map2Levels1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_5cd27dd6528a4c53a1f7bc08555e2924">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="flash:FlashJob" />
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="e" />
+                    <value xsi:type="flash:FlashJobValue" valueOf="FlashJob1" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_a4ef291b14614384a459fdc2d5ecf851">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map2Levels2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="flash:FlashJob" />
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="w" />
+                    <value xsi:type="MapValue" valueOf="Map2" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_9a422cbd37b24a1486b2b9ca557d7b5f">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="MapVariable" name="Map3Levels2" />
+              <term xsi:type="MapCreate">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="Map">
+                  <keyType xsi:type="String" />
+                  <valueType xsi:type="Map">
+                    <keyType xsi:type="String" />
+                    <valueType xsi:type="flash:FlashJob" />
+                  </valueType>
+                </valueType>
+                <items>
+                  <item>
+                    <key xsi:type="StringLiteral" value="q" />
+                    <value xsi:type="MapValue" valueOf="Map2Levels2" />
+                  </item>
+                </items>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_d8a9c18551d04e6bb001bb92a8227499">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashJobVariable" name="FlashJob2" />
+              <term xsi:type="flash:CreateFlashJob">
+                <flash:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <flash:session xsi:type="flash:GetFlashSession">
+                  <flash:sessionID xsi:type="StringLiteral" value="_7PP907357H_7540" />
+                </flash:session>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_b4109e13441b4c0fbe067bc4d7e9ca1a">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashJobVariable" name="List3Levels1">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                </path>
+              </result>
+              <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+            </realisation>
+          </action>
+          <action id="Action_e539db7a275942468203205db9b3a050">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashJobVariable" name="Map3Levels1">
+                <path>
+                  <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                </path>
+              </result>
+              <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+            </realisation>
+          </action>
+          <action id="Action_037bc99fe8a8493b8bc1985f79234a22">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="flash:FlashJobVariable" name="Map3Levels2">
+                <path>
+                  <stepByName xsi:type="StringLiteral" value="q" />
+                  <stepByName xsi:type="StringLiteral" value="w" />
+                  <stepByName xsi:type="StringLiteral" value="e" />
+                </path>
+              </result>
+              <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+            </realisation>
+          </action>
+          <action id="Action_adeb1406c59a4055b78861c6d0468f44">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashJobValue" valueOf="List3Levels1">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_50567fb1c9b9427a96830bd2017b0ce6">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashJobValue" valueOf="Map3Levels1">
+                  <flash:path>
+                    <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                    <stepByIndex xsi:type="IntegerLiteral" value="9" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_1d918dc289144ad8b5efba2b12a9d796">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="flash:FlashJobValue" valueOf="Map3Levels2">
+                  <flash:path>
+                    <stepByName xsi:type="StringLiteral" value="q" />
+                    <stepByName xsi:type="StringLiteral" value="w" />
+                    <stepByName xsi:type="StringLiteral" value="e" />
+                  </flash:path>
+                </term>
+                <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <compoundNode id="ExtensibleCompoundNode_8886f3ab0873480da7f7d8b34c3bef7a">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_5e31cfc8957d49de9af0b70eaa06ab9b">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashJobVariable" name="List3Levels1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_388ae19ffcab46ed93713939c67124be">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_674c5fb216cb484480746512fa3b041b">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashJobVariable" name="Map3Levels1">
+                      <path>
+                        <stepByIndex xsi:type="IntegerLiteral" value="1" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="5" />
+                        <stepByIndex xsi:type="IntegerLiteral" value="12" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+          <compoundNode id="ExtensibleCompoundNode_77f692ef9e4c49a5a7526ff9df3e5fbd">
+            <realisation xsi:type="unittest:AssertThrows">
+              <unittest:exception xsi:type="OutOfBoundsException" />
+              <unittest:flow>
+                <action id="Action_c9039ad4786e468ebf885eaa0ccb326d">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="flash:FlashJobVariable" name="Map3Levels2">
+                      <path>
+                        <stepByName xsi:type="StringLiteral" value="q" />
+                        <stepByName xsi:type="StringLiteral" value="w" />
+                        <stepByName xsi:type="StringLiteral" value="z" />
+                      </path>
+                    </result>
+                    <term xsi:type="flash:FlashJobValue" valueOf="FlashJob2" />
+                  </realisation>
+                </action>
+              </unittest:flow>
+            </realisation>
+          </compoundNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ChangeOdxDb_LastDb" id="TestProcedure_0f78425674ab4ba4aafa83b2e6c4e14f">
+      <unittest:realisation>
+        <unittest:flow>
+          <branch id="Branch_309ade3e082e4d48a4f2c83a72947d08">
+            <realisation>
+              <if>
+                <condition id="ConditionHeader_5a921e913d5c4ba79ee72d88af4ad04e">
+                  <realisation xsi:type="IsEqual">
+                    <term xsi:type="StringValue" valueOf="CurrentProjectName" />
+                    <term xsi:type="StringLiteral" value="918" />
+                  </realisation>
+                </condition>
+                <flow>
+                  <action id="Action_105c9d365dbd44f796c8b27870371d1c">
+                    <realisation xsi:type="diagConf:SelectProject">
+                      <diagConf:projectName xsi:type="StringValue" valueOf="CurrentProjectName" />
+                    </realisation>
+                  </action>
+                  <action id="Action_fa2b06e4e8744500a79fe3ae6998417a">
+                    <realisation xsi:type="diagConf:SelectVehicleInformation">
+                      <diagConf:vehicleInformation xsi:type="StringValue" valueOf="CurrentVehicleName" />
+                    </realisation>
+                  </action>
+                </flow>
+              </if>
+            </realisation>
+          </branch>
+          <endNode id="ExtensibleEndNode_6e338adb49204d74958e29dc593e81be">
+            <realisation xsi:type="unittest:Pass" />
+          </endNode>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:tearDownProcedure name="TearDownProcedure1" id="SetupProcedure_53a6149c3bb547c18dace50d124d5be2">
+      <unittest:realisation>
+        <unittest:flow>
+          <handler id="Handler_aa6e8dfd25c148a887b36465e2fcf526">
+            <realisation>
+              <try>
+                <action id="Action_ba32bdba570d4244b533653076f99e80">
+                  <realisation xsi:type="diag:CloseComChannel">
+                    <diag:comChannel name="ComChannel1" />
+                  </realisation>
+                </action>
+              </try>
+              <catch>
+                <exception id="CatchHeader_edc37e3e124f4c79afbd5258e778b3fd">
+                  <realisation>
+                    <type />
+                  </realisation>
+                </exception>
+                <flow />
+              </catch>
+            </realisation>
+          </handler>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:tearDownProcedure>
+  </extendedElement>
+</otx>

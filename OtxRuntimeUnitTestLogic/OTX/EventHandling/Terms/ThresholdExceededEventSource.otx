@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" xmlns:event="http://iso.org/OTX/1.0.0/Event" name="ThresholdExceededEventSource" id="id_3664c46658374ffba31f6384b1bd2aff" package="EventHandling.Terms" version="1.0.0.0" timestamp="2021-08-10T10:52:56.358+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.42500</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="ThresholdExceededEventSource_WithInteger" id="id_51f1cd6e0aba4b27a6eea6b15c15150a" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="EventSource1" id="VariableDeclaration_f7264ec8d8e948e2925cedf7c2528eee">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_4994d05afb4f47b29050c37d51e19516">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+          <variable name="Integer1" id="VariableDeclaration_1be9a103628d4da3a7520470467b9600">
+            <realisation>
+              <dataType xsi:type="Integer">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_ebc71677ee5a45edbc28763f74aad091">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:ThresholdExceededEventSource">
+                <event:variable xsi:type="IntegerVariable" name="Integer1" />
+                <event:lowerThreshold xsi:type="IntegerLiteral" value="0" />
+                <event:upperThreshold xsi:type="IntegerLiteral" value="9" />
+              </term>
+            </realisation>
+          </action>
+          <parallel id="Parallel_fac8172f3d604298ab8f98a4fd8fc85c">
+            <realisation>
+              <lane>
+                <action id="Action_f1aca1b125e64ce393a60a369454a8be">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_ac24ee34f37246b4b4150a644bb820d9">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="100" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_7512a079c30f4d8e9bf9f774491efb75">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="IntegerVariable" name="Integer1" />
+                    <term xsi:type="IntegerLiteral" value="-1" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_8868b7a030c24f3fbb7b73ac840f814d">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="event:IsMonitorChangeEvent">
+                <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                <event:variable xsi:type="IntegerVariable" name="Integer1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_3752c4024d624e689a069ba480ca7e20">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="event:IsThresholdExceededEvent">
+                <event:event xsi:type="event:EventValue" valueOf="Event1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_8275b1f659a14cff8059a6d1d93fb3d4">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToInteger">
+                  <term xsi:type="event:GetNewValue">
+                    <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                  </term>
+                </term>
+                <term xsi:type="IntegerLiteral" value="-1" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ThresholdExceededEventSource_WithFloat" id="TestProcedure_5d6cace8b09e4d2e8abfdee9ecc50651" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="EventSource1" id="VariableDeclaration_6b900cbb5d5644e9a69a35bd5c969d17">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_f0b4a2af2f5a4a2b8dee0029a09a60cb">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+          <variable name="Float1" id="VariableDeclaration_5f2f8c40064a42b58dd3e52f209ccbb3">
+            <realisation>
+              <dataType xsi:type="Float">
+                <init value="0" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_4e8a74123b324aa29bcffdc41f7cb0f9">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:ThresholdExceededEventSource">
+                <event:variable xsi:type="FloatVariable" name="Float1" />
+                <event:lowerThreshold xsi:type="FloatLiteral" value="-0.00011" />
+                <event:upperThreshold xsi:type="FloatLiteral" value="0.000998" />
+              </term>
+            </realisation>
+          </action>
+          <parallel id="Parallel_071bf5c6f6a845f0a99ac84210ae8b85">
+            <realisation>
+              <lane>
+                <action id="Action_fc07aa6019044368a4dc7778d716babb">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_fd34ad4ba3d841d6a192c31656c57c6d">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="100" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_0eddc22fcef74408bc976ae3b6778a60">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="FloatVariable" name="Float1" />
+                    <term xsi:type="FloatLiteral" value="-0.000111" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_ebd175ba2fbf454c8a5222170e095fe6">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="event:IsMonitorChangeEvent">
+                <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                <event:variable xsi:type="FloatVariable" name="Float1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_2545b146196c42cfad9155db3e037819">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="event:IsThresholdExceededEvent">
+                <event:event xsi:type="event:EventValue" valueOf="Event1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_051a2e7af2d247f095ab6716c871ae45">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToFloat">
+                  <term xsi:type="event:GetNewValue">
+                    <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                  </term>
+                </term>
+                <term xsi:type="FloatLiteral" value="-0.000111" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+    <unittest:testProcedure name="ThresholdExceededEventSource_WithString" id="TestProcedure_6e2d897c7e3c49c891fc121d0af406ac" parallelizable="true">
+      <unittest:realisation>
+        <unittest:declarations>
+          <variable name="EventSource1" id="VariableDeclaration_92e826d82a62463083109db10df9aecd">
+            <realisation>
+              <dataType xsi:type="event:EventSource" />
+            </realisation>
+          </variable>
+          <variable name="Event1" id="VariableDeclaration_cc90eebf913d4f07aa394b7e36604a94">
+            <realisation>
+              <dataType xsi:type="event:Event" />
+            </realisation>
+          </variable>
+          <variable name="String1" id="VariableDeclaration_b7eb47bc7a17418e92c4b1f83d8bd196">
+            <realisation>
+              <dataType xsi:type="String">
+                <init value="" />
+              </dataType>
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_5b8c62455f6945a7bee18063e1d5dedc">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="event:EventSourceVariable" name="EventSource1" />
+              <term xsi:type="event:ThresholdExceededEventSource">
+                <event:variable xsi:type="StringVariable" name="String1" />
+                <event:lowerThreshold xsi:type="StringLiteral" value="asd" />
+                <event:upperThreshold xsi:type="StringLiteral" value="ass" />
+              </term>
+            </realisation>
+          </action>
+          <parallel id="Parallel_d43b9449f57f4d5d91f2212693a8dc82">
+            <realisation>
+              <lane>
+                <action id="Action_16d21cd4f84a439db6f42cac7d5348b6">
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:EventSourceValue" valueOf="EventSource1" />
+                    <event:event name="Event1" />
+                  </realisation>
+                </action>
+              </lane>
+              <lane>
+                <action id="Action_8b79d4822f0346408be13bcc63b8f9d1">
+                  <metaData>
+                    <data key="EmotiveActivity">SleepActivity</data>
+                  </metaData>
+                  <realisation xsi:type="event:WaitForEvent">
+                    <event:source xsi:type="event:TimerExpiredEventSource">
+                      <event:timeout xsi:type="IntegerLiteral" value="100" />
+                    </event:source>
+                  </realisation>
+                </action>
+                <action id="Action_8d4d49b4274c49d0963638449542761a">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="StringVariable" name="String1" />
+                    <term xsi:type="StringLiteral" value="asa" />
+                  </realisation>
+                </action>
+              </lane>
+            </realisation>
+          </parallel>
+          <action id="Action_16490aa55e044c3b90a35824f629dc62">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="event:IsMonitorChangeEvent">
+                <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                <event:variable xsi:type="StringVariable" name="String1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_c77ec23b559a4aea80645354bc93d00f">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="event:IsThresholdExceededEvent">
+                <event:event xsi:type="event:EventValue" valueOf="Event1" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_555f1138fcec402fb23877c2a9bdc43a">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="ToString">
+                  <term xsi:type="event:GetNewValue">
+                    <event:event xsi:type="event:EventValue" valueOf="Event1" />
+                  </term>
+                </term>
+                <term xsi:type="StringLiteral" value="bba" />
+              </assert:condition>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>

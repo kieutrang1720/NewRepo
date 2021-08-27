@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns="http://www.emotive.de/AssemblyScreenMapping.xsd" xmlns:mstns="http://www.emotive.de/AssemblyScreenMapping.xsd" elementFormDefault="qualified" id="AssemblyScreenMapping" targetNamespace="http://www.emotive.de/AssemblyScreenMapping.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>O T X   M a p p i n g
+----------------------
+The OTX mapping contains the mapping of all interaction of the OTX-Runtime with the external environment. It contains the following mappings:
+
+* ContextMapping : Mapping of OTX context variables and to its identification routines.
+* StateMapping : Mapping of OTX state variables and its signal methods.
+* ScreenMapping : Mapping of screen signatures (Custom screens of OTX HMI extension) to special marked properties inside an application.
+* DeviceMapping : Mapping of device signatures (OTX Measure extension) to public static methods inside an application.
+* ServiceProviderMapping : Mapping of service provider signatures (OTX ExternalServiceProvider extension) to an application.
+
+The intended mapping direction is the mapping of existing elements inside an external applications to different OTX elements. This is the intended use case but also the opposite direction is possible.
+
+Special Mapping behavior for Assembly Screens
+---------------------------------------------
+The AssemblyScreenMapping is an implementation of OTX HMI CustomScreens inside the EMOTIVE OTX Runtime.
+
+With AssemblyScreenMapping it is possible to map screen signature parameters to properties inside an assembly. The assemble shall have the following special structure:
+
+One ore more classes inside the assembly have to be marked with attribute [OtxScreenSignature].
+Each of this classes can be mapped to a ScreenSignature.
+
+The class shall contain the following fixed elements mandatory. If one of this elements does not exists or more than one exists, the class should be ignored.
+
+1. Method: public void OpenScreen() marked with attribute [OtxOpenScreen] (Name of the method can be different)
+   Called from the OTX-Runtime if OpenScreen is performed.
+2. Method: public void CloseScreen() marked with attribute [OtxCloseScreen] (Name of the method can be different)
+   Called from the OTX-Runtime if CloseScreen is performed.
+3. Method: public void HighlightScreen() marked with attribute [OtxHighlightScreen] (Name of the method can be different)
+   Called from the OTX-Runtime if HighlightScreen is performed.
+4. Property (Get): public bool ScreenIsOpen() marked with attribute [OtxScreenIsOpen] (Name of the property can be different)
+   Read from the OTX-Runtime if ScreenIsOpen is performed.
+5. Event: public void ScreenClosedEventHandler() marked with attribute [OtxScreenCloseEventSource] (Name of the event can be different)
+   Should fired by the assembly if the related screen is closed.
+6. Event: public void ScreenSignatureParameterValueChangedEventHandler(string propertyName, object value) marked with attribute [OtxScreenSignatureParameterValueChangedEvent] (Name of the event can be different)
+   Should fired by the assembly if an InOut- or Out-Parameter was changed.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType name="OtxMapping">
+        <xs:sequence>
+            <xs:element name="applications" type="Applications" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>List of external applications</xs:documentation>
+                </xs:annotation>
+                <xs:key name="UniqueIds">
+                    <xs:selector xpath=".//application" />
+                    <xs:field xpath="@id" />
+                </xs:key>
+            </xs:element>
+            <xs:element name="mappings" type="Mappings" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>List of all different mappings</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="initialValues" type="InitialValues" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>List of signature parameters of the related project which shall have a certain initial value. Each parameter can have only one initalValue. The initial value shall be adjusted to the parameter before a related procedure is executed.</xs:documentation>
+                </xs:annotation>
+                <xs:key name="UniqueNames">
+                    <xs:selector xpath=".//initialValue" />
+                    <xs:field xpath="@name" />
+                </xs:key>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="version" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>Version of the schema for later extension</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="description" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation>Optional description of the OTX-mapping file</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="Applications">
+        <xs:sequence>
+            <xs:element name="application" type="Application" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>External application</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Mappings">
+        <xs:sequence>
+            <xs:element name="contextMapping" type="ContextMapping" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Mapping of OTX context variables and its identification routines (Getter)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="stateMapping" type="StateMapping" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Mapping of OTX state variables and its signal methods (Setter)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="screenMapping" type="ScreenMapping" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Mapping of screen signatures (Custom screens of OTX HMI extension) to special marked properties inside a binary</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="deviceMapping" type="DeviceMapping" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Mapping of device signatures (OTX Measure extension) to public static methods inside an application</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="serviceProviderMapping" type="ServiceProviderMapping" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Mapping of service provider signatures (OTX ExternalServiceProvider extension) to an application</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Application">
+        <xs:sequence>
+            <xs:element name="init" type="StaticMethod" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Optional public static method inside the binary to initialize the application</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="deinit" type="StaticMethod" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Optional public static method inside the binary to deinitialize the application</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" use="required">
+            <xs:annotation>
+                <xs:documentation>A unique application ID (AppId) which refers to an external binary, e.g. DotNet assembly or WebService</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="AppId">
+                    <xs:pattern value="_*[a-zA-Z][a-zA-Z0-9_]*" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="path" use="required">
+            <xs:annotation>
+                <xs:documentation>Full path to the binary (relative or absolute)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="_*[a-zA-Z][a-zA-Z0-9_]*" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="StaticMethod">
+        <xs:sequence>
+            <xs:element name="parameters" type="MethodParameters" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Optional parameters of the method</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:Name" use="required">
+            <xs:annotation>
+                <xs:documentation>Full qualified name of the public static method inside the application</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="MethodParameters">
+        <xs:sequence>
+            <xs:element name="parameter" type="MethodParameter" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Parameters of the method</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="MethodParameter">
+        <xs:annotation>
+            <xs:documentation>Parameter of the method</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="value" type="xs:string" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Value of the parameter as a literal. The datatype of the parameter and the literal shall be matched.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:Name" use="required">
+            <xs:annotation>
+                <xs:documentation>Name of the parameter</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="ContextMapping">
+        <xs:sequence>
+            <xs:element name="identificationRoutine" type="MappingElement" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Identification routine to read the value of an OTX context variable which is used inside OTX</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="appIdRef" use="required">
+            <xs:annotation>
+                <xs:documentation>Reference to an ID of an application</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="AppIdRef">
+                    <xs:pattern value="_*[a-zA-Z][a-zA-Z0-9_]*" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="StateMapping">
+        <xs:sequence>
+            <xs:element name="notifyRoutine" type="MappingElement" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Notify routine to transport the value of an OTX state variable to the OTX environment</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="appIdRef" use="required">
+            <xs:annotation>
+                <xs:documentation>Reference to an ID of an application</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="AppIdRef">
+                    <xs:pattern value="_*[a-zA-Z][a-zA-Z0-9_]*" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="ScreenMapping">
+        <xs:sequence>
+            <xs:element name="screen" type="MappingSignature" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Screens inside an application (classes marked via special attribute) which could be mapped to a ScreenSignature.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="appIdRef" use="required">
+            <xs:annotation>
+                <xs:documentation>Reference to an ID of an application</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="AppIdRef">
+                    <xs:pattern value="_*[a-zA-Z][a-zA-Z0-9_]*" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="MappingSignature">
+        <xs:sequence>
+            <xs:element name="mappingElements" type="MappingElements" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>List of mapping elements. If an element inside the application is not mapped, the runtime will ignore it.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:Name" use="required">
+            <xs:annotation>
+                <xs:documentation>Name of an entity inside the application (screen, class etc.) which should be mapped to an OTX signature</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="signatureName" type="xs:Name" use="required">
+            <xs:annotation>
+                <xs:documentation>Name of the OTX signature which should be mapped</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="MappingServiceSignature">
+      <xs:complexContent>
+        <xs:extension base="MappingSignature">
+          <xs:sequence>
+            <xs:element name="mappingThrows" type="MappingThrows" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation />
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="DeviceMapping">
+        <xs:sequence>
+            <xs:element name="device" type="Device" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Device inside an application (class) which could be mapped to a DeviceServiceSignature.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="appIdRef" use="required">
+            <xs:annotation>
+                <xs:documentation>Reference to an ID of an application</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="AppIdRef">
+                    <xs:pattern value="_*[a-zA-Z][a-zA-Z0-9_]*" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="Device">
+        <xs:sequence>
+            <xs:element name="services" type="Services" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>List of device services</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:Name" use="required">
+            <xs:annotation>
+                <xs:documentation>Name of the device inside an assembly (class) which should be mapped to a DeviceSignature.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="deviceSignatureName" type="xs:Name" use="required">
+            <xs:annotation>
+                <xs:documentation>Name of the DeviceSignature which should be mapped to a device inside the application.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="ServiceProviderMapping">
+        <xs:sequence>
+            <xs:element name="serviceProvider" type="ServiceProvider" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Service provider inside an application (class) which could be mapped to a ServiceProviderSignature.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="appIdRef" use="required">
+            <xs:annotation>
+                <xs:documentation>Reference to an ID of an application</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="AppIdRef">
+                    <xs:pattern value="_*[a-zA-Z][a-zA-Z0-9_]*" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="ServiceProvider">
+        <xs:sequence>
+            <xs:element name="constructors" type="Constructors" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>List of constructors</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="properties" type="Properties" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>List of properties</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="services" type="Services" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>List of services</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="events" type="Events" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>List of events</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>Name of the service provider inside an assembly (class) which should be mapped to a ServiceProviderSignature.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="serviceProviderSignatureName" type="xs:Name" use="required">
+            <xs:annotation>
+                <xs:documentation>Name of the ServiceProviderSignature which should be mapped to a class inside the application.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="Constructors">
+        <xs:sequence>
+            <xs:element name="constructor" type="MappingSignature" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Constructor inside an application which could be mapped to a ConstructorSignature. A constructor is called if a service provider is created.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Properties">
+        <xs:sequence>
+            <xs:element name="property" type="MappingSignature" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Property inside an application which could be mapped to a PropertySignature. A property is like a class property.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Services">
+        <xs:sequence>
+            <xs:element name="service" type="MappingServiceSignature" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Service inside an application (method) which could be mapped to a ServiceSignature. A service is like a class method.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Events">
+        <xs:sequence>
+            <xs:element name="event" type="MappingSignature" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Event inside an application which could be mapped to an EventSignature</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="MappingElements">
+        <xs:sequence>
+            <xs:element name="mappingElement" type="MappingElement" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Basic mapping element. It assigns an element of the application (MappingElement) to an element inside OTX (mapToElement).</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="MappingElement">
+        <xs:annotation>
+            <xs:documentation />
+        </xs:annotation>
+        <xs:choice>
+            <xs:element name="mapToElement" type="xs:Name" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Name of an OTX element (mapToElement) which should be mapped to an element inside the application (name).</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="literalValue" minOccurs="1" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Instead of mapping an OTX element the mapping element can be set to a fixed literal value. This is only valid elements with an In-Direction. In other words the value have to be transported from inside OTX to the environment.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="datatype" type="xs:string" use="required" />
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:choice>
+        <xs:attribute name="name" type="xs:Name" use="required">
+            <xs:annotation>
+                <xs:documentation>Name of an element inside the application (routine, method, property, event etc.) which should be mapped to the related OTX element (parameter of a signature, variable etc.)</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="listIndex" type="xs:unsignedLong">
+            <xs:annotation>
+                <xs:documentation>A mapping element from the application of type List can be handled special. Each item of this List can be mapped to an element or a literal of the Lists inner datatype (List&lt;Datatype&gt;[Index] = Datatype;).
+
+If the listIndex is omitted, the whole element is mapped. If the listIndex is not omitted, the related item of the list is mapped to an element or a literal value. It is not necessary that each item of a list should be mapped.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="datatypeConversion" default="false" type="xs:boolean">
+            <xs:annotation>
+                <xs:documentation>An optional type conversion between mapToElement and the mappingElement can be performed. The default value is FALSE.
+
+Without type conversion the datatype of the to-be mapped element have to match with the datatype of the mapping element. If it is not matched, nothing happens, the to-be mapped element will ignored.
+
+If datatype conversion is set to TRUE, the datatype of elements can be different. An implicit datatype conversion is performed. The user have to ensure that the conversion is possible, otherwise an runtime exception will thrown, which cannot be catched by an OTX sequence.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="MappingThrows">
+        <xs:sequence>
+            <xs:element name="mappingThrow" type="MappingThrow" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation />
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="MappingThrow">
+      <xs:annotation>
+        <xs:documentation />
+      </xs:annotation>
+      <xs:sequence>
+        <xs:element name="mapToException" type="xs:Name" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Name of exception (mapToException) which should be mapped to an element inside the application (name).</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:Name" use="required">
+        <xs:annotation>
+          <xs:documentation>Exception type name inside the application, which should be mapped to the related exception of a signature</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+  
+    <xs:simpleType name="AppId">
+        <xs:annotation>
+            <xs:documentation>Unique application ID (AppId)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z][a-zA-Z0-9_]*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AppIdRef">
+        <xs:annotation>
+            <xs:documentation>Reference to an application ID inside this document</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z][a-zA-Z0-9_]*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Name">
+        <xs:annotation>
+            <xs:documentation>Full qualified name containing namespace and other address information separated by dots e.g. "OtxScreens.Screens.ScreenTest.ByteArrayToString"</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9_\.]+" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="InitialValue">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="name" type="xs:Name">
+                    <xs:annotation>
+                        <xs:documentation>Full qualified name of a signature parameter containing the full path to the parameter.</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="InitialValues">
+        <xs:sequence>
+            <xs:element name="initialValue" type="InitialValue" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>String representation of the initial Value of the signature parameter. The string value shall be able to convert to the datatype of the signature parameter, otherwise the value should be ignored.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="otxMapping" type="OtxMapping">
+        <xs:annotation>
+            <xs:documentation>Each access to an external application will mapped via the OTX-Mapping. With the mapping an author can bind certain OTX elements to properties, methods, events etc. of external applications.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:complexType name="LiteralValue" />
+</xs:schema>

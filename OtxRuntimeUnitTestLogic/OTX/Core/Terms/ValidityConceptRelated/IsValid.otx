@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assert="http://iso.org/OTX/1.0.0/Assertion" name="IsValid" id="id_e064026044c349e78198874c52de6051" package="Core.Terms.ValidityConceptRelated" version="1.0.0.41646" timestamp="2021-05-12T15:03:08.453+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.4.0.41142</data>
+  </metaData>
+  <declarations>
+    <context name="ContextVariableFalse" id="ContextVariableDeclaration_9c62ffefcd834f94a69dd67072af336a">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="false" />
+        </dataType>
+      </realisation>
+    </context>
+    <context name="ContextVariableTrue" id="ContextVariableDeclaration_d64e6ad394f8426da8c52a3b53d4f875">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="true" />
+        </dataType>
+      </realisation>
+    </context>
+    <constant name="GlobalConstantFalse" id="GlobalConstantDeclaration_52f6200f8760413398c9e8b841907808">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="false" />
+        </dataType>
+      </realisation>
+    </constant>
+    <constant name="GlobalConstantTrue" id="GlobalConstantDeclaration_5c2bf974a471412c87239e2811b902f7">
+      <realisation>
+        <dataType xsi:type="Boolean">
+          <init value="true" />
+        </dataType>
+      </realisation>
+    </constant>
+  </declarations>
+  <validities>
+    <validity name="ValidityTrue" id="Validity_75f88667955f45edb4d8ea7a7c95006e">
+      <realisation xsi:type="BooleanLiteral" value="true" />
+    </validity>
+    <validity name="ValidityFalse" id="Validity_afde63ea725c4a9c8ce53a299fe0e2fe">
+      <realisation xsi:type="BooleanLiteral" value="false" />
+    </validity>
+  </validities>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="IsValid_Base" id="TestProcedure_5c0080374e104a40b2dfb9d82ab47b3a" parallelizable="true">
+      <unittest:realisation>
+        <unittest:flow>
+          <action id="Action_2fa56c0cb2494043939b41778076bdbd">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IsValid" validity="ValidityFalse" />
+                <term xsi:type="BooleanLiteral" value="false" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_fdd563d1718b4a0d8a9186a2fde941e1">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IsValid" validity="ContextVariableFalse" />
+                <term xsi:type="BooleanLiteral" value="false" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_602a316ee110481cb81ac0824ca656bc">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsEqual">
+                <term xsi:type="IsValid" validity="GlobalConstantFalse" />
+                <term xsi:type="BooleanLiteral" value="false" />
+              </assert:condition>
+            </realisation>
+          </action>
+          <action id="Action_068203a13c8c494abbc37e271febf9b9">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsValid" validity="ValidityTrue" />
+            </realisation>
+          </action>
+          <action id="Action_a25d93d7ffd147b29ce34504b696f605">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsValid" validity="ContextVariableTrue" />
+            </realisation>
+          </action>
+          <action id="Action_c1a98893f0344b528bad4ccd3b49d094">
+            <realisation xsi:type="assert:Assert">
+              <assert:condition xsi:type="IsValid" validity="GlobalConstantTrue" />
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>
